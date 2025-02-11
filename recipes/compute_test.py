@@ -20,23 +20,17 @@ dfs = {
     "1995" : presidentielle_1995.get_dataframe()
 }
 
-final_df = pd.DataFrame(columns=["year"])
+
+final_df = pd.DataFrame(columns=["Année", "Nom", "Prénom", "Voix"])
+count = 0
 
 for key, df in dfs.items():
     headers = df.columns 
     row = df.iloc[0]
 
     for header, value in zip(headers, row):
-        print(f"{key}")
-        print(f"Colonne: {header}, Valeur: {value}")
-
-        # Exemple de test conditionnel
-        if "Nom" in header:
-            print(f"Nom détecté: {value}")
-        elif "Score" in header:
-            print(f"Score détecté: {value}")
-        else:
-            print(f"Autre valeur: {value}")
+        df.loc[1, "Année"] = key
+        count += 1
 
 
 # Compute recipe outputs from inputs
