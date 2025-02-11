@@ -10,7 +10,8 @@ presidentielle_2017 = dataiku.Dataset("MSPR__1__Presidentielle_2017")
 presidentielle_2012 = dataiku.Dataset("MSPR__1__Presidentielle_2012")
 presidentielle_2007 = dataiku.Dataset("MSPR__1__Presidentielle_2007")
 presidentielle_2002 = dataiku.Dataset("MSPR__1__Presidentielle_2002")
-presidentielle_1995 = dataiku.Dataset("MSPR__1__Presidentielle_1995")
+# Dataset MSPR__1__Presidentielle_1995 renamed to Presidentielle_1995 by admin on 2025-02-11 15:20:56
+presidentielle_1995 = dataiku.Dataset("Presidentielle_1995")
 
 dfs = {
     "2022" : presidentielle_2022.get_dataframe(),
