@@ -25,7 +25,7 @@ dfs = {
 }
 
 # Create empty dataframe with columns needed
-final_df = pd.DataFrame(columns=["Année", "Partis", "Voix"])
+final_df = pd.DataFrame(columns=["Année", "Parti", "Voix"])
 
 count = 0
 
@@ -34,8 +34,11 @@ for key, df in dfs.items():
     headers = df.columns 
     row = df.iloc[0]
     col_count = 0
-
-    for header, value in zip(headers, row):
+    
+    # Iterate over first line values
+    for index, (header, value) in enumerate(zip(headers, row)):
+        
+        # Create new row for blank votes
         if(header == "Blancs" or header == "Nuls"):
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Parti"] = "Blanc"
