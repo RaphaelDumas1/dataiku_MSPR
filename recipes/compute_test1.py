@@ -68,5 +68,6 @@ for key, df in dfs.items():
 
 # Write recipe outputs
 # Dataset test renamed to Presidentielle by admin on 2025-02-11 15:22:10
-test = dataiku.Dataset("test1")
+# Dataset test1 renamed to Legislatives by admin on 2025-02-11 18:01:36
+test = dataiku.Dataset("Legislatives")
 test.write_with_schema(final_df)
