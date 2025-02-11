@@ -24,6 +24,26 @@
         {
           "ref": "MSPR__1__Presidentielle_2022",
           "deps": []
+        },
+        {
+          "ref": "MSPR__1__Presidentielle_1995",
+          "deps": []
+        },
+        {
+          "ref": "MSPR__1__Presidentielle_2002",
+          "deps": []
+        },
+        {
+          "ref": "MSPR__1__Presidentielle_2007",
+          "deps": []
+        },
+        {
+          "ref": "MSPR__1__Presidentielle_2012",
+          "deps": []
+        },
+        {
+          "ref": "MSPR__1__Presidentielle_2017",
+          "deps": []
         }
       ]
     }
