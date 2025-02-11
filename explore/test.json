@@ -85,8 +85,9 @@
           "columnType": "NUMERICAL",
           "currentMode": "NUMERICAL",
           "sort": "count",
-          "minValue": 2022,
-          "selectedValues": {}
+          "minValue": 2017,
+          "selectedValues": {},
+          "maxValue": 2017
         },
         "alphanumFilter": {
           "type": "alphanum",
