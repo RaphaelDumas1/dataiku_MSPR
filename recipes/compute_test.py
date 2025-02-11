@@ -3,18 +3,11 @@ import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
-# Read recipe inputs
-# Dataset MSPR__1__Presidentielle_2022 renamed to Presidentielle_2022 by admin on 2025-02-11 15:20:49
 presidentielle_2022 = dataiku.Dataset("Presidentielle_2022")
-# Dataset MSPR__1__Presidentielle_2017 renamed to Presidentielle_2017 by admin on 2025-02-11 15:21:31
 presidentielle_2017 = dataiku.Dataset("Presidentielle_2017")
-# Dataset MSPR__1__Presidentielle_2012 renamed to Presidentielle_2012 by admin on 2025-02-11 15:21:21
 presidentielle_2012 = dataiku.Dataset("Presidentielle_2012")
-# Dataset MSPR__1__Presidentielle_2007 renamed to Presidentielle_2007 by admin on 2025-02-11 15:21:13
 presidentielle_2007 = dataiku.Dataset("Presidentielle_2007")
-# Dataset MSPR__1__Presidentielle_2002 renamed to Presidentielle_2002 by admin on 2025-02-11 15:21:03
 presidentielle_2002 = dataiku.Dataset("Presidentielle_2002")
-# Dataset MSPR__1__Presidentielle_1995 renamed to Presidentielle_1995 by admin on 2025-02-11 15:20:56
 presidentielle_1995 = dataiku.Dataset("Presidentielle_1995")
 
 dfs = {
@@ -66,7 +59,5 @@ for key, df in dfs.items():
             
         
 
-# Write recipe outputs
-# Dataset test renamed to Presidentielle by admin on 2025-02-11 15:22:10
-test = dataiku.Dataset("Presidentielle")
-test.write_with_schema(final_df)
+results = dataiku.Dataset("Presidentielle")
+results.write_with_schema(final_df)
