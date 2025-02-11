@@ -44,7 +44,7 @@ for key, df in dfs.items():
             count += 1
         
         
-        if(0 <= index):
+        if(headers.index("Sexe") <= index):
             col_count += 1
             
         if(col_count == 1):
