@@ -19,16 +19,21 @@ dfs = {
     "1995" : presidentielle_1995.get_dataframe()
 }
 
-
+# Create empty dataframe with columns needed
 final_df = pd.DataFrame(columns=["Année", "Genre", "Nom", "Prénom", "Voix"])
+
 count = 0
 
+# Iterate over dataframes
 for key, df in dfs.items():
     headers = df.columns 
     row = df.iloc[0]
     col_count = 0
-
+    
+    # Iterate over first line values
     for index, (header, value) in enumerate(zip(headers, row)):
+        
+        # Create new row for draw votes
         if(header == "Blancs" or header == "Blancs et nuls"):
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Nom"] = "Blanc"
@@ -36,7 +41,7 @@ for key, df in dfs.items():
             final_df.loc[count, "Voix"] = value
             count += 1
         
-        
+        # Increment since first candidate
         if(headers.get_loc("Sexe") <= index):
             col_count += 1
             
