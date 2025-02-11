@@ -5,7 +5,7 @@ from dataiku import pandasutils as pdu
 
 # Read recipe inputs
 MSPR__1__Presidentielle_2022 = dataiku.Dataset("MSPR__1__Presidentielle_2022")
-MSPR__1__Presidentielle_2022_df = MSPR__1__Presidentielle_2022.get_dataframe()
+df = MSPR__1__Presidentielle_2022.get_dataframe()
 
 
 # Compute recipe outputs from inputs
@@ -28,7 +28,7 @@ for header, value in zip(headers, second_row):
     else:
         print(f"Autre valeur: {value}")
 
-test_df = MSPR__1__Presidentielle_2022_df # For this sample code, simply copy input to output
+test_df = df # For this sample code, simply copy input to output
 
 
 # Write recipe outputs
