@@ -73,43 +73,7 @@
       "autoRefresh": true
     },
     "globalSearchQuery": "",
-    "explorationFilters": [
-      {
-        "column": "Année",
-        "type": "columnFilter",
-        "currentMode": "FACET",
-        "active": true,
-        "facet": {
-          "type": "facet",
-          "column": "Année",
-          "columnType": "NUMERICAL",
-          "currentMode": "NUMERICAL",
-          "sort": "count",
-          "minValue": 2017,
-          "selectedValues": {},
-          "maxValue": 2017
-        },
-        "alphanumFilter": {
-          "type": "alphanum",
-          "column": "Année",
-          "selectedValues": [],
-          "params": {
-            "mode": "full_string",
-            "normalization": "exact"
-          }
-        },
-        "validityFilter": {
-          "type": "validity",
-          "column": "Année",
-          "params": {
-            "type": "LongMeaning",
-            "ok": true,
-            "nok": true,
-            "empty": true
-          }
-        }
-      }
-    ],
+    "explorationFilters": [],
     "previewMode": "ALL_ROWS"
   },
   "charts": [],
