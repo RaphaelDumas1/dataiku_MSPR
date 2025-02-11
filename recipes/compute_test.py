@@ -49,4 +49,4 @@ for key, df in dfs.items():
 
 # Write recipe outputs
 test = dataiku.Dataset("test")
-test.write_with_schema(emptyDf)
+test.write_with_schema(final_df)
