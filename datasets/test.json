@@ -87,7 +87,10 @@
   },
   "schema": {
     "columns": [
-      {"name":"year","type":"string"}
+      {"name":"Année","type":"string"},
+      {"name":"Nom","type":"string"},
+      {"name":"Prénom","type":"string"},
+      {"name":"Voix","type":"string"}
     ],
     "userModified": false
   },
