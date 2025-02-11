@@ -88,6 +88,7 @@
   "schema": {
     "columns": [
       {"name":"Année","type":"string"},
+      {"name":"Genre","type":"string"},
       {"name":"Nom","type":"string"},
       {"name":"Prénom","type":"string"},
       {"name":"Voix","type":"string"}
