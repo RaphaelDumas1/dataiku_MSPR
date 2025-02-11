@@ -6,7 +6,8 @@ from dataiku import pandasutils as pdu
 # Read recipe inputs
 # Dataset MSPR__1__Presidentielle_2022 renamed to Presidentielle_2022 by admin on 2025-02-11 15:20:49
 presidentielle_2022 = dataiku.Dataset("Presidentielle_2022")
-presidentielle_2017 = dataiku.Dataset("MSPR__1__Presidentielle_2017")
+# Dataset MSPR__1__Presidentielle_2017 renamed to Presidentielle_2017 by admin on 2025-02-11 15:21:31
+presidentielle_2017 = dataiku.Dataset("Presidentielle_2017")
 # Dataset MSPR__1__Presidentielle_2012 renamed to Presidentielle_2012 by admin on 2025-02-11 15:21:21
 presidentielle_2012 = dataiku.Dataset("Presidentielle_2012")
 # Dataset MSPR__1__Presidentielle_2007 renamed to Presidentielle_2007 by admin on 2025-02-11 15:21:13
