@@ -34,9 +34,8 @@ for key, df in dfs.items():
     headers = df.columns 
     row = df.iloc[0]
     col_count = 0
-    started = False
 
-    for header, value in zip(headers, row):
+    for index, (header, value) in enumerate(zip(headers, row)):
         if(header == "Blancs" or header == "Blancs et nuls"):
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Nom"] = "Blanc"
@@ -45,14 +44,12 @@ for key, df in dfs.items():
             count += 1
         
         
-        if(col_count > 0):
+        if(headers.index("Sexe") <= index):
             col_count += 1
             
-        if(header == "Sexe" or started and col_count == 0):
+        if(col_count == 1):
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Genre"] = value   
-            col_count = 1
-            started = True
             
         if(col_count == 2):
             final_df.loc[count, "Nom"] = value
