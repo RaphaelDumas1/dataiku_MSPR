@@ -16,6 +16,8 @@ df = MSPR__1__Presidentielle_2022.get_dataframe()
 headers = df.columns  # Noms des colonnes
 second_row = df.iloc[0]  # Deuxième ligne
 
+emptyDf = pd.Dataframe()
+
 # Itération sur chaque colonne de la deuxième ligne
 for header, value in zip(headers, second_row):
     print(f"Colonne: {header}, Valeur: {value}")
@@ -28,9 +30,7 @@ for header, value in zip(headers, second_row):
     else:
         print(f"Autre valeur: {value}")
 
-test_df = df # For this sample code, simply copy input to output
-
 
 # Write recipe outputs
 test = dataiku.Dataset("test")
-test.write_with_schema(test_df)
+test.write_with_schema(emptyDf)
