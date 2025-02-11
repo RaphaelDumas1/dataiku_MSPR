@@ -1,0 +1,96 @@
+{
+  "mode": "UNION",
+  "originColumnName": "original_dataset",
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVESERVER2"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "containerSelection": {
+      "containerMode": "INHERIT"
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "virtualInputs": [
+    {
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "originLabel": "MSPR__1__Presidentielle_1995",
+      "index": 0
+    },
+    {
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "originLabel": "MSPR__1__Presidentielle_2002",
+      "index": 1
+    },
+    {
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "originLabel": "MSPR__1__Presidentielle_2007",
+      "index": 2
+    },
+    {
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "originLabel": "MSPR__1__Presidentielle_2012",
+      "index": 3
+    },
+    {
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "originLabel": "MSPR__1__Presidentielle_2017",
+      "index": 4
+    },
+    {
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "originLabel": "MSPR__1__Presidentielle_2022",
+      "index": 5
+    }
+  ],
+  "postFilter": {
+    "distinct": false,
+    "enabled": false
+  },
+  "addOriginColumn": false
+}
