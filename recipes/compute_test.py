@@ -49,7 +49,7 @@ for key, df in dfs.items():
         if(col_count == 4)
             final_df.loc[count, "Voix"] = value
          
-        if(col_count == 6)
+        if(col_count == 6):
             col_count = 0
             count += 1
             
