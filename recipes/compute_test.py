@@ -36,7 +36,6 @@ for key, df in dfs.items():
             final_df.loc[count, "Nom"] = "Blanc"
             final_df.loc[count, "Prénom"] = "Blanc"
             final_df.loc[count, "Voix"] = value
-            final_df.loc[count, "Genre"] = "Neutre"
             count += 1
         
         
