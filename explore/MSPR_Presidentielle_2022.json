@@ -1,0 +1,216 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "Code du département": 158,
+      "Libellé du département": 180,
+      "Etat saisie": 100,
+      "Inscrits": 100,
+      "Abstentions": 100,
+      "% Abs/Ins": 134,
+      "Votants": 100,
+      "% Vot/Ins": 134,
+      "Blancs": 100,
+      "% Blancs/Ins": 134,
+      "% Blancs/Vot": 134,
+      "Nuls": 100,
+      "% Nuls/Ins": 134,
+      "% Nuls/Vot": 134,
+      "Exprimés": 100,
+      "% Exp/Ins": 134,
+      "% Exp/Vot": 134,
+      "Sexe": 100,
+      "Nom": 100,
+      "Prénom": 100,
+      "Voix": 100,
+      "% Voix/Ins": 134,
+      "% Voix/Exp": 134,
+      "col_23": 100,
+      "col_24": 100,
+      "col_25": 100,
+      "col_26": 100,
+      "col_27": 134,
+      "col_28": 134,
+      "col_29": 100,
+      "col_30": 100,
+      "col_31": 100,
+      "col_32": 100,
+      "col_33": 134,
+      "col_34": 134,
+      "col_35": 100,
+      "col_36": 100,
+      "col_37": 100,
+      "col_38": 100,
+      "col_39": 134,
+      "col_40": 134,
+      "col_41": 100,
+      "col_42": 100,
+      "col_43": 100,
+      "col_44": 100,
+      "col_45": 134,
+      "col_46": 134,
+      "col_47": 100,
+      "col_48": 100,
+      "col_49": 100,
+      "col_50": 100,
+      "col_51": 134,
+      "col_52": 134,
+      "col_53": 100,
+      "col_54": 100,
+      "col_55": 100,
+      "col_56": 100,
+      "col_57": 134,
+      "col_58": 134,
+      "col_59": 100,
+      "col_60": 100,
+      "col_61": 100,
+      "col_62": 100,
+      "col_63": 134,
+      "col_64": 134,
+      "col_65": 100,
+      "col_66": 100,
+      "col_67": 100,
+      "col_68": 100,
+      "col_69": 134,
+      "col_70": 134,
+      "col_71": 100,
+      "col_72": 100,
+      "col_73": 100,
+      "col_74": 100,
+      "col_75": 134,
+      "col_76": 134,
+      "col_77": 100,
+      "col_78": 100,
+      "col_79": 100,
+      "col_80": 100,
+      "col_81": 134,
+      "col_82": 134,
+      "col_83": 100,
+      "col_84": 100,
+      "col_85": 100,
+      "col_86": 100,
+      "col_87": 134,
+      "col_88": 134,
+      "col_89": 100,
+      "col_90": 100,
+      "col_91": 100,
+      "col_92": 100,
+      "col_93": 100,
+      "col_94": 100,
+      "col_95": 100,
+      "col_96": 100,
+      "col_97": 100,
+      "col_98": 100,
+      "col_99": 100,
+      "col_100": 100,
+      "col_101": 100,
+      "col_102": 100
+    },
+    "columnUseScientificNotationByName": {},
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "individualColumnsRules": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxRecordsForDisplay": -1,
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "FULL",
+        "maxRecords": -1,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [
+      {
+        "column": "Code du département",
+        "type": "columnFilter",
+        "currentMode": "FACET",
+        "active": true,
+        "facet": {
+          "type": "facet",
+          "column": "Code du département",
+          "columnType": "NUMERICAL",
+          "currentMode": "NUMERICAL",
+          "sort": "count",
+          "selectedValues": {}
+        },
+        "alphanumFilter": {
+          "type": "alphanum",
+          "column": "Code du département",
+          "selectedValues": [],
+          "params": {
+            "mode": "full_string",
+            "normalization": "exact"
+          }
+        },
+        "validityFilter": {
+          "type": "validity",
+          "column": "Code du département",
+          "params": {
+            "type": "LongMeaning",
+            "ok": true,
+            "nok": true,
+            "empty": true
+          }
+        }
+      }
+    ],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [],
+  "interactiveSearch": {
+    "savedQueries": []
+  },
+  "customMeasures": []
+}
