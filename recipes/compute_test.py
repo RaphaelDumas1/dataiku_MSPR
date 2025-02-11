@@ -43,10 +43,10 @@ for key, df in dfs.items():
         if(col_count == 2):
             final_df.loc[count, "Nom"] = value
             
-        if(col_count == 3)
+        if(col_count == 3):
             final_df.loc[count, "Prénom"] = value
 
-        if(col_count == 4)
+        if(col_count == 4):
             final_df.loc[count, "Voix"] = value
          
         if(col_count == 6):
