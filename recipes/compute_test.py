@@ -14,7 +14,7 @@ df = MSPR__1__Presidentielle_2022.get_dataframe()
 
 # Extraire la première ligne comme en-têtes et la deuxième ligne comme valeurs
 headers = df.columns  # Noms des colonnes
-second_row = df.iloc[1]  # Deuxième ligne
+second_row = df.iloc[0]  # Deuxième ligne
 
 # Itération sur chaque colonne de la deuxième ligne
 for header, value in zip(headers, second_row):
