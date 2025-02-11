@@ -1,0 +1,511 @@
+{
+  "joins": [
+    {
+      "table2": 1,
+      "table1": 0,
+      "conditionsMode": "AND",
+      "type": "LEFT",
+      "outerJoinOnTheLeft": true,
+      "on": []
+    }
+  ],
+  "selectedColumns": [
+    {
+      "name": "Code du département",
+      "table": 0
+    },
+    {
+      "name": "Libellé du département",
+      "table": 0
+    },
+    {
+      "name": "Inscrits",
+      "table": 0
+    },
+    {
+      "name": "Abstentions",
+      "table": 0
+    },
+    {
+      "name": "% Abs/Ins",
+      "table": 0
+    },
+    {
+      "name": "Votants",
+      "table": 0
+    },
+    {
+      "name": "% Vot/Ins",
+      "table": 0
+    },
+    {
+      "name": "Blancs et nuls",
+      "table": 0
+    },
+    {
+      "name": "% BlNuls/Ins",
+      "table": 0
+    },
+    {
+      "name": "% BlNuls/Vot",
+      "table": 0
+    },
+    {
+      "name": "Exprimés",
+      "table": 0
+    },
+    {
+      "name": "% Exp/Ins",
+      "table": 0
+    },
+    {
+      "name": "% Exp/Vot",
+      "table": 0
+    },
+    {
+      "name": "Sexe",
+      "table": 0
+    },
+    {
+      "name": "Nom",
+      "table": 0
+    },
+    {
+      "name": "Prénom",
+      "table": 0
+    },
+    {
+      "name": "Voix",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp",
+      "table": 0
+    },
+    {
+      "name": "Sexe_1",
+      "table": 0
+    },
+    {
+      "name": "Nom_1",
+      "table": 0
+    },
+    {
+      "name": "Prénom_1",
+      "table": 0
+    },
+    {
+      "name": "Voix_1",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_1",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_1",
+      "table": 0
+    },
+    {
+      "name": "Sexe_2",
+      "table": 0
+    },
+    {
+      "name": "Nom_2",
+      "table": 0
+    },
+    {
+      "name": "Prénom_2",
+      "table": 0
+    },
+    {
+      "name": "Voix_2",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_2",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_2",
+      "table": 0
+    },
+    {
+      "name": "Sexe_3",
+      "table": 0
+    },
+    {
+      "name": "Nom_3",
+      "table": 0
+    },
+    {
+      "name": "Prénom_3",
+      "table": 0
+    },
+    {
+      "name": "Voix_3",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_3",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_3",
+      "table": 0
+    },
+    {
+      "name": "Sexe_4",
+      "table": 0
+    },
+    {
+      "name": "Nom_4",
+      "table": 0
+    },
+    {
+      "name": "Prénom_4",
+      "table": 0
+    },
+    {
+      "name": "Voix_4",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_4",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_4",
+      "table": 0
+    },
+    {
+      "name": "Sexe_5",
+      "table": 0
+    },
+    {
+      "name": "Nom_5",
+      "table": 0
+    },
+    {
+      "name": "Prénom_5",
+      "table": 0
+    },
+    {
+      "name": "Voix_5",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_5",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_5",
+      "table": 0
+    },
+    {
+      "name": "Sexe_6",
+      "table": 0
+    },
+    {
+      "name": "Nom_6",
+      "table": 0
+    },
+    {
+      "name": "Prénom_6",
+      "table": 0
+    },
+    {
+      "name": "Voix_6",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_6",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_6",
+      "table": 0
+    },
+    {
+      "name": "Sexe_7",
+      "table": 0
+    },
+    {
+      "name": "Nom_7",
+      "table": 0
+    },
+    {
+      "name": "Prénom_7",
+      "table": 0
+    },
+    {
+      "name": "Voix_7",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_7",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_7",
+      "table": 0
+    },
+    {
+      "name": "Sexe_8",
+      "table": 0
+    },
+    {
+      "name": "Nom_8",
+      "table": 0
+    },
+    {
+      "name": "Prénom_8",
+      "table": 0
+    },
+    {
+      "name": "Voix_8",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_8",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_8",
+      "table": 0
+    },
+    {
+      "name": "Sexe_9",
+      "table": 0
+    },
+    {
+      "name": "Nom_9",
+      "table": 0
+    },
+    {
+      "name": "Prénom_9",
+      "table": 0
+    },
+    {
+      "name": "Voix_9",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_9",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_9",
+      "table": 0
+    },
+    {
+      "name": "Sexe_10",
+      "table": 0
+    },
+    {
+      "name": "Nom_10",
+      "table": 0
+    },
+    {
+      "name": "Prénom_10",
+      "table": 0
+    },
+    {
+      "name": "Voix_10",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_10",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_10",
+      "table": 0
+    },
+    {
+      "name": "Sexe_11",
+      "table": 0
+    },
+    {
+      "name": "Nom_11",
+      "table": 0
+    },
+    {
+      "name": "Prénom_11",
+      "table": 0
+    },
+    {
+      "name": "Voix_11",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_11",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_11",
+      "table": 0
+    },
+    {
+      "name": "Sexe_12",
+      "table": 0
+    },
+    {
+      "name": "Nom_12",
+      "table": 0
+    },
+    {
+      "name": "Prénom_12",
+      "table": 0
+    },
+    {
+      "name": "Voix_12",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_12",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_12",
+      "table": 0
+    },
+    {
+      "name": "Sexe_13",
+      "table": 0
+    },
+    {
+      "name": "Nom_13",
+      "table": 0
+    },
+    {
+      "name": "Prénom_13",
+      "table": 0
+    },
+    {
+      "name": "Voix_13",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_13",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_13",
+      "table": 0
+    },
+    {
+      "name": "Sexe_14",
+      "table": 0
+    },
+    {
+      "name": "Nom_14",
+      "table": 0
+    },
+    {
+      "name": "Prénom_14",
+      "table": 0
+    },
+    {
+      "name": "Voix_14",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_14",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_14",
+      "table": 0
+    },
+    {
+      "name": "Sexe_15",
+      "table": 0
+    },
+    {
+      "name": "Nom_15",
+      "table": 0
+    },
+    {
+      "name": "Prénom_15",
+      "table": 0
+    },
+    {
+      "name": "Voix_15",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Ins_15",
+      "table": 0
+    },
+    {
+      "name": "% Voix/Exp_15",
+      "table": 0
+    }
+  ],
+  "resolvedSelectedColumns": [],
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVESERVER2"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "containerSelection": {
+      "containerMode": "INHERIT"
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "virtualInputs": [
+    {
+      "outputColumnsSelectionMode": "AUTO_NON_CONFLICTING",
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "originLabel": "MSPR__1__Presidentielle_2002",
+      "index": 0,
+      "computedColumns": []
+    },
+    {
+      "outputColumnsSelectionMode": "AUTO_NON_CONFLICTING",
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "originLabel": "MSPR__1__Presidentielle_2007",
+      "index": 1,
+      "computedColumns": []
+    }
+  ],
+  "enableAutoCastInJoinConditions": false
+}
