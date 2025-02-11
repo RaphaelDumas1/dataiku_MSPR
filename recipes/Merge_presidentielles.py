@@ -33,7 +33,7 @@ for key, df in dfs.items():
     # Iterate over first line values
     for index, (header, value) in enumerate(zip(headers, row)):
         
-        # Create new row for draw votes
+        # Create new row for blank votes
         if(header == "Blancs" or header == "Blancs et nuls"):
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Nom"] = "Blanc"
