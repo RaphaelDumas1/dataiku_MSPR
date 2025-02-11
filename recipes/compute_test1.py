@@ -10,7 +10,7 @@ legislative_2012 = dataiku.Dataset("Legislative_2012")
 legislative_2007 = dataiku.Dataset("Legislative_2007")
 legislative_2002 = dataiku.Dataset("Legislative_2002")
 legislative_1997 = dataiku.Dataset("Legislative_1997")
-legislative_1995 = dataiku.Dataset("Legislative_1995")
+legislative_1993 = dataiku.Dataset("Legislative_1993")
 
 
 
@@ -22,11 +22,11 @@ dfs = {
     "2007" : legislative_2007.get_dataframe(),
     "2002" : legislative_2002.get_dataframe(),
     "1997" : legislative_1997.get_dataframe(),
-    "1995" : legislative_1995.get_dataframe(),
+    "1993" : legislative_1993.get_dataframe(),
 }
 
 
-final_df = pd.DataFrame(columns=["Année", "Genre", "Nom", "Prénom", "Voix"])
+final_df = pd.DataFrame(columns=["Année", "Partis", "Voix"])
 count = 0
 
 for key, df in dfs.items():
@@ -36,33 +36,31 @@ for key, df in dfs.items():
     started = False
 
     for header, value in zip(headers, row):
-        if(header == "Blancs" or header == "Blancs et nuls"):
+        if(header == "Blancs" or header == "Nuls"):
             final_df.loc[count, "Année"] = key
-            final_df.loc[count, "Nom"] = "Blanc"
-            final_df.loc[count, "Prénom"] = "Blanc"
+            final_df.loc[count, "Partis"] = "Blanc"
+            final_df.loc[count, "Voix"] += value
+            count += 1
+            
+        if(header == "Blancs et nuls"):
+            final_df.loc[count, "Année"] = key
+            final_df.loc[count, "Partis"] = "Blanc"
             final_df.loc[count, "Voix"] = value
             count += 1
-        
+            
         
         if(col_count > 0):
             col_count += 1
             
-        if(header == "Sexe" or started and col_count == 0):
-            final_df.loc[count, "Année"] = key
-            final_df.loc[count, "Genre"] = value   
+        if(header == "Nuance candidat 1" or header == "Code Nuance" or started and col_count == 0):
+            final_df.loc[count, "Partis"] = key
             col_count = 1
             started = True
             
         if(col_count == 2):
-            final_df.loc[count, "Nom"] = value
-            
-        if(col_count == 3):
-            final_df.loc[count, "Prénom"] = value
-
-        if(col_count == 4):
             final_df.loc[count, "Voix"] = value
          
-        if(col_count == 6):
+        if(col_count == 4):
             col_count = 0
             count += 1
             
