@@ -4,7 +4,8 @@ import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
 # Read recipe inputs
-presidentielle_2022 = dataiku.Dataset("MSPR__1__Presidentielle_2022")
+# Dataset MSPR__1__Presidentielle_2022 renamed to Presidentielle_2022 by admin on 2025-02-11 15:20:49
+presidentielle_2022 = dataiku.Dataset("Presidentielle_2022")
 presidentielle_2017 = dataiku.Dataset("MSPR__1__Presidentielle_2017")
 presidentielle_2012 = dataiku.Dataset("MSPR__1__Presidentielle_2012")
 presidentielle_2007 = dataiku.Dataset("MSPR__1__Presidentielle_2007")
