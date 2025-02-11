@@ -32,6 +32,7 @@ count = 0
 # Iterate over dataframes
 for key, df in dfs.items():
     headers = df.columns 
+    first_party_position = next((headers.get_loc(col) for col in ["Nuance candidat 1", "Code Nuance"] if col in headers), None)
     row = df.iloc[0]
     col_count = 0
     
@@ -39,33 +40,28 @@ for key, df in dfs.items():
     for index, (header, value) in enumerate(zip(headers, row)):
         
         # Create new row for blank votes
-        if(header == "Blancs" or header == "Nuls"):
+        if(header == "Blancs" or header == "Nuls" or header == "Blancs et nuls"):
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Parti"] = "Blanc"
             final_df.loc[count, "Voix"] += value
-            count += 1
             
-        if(header == "Blancs et nuls"):
-            final_df.loc[count, "Année"] = key
-            final_df.loc[count, "Partis"] = "Blanc"
-            final_df.loc[count, "Voix"] = value
-            count += 1
+            if(header == "Nuls" or header == "Blancs et nuls"):
+                count += 1
             
         
-        if(col_count > 0):
+        # Increment since first party
+        if(first_party_position <= index):
             col_count += 1
             
-        if(header == "Nuance candidat 1" or header == "Code Nuance" or started and col_count == 0):
-            final_df.loc[count, "Partis"] = key
-            col_count = 1
-            started = True
+        if(col_count == 1):
+            final_df.loc[count, "Année"] = key
+            final_df.loc[count, "Parti"] = value   
             
         if(col_count == 2):
             final_df.loc[count, "Voix"] = value
-         
-        if(col_count == 4):
-            col_count = 0
-            count += 1
+            
+        if(col_count == 3):
+            final_df.loc[count, "Prénom"] = value
             
         
 
