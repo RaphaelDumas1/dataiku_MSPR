@@ -28,7 +28,7 @@ for key, df in dfs.items():
     headers = df.columns 
     row = df.iloc[0]
     col_count = 0
-    started = false
+    started = False
 
     for header, value in zip(headers, row):
         if(col_count > 0):
@@ -38,7 +38,7 @@ for key, df in dfs.items():
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Genre"] = value   
             col_count = 1
-            started = true
+            started = True
             
         if(col_count == 2):
             final_df.loc[count, "Nom"] = value
