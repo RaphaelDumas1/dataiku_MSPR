@@ -34,12 +34,11 @@ for key, df in dfs.items():
     headers = df.columns 
     row = df.iloc[0]
     col_count = 0
-    started = False
 
     for header, value in zip(headers, row):
         if(header == "Blancs" or header == "Nuls"):
             final_df.loc[count, "Année"] = key
-            final_df.loc[count, "Partis"] = "Blanc"
+            final_df.loc[count, "Parti"] = "Blanc"
             final_df.loc[count, "Voix"] += value
             count += 1
             
