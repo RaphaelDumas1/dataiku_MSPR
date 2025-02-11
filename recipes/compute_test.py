@@ -21,7 +21,7 @@ dfs = {
 }
 
 
-final_df = pd.DataFrame(columns=["Année", "Nom", "Prénom", "Voix"])
+final_df = pd.DataFrame(columns=["Année", "Genre", "Nom", "Prénom", "Voix"])
 count = 0
 
 for key, df in dfs.items():
@@ -29,17 +29,27 @@ for key, df in dfs.items():
     row = df.iloc[0]
 
     for header, value in zip(headers, row):
-        final_df.loc[count, "Année"] = key
-        count += 1
+        col_count = 0
+        if(col_count > 0)
+            col_count += 1
+        
+        if(header == "Sexe" or col_count == 1):
+            count += 1
+            final_df.loc[count, "Année"] = key
+            final_df.loc[count, "Genre"] = value    
+            col_count = 1
+            
+        if(col_count == 2):
+            final_df.loc[count, "Nom"] = value
+            
+        if(col_count == 3)
+            final_df.loc[count, "Prénom"] = value
 
-
-# Compute recipe outputs from inputs
-# TODO: Replace this part by your actual code that computes the output, as a Pandas dataframe
-# NB: DSS also supports other kinds of APIs for reading and writing data. Please see doc.
-
-# Extraire la première ligne comme en-têtes et la deuxième ligne comme valeurs
-
-
+        if(col_count == 4)
+            final_df.loc[count, "Voix"] = value
+         
+        if(col_count == 6)
+            col_count = 1
 
 # Write recipe outputs
 test = dataiku.Dataset("test")
