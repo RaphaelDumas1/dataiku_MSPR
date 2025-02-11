@@ -31,7 +31,7 @@ for key, df in dfs.items():
     started = False
 
     for header, value in zip(headers, row):
-        if(header == "Blancs" or header == "Blancs et nuls") 
+        if(header == "Blancs" or header == "Blancs et nuls"):
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Nom"] = "Blanc"
             final_df.loc[count, "Prénom"] = "Blanc"
