@@ -200,8 +200,8 @@
           "params": {
             "type": "LongMeaning",
             "ok": true,
-            "nok": true,
-            "empty": true
+            "nok": false,
+            "empty": false
           }
         }
       }
