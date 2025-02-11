@@ -86,7 +86,9 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"year","type":"string"}
+    ],
     "userModified": false
   },
   "dkuProperties": [],
