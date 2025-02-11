@@ -13,7 +13,6 @@ legislative_1997 = dataiku.Dataset("Legislative_1997")
 legislative_1993 = dataiku.Dataset("Legislative_1993")
 
 
-
 dfs = {
     "2024" : legislative_2024.get_dataframe(),
     "2022" : legislative_2022.get_dataframe(),
@@ -25,10 +24,12 @@ dfs = {
     "1993" : legislative_1993.get_dataframe(),
 }
 
-
+# Create empty dataframe with columns needed
 final_df = pd.DataFrame(columns=["Année", "Partis", "Voix"])
+
 count = 0
 
+# Iterate over dataframes
 for key, df in dfs.items():
     headers = df.columns 
     row = df.iloc[0]
