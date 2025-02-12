@@ -35,6 +35,7 @@ for key, df in dfs.items():
         
         # Create new row for blank votes
         if(header == "Blancs" or header == "Blancs et nuls"):
+            print("yes")
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Nom"] = "Blanc"
             final_df.loc[count, "Prénom"] = "Blanc"
