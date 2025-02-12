@@ -72,8 +72,8 @@ count = 0
 # Iterate over dataframes
 for key, df in dfs.items():
     print(f"key")
-    headers = df.columns 
-    row = df.iloc[0]
+    headers = df["df"].columns 
+    row = df["df"].iloc[0]
     col_count = 0
     
     # Iterate over first line values
