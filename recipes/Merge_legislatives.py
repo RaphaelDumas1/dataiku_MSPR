@@ -40,7 +40,7 @@ dfs = {
     },
     "2007" : {
         "df" : legislative_2007.get_dataframe(),
-        "party_col_name" : "Code Nuance
+        "party_col_name" : "Code Nuance,
         "voices_col_nb" : 3,
         "total_cycle" : 5,
     },
