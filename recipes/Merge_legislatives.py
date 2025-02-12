@@ -83,7 +83,10 @@ for key, df in dfs.items():
         if(header == "Blancs" or header == "Nuls" or header == "Blancs et nuls"):
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Parti"] = "Blanc"
-            final_df.loc[count, "Voix"] = final_df.loc[count, "Voix"].fillna(0) + value
+            if pd.isna(final_df.at[count, "Voix"]):
+                final_df.loc[count, "Voix"] = value
+            else:
+               final_df.loc[count, "Voix"] += value
             
             if(header == "Nuls" or header == "Blancs et nuls"):
                 count += 1
