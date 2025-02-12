@@ -83,6 +83,7 @@ for key, df in dfs.items():
         if(header == "Blancs" or header == "Nuls" or header == "Blancs et nuls"):
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Parti"] = "Blanc"
+            
             if pd.isna(final_df.at[count, "Voix"]):
                 final_df.loc[count, "Voix"] = value
             else:
