@@ -16,51 +16,51 @@ legislative_1993 = dataiku.Dataset("Legislative_1993")
 dfs = {
     "2024" : {
         "df" : legislative_2024.get_dataframe(),
-        "party_col_name" : "Nuance candidat 1",
-        "voices_col_nb" : 2,
-        "total_cycle" : 4,
+        "first_party_col_name" : "Nuance candidat 1",
+        "votes_col_nb" : 2,
+        "cycle_length" : 4,
     },
     "2022" : {
         "df" : legislative_2022.get_dataframe(),
-        "party_col_name" : "Code Nuance",
-        "voices_col_nb" : 2,
-        "total_cycle" : 5,
+        "first_party_col_name" : "Code Nuance",
+        "votes_col_nb" : 2,
+        "cycle_length" : 5,
     },
     "2017" : {
         "df" : legislative_2017.get_dataframe(),
-        "party_col_name" : "Code Nuance",
-        "voices_col_nb" : 2,
-        "total_cycle" : 5,
+        "first_party_col_name" : "Code Nuance",
+        "votes_col_nb" : 2,
+        "cycle_length" : 5,
     },
     "2012" : {
         "df" : legislative_2012.get_dataframe(),
-        "party_col_name" : "Code Nuance",
-        "voices_col_nb" : 3,
-        "total_cycle" : 5,
+        "first_party_col_name" : "Code Nuance",
+        "votes_col_nb" : 3,
+        "cycle_length" : 5,
     },
     "2007" : {
         "df" : legislative_2007.get_dataframe(),
-        "party_col_name" : "Code Nuance",
-        "voices_col_nb" : 3,
-        "total_cycle" : 5,
+        "first_party_col_name" : "Code Nuance",
+        "votes_col_nb" : 3,
+        "cycle_length" : 5,
     },
     "2002" : {
         "df" : legislative_2002.get_dataframe(),
-        "party_col_name" : "Code Nuance",
-        "voices_col_nb" : 3,
-        "total_cycle" : 5,
+        "first_party_col_name" : "Code Nuance",
+        "votes_col_nb" : 3,
+        "cycle_length" : 5,
     },
     "1997" : {
         "df" : legislative_1997.get_dataframe(),
-        "party_col_name" : "Code Nuance",
-        "voices_col_nb" : 3,
-        "total_cycle" : 5,
+        "first_party_col_name" : "Code Nuance",
+        "votes_col_nb" : 3,
+        "cycle_length" : 5,
     },
     "1993" : {
         "df" : legislative_1993.get_dataframe(),
-        "party_col_name" : "Code Nuance",
-        "voices_col_nb" : 3,
-        "total_cycle" : 3,
+        "first_party_col_name" : "Code Nuance",
+        "votes_col_nb" : 3,
+        "cycle_length" : 3,
     },
 }
 
@@ -71,7 +71,6 @@ count = 0
 
 # Iterate over dataframes
 for key, df in dfs.items():
-    print(f"key")
     headers = df["df"].columns 
     row = df["df"].iloc[0]
     col_count = 0
@@ -95,17 +94,17 @@ for key, df in dfs.items():
             
         
         # Increment since first party
-        if(headers.get_loc(df["party_col_name"]) <= index):
+        if(headers.get_loc(df["first_party_col_name"]) <= index):
             col_count += 1
             
         if(col_count == 1):
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Parti"] = value   
             
-        if(col_count == df["voices_col_nb"]):
+        if(col_count == df["votes_col_nb"]):
             final_df.loc[count, "Voix"] = value
             
-        if(col_count == df["total_cycle"]):
+        if(col_count == df["cycle_length"]):
             col_count = 0
             count += 1
         
