@@ -14,14 +14,54 @@ legislative_1993 = dataiku.Dataset("Legislative_1993")
 
 
 dfs = {
-    "2024" : legislative_2024.get_dataframe(),
-    "2022" : legislative_2022.get_dataframe(),
-    "2017" : legislative_2017.get_dataframe(),
-    "2012" : legislative_2012.get_dataframe(),
-    "2007" : legislative_2007.get_dataframe(),
-    "2002" : legislative_2002.get_dataframe(),
-    "1997" : legislative_1997.get_dataframe(),
-    "1993" : legislative_1993.get_dataframe(),
+    "2024" : {
+        "df" : legislative_2024.get_dataframe(),
+        "party_col_name" : "Nuance candidat 1",
+        "voices_col_nb" : 2,
+        "total_cycle" : 4,
+    },
+    "2022" : {
+        "df" : legislative_2022.get_dataframe(),
+        "party_col_name" : "Code Nuance",
+        "voices_col_nb" : 2,
+        "total_cycle" : 5,
+    },
+    "2017" : {
+        "df" : legislative_2017.get_dataframe(),
+        "party_col_name" : "Code Nuance",
+        "voices_col_nb" : 2,
+        "total_cycle" : 5,
+    },
+    "2012" : {
+        "df" : legislative_2012.get_dataframe(),
+        "party_col_name" : "Code Nuance",
+        "voices_col_nb" : 3,
+        "total_cycle" : 5,
+    },
+    "2007" : {
+        "df" : legislative_2007.get_dataframe(),
+        "party_col_name" : "Code Nuance
+        "voices_col_nb" : 3,
+        "total_cycle" : 5,
+    },
+    "2002" : {
+        "df" : legislative_2002.get_dataframe(),
+        "party_col_name" : "Code Nuance
+        "voices_col_nb" : 3,
+        "total_cycle" : 5,
+    },
+    "1997" : {
+        "df" : legislative_1997.get_dataframe(),
+        "party_col_name" : "Code Nuance
+        "voices_col_nb" : 3,
+        "total_cycle" : 5,
+    },
+    "1993" : {
+        "df" : legislative_1993.get_dataframe(),
+        "party_col_name" : "Code Nuance
+        "voices_col_nb" : 3,
+        "total_cycle" : 5,
+    },
 }
 
 # Create empty dataframe with columns needed
@@ -32,7 +72,6 @@ count = 0
 # Iterate over dataframes
 for key, df in dfs.items():
     headers = df.columns 
-    first_party_position = next((headers.get_loc(col) for col in ["Nuance candidat 1", "Code Nuance"] if col in headers), None)
     row = df.iloc[0]
     col_count = 0
     
@@ -50,23 +89,20 @@ for key, df in dfs.items():
             
         
         # Increment since first party
-        if(first_party_position <= index):
+        if(headers.get_loc(df["party_col_name"]) <= index):
             col_count += 1
             
         if(col_count == 1):
             final_df.loc[count, "Année"] = key
             final_df.loc[count, "Parti"] = value   
             
-        if(col_count == 2):
+        if(col_count == df["voices_col_nb"]):
             final_df.loc[count, "Voix"] = value
             
-        if(col_count == 3):
-            final_df.loc[count, "Prénom"] = value
-            
+        if(col_count == df["total_cycle"]):
+            col_count = 0
+            count += 1
         
 
-# Write recipe outputs
-# Dataset test renamed to Presidentielle by admin on 2025-02-11 15:22:10
-# Dataset test1 renamed to Legislatives by admin on 2025-02-11 18:01:36
 test = dataiku.Dataset("Legislatives")
 test.write_with_schema(final_df)
