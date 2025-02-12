@@ -46,19 +46,19 @@ dfs = {
     },
     "2002" : {
         "df" : legislative_2002.get_dataframe(),
-        "party_col_name" : "Code Nuance
+        "party_col_name" : "Code Nuance",
         "voices_col_nb" : 3,
         "total_cycle" : 5,
     },
     "1997" : {
         "df" : legislative_1997.get_dataframe(),
-        "party_col_name" : "Code Nuance
+        "party_col_name" : "Code Nuance",
         "voices_col_nb" : 3,
         "total_cycle" : 5,
     },
     "1993" : {
         "df" : legislative_1993.get_dataframe(),
-        "party_col_name" : "Code Nuance
+        "party_col_name" : "Code Nuance",
         "voices_col_nb" : 3,
         "total_cycle" : 5,
     },
