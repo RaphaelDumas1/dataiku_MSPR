@@ -88,7 +88,7 @@
   "schema": {
     "columns": [
       {"name":"Année","type":"string"},
-      {"name":"Partis","type":"string"},
+      {"name":"Parti","type":"string"},
       {"name":"Voix","type":"string"}
     ],
     "userModified": false
