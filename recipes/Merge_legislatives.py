@@ -60,7 +60,7 @@ dfs = {
         "df" : legislative_1993.get_dataframe(),
         "party_col_name" : "Code Nuance",
         "voices_col_nb" : 3,
-        "total_cycle" : 5,
+        "total_cycle" : 3,
     },
 }
 
