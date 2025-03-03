@@ -71,7 +71,17 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"CODE DPT","type":"string"},
+      {"name":"NOM","type":"string"},
+      {"name":"PRENOM","type":"string"},
+      {"name":"DATE NAISSANCE","type":"string"},
+      {"name":"SEXE","type":"string"},
+      {"name":"CODE NUANCE","type":"string"},
+      {"name":"PROFESSION","type":"string"},
+      {"name":"SORTANT","type":"string"},
+      {"name":"TOUR_ELECTION","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
