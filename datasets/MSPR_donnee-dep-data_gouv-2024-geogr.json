@@ -71,7 +71,19 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"Code_departement","type":"string"},
+      {"name":"Code_region","type":"string"},
+      {"name":"annee","type":"string"},
+      {"name":"indicateur","type":"string"},
+      {"name":"unite_de_compte","type":"string"},
+      {"name":"nombre","type":"string"},
+      {"name":"taux_pour_mille","type":"string"},
+      {"name":"insee_pop","type":"string"},
+      {"name":"insee_pop_millesime","type":"string"},
+      {"name":"insee_log","type":"string"},
+      {"name":"insee_log_millesime","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
