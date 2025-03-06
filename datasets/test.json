@@ -1,0 +1,348 @@
+{
+  "type": "Filesystem",
+  "managed": true,
+  "featureGroup": false,
+  "formatType": "csv",
+  "checklists": {
+    "checklists": []
+  },
+  "checks": [],
+  "customMeta": {
+    "kv": {}
+  },
+  "flowOptions": {
+    "virtualizable": false,
+    "rebuildBehavior": "NORMAL",
+    "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "readWriteOptions": {
+    "preserveOrder": false,
+    "writeBuckets": 1,
+    "forceSingleOutputFile": false,
+    "defaultReadOrdering": {
+      "enabled": false,
+      "rules": []
+    }
+  },
+  "formatParams": {
+    "style": "unix",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "maxRowChars": 100000000,
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
+    "skipRowsBeforeHeader": 0,
+    "parseHeaderRow": false,
+    "skipRowsAfterHeader": 0,
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": "gz"
+  },
+  "partitioning": {
+    "ignoreNonMatchingFile": false,
+    "considerMissingRequestedPartitionsAsEmpty": false,
+    "dimensions": []
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1741295203738,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "params": {
+    "connection": "filesystem_managed",
+    "path": "${projectKey}/test",
+    "notReadyIfEmpty": false,
+    "filesSelectionRules": {
+      "mode": "ALL",
+      "excludeRules": [],
+      "includeRules": [],
+      "explicitFiles": []
+    },
+    "variablesExpansionLoopConfig": {
+      "enabled": false,
+      "mode": "CREATE_VARIABLE_FOR_EACH_COLUMN",
+      "replacements": []
+    }
+  },
+  "schema": {
+    "columns": [
+      {"name":"Unnamed: 0","type":"string"},
+      {"name":"Unnamed: 1","type":"string"},
+      {"name":"Unnamed: 2","type":"string"},
+      {"name":"Unnamed: 3","type":"string"},
+      {"name":"Unnamed: 4","type":"string"},
+      {"name":"Unnamed: 5","type":"string"},
+      {"name":"Unnamed: 6","type":"string"},
+      {"name":"Unnamed: 7","type":"string"},
+      {"name":"Unnamed: 8","type":"string"},
+      {"name":"Salaires et revenus d\u0027activité en 2022","type":"string"},
+      {"name":"Unnamed: 10","type":"string"},
+      {"name":"Unnamed: 11","type":"string"},
+      {"name":"Unnamed: 12","type":"string"},
+      {"name":"Unnamed: 13","type":"string"},
+      {"name":"Unnamed: 14","type":"string"},
+      {"name":"Unnamed: 15","type":"string"},
+      {"name":"Unnamed: 16","type":"string"},
+      {"name":"Unnamed: 17","type":"string"},
+      {"name":"Unnamed: 18","type":"string"},
+      {"name":"Unnamed: 19","type":"string"},
+      {"name":"Unnamed: 20","type":"string"},
+      {"name":"Unnamed: 21","type":"string"},
+      {"name":"Unnamed: 22","type":"string"},
+      {"name":"Unnamed: 23","type":"string"},
+      {"name":"Unnamed: 24","type":"string"},
+      {"name":"Unnamed: 25","type":"string"},
+      {"name":"Unnamed: 26","type":"string"},
+      {"name":"Unnamed: 27","type":"string"},
+      {"name":"Unnamed: 28","type":"string"},
+      {"name":"Unnamed: 29","type":"string"},
+      {"name":"Unnamed: 30","type":"string"},
+      {"name":"Unnamed: 31","type":"string"},
+      {"name":"Unnamed: 32","type":"string"},
+      {"name":"Unnamed: 33","type":"string"},
+      {"name":"Unnamed: 34","type":"string"},
+      {"name":"Unnamed: 35","type":"string"},
+      {"name":"Unnamed: 36","type":"string"},
+      {"name":"Unnamed: 37","type":"string"},
+      {"name":"Unnamed: 38","type":"string"},
+      {"name":"Unnamed: 39","type":"string"},
+      {"name":"Unnamed: 40","type":"string"},
+      {"name":"Unnamed: 41","type":"string"},
+      {"name":"Unnamed: 42","type":"string"},
+      {"name":"Unnamed: 43","type":"string"},
+      {"name":"Unnamed: 44","type":"string"},
+      {"name":"Unnamed: 45","type":"string"},
+      {"name":"Unnamed: 46","type":"string"},
+      {"name":"Unnamed: 47","type":"string"},
+      {"name":"Unnamed: 48","type":"string"},
+      {"name":"Unnamed: 49","type":"string"},
+      {"name":"Unnamed: 50","type":"string"},
+      {"name":"Unnamed: 51","type":"string"},
+      {"name":"Unnamed: 52","type":"string"},
+      {"name":"Unnamed: 53","type":"string"},
+      {"name":"Unnamed: 54","type":"string"},
+      {"name":"Unnamed: 55","type":"string"},
+      {"name":"Unnamed: 56","type":"string"},
+      {"name":"Unnamed: 57","type":"string"},
+      {"name":"Unnamed: 58","type":"string"},
+      {"name":"Unnamed: 59","type":"string"},
+      {"name":"Unnamed: 60","type":"string"},
+      {"name":"Unnamed: 61","type":"string"},
+      {"name":"Unnamed: 62","type":"string"},
+      {"name":"Unnamed: 63","type":"string"},
+      {"name":"Unnamed: 64","type":"string"},
+      {"name":"Unnamed: 65","type":"string"},
+      {"name":"Unnamed: 66","type":"string"},
+      {"name":"Unnamed: 67","type":"string"},
+      {"name":"Unnamed: 68","type":"string"},
+      {"name":"Unnamed: 69","type":"string"},
+      {"name":"Unnamed: 70","type":"string"},
+      {"name":"Unnamed: 71","type":"string"},
+      {"name":"Unnamed: 72","type":"string"},
+      {"name":"Unnamed: 73","type":"string"},
+      {"name":"Unnamed: 74","type":"string"},
+      {"name":"Unnamed: 75","type":"string"},
+      {"name":"Unnamed: 76","type":"string"},
+      {"name":"Unnamed: 77","type":"string"},
+      {"name":"Unnamed: 78","type":"string"},
+      {"name":"Unnamed: 79","type":"string"},
+      {"name":"Unnamed: 80","type":"string"},
+      {"name":"Unnamed: 81","type":"string"},
+      {"name":"Unnamed: 82","type":"string"},
+      {"name":"Unnamed: 83","type":"string"},
+      {"name":"Unnamed: 84","type":"string"},
+      {"name":"Unnamed: 85","type":"string"},
+      {"name":"Unnamed: 86","type":"string"},
+      {"name":"Unnamed: 87","type":"string"},
+      {"name":"Unnamed: 88","type":"string"},
+      {"name":"Unnamed: 89","type":"string"},
+      {"name":"Unnamed: 90","type":"string"},
+      {"name":"Unnamed: 91","type":"string"},
+      {"name":"Unnamed: 92","type":"string"},
+      {"name":"Unnamed: 93","type":"string"},
+      {"name":"Unnamed: 94","type":"string"},
+      {"name":"Unnamed: 95","type":"string"},
+      {"name":"Unnamed: 96","type":"string"},
+      {"name":"Unnamed: 97","type":"string"},
+      {"name":"Unnamed: 98","type":"string"},
+      {"name":"Unnamed: 99","type":"string"},
+      {"name":"Unnamed: 100","type":"string"},
+      {"name":"Unnamed: 101","type":"string"},
+      {"name":"Unnamed: 102","type":"string"},
+      {"name":"Unnamed: 103","type":"string"},
+      {"name":"Unnamed: 104","type":"string"},
+      {"name":"Unnamed: 105","type":"string"},
+      {"name":"Unnamed: 106","type":"string"},
+      {"name":"Unnamed: 107","type":"string"},
+      {"name":"Unnamed: 108","type":"string"},
+      {"name":"Unnamed: 109","type":"string"},
+      {"name":"Unnamed: 110","type":"string"},
+      {"name":"Unnamed: 111","type":"string"},
+      {"name":"Unnamed: 112","type":"string"},
+      {"name":"Unnamed: 113","type":"string"},
+      {"name":"Unnamed: 114","type":"string"},
+      {"name":"Unnamed: 115","type":"string"},
+      {"name":"Unnamed: 116","type":"string"},
+      {"name":"Unnamed: 117","type":"string"},
+      {"name":"Unnamed: 118","type":"string"},
+      {"name":"Unnamed: 119","type":"string"},
+      {"name":"Unnamed: 120","type":"string"},
+      {"name":"Unnamed: 121","type":"string"},
+      {"name":"Unnamed: 122","type":"string"},
+      {"name":"Unnamed: 123","type":"string"},
+      {"name":"Unnamed: 124","type":"string"},
+      {"name":"Unnamed: 125","type":"string"},
+      {"name":"Unnamed: 126","type":"string"},
+      {"name":"Unnamed: 127","type":"string"},
+      {"name":"Unnamed: 128","type":"string"},
+      {"name":"Unnamed: 129","type":"string"},
+      {"name":"Unnamed: 130","type":"string"},
+      {"name":"Unnamed: 131","type":"string"},
+      {"name":"Unnamed: 132","type":"string"},
+      {"name":"Unnamed: 133","type":"string"},
+      {"name":"Unnamed: 134","type":"string"},
+      {"name":"Unnamed: 135","type":"string"},
+      {"name":"Unnamed: 136","type":"string"},
+      {"name":"Unnamed: 137","type":"string"},
+      {"name":"Unnamed: 138","type":"string"},
+      {"name":"Unnamed: 139","type":"string"},
+      {"name":"Unnamed: 140","type":"string"},
+      {"name":"Unnamed: 141","type":"string"},
+      {"name":"Unnamed: 142","type":"string"},
+      {"name":"Unnamed: 143","type":"string"},
+      {"name":"Unnamed: 144","type":"string"},
+      {"name":"Unnamed: 145","type":"string"},
+      {"name":"Unnamed: 146","type":"string"},
+      {"name":"Unnamed: 147","type":"string"},
+      {"name":"Unnamed: 148","type":"string"},
+      {"name":"Unnamed: 149","type":"string"},
+      {"name":"Unnamed: 150","type":"string"},
+      {"name":"Unnamed: 151","type":"string"},
+      {"name":"Unnamed: 152","type":"string"},
+      {"name":"Unnamed: 153","type":"string"},
+      {"name":"Unnamed: 154","type":"string"},
+      {"name":"Unnamed: 155","type":"string"},
+      {"name":"Unnamed: 156","type":"string"},
+      {"name":"Unnamed: 157","type":"string"},
+      {"name":"Unnamed: 158","type":"string"},
+      {"name":"Unnamed: 159","type":"string"},
+      {"name":"Unnamed: 160","type":"string"},
+      {"name":"Unnamed: 161","type":"string"},
+      {"name":"Unnamed: 162","type":"string"},
+      {"name":"Unnamed: 163","type":"string"},
+      {"name":"Unnamed: 164","type":"string"},
+      {"name":"Unnamed: 165","type":"string"},
+      {"name":"Unnamed: 166","type":"string"},
+      {"name":"Unnamed: 167","type":"string"},
+      {"name":"Unnamed: 168","type":"string"},
+      {"name":"Unnamed: 169","type":"string"},
+      {"name":"Unnamed: 170","type":"string"},
+      {"name":"Unnamed: 171","type":"string"}
+    ],
+    "userModified": false
+  },
+  "dkuProperties": [],
+  "metrics": {
+    "probes": [
+      {
+        "type": "basic",
+        "enabled": true,
+        "computeOnBuildMode": "PARTITION",
+        "meta": {
+          "name": "Basic data",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "records",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Record count",
+          "level": 0
+        },
+        "configuration": {}
+      }
+    ],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": []
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "ascending": true,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
+      "python": {}
+    },
+    "displayedState": {
+      "columns": [],
+      "metrics": [
+        "basic:COUNT_COLUMNS",
+        "basic:COUNT_FILES",
+        "basic:SIZE",
+        "records:COUNT_RECORDS"
+      ]
+    }
+  },
+  "metricsChecks": {
+    "monitor": false,
+    "checks": [],
+    "displayedState": {
+      "checks": []
+    }
+  },
+  "customFields": {}
+}
