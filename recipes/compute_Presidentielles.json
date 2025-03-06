@@ -1,0 +1,75 @@
+{
+  "type": "python",
+  "neverRecomputeExistingPartitions": false,
+  "params": {
+    "envSelection": {
+      "envMode": "INHERIT"
+    },
+    "containerSelection": {
+      "containerMode": "INHERIT"
+    },
+    "skipPrerunValidate": false
+  },
+  "customMeta": {
+    "kv": {}
+  },
+  "redispatchPartitioning": false,
+  "maxRunningActivities": 0,
+  "hashPropagationBehavior": "INHERIT",
+  "variables": {},
+  "dkuProperties": [],
+  "inputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "MSPR_Presidentielle_1995",
+          "deps": []
+        },
+        {
+          "ref": "MSPR_Presidentielle_2002",
+          "deps": []
+        },
+        {
+          "ref": "MSPR_Presidentielle_2007",
+          "deps": []
+        },
+        {
+          "ref": "MSPR_Presidentielle_2012",
+          "deps": []
+        },
+        {
+          "ref": "MSPR_Presidentielle_2017",
+          "deps": []
+        },
+        {
+          "ref": "MSPR_Presidentielle_2022",
+          "deps": []
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "Presidentielles",
+          "appendMode": false
+        }
+      ]
+    }
+  },
+  "labels": [],
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1741290360365,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}
