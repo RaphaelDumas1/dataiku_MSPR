@@ -22,35 +22,35 @@
     "main": {
       "items": [
         {
-          "ref": "Legislative_1997",
+          "ref": "MSPR_Legislative_1993",
           "deps": []
         },
         {
-          "ref": "Legislative_2007",
+          "ref": "MSPR_Legislative_1997",
           "deps": []
         },
         {
-          "ref": "Legislative_2017",
+          "ref": "MSPR_Legislative_2002",
           "deps": []
         },
         {
-          "ref": "Legislative_2002",
+          "ref": "MSPR_Legislative_2007",
           "deps": []
         },
         {
-          "ref": "Legislative_2024",
+          "ref": "MSPR_Legislative_2012",
           "deps": []
         },
         {
-          "ref": "Legislative_1993",
+          "ref": "MSPR_Legislative_2017",
           "deps": []
         },
         {
-          "ref": "Legislative_2012",
+          "ref": "MSPR_Legislative_2022",
           "deps": []
         },
         {
-          "ref": "Legislative_2022",
+          "ref": "MSPR_Legislative_2024",
           "deps": []
         }
       ]
