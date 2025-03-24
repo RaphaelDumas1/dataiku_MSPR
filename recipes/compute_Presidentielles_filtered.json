@@ -14,7 +14,7 @@
         "enabled": false,
         "rules": []
       },
-      "samplingMethod": "FULL",
+      "samplingMethod": "HEAD_SEQUENTIAL",
       "maxRecords": -1,
       "targetRatio": 0.02,
       "ascending": true,
