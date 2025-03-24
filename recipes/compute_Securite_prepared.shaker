@@ -29,8 +29,34 @@
   },
   "explorationFilters": [],
   "columnUseScientificNotationByName": {},
-  "exploreUIParams": {},
-  "steps": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FilterOnValue",
+      "params": {
+        "normalizationMode": "EXACT",
+        "booleanMode": "AND",
+        "columns": [
+          "Code_departement"
+        ],
+        "values": [
+          "35"
+        ],
+        "matchingMode": "FULL_STRING",
+        "action": "KEEP_ROW",
+        "appliesTo": "SINGLE_COLUMN",
+        "exclude": false,
+        "processNullOrEmptyValues": false
+      },
+      "alwaysShowComment": false
+    }
+  ],
   "maxProcessedMemTableBytes": -1,
   "previewMode": "ALL_ROWS",
   "vizSampling": {
@@ -57,7 +83,19 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
-  "columnWidthsByName": {},
+  "columnWidthsByName": {
+    "Code_departement": 135,
+    "indicateur": 300,
+    "taux_pour_mille": 134,
+    "insee_pop": 113,
+    "insee_log_millesime": 158,
+    "insee_log": 100,
+    "Code_region": 100,
+    "annee": 100,
+    "insee_pop_millesime": 158,
+    "unite_de_compte": 128,
+    "nombre": 100
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
