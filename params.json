@@ -21,8 +21,7 @@
     "flowDisplaySettings": {
       "zonesGraphRenderingAlgorithm": "DOT_OLDRANK",
       "zonesGraphConnectZones": true,
-      "zonesGraphForJobs": true,
-      "zonesManualPositioning": false
+      "zonesGraphForJobs": true
     },
     "gitCommitMode": "AUTO",
     "useRemoteGit": true,
@@ -205,7 +204,7 @@
     "lastModifiedOn": 1739265771385,
     "extendedProperties": {}
   },
-  "shortDesc": "The project *MSPR* was created by Anthony Mény on Mar 24th 2025",
+  "shortDesc": "The project *MSPR* was created by test test on Mar 24th 2025",
   "tags": [],
   "customFields": {},
   "checklists": {
