@@ -21,7 +21,8 @@
     "flowDisplaySettings": {
       "zonesGraphRenderingAlgorithm": "DOT_OLDRANK",
       "zonesGraphConnectZones": true,
-      "zonesGraphForJobs": true
+      "zonesGraphForJobs": true,
+      "zonesManualPositioning": false
     },
     "gitCommitMode": "AUTO",
     "useRemoteGit": true,
@@ -139,7 +140,8 @@
     },
     "dkuProperties": []
   },
-  "name": "test (origin/master)",
+  "name": "MSPR",
+  "projectStatus": "Sandbox",
   "metrics": {
     "probes": [],
     "engineConfig": {
@@ -203,10 +205,8 @@
     "lastModifiedOn": 1739265771385,
     "extendedProperties": {}
   },
-  "shortDesc": "The project *test* was created by test test on Mar 06th 2025\nThe project *TEST_ORIGIN_MASTER_2* was copied from *TEST_1* on *d53c1998d9a8a9d5f8d25110cbbe400e4ba584a0* branch by test test on Mar 06th 2025",
-  "tags": [
-    "duplicated"
-  ],
+  "shortDesc": "The project *MSPR* was created by Anthony Mény on Mar 24th 2025",
+  "tags": [],
   "customFields": {},
   "checklists": {
     "checklists": [
