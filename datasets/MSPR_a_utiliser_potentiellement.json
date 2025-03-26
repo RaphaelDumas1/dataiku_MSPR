@@ -71,7 +71,15 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"Évolution trimestreille de l\u0027emploi salarié des secteurs principalement marchands","type":"string"},
+      {"name":"Unnamed: 1","type":"string"},
+      {"name":"Unnamed: 2","type":"string"},
+      {"name":"Unnamed: 3","type":"string"},
+      {"name":"Unnamed: 4","type":"string"},
+      {"name":"Unnamed: 5","type":"string"},
+      {"name":"Unnamed: 6","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
