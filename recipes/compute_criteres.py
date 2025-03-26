@@ -20,9 +20,6 @@ def column_from_float_to_string(df, column):
     df["Année"] = df["Année"].astype(float).astype(int).astype(str)
     return df
 
-def rename(df):
-    return df
-
 def copy_years_range(df):
     # Add row for each year in range
     rows = []
@@ -40,6 +37,10 @@ def copy_years_range(df):
             rows.append(new_row)
     
     return pd.DataFrame(rows)
+
+def remove_column_by_index(df, index):
+    df = df.drop(df.columns[index], axis=1)
+    return df
 
 #
 # DATASETS
