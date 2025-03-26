@@ -197,6 +197,11 @@ datasets = [
         "output": "Taux_de_chomage",
         "functions": []
     },
+    {
+        "input": "MSPR_Taux_de_mortalite",
+        "output": "Taux_de_mortalite",
+        "functions": []
+    },
 ]
 
 #

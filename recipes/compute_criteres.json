@@ -92,6 +92,10 @@
         {
           "ref": "MSPR_Taux_de_chomage",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Taux_de_mortalite",
+          "deps": []
         }
       ]
     }
@@ -169,6 +173,10 @@
         },
         {
           "ref": "Taux_de_chomage",
+          "appendMode": false
+        },
+        {
+          "ref": "Taux_de_mortalite",
           "appendMode": false
         }
       ]
