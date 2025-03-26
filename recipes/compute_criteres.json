@@ -48,6 +48,10 @@
         {
           "ref": "MSPR_Evolution_population",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Nombre_de_salarie",
+          "deps": []
         }
       ]
     }
@@ -81,6 +85,10 @@
         },
         {
           "ref": "Evolution_population",
+          "appendMode": false
+        },
+        {
+          "ref": "Nombre_de_salarie",
           "appendMode": false
         }
       ]

@@ -126,6 +126,11 @@ datasets = [
             }
         ]
     },
+    {
+        "input": "MSPR_Nombre_de_salarie",
+        "output": "Nombre_de_salarie",
+        "functions": []
+    },
 ]
 
 #
