@@ -38,9 +38,6 @@ def copy_years_range(df):
     
     return pd.DataFrame(rows)
 
-def remove_column_by_index(df, index):
-    df = df.drop(df.columns[index], axis=1)
-    return df
 
 #
 # DATASETS
