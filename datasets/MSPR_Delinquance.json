@@ -71,7 +71,17 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"Indicateur","type":"string"},
+      {"name":"unite_de_compte","type":"string"},
+      {"name":"nombre","type":"string"},
+      {"name":"taux_pour_mille","type":"string"},
+      {"name":"insee_pop","type":"string"},
+      {"name":"insee_pop_millesime","type":"string"},
+      {"name":"insee_log","type":"string"},
+      {"name":"insee_log_millesime","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
