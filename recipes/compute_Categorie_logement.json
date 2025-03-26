@@ -44,6 +44,10 @@
         {
           "ref": "MSPR_Logement",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Evolution_population",
+          "deps": []
         }
       ]
     }
@@ -73,6 +77,10 @@
         },
         {
           "ref": "Logement",
+          "appendMode": false
+        },
+        {
+          "ref": "Evolution_population",
           "appendMode": false
         }
       ]
