@@ -56,6 +56,10 @@
         {
           "ref": "MSPR_Nombre_detranger",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Nombre_dimmigre",
+          "deps": []
         }
       ]
     }
@@ -97,6 +101,10 @@
         },
         {
           "ref": "Nombre_detranger",
+          "appendMode": false
+        },
+        {
+          "ref": "Nombre_dimmigre",
           "appendMode": false
         }
       ]

@@ -136,6 +136,11 @@ datasets = [
         "output": "Nombre_detranger",
         "functions": []
     },
+    {
+        "input": "MSPR_Nombre_dimmigre",
+        "output": "Nombre_dimmigre",
+        "functions": []
+    },
 ]
 
 #
