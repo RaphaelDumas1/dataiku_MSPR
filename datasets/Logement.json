@@ -86,8 +86,14 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"Nombre de logements","type":"string"},
+      {"name":"Part des résidences principales (%)","type":"string"},
+      {"name":"Part des rés. secondaires (yc log. occasionnels) (%)","type":"string"},
+      {"name":"Part des logements vacants (%)","type":"string"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
