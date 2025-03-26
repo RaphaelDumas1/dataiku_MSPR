@@ -24,6 +24,26 @@
         {
           "ref": "MSPR_Categorie_logement",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Composition_menage",
+          "deps": []
+        },
+        {
+          "ref": "MSPR_Delinquance",
+          "deps": []
+        },
+        {
+          "ref": "MSPR_Impot_moyen",
+          "deps": []
+        },
+        {
+          "ref": "MSPR_Administration_penitentiaire",
+          "deps": []
+        },
+        {
+          "ref": "MSPR_Logement",
+          "deps": []
         }
       ]
     }
@@ -33,6 +53,26 @@
       "items": [
         {
           "ref": "Categorie_logement",
+          "appendMode": false
+        },
+        {
+          "ref": "Composition_menage",
+          "appendMode": false
+        },
+        {
+          "ref": "Delinquance",
+          "appendMode": false
+        },
+        {
+          "ref": "Impot_moyen",
+          "appendMode": false
+        },
+        {
+          "ref": "Administration_penitentiaire",
+          "appendMode": false
+        },
+        {
+          "ref": "Logement",
           "appendMode": false
         }
       ]
