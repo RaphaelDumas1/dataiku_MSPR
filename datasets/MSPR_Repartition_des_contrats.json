@@ -71,7 +71,11 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"CDD","type":"string"},
+      {"name":"CDI","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
