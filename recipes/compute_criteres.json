@@ -72,6 +72,10 @@
         {
           "ref": "MSPR_Repartition_age",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Repartition_des_contrats",
+          "deps": []
         }
       ]
     }
@@ -129,6 +133,10 @@
         },
         {
           "ref": "Repartition_age",
+          "appendMode": false
+        },
+        {
+          "ref": "Repartition_des_contrats",
           "appendMode": false
         }
       ]

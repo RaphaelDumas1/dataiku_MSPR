@@ -163,6 +163,11 @@ datasets = [
         "output": "Repartition_age",
         "functions": []
     },
+    {
+        "input": "MSPR_Repartition_des_contrats",
+        "output": "Repartition_des_contrats",
+        "functions": []
+    },
 ]
 
 #
