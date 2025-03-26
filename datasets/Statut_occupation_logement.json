@@ -86,8 +86,15 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"Propriétaires","type":"string"},
+      {"name":"Locataires","type":"string"},
+      {"name":"- dont locataires d\u0027un logement HLM loué vide","type":"string"},
+      {"name":"Logés gratuitement","type":"string"},
+      {"name":"Ensemble","type":"string"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
