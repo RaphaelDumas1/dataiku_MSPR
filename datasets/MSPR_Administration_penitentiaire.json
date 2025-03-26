@@ -71,7 +71,26 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"Mesure","type":"string"},
+      {"name":"2000.0","type":"string"},
+      {"name":"2005.0","type":"string"},
+      {"name":"2009.0","type":"string"},
+      {"name":"2010.0","type":"string"},
+      {"name":"2011.0","type":"string"},
+      {"name":"2012.0","type":"string"},
+      {"name":"2013.0","type":"string"},
+      {"name":"2014.0","type":"string"},
+      {"name":"2015.0","type":"string"},
+      {"name":"2016.0","type":"string"},
+      {"name":"2017.0","type":"string"},
+      {"name":"2018.0","type":"string"},
+      {"name":"2019.0","type":"string"},
+      {"name":"2020.0","type":"string"},
+      {"name":"2021.0","type":"string"},
+      {"name":"2022.0","type":"string"},
+      {"name":"2023.0","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
