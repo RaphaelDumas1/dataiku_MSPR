@@ -86,8 +86,12 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Année","type":"bigint"},
+      {"name":"CDD","type":"string"},
+      {"name":"CDI","type":"string"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
