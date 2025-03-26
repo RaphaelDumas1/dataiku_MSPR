@@ -86,8 +86,16 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Année","type":"double"},
+      {"name":"Population de 0-14 ans","type":"double"},
+      {"name":"Population de 15-29 ans","type":"double"},
+      {"name":"Population de 30-44 ans","type":"double"},
+      {"name":"Population de 45-59 ans","type":"double"},
+      {"name":"Population de 60-74 ans","type":"double"},
+      {"name":"Population de plus de 75 ans","type":"double"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
