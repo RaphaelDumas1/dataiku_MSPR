@@ -86,8 +86,14 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"Maisons","type":"string"},
+      {"name":"Appartements","type":"string"},
+      {"name":"Autres logements","type":"string"},
+      {"name":"Total","type":"string"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
