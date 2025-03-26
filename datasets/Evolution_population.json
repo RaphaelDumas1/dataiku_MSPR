@@ -86,8 +86,13 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"Variation de population (%)","type":"double"},
+      {"name":"- due au solde naturel (%)","type":"double"},
+      {"name":"- due au solde entrées/sorties (%)","type":"double"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
