@@ -80,6 +80,10 @@
         {
           "ref": "MSPR_Repartition_sexe",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Salaire_moyen",
+          "deps": []
         }
       ]
     }
@@ -145,6 +149,10 @@
         },
         {
           "ref": "Repartition_sexe",
+          "appendMode": false
+        },
+        {
+          "ref": "Salaire_moyen",
           "appendMode": false
         }
       ]

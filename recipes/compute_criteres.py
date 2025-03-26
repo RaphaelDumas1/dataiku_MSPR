@@ -173,6 +173,11 @@ datasets = [
         "output": "Repartition_sexe",
         "functions": []
     },
+    {
+        "input": "MSPR_Salaire_moyen",
+        "output": "Salaire_moyen",
+        "functions": []
+    },
 ]
 
 #
