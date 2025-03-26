@@ -71,7 +71,10 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"Taux","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
