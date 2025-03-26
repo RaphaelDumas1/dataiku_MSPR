@@ -64,6 +64,10 @@
         {
           "ref": "MSPR_Nombre_enfant",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Population",
+          "deps": []
         }
       ]
     }
@@ -113,6 +117,10 @@
         },
         {
           "ref": "Nombre_enfant",
+          "appendMode": false
+        },
+        {
+          "ref": "Population",
           "appendMode": false
         }
       ]
