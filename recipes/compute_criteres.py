@@ -168,6 +168,11 @@ datasets = [
         "output": "Repartition_des_contrats",
         "functions": []
     },
+    {
+        "input": "MSPR_Repartition_sexe",
+        "output": "Repartition_sexe",
+        "functions": []
+    },
 ]
 
 #
