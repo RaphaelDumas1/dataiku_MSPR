@@ -84,6 +84,10 @@
         {
           "ref": "MSPR_Salaire_moyen",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Statut_occupation_logement",
+          "deps": []
         }
       ]
     }
@@ -153,6 +157,10 @@
         },
         {
           "ref": "Salaire_moyen",
+          "appendMode": false
+        },
+        {
+          "ref": "Statut_occupation_logement",
           "appendMode": false
         }
       ]

@@ -178,6 +178,20 @@ datasets = [
         "output": "Salaire_moyen",
         "functions": []
     },
+    {
+        "input": "MSPR_Statut_occupation_logement",
+        "output": "Statut_occupation_logement",
+        "functions": [
+            {
+                 "name" : pivot_years,
+                 "args" : None
+            },
+            {
+                 "name" : column_from_float_to_string,
+                 "args" : ["Année"]
+            }
+        ]
+    },
 ]
 
 #
