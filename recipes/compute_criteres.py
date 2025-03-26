@@ -226,6 +226,11 @@ datasets = [
             }
         ]
     },
+    {
+        "input": "MSPR_Taux_scolarisation",
+        "output": "Taux_scolarisation",
+        "functions": []
+    },
 ]
 
 #
