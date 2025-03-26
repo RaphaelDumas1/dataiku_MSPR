@@ -71,7 +71,12 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"Indicateurs","type":"string"},
+      {"name":"2010.0","type":"string"},
+      {"name":"2015.0","type":"string"},
+      {"name":"2021.0","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
