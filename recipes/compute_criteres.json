@@ -96,6 +96,10 @@
         {
           "ref": "MSPR_Taux_de_mortalite",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Taux_de_natalite",
+          "deps": []
         }
       ]
     }
@@ -177,6 +181,10 @@
         },
         {
           "ref": "Taux_de_mortalite",
+          "appendMode": false
+        },
+        {
+          "ref": "Taux_de_natalite",
           "appendMode": false
         }
       ]

@@ -202,6 +202,11 @@ datasets = [
         "output": "Taux_de_mortalite",
         "functions": []
     },
+    {
+        "input": "MSPR_Taux_de_natalite",
+        "output": "Taux_de_natalite",
+        "functions": []
+    },
 ]
 
 #
