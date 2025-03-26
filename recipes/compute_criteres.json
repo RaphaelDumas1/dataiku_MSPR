@@ -60,6 +60,10 @@
         {
           "ref": "MSPR_Nombre_dimmigre",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Nombre_enfant",
+          "deps": []
         }
       ]
     }
@@ -105,6 +109,10 @@
         },
         {
           "ref": "Nombre_dimmigre",
+          "appendMode": false
+        },
+        {
+          "ref": "Nombre_enfant",
           "appendMode": false
         }
       ]

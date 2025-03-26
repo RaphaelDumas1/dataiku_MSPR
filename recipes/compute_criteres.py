@@ -141,6 +141,20 @@ datasets = [
         "output": "Nombre_dimmigre",
         "functions": []
     },
+    {
+        "input": "MSPR_Nombre_enfant",
+        "output": "Nombre_enfant",
+        "functions": [
+            {
+                 "name" : pivot_years,
+                 "args" : None
+            },
+            {
+                 "name" : column_from_float_to_string,
+                 "args" : ["Année"]
+            }
+        ]
+    },
 ]
 
 #
