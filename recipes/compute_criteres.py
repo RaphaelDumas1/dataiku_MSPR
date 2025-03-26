@@ -200,6 +200,9 @@ for dataset in datasets:
 
         # Transform
         df = name(df, *args)
+        
+    # Drop empty rows
+    df = df.dropna(how="all")
 
     # Write datas
     result_dataset = dataiku.Dataset(output_name)
