@@ -31,10 +31,6 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "aPmnwurD",
-      "objectType": "MANAGED_FOLDER"
-    },
-    {
       "objectId": "Merge_presidentielles",
       "objectType": "RECIPE"
     }
