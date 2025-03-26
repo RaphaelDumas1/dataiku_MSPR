@@ -100,6 +100,10 @@
         {
           "ref": "MSPR_Taux_de_natalite",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Taux_de_pauvrete",
+          "deps": []
         }
       ]
     }
@@ -185,6 +189,10 @@
         },
         {
           "ref": "Taux_de_natalite",
+          "appendMode": false
+        },
+        {
+          "ref": "Taux_de_pauvrete",
           "appendMode": false
         }
       ]

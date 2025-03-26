@@ -207,6 +207,11 @@ datasets = [
         "output": "Taux_de_natalite",
         "functions": []
     },
+    {
+        "input": "MSPR_Taux_de_pauvrete",
+        "output": "Taux_de_pauvrete",
+        "functions": []
+    },
 ]
 
 #
