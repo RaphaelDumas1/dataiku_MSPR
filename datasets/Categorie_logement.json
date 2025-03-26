@@ -86,8 +86,14 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"Résidences principales","type":"string"},
+      {"name":"Résid. secondaires et log. occasionnels","type":"string"},
+      {"name":"Logements vacants","type":"string"},
+      {"name":"Total","type":"string"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
