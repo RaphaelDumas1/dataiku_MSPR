@@ -71,7 +71,10 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"Salaire Net","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
