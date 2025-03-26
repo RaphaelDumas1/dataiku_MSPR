@@ -71,7 +71,15 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"2 - 5 ans","type":"string"},
+      {"name":"6 - 14 ans","type":"string"},
+      {"name":"15 - 17 ans","type":"string"},
+      {"name":"18 - 24 ans","type":"string"},
+      {"name":"25 - 29 ans","type":"string"},
+      {"name":"30 ou plus","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
