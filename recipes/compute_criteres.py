@@ -156,6 +156,16 @@ datasets = [
             }
         ]
     },
+    {
+        "input": "MSPR_Population",
+        "output": "Population",
+        "functions": [
+            {
+                 "name" : remove_column_by_index,
+                 "args" : [2]
+            }
+        ]
+    },
 ]
 
 #
