@@ -86,8 +86,18 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Année","type":"bigint"},
+      {"name":"Indicateur","type":"string"},
+      {"name":"unite_de_compte","type":"string"},
+      {"name":"nombre","type":"bigint"},
+      {"name":"taux_pour_mille","type":"double"},
+      {"name":"insee_pop","type":"bigint"},
+      {"name":"insee_pop_millesime","type":"bigint"},
+      {"name":"insee_log","type":"bigint"},
+      {"name":"insee_log_millesime","type":"bigint"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
