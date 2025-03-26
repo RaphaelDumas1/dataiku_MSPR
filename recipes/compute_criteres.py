@@ -192,6 +192,11 @@ datasets = [
             }
         ]
     },
+    {
+        "input": "MSPR_Taux_de_chomage",
+        "output": "Taux_de_chomage",
+        "functions": []
+    },
 ]
 
 #

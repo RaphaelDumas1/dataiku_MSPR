@@ -88,6 +88,10 @@
         {
           "ref": "MSPR_Statut_occupation_logement",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Taux_de_chomage",
+          "deps": []
         }
       ]
     }
@@ -161,6 +165,10 @@
         },
         {
           "ref": "Statut_occupation_logement",
+          "appendMode": false
+        },
+        {
+          "ref": "Taux_de_chomage",
           "appendMode": false
         }
       ]
