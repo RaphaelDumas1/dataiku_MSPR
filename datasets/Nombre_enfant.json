@@ -86,8 +86,15 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"Aucun enfant","type":"bigint"},
+      {"name":"1 enfant","type":"bigint"},
+      {"name":"2 enfants","type":"bigint"},
+      {"name":"3 enfants","type":"bigint"},
+      {"name":"4 enfants ou plus","type":"bigint"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
