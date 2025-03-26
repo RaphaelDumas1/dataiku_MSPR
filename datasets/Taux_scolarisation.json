@@ -86,8 +86,16 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Année","type":"double"},
+      {"name":"2 - 5 ans","type":"double"},
+      {"name":"6 - 14 ans","type":"double"},
+      {"name":"15 - 17 ans","type":"double"},
+      {"name":"18 - 24 ans","type":"double"},
+      {"name":"25 - 29 ans","type":"double"},
+      {"name":"30 ou plus","type":"double"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
