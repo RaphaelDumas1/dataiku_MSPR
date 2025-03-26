@@ -104,6 +104,10 @@
         {
           "ref": "MSPR_Taux_de_pauvrete",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Type_logement",
+          "deps": []
         }
       ]
     }
@@ -193,6 +197,10 @@
         },
         {
           "ref": "Taux_de_pauvrete",
+          "appendMode": false
+        },
+        {
+          "ref": "Type_logement",
           "appendMode": false
         }
       ]

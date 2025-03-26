@@ -212,6 +212,20 @@ datasets = [
         "output": "Taux_de_pauvrete",
         "functions": []
     },
+    {
+        "input": "MSPR_Type_logement",
+        "output": "Type_logement",
+        "functions": [
+            {
+                 "name" : pivot_years,
+                 "args" : None
+            },
+            {
+                 "name" : column_from_float_to_string,
+                 "args" : ["Année"]
+            }
+        ]
+    },
 ]
 
 #
