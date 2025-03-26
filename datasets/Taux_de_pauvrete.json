@@ -86,8 +86,11 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Année","type":"bigint"},
+      {"name":"Taux de pauvrete","type":"double"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
