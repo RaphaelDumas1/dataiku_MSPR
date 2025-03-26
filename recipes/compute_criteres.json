@@ -52,6 +52,10 @@
         {
           "ref": "MSPR_Nombre_de_salarie",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Nombre_detranger",
+          "deps": []
         }
       ]
     }
@@ -89,6 +93,10 @@
         },
         {
           "ref": "Nombre_de_salarie",
+          "appendMode": false
+        },
+        {
+          "ref": "Nombre_detranger",
           "appendMode": false
         }
       ]

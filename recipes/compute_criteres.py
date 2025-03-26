@@ -131,6 +131,11 @@ datasets = [
         "output": "Nombre_de_salarie",
         "functions": []
     },
+    {
+        "input": "MSPR_Nombre_detranger",
+        "output": "Nombre_detranger",
+        "functions": []
+    },
 ]
 
 #
