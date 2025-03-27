@@ -87,7 +87,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"test","type":"string"},
+      {"name":"nan","type":"string"},
       {"name":"2010","type":"string"},
       {"name":"2015","type":"string"},
       {"name":"2021","type":"string"}
