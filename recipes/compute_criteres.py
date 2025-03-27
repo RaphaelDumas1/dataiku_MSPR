@@ -46,6 +46,8 @@ def process_category_metier(df):
     df.loc[0, "Unnamed: 6"] = df.loc[0, "Unnamed: 4"]  
     df.loc[0, "Unnamed: 9"] = df.loc[0, "Unnamed: 7"]  
     df = df.drop(columns=["Unnamed: 1", "Unnamed: 2", "Unnamed: 4", "Unnamed: 5", "Unnamed: 7", "Unnamed: 8"])
+    df.columns = df.iloc[0] 
+    df = df[1:].reset_index(drop=True) 
     
     return df
 
