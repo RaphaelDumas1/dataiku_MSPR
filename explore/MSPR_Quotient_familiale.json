@@ -1,0 +1,208 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "Date référence": 120,
+      "Numéro département": 150,
+      "Nom département": 155,
+      "Numéro région": 113,
+      "Nom région": 120,
+      "Quotient familial": 281,
+      "Nombre foyers NDUR": 150,
+      "Nombre personnes NDUR": 173,
+      "Montant total NDUR": 150,
+      "Nombre foyers NDURPAJE": 180,
+      "Nombre personnes NDURPAJE": 203,
+      "Montant total NDURPAJE": 180,
+      "Nombre foyers NDUREJ": 165,
+      "Nombre personnes NDUREJ": 188,
+      "Montant total NDUREJ": 165,
+      "Nombre foyers NDURAL": 165,
+      "Nombre personnes NDURAL": 188,
+      "Montant total NDURAL": 165,
+      "Nombre foyers NDURINS": 173,
+      "Nombre personnes NDURINS": 195,
+      "Montant total NDURINS": 173,
+      "Lieu résidence": 127,
+      "Unnamed: 22": 106,
+      "Unnamed: 23": 134,
+      "Unnamed: 24": 100,
+      "Unnamed: 25": 106,
+      "Unnamed: 26": 134,
+      "Unnamed: 27": 100,
+      "Unnamed: 28": 100,
+      "Unnamed: 29": 134,
+      "Unnamed: 30": 100,
+      "Unnamed: 31": 100,
+      "Unnamed: 32": 134,
+      "Unnamed: 33": 100,
+      "Unnamed: 34": 100,
+      "Unnamed: 35": 100,
+      "Unnamed: 36": 100,
+      "Unnamed: 37": 100,
+      "Unnamed: 38": 100,
+      "Unnamed: 39": 100,
+      "Unnamed: 40": 106,
+      "Unnamed: 41": 134,
+      "Unnamed: 42": 100,
+      "Unnamed: 43": 106,
+      "Unnamed: 44": 100,
+      "Unnamed: 45": 134,
+      "Unnamed: 46": 100,
+      "Unnamed: 47": 106,
+      "Unnamed: 48": 100,
+      "Unnamed: 49": 134,
+      "Unnamed: 50": 100,
+      "Unnamed: 51": 106,
+      "Unnamed: 52": 100,
+      "Unnamed: 53": 100,
+      "Unnamed: 54": 100,
+      "Unnamed: 55": 106,
+      "Unnamed: 56": 100,
+      "Unnamed: 57": 134,
+      "Unnamed: 58": 100,
+      "Unnamed: 59": 106,
+      "Unnamed: 60": 134,
+      "Unnamed: 61": 100,
+      "Unnamed: 62": 100,
+      "Unnamed: 63": 134,
+      "Unnamed: 64": 100,
+      "Unnamed: 65": 100,
+      "Unnamed: 66": 134,
+      "Unnamed: 67": 100,
+      "Unnamed: 68": 100,
+      "Unnamed: 69": 134,
+      "Unnamed: 70": 100,
+      "Unnamed: 71": 113,
+      "Unnamed: 72": 134,
+      "Unnamed: 73": 100,
+      "Unnamed: 74": 100,
+      "Unnamed: 75": 134,
+      "Unnamed: 76": 100,
+      "Unnamed: 77": 100,
+      "Unnamed: 78": 134,
+      "Unnamed: 79": 100,
+      "Unnamed: 80": 100,
+      "Unnamed: 81": 100,
+      "Unnamed: 82": 100,
+      "Unnamed: 83": 100,
+      "Unnamed: 84": 100,
+      "Unnamed: 85": 100,
+      "Unnamed: 86": 100,
+      "Unnamed: 87": 100,
+      "Unnamed: 88": 100,
+      "Unnamed: 89": 100,
+      "Unnamed: 90": 100,
+      "Unnamed: 91": 100,
+      "Unnamed: 92": 100,
+      "Unnamed: 93": 100,
+      "Unnamed: 94": 183
+    },
+    "columnUseScientificNotationByName": {},
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "individualColumnsRules": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxRecordsForDisplay": -1,
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "FULL",
+        "maxRecords": -1,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [
+      {
+        "column": "Nombre foyers NDUR",
+        "type": "columnFilter",
+        "currentMode": "FACET",
+        "active": true,
+        "facet": {
+          "type": "facet",
+          "column": "Nombre foyers NDUR",
+          "columnType": "NUMERICAL",
+          "currentMode": "ALPHANUM",
+          "sort": "count",
+          "selectedValues": {}
+        },
+        "alphanumFilter": {
+          "type": "alphanum",
+          "column": "Nombre foyers NDUR",
+          "selectedValues": [],
+          "params": {
+            "mode": "full_string",
+            "normalization": "exact"
+          }
+        },
+        "validityFilter": {
+          "type": "validity",
+          "column": "Nombre foyers NDUR",
+          "params": {
+            "type": "LongMeaning",
+            "ok": true,
+            "nok": true,
+            "empty": true
+          }
+        }
+      }
+    ],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [],
+  "interactiveSearch": {
+    "savedQueries": []
+  },
+  "customMeasures": []
+}
