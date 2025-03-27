@@ -1,8 +1,8 @@
 {
-  "type": "FilesInFolder",
-  "managed": false,
+  "type": "Filesystem",
+  "managed": true,
   "featureGroup": false,
-  "formatType": "excel",
+  "formatType": "csv",
   "checklists": {
     "checklists": []
   },
@@ -25,19 +25,35 @@
     }
   },
   "formatParams": {
-    "preserveNumberFormatting": false,
-    "parseDatesToISO": false,
+    "style": "unix",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "maxRowChars": 100000000,
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
     "skipRowsBeforeHeader": 0,
-    "parseHeaderRow": true,
+    "parseHeaderRow": false,
     "skipRowsAfterHeader": 0,
-    "sheetsToColumn": false,
-    "passwordRequired": false,
-    "rowOverflowStrategy": "NEW_SHEET",
-    "cellOverflowStrategy": "ERROR",
-    "invalidCellStrategy": "ERROR",
-    "applyColoring": false,
-    "sheetSelectionMode": "NAMES",
-    "sheets": "*data set de crime full"
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": "gz"
   },
   "partitioning": {
     "ignoreNonMatchingFile": false,
@@ -49,11 +65,13 @@
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1742814622503
+    "lastModifiedOn": 1743025813596,
+    "extendedProperties": {}
   },
   "tags": [],
   "params": {
-    "folderSmartId": "aPmnwurD",
+    "connection": "filesystem_managed",
+    "path": "${projectKey}/Statut_occupation_logement",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
@@ -69,19 +87,14 @@
   },
   "schema": {
     "columns": [
-      {"name":"Code_departement","type":"string"},
-      {"name":"Code_region","type":"string"},
-      {"name":"annee","type":"string"},
-      {"name":"indicateur","type":"string"},
-      {"name":"unite_de_compte","type":"string"},
-      {"name":"nombre","type":"string"},
-      {"name":"taux_pour_mille","type":"string"},
-      {"name":"insee_pop","type":"string"},
-      {"name":"insee_pop_millesime","type":"string"},
-      {"name":"insee_log","type":"string"},
-      {"name":"insee_log_millesime","type":"string"}
+      {"name":"Année","type":"string"},
+      {"name":"Propriétaires","type":"string"},
+      {"name":"Locataires","type":"string"},
+      {"name":"- dont locataires d\u0027un logement HLM loué vide","type":"string"},
+      {"name":"Logés gratuitement","type":"string"},
+      {"name":"Ensemble","type":"string"}
     ],
-    "userModified": true
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {

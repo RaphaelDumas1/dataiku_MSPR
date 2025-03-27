@@ -12,15 +12,12 @@ def pivot_years(df):
     df = df.T.reset_index()
 
     # Rename column
-    df.rename(columns={'index': 'Année'}, inplace=True)
+    df = df.rename(columns={df.columns[0]: "Année"})
     
     return df
 
 def column_from_float_to_string(df, column):
     df["Année"] = df["Année"].astype(float).astype(int).astype(str)
-    return df
-
-def rename(df):
     return df
 
 def copy_years_range(df):
@@ -40,6 +37,20 @@ def copy_years_range(df):
             rows.append(new_row)
     
     return pd.DataFrame(rows)
+
+def process_category_metier(df):
+    # Remove headers rows
+    df = df.drop(index=1)
+    df = df.loc[:10]
+    df.loc[0, "Unnamed: 3"] = df.loc[0, "Unnamed: 1"]  
+    df.loc[0, "Unnamed: 6"] = df.loc[0, "Unnamed: 4"]  
+    df.loc[0, "Unnamed: 9"] = df.loc[0, "Unnamed: 7"]  
+    df = df.drop(columns=["Unnamed: 1", "Unnamed: 2", "Unnamed: 4", "Unnamed: 5", "Unnamed: 7", "Unnamed: 8"])
+    df.columns = df.iloc[0] 
+    df = df[1:].reset_index(drop=True) 
+    
+    return df
+
 
 #
 # DATASETS
@@ -126,6 +137,128 @@ datasets = [
             }
         ]
     },
+    {
+        "input": "MSPR_Nombre_de_salarie",
+        "output": "Nombre_de_salarie",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Nombre_detranger",
+        "output": "Nombre_detranger",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Nombre_dimmigre",
+        "output": "Nombre_dimmigre",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Nombre_enfant",
+        "output": "Nombre_enfant",
+        "functions": [
+            {
+                 "name" : pivot_years,
+                 "args" : None
+            },
+            {
+                 "name" : column_from_float_to_string,
+                 "args" : ["Année"]
+            }
+        ]
+    },
+    {
+        "input": "MSPR_Population",
+        "output": "Population",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Repartition_age",
+        "output": "Repartition_age",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Repartition_des_contrats",
+        "output": "Repartition_des_contrats",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Repartition_sexe",
+        "output": "Repartition_sexe",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Salaire_moyen",
+        "output": "Salaire_moyen",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Statut_occupation_logement",
+        "output": "Statut_occupation_logement",
+        "functions": [
+            {
+                 "name" : pivot_years,
+                 "args" : None
+            },
+            {
+                 "name" : column_from_float_to_string,
+                 "args" : ["Année"]
+            }
+        ]
+    },
+    {
+        "input": "MSPR_Taux_de_chomage",
+        "output": "Taux_de_chomage",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Taux_de_mortalite",
+        "output": "Taux_de_mortalite",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Taux_de_natalite",
+        "output": "Taux_de_natalite",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Taux_de_pauvrete",
+        "output": "Taux_de_pauvrete",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Type_logement",
+        "output": "Type_logement",
+        "functions": [
+            {
+                 "name" : pivot_years,
+                 "args" : None
+            },
+            {
+                 "name" : column_from_float_to_string,
+                 "args" : ["Année"]
+            }
+        ]
+    },
+    {
+        "input": "MSPR_Taux_scolarisation",
+        "output": "Taux_scolarisation",
+        "functions": []
+    },
+    {
+        "input": "MSPR_Categorie_metiers",
+        "output": "Categorie_metiers",
+        "functions": [
+            {
+                 "name" : process_category_metier,
+                 "args" : []   
+            },
+            {
+                 "name" : pivot_years,
+                 "args" : []   
+            },
+            
+        ]
+    },
 ]
 
 #
@@ -143,11 +276,15 @@ for dataset in datasets:
     df = dataset.get_dataframe()
     
     for function in functions:
+        # Set variables for iteration
         name = function["name"]
         args = function["args"] if function["args"] is not None else []
 
         # Transform
         df = name(df, *args)
+        
+    # Drop empty rows
+    df = df.dropna(how="all")
 
     # Write datas
     result_dataset = dataiku.Dataset(output_name)

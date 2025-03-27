@@ -1,8 +1,8 @@
 {
-  "type": "FilesInFolder",
-  "managed": false,
+  "type": "Filesystem",
+  "managed": true,
   "featureGroup": false,
-  "formatType": "excel",
+  "formatType": "csv",
   "checklists": {
     "checklists": []
   },
@@ -25,19 +25,35 @@
     }
   },
   "formatParams": {
-    "xlsx": true,
-    "preserveNumberFormatting": false,
-    "parseDatesToISO": false,
+    "style": "unix",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "maxRowChars": 100000000,
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
     "skipRowsBeforeHeader": 0,
-    "parseHeaderRow": true,
+    "parseHeaderRow": false,
     "skipRowsAfterHeader": 0,
-    "sheetsToColumn": false,
-    "rowOverflowStrategy": "NEW_SHEET",
-    "cellOverflowStrategy": "ERROR",
-    "invalidCellStrategy": "ERROR",
-    "applyColoring": false,
-    "sheetSelectionMode": "NAMES",
-    "sheets": "*Donnees"
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": "gz"
   },
   "partitioning": {
     "ignoreNonMatchingFile": false,
@@ -49,20 +65,19 @@
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1741040633940,
+    "lastModifiedOn": 1743026157325,
     "extendedProperties": {}
   },
   "tags": [],
   "params": {
-    "folderSmartId": "aPmnwurD",
+    "connection": "filesystem_managed",
+    "path": "${projectKey}/Taux_de_natalite",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
-      "mode": "EXPLICIT_SELECT_FILES",
+      "mode": "ALL",
       "excludeRules": [],
       "includeRules": [],
-      "explicitFiles": [
-        "MSPR.xlsx"
-      ]
+      "explicitFiles": []
     },
     "variablesExpansionLoopConfig": {
       "enabled": false,
@@ -71,8 +86,11 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Année","type":"bigint"},
+      {"name":"Taux de natalite","type":"double"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {

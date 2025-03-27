@@ -1,8 +1,8 @@
 {
-  "type": "FilesInFolder",
-  "managed": false,
+  "type": "Filesystem",
+  "managed": true,
   "featureGroup": false,
-  "formatType": "excel",
+  "formatType": "csv",
   "checklists": {
     "checklists": []
   },
@@ -25,19 +25,35 @@
     }
   },
   "formatParams": {
-    "xlsx": true,
-    "preserveNumberFormatting": false,
-    "parseDatesToISO": false,
+    "style": "unix",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "maxRowChars": 100000000,
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
     "skipRowsBeforeHeader": 0,
-    "parseHeaderRow": true,
+    "parseHeaderRow": false,
     "skipRowsAfterHeader": 0,
-    "sheetsToColumn": false,
-    "rowOverflowStrategy": "NEW_SHEET",
-    "cellOverflowStrategy": "ERROR",
-    "invalidCellStrategy": "ERROR",
-    "applyColoring": false,
-    "sheetSelectionMode": "NAMES",
-    "sheets": "*donnee-dep-data.gouv-2024-geogr"
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": "gz"
   },
   "partitioning": {
     "ignoreNonMatchingFile": false,
@@ -49,20 +65,19 @@
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1741040634560,
+    "lastModifiedOn": 1743025226255,
     "extendedProperties": {}
   },
   "tags": [],
   "params": {
-    "folderSmartId": "aPmnwurD",
+    "connection": "filesystem_managed",
+    "path": "${projectKey}/Repartition_age",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
-      "mode": "EXPLICIT_SELECT_FILES",
+      "mode": "ALL",
       "excludeRules": [],
       "includeRules": [],
-      "explicitFiles": [
-        "MSPR.xlsx"
-      ]
+      "explicitFiles": []
     },
     "variablesExpansionLoopConfig": {
       "enabled": false,
@@ -72,19 +87,15 @@
   },
   "schema": {
     "columns": [
-      {"name":"Code_departement","type":"string"},
-      {"name":"Code_region","type":"string"},
-      {"name":"annee","type":"string"},
-      {"name":"indicateur","type":"string"},
-      {"name":"unite_de_compte","type":"string"},
-      {"name":"nombre","type":"string"},
-      {"name":"taux_pour_mille","type":"string"},
-      {"name":"insee_pop","type":"string"},
-      {"name":"insee_pop_millesime","type":"string"},
-      {"name":"insee_log","type":"string"},
-      {"name":"insee_log_millesime","type":"string"}
+      {"name":"Année","type":"double"},
+      {"name":"Population de 0-14 ans","type":"double"},
+      {"name":"Population de 15-29 ans","type":"double"},
+      {"name":"Population de 30-44 ans","type":"double"},
+      {"name":"Population de 45-59 ans","type":"double"},
+      {"name":"Population de 60-74 ans","type":"double"},
+      {"name":"Population de plus de 75 ans","type":"double"}
     ],
-    "userModified": true
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
