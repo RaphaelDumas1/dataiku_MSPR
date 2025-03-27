@@ -42,6 +42,8 @@ def process_category_metier(df):
     # Remove headers rows
     df = df.drop(index=1)
     df = df.loc[:10]
+    df.loc[2, "Unnamed: 3"] = df.loc[2, "Unnamed: 3"]  
+    
     return df
 
 
