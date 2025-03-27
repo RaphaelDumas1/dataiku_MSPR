@@ -112,6 +112,10 @@
         {
           "ref": "MSPR_Taux_scolarisation",
           "deps": []
+        },
+        {
+          "ref": "MSPR_Categorie_metiers",
+          "deps": []
         }
       ]
     }
@@ -209,6 +213,10 @@
         },
         {
           "ref": "Taux_scolarisation",
+          "appendMode": false
+        },
+        {
+          "ref": "Categorie_metiers",
           "appendMode": false
         }
       ]
