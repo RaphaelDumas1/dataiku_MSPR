@@ -48,6 +48,7 @@ def process_category_metier(df):
     df = df.drop(columns=["Unnamed: 1", "Unnamed: 2", "Unnamed: 4", "Unnamed: 5", "Unnamed: 7", "Unnamed: 8"])
     df.columns = df.iloc[0] 
     df = df[1:].reset_index(drop=True) 
+    df = df.rename(columns={df.columns[0]: "test"})
     
     return df
 
@@ -63,6 +64,10 @@ datasets = [
         "functions": [
             {
                  "name" : process_category_metier,
+                 "args" : []   
+            },
+            {
+                 "name" : pivot_years,
                  "args" : []   
             }
         ]
