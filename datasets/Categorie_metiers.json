@@ -88,14 +88,8 @@
   "schema": {
     "columns": [
       {"name":"Population de 15 ans ou plus par CSP","type":"string"},
-      {"name":"Unnamed: 1","type":"string"},
-      {"name":"Unnamed: 2","type":"string"},
       {"name":"Unnamed: 3","type":"string"},
-      {"name":"Unnamed: 4","type":"string"},
-      {"name":"Unnamed: 5","type":"string"},
       {"name":"Unnamed: 6","type":"string"},
-      {"name":"Unnamed: 7","type":"string"},
-      {"name":"Unnamed: 8","type":"string"},
       {"name":"Unnamed: 9","type":"string"}
     ],
     "userModified": false
