@@ -65,6 +65,10 @@ datasets = [
                  "name" : process_category_metier,
                  "args" : []   
             },
+            {
+                 "name" : pivot_years,
+                 "args" : []   
+            },
             
         ]
     },
