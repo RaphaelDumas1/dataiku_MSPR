@@ -87,10 +87,10 @@
   },
   "schema": {
     "columns": [
-      {"name":"Population de 15 ans ou plus par CSP","type":"string"},
-      {"name":"Unnamed: 3","type":"string"},
-      {"name":"Unnamed: 6","type":"string"},
-      {"name":"Unnamed: 9","type":"string"}
+      {"name":"nan","type":"string"},
+      {"name":"2010","type":"string"},
+      {"name":"2015","type":"string"},
+      {"name":"2021","type":"string"}
     ],
     "userModified": false
   },
