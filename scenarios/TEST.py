@@ -1,24 +1,23 @@
-# This sample code helps you get started with the custom scenario API.
-#For more details and samples, please see our Documentation
-from dataiku.scenario import Scenario
+import dataiku
+import pandas as pd
 
-# The Scenario object is the main handle from which you initiate steps
-scenario = Scenario()
+# Connexion au projet
+client = dataiku.api_client()
+project = client.get_project(dataiku.default_project_key())
 
-# A few example steps follow
+# Liste des datasets à exporter
+datasets_names = ["Categorie_logement"]  # Modifiez avec vos datasets
+folder = dataiku.Folder("test")  # ID du dossier de destination
 
-# Building a dataset
-scenario.build_dataset("customers_prepared", partitions="2015-01-03")
+for dataset_name in datasets_names:
+    dataset = dataiku.Dataset(dataset_name)
+    df = dataset.get_dataframe()
+    
+    # Nom du fichier CSV
+    file_path = f"{dataset_name}.csv"
+    
+    # Sauvegarde dans le dossier
+    with folder.get_writer(file_path) as writer:
+        df.to_csv(writer, index=False)
 
-# Controlling the train of a dataset
-train_ret = scenario.train_model("uSEkldfsm")
-trained_model = train_ret.get_trained_model()
-performance = trained_model.get_new_version_metrics().get_performance_values()
-if performance["AUC"] > 0.85:
-    trained_model.activate_new_version()
-
-# Sending custom reports
-sender = scenario.get_message_sender("mail-scenario", "local-mail") # A messaging channel
-sender.set_params(sender="dss@company.com", recipient="data-scientists@company.com")
-
-sender.send(subject="The scenario is doing well", message="All is good")
+print("Export terminé avec succès ✅")
