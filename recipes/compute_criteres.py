@@ -22,11 +22,9 @@ def column_from_float_to_string(df, column):
 
 def columns_to_int(df, columns):
     for col in columns:
-        print("\n")
-        print("\n")
-        print("\n")
-
-        print(type(df[col]))
+        print("\n\n\n")  # Sauts de ligne
+        print(type(df[col]))  # Affiche le type de la colonne
+        sys.stdout.flush()
         if isinstance(df[col], str):
             df[col] = df[col].replace(" ", "")
             
