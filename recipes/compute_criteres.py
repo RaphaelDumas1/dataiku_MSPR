@@ -23,6 +23,7 @@ def column_from_float_to_string(df, column):
 def columns_to_int(df, columns):
     for col in columns:
         if isinstance(df[col], str):
+            print(df[col])
             df[col] = df[col].replace(" ", "")
             
         
