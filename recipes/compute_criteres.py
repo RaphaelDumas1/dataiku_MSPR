@@ -22,8 +22,8 @@ def column_from_float_to_string(df, column):
 
 def columns_to_int(df, columns):
     for col in columns:
-        if isinstance(col, str):
-            col = col.replace(" ", "")
+        if isinstance(df[col], str):
+            df[col] = df[col].replace(" ", "")
             
         
         df[col] = df[col].astype(int)
