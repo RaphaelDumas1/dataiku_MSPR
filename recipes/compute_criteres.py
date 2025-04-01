@@ -29,7 +29,7 @@ def columns_to_int(df, columns):
             df[col] = df[col].replace(" ", "")
             
         
-        df[col] = df[col].astype(int)
+        
     return df
 
 def copy_years_range(df):
