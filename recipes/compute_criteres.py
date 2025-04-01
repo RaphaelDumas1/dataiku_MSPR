@@ -20,6 +20,11 @@ def column_from_float_to_string(df, column):
     df["Année"] = df["Année"].astype(float).astype(int).astype(str)
     return df
 
+def columns_to_int(df, columns):
+    for col in columns:
+        df[col] = df[col].astype(int)
+    return df
+
 def copy_years_range(df):
     # Add row for each year in range
     rows = []
@@ -68,6 +73,13 @@ datasets = [
             {
                  "name" : column_from_float_to_string,
                  "args" : ["Année"]
+            },
+            {
+                 "name" : columns_to_int,
+                 "args" : ["{
+                 "name" : column_from_float_to_string,
+                 "args" : ["Année"]
+            }"]
             }
         ]
     },
