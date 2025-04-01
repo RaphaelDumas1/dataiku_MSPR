@@ -76,7 +76,7 @@ datasets = [
             },
             {
                  "name" : columns_to_int,
-                 "args" : ["Résidences principales", "Résid. secondaires et log. occasionnels", "Logements vacants", "Total"]
+                 "args" : [["Résidences principales", "Résid. secondaires et log. occasionnels", "Logements vacants", "Total"]]
             }
         ]
     },
