@@ -18,7 +18,7 @@ for dataset_name in datasets_names:
     buffer = io.BytesIO()
     
     # Écriture dans le buffer
-    df.to_csv(buffer, index=False, encoding="utf-8")  # Ajoutez encoding si nécessaire
+    df.to_csv(buffer, index=False, encoding="utf-8", sep=";")  # Ajoutez encoding si nécessaire
     
     # Sauvegarde dans le dossier
     file_path = f"{dataset_name}.csv"
