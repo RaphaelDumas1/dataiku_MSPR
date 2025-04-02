@@ -88,9 +88,9 @@
   "schema": {
     "columns": [
       {"name":"Année","type":"bigint"},
-      {"name":"Nombre de salarie","type":"string","meaning":"Text"}
+      {"name":"Nombre de salarie","type":"bigint"}
     ],
-    "userModified": true
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
