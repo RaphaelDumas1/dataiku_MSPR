@@ -131,6 +131,10 @@ datasets = [
                  "name" : copy_years_range,
                  "args" : None
             },
+            {
+                 "name" : columns_to_int,
+                 "args" : [["Année"]]
+            },
         ]
     },
     {
@@ -152,7 +156,7 @@ datasets = [
             },
             {
                  "name" : columns_to_float,
-                 "args" : [["Part des résidences principales (%)", "Part des rés. secondaires (yc log. occasionnels) (%)", "Part des résidences principales (%)"]]
+                 "args" : [["Part des résidences principales (%)", "Part des rés. secondaires (yc log. occasionnels) (%)", "Part des logements vacants (%)"]]
             }
         ]
     },
