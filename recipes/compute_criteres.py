@@ -28,7 +28,14 @@ def columns_to_int(df, columns=None):
         columns = df.columns
     
     for col in columns:
-        df[col] = df[col].astype(str).str.replace(" ", "").astype(float).astype('Int64')
+        df[col] = (
+            df[col]
+            .astype(str)
+            .str.replace("\xa0", "")
+            .str.replace(" ", "")
+            .astype(float)
+            .astype('Int64')
+        )
         
     return df
 
