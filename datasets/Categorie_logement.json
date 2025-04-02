@@ -88,10 +88,10 @@
   "schema": {
     "columns": [
       {"name":"Année","type":"string"},
-      {"name":"Résidences principales","type":"string"},
-      {"name":"Résid. secondaires et log. occasionnels","type":"string"},
-      {"name":"Logements vacants","type":"string"},
-      {"name":"Total","type":"string"}
+      {"name":"Résidences principales","type":"bigint"},
+      {"name":"Résid. secondaires et log. occasionnels","type":"bigint"},
+      {"name":"Logements vacants","type":"bigint"},
+      {"name":"Total","type":"bigint"}
     ],
     "userModified": false
   },
