@@ -1,7 +1,6 @@
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
-import logging
 
 # 
 # FUNCTIONS
@@ -21,15 +20,13 @@ def column_from_float_to_string(df, column):
     df["Année"] = df["Année"].astype(float).astype(int).astype(str)
     return df
 
-def columns_to_int(df, columns):
-    logger = logging.getLogger()
-    logger.info(df.dtypes)
+def columns_to_int(df, columns=None):
+    
+    if columns is None:
+        columns = df.columns
     
     for col in columns:
         df[col] = df[col].astype(str).str.replace(" ", "").astype(float).astype('Int64')
-        
-            
-        
         
     return df
 
@@ -79,12 +76,8 @@ datasets = [
                  "args" : None
             },
             {
-                 "name" : column_from_float_to_string,
-                 "args" : ["Année"]
-            },
-            {
                  "name" : columns_to_int,
-                 "args" : [["Résidences principales", "Résid. secondaires et log. occasionnels", "Logements vacants", "Total"]]
+                 "args" : []
             }
         ]
     },
@@ -96,9 +89,9 @@ datasets = [
                  "name" : pivot_years,
                  "args" : None
             },
-           {
-                 "name" : column_from_float_to_string,
-                 "args" : ["Année"]
+            {
+                 "name" : columns_to_int,
+                 "args" : []
             }
         ]
     },
@@ -137,6 +130,10 @@ datasets = [
             {
                  "name" : column_from_float_to_string,
                  "args" : ["Année"]
+            },
+             {
+                 "name" : columns_to_int,
+                 "args" : [["Nombre de logements"]]
             }
         ]
     },
@@ -157,7 +154,12 @@ datasets = [
     {
         "input": "MSPR_Nombre_de_salarie",
         "output": "Nombre_de_salarie",
-        "functions": []
+        "functions": [
+            {
+                 "name" : columns_to_int,
+                 "args" : [["Nombre de salarie"]]
+            }
+        ]
     },
     {
         "input": "MSPR_Nombre_detranger",
@@ -191,17 +193,32 @@ datasets = [
     {
         "input": "MSPR_Repartition_age",
         "output": "Repartition_age",
-        "functions": []
+        "functions": [
+            {
+                 "name" : column_from_float_to_string,
+                 "args" : ["Année"]
+            }
+        ]
     },
     {
         "input": "MSPR_Repartition_des_contrats",
         "output": "Repartition_des_contrats",
-        "functions": []
+        "functions": [
+            {
+                 "name" : columns_to_int,
+                 "args" : [["CDD", "CDI"]]
+            }
+        ]
     },
     {
         "input": "MSPR_Repartition_sexe",
         "output": "Repartition_sexe",
-        "functions": []
+        "functions": [
+            {
+                 "name" : columns_to_int,
+                 "args" : []
+            }
+        ]
     },
     {
         "input": "MSPR_Salaire_moyen",
@@ -217,8 +234,8 @@ datasets = [
                  "args" : None
             },
             {
-                 "name" : column_from_float_to_string,
-                 "args" : ["Année"]
+                 "name" : columns_to_int,
+                 "args" : []
             }
         ]
     },
@@ -251,15 +268,20 @@ datasets = [
                  "args" : None
             },
             {
-                 "name" : column_from_float_to_string,
-                 "args" : ["Année"]
+                 "name" : columns_to_int,
+                 "args" : []
             }
         ]
     },
     {
         "input": "MSPR_Taux_scolarisation",
         "output": "Taux_scolarisation",
-        "functions": []
+        "functions": [
+            {
+                 "name" : column_from_float_to_string,
+                 "args" : ["Année"]
+            }
+        ]
     },
     {
         "input": "MSPR_Categorie_metiers",
@@ -273,6 +295,10 @@ datasets = [
                  "name" : pivot_years,
                  "args" : []   
             },
+            {
+                 "name" : columns_to_int,
+                 "args" : []
+            }
             
         ]
     },
