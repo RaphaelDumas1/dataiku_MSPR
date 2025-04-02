@@ -22,11 +22,10 @@ def column_from_float_to_string(df, column):
     return df
 
 def columns_to_int(df, columns):
+    logger = logging.getLogger()
+    
     for col in columns:
-        logger = logging.getLogger()
-        logger.info("Ceci est un message de log")
-        print(type(df[col]))  # Affiche le type de la colonne
-        sys.stdout.flush()
+        logger.info(type(df[col]))
         if isinstance(df[col], str):
             df[col] = df[col].replace(" ", "")
             
