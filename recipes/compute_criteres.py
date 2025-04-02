@@ -26,10 +26,8 @@ def columns_to_int(df, columns):
     logger.info(df.dtypes)
     
     for col in columns:
-        logger.info("yesssssssssssssssssssssssssssssssssssss")
-        logger.info(type(df[col]))
-        if isinstance(df[col], str):
-            df[col] = df[col].replace(" ", "")
+        df[col] = df[col].astype(str).str.replace(" ", "").astype(float).astype('Int64')
+        
             
         
         
