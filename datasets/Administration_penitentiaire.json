@@ -87,7 +87,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"string"},
+      {"name":"Année","type":"bigint"},
       {"name":"Personnes prises en charge","type":"bigint"},
       {"name":"Mesures en cours","type":"bigint"},
       {"name":"    Sursis1 ","type":"bigint"},
