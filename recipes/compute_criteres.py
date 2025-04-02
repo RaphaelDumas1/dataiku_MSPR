@@ -1,6 +1,7 @@
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
+import logging
 
 # 
 # FUNCTIONS
@@ -21,6 +22,7 @@ def column_from_float_to_string(df, column):
     return df
 
 def columns_to_int(df, columns=None):
+    
     
     if columns is None:
         columns = df.columns
@@ -309,11 +311,14 @@ datasets = [
 # PROCESS
 #
 
+logger = logging.getLogger()
+
 for dataset in datasets:
     # Set variables for iteration
     input_name = dataset["input"]
     output_name = dataset["output"]
     functions = dataset["functions"]
+    logger.info(output_name)
     
     # Get datas
     dataset = dataiku.Dataset(input_name)
