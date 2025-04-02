@@ -23,6 +23,7 @@ def column_from_float_to_string(df, column):
 
 def columns_to_int(df, columns):
     logger = logging.getLogger()
+    logger.info(df.dtypes)
     
     for col in columns:
         logger.info("yesssssssssssssssssssssssssssssssssssss")
