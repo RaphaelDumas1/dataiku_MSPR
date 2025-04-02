@@ -129,13 +129,9 @@ datasets = [
                  "name" : pivot_years,
                  "args" : None
             },
-            {
-                 "name" : column_from_float_to_string,
-                 "args" : ["Année"]
-            },
              {
                  "name" : columns_to_int,
-                 "args" : [["Nombre de logements"]]
+                 "args" : [["Année", "Nombre de logements"]]
             }
         ]
     },
@@ -148,8 +144,8 @@ datasets = [
                  "args" : None
             },
             {
-                 "name" : column_from_float_to_string,
-                 "args" : ["Année"]
+                 "name" : columns_to_int,
+                 "args" : [["Année"]]
             }
         ]
     },
@@ -182,8 +178,8 @@ datasets = [
                  "args" : None
             },
             {
-                 "name" : column_from_float_to_string,
-                 "args" : ["Année"]
+                 "name" : columns_to_int,
+                 "args" : [["Année"]]
             }
         ]
     },
@@ -197,8 +193,8 @@ datasets = [
         "output": "Repartition_age",
         "functions": [
             {
-                 "name" : column_from_float_to_string,
-                 "args" : ["Année"]
+                 "name" : columns_to_int,
+                 "args" : [["Année"]]
             }
         ]
     },
@@ -280,8 +276,8 @@ datasets = [
         "output": "Taux_scolarisation",
         "functions": [
             {
-                 "name" : column_from_float_to_string,
-                 "args" : ["Année"]
+                 "name" : columns_to_int,
+                 "args" : [["Année"]]
             }
         ]
     },
