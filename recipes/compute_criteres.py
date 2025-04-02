@@ -22,8 +22,6 @@ def column_from_float_to_string(df, column):
     return df
 
 def columns_to_int(df, columns=None):
-    
-    
     if columns is None:
         columns = df.columns
     
@@ -35,6 +33,18 @@ def columns_to_int(df, columns=None):
             .str.replace(" ", "")
             .astype(float)
             .astype('Int64')
+        )
+        
+    return df
+
+def columns_to_float(df, columns=None):
+    if columns is None:
+        columns = df.columns
+    
+    for col in columns:
+        df[col] = (
+            df[col]
+            .astype(float)
         )
         
     return df
@@ -139,6 +149,10 @@ datasets = [
              {
                  "name" : columns_to_int,
                  "args" : [["Année", "Nombre de logements"]]
+            },
+            {
+                 "name" : columns_to_float,
+                 "args" : [["Part des résidences principales (%)", "Part des rés. secondaires (yc log. occasionnels) (%)", "Part des résidences principales (%)"]]
             }
         ]
     },
