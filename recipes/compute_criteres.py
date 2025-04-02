@@ -1,6 +1,7 @@
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
+import logging
 
 # 
 # FUNCTIONS
@@ -22,7 +23,8 @@ def column_from_float_to_string(df, column):
 
 def columns_to_int(df, columns):
     for col in columns:
-        print("\n\n\n")  # Sauts de ligne
+        logger = logging.getLogger()
+        logger.info("Ceci est un message de log")
         print(type(df[col]))  # Affiche le type de la colonne
         sys.stdout.flush()
         if isinstance(df[col], str):
