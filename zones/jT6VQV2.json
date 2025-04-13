@@ -45,6 +45,10 @@
     {
       "objectId": "Demographie_Quotient_familiale",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "Demographie_Taux_de_natalite",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
