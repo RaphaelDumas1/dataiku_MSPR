@@ -5,8 +5,5 @@ from dataiku import pandasutils as pdu
 
 client = dataiku.api_client()
 
-# Lister tous les plugins installés
-plugins = client.list_plugins()
-
-for plugin in plugins:
-    print(f"Plugin ID: {plugin['id']}, Plugin Label: ")
+# Liste des méthodes et attributs de 'client'
+print(dir(client))
