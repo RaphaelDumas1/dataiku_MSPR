@@ -37,20 +37,13 @@ def run(folder_id, files_names):
             title = ss_sheet.title
             print(title)
             title = '_'.join(title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
-
-            for sheet in ss.sheetnames:
-                ss_sheet = ss[sheet]
-                title = ss_sheet.title
-
-                title = '_'.join(title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
-
-                data = list(ss_sheet.values)
-                headers = data[0]
-                print(headers)
-                rows = data[1:]
-                df = pd.DataFrame(rows, columns=headers)
-                test = dataiku.Dataset(title)
-                test.write_with_schema(df)
+            data = list(ss_sheet.values)
+            headers = data[0]
+            print(headers)
+            rows = data[1:]
+            df = pd.DataFrame(rows, columns=headers)
+            test = dataiku.Dataset(title)
+            test.write_with_schema(df)
 
 for name in files_names:
     run(folder_id, name)
