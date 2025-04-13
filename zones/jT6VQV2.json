@@ -61,6 +61,10 @@
     {
       "objectId": "Demographie_Repartition_age",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "Demographie_Repartition_sexe",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
