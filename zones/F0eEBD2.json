@@ -49,6 +49,10 @@
     {
       "objectId": "MSPR_-_Demographie_Taux_de_mortalite",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "MSPR_-_Demographie_Population",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
