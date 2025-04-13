@@ -1,7 +1,28 @@
 {
   "name": "Economie",
   "color": "#C82423",
-  "items": [],
+  "items": [
+    {
+      "objectId": "Pib",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Inflation",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Salaire_moyen",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Impot_moyen",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_Pib",
+      "objectType": "RECIPE"
+    }
+  ],
   "shared": [],
   "tags": [],
   "customFields": {},
