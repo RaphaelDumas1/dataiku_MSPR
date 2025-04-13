@@ -87,10 +87,10 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Population femme","type":"bigint"},
-      {"name":"Population homme","type":"bigint"},
-      {"name":"Population totale","type":"bigint"}
+      {"name":"Année","type":"double"},
+      {"name":"Population femme","type":"double"},
+      {"name":"Population homme","type":"double"},
+      {"name":"Population totale","type":"string"}
     ],
     "userModified": false
   },
