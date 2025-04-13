@@ -46,6 +46,7 @@ def run(folder_id, files_names):
 
                 data = list(ss_sheet.values)
                 headers = data[0]
+                print(headers)
                 rows = data[1:]
                 df = pd.DataFrame(rows, columns=headers)
                 test = dataiku.Dataset(title)
