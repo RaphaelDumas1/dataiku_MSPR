@@ -5,4 +5,4 @@ from dataiku import pandasutils as pdu
 
 client = dataiku.api_client()
 plugin = client.get_plugin("excel-sheet-importer")
-print(dir(plugin))
+print(dir(plugin.client))
