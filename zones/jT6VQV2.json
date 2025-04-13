@@ -63,10 +63,6 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "Demographie_Nombre_detranger",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "Demographie_Nombre_dimmigre",
       "objectType": "DATASET"
     },
