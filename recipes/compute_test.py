@@ -4,6 +4,6 @@ import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
 client = dataiku.api_client()
+project = client.get_project("MSPR")
 
-# Liste des méthodes et attributs de 'client'
-print(dir(client))
+plugin = project.get_plugin("excel-sheet-importer")
