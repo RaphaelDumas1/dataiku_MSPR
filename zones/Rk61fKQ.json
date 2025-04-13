@@ -1,7 +1,48 @@
 {
   "name": "Demographie",
   "color": "#8C2DA7",
-  "items": [],
+  "items": [
+    {
+      "objectId": "Nombre_detranger",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Quotient_familiale",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Taux_de_natalite",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Taux_de_mortalite",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Population",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Repartition_age",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Repartition_sexe",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Nombre_dimmigre",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Taux_de_pauvrete",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_test",
+      "objectType": "RECIPE"
+    }
+  ],
   "shared": [],
   "tags": [],
   "customFields": {},
