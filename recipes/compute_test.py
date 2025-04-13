@@ -5,4 +5,9 @@ from dataiku import pandasutils as pdu
 
 client = dataiku.api_client()
 plugin = client.get_plugin("excel-sheet-importer")
-print(dir(plugin.client))
+runnables = plugin.list_runnables()
+for r in runnables:
+    print("Runnable ID:", r["id"])
+    print("Label:", r["label"])
+    print("Description:", r.get("description", ""))
+    print("---")
