@@ -29,10 +29,10 @@ def run(folder_id, files_names):
                 continue
 
         for sheet in ss.sheetnames:
-            print(sheet)
+            
             if sheet in exclude_sheets:
                 continue
-
+            print(sheet)
             ss_sheet = ss[sheet]
             title = ss_sheet.title
 
