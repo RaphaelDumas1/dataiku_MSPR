@@ -71,7 +71,12 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"Population femme","type":"string"},
+      {"name":"Population homme","type":"string"},
+      {"name":"Population totale","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
