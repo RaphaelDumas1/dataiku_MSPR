@@ -1,3 +1,3 @@
-from python.utils import run
+from utils import run
 
 run("MSPR", "aPmnwurD", "MSPR - Demographie.xlsx", ["Quotient familiale"])
