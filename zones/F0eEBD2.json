@@ -65,6 +65,10 @@
     {
       "objectId": "MSPR_-_Demographie_Nombre_detranger",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "MSPR_-_Demographie_Nombre_dimmigre",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
