@@ -6,6 +6,8 @@ from io import BytesIO
 
 folder_id = "aPmnwurD"
 files_names = ["MSPR - Demographie.xlsx"]
+exclude_sheets = ["Quotient familiale"]
+
 
 def run(folder_id, files_names):
     client = dataiku.api_client()
@@ -27,6 +29,9 @@ def run(folder_id, files_names):
                 continue
 
         for sheet in ss.sheetnames:
+             if sheet in exclude_sheets:
+                continue
+            
             ss_sheet = ss[sheet]
             title = ss_sheet.title
 
