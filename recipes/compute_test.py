@@ -9,4 +9,4 @@ client = dataiku.api_client()
 plugins = client.list_plugins()
 
 for plugin in plugins:
-    print(f"Plugin ID: {plugin['id']}, Plugin Label: {plugin['label']}")
+    print(f"Plugin ID: {plugin['id']}, Plugin Label: ")
