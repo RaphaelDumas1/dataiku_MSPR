@@ -57,6 +57,10 @@
     {
       "objectId": "MSPR_-_Demographie_Repartition_age",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "MSPR_-_Demographie_Repartition_sexe",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
