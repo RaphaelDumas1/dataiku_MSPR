@@ -29,6 +29,7 @@ def run(folder_id, files_names):
                 continue
 
         for sheet in ss.sheetnames:
+            print(sheet)
             if sheet in exclude_sheets:
                 continue
 
