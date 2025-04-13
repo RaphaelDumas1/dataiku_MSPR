@@ -5,7 +5,7 @@ import time
 from io import BytesIO
 
 folder_id = "aPmnwurD"
-files_names = ["MSPR - Demographie.xlsx"]
+files_names = ["MSPR - Demographie.xlsx", "MSPR - Economie.xlsx"]
 exclude_sheets = ["Quotient familiale"]
 
 
