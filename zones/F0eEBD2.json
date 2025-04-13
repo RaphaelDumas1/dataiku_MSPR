@@ -31,48 +31,8 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "aPmnwurD",
-      "objectType": "MANAGED_FOLDER"
-    },
-    {
       "objectId": "Merge_presidentielles",
       "objectType": "RECIPE"
-    },
-    {
-      "objectId": "MSPR_-_Demographie_Quotient_familiale",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "MSPR_-_Demographie_Taux_de_natalite",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "MSPR_-_Demographie_Taux_de_mortalite",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "MSPR_-_Demographie_Population",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "MSPR_-_Demographie_Repartition_age",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "MSPR_-_Demographie_Repartition_sexe",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "MSPR_-_Demographie_Nombre_detranger",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "MSPR_-_Demographie_Nombre_dimmigre",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "MSPR_-_Demographie_Taux_de_pauvrete",
-      "objectType": "DATASET"
     }
   ],
   "shared": [],
