@@ -61,6 +61,10 @@
     {
       "objectId": "MSPR_-_Demographie_Repartition_sexe",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "MSPR_-_Demographie_Nombre_detranger",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
