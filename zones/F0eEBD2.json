@@ -41,6 +41,10 @@
     {
       "objectId": "MSPR_-_Demographie_Quotient_familiale",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "MSPR_-_Demographie_Taux_de_natalite",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
