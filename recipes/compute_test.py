@@ -31,7 +31,7 @@ def run(folder_id, files_names):
         for sheet in ss.sheetnames:
              if sheet in exclude_sheets:
                 continue
-            
+
             ss_sheet = ss[sheet]
             title = ss_sheet.title
 
