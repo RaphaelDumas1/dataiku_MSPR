@@ -51,10 +51,6 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "Demographie_Population",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "Demographie_Taux_de_pauvrete",
       "objectType": "DATASET"
     }
