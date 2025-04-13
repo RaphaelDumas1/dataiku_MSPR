@@ -66,5 +66,5 @@ def run(folder_id, files_names):
                     df = pd.read_excel(BytesIO(file_handle.read()), sheet_name=ss_sheet.title, nrows=1000)
                     dataset.set_schema({'columns': [{'name': column, 'type': 'string'} for column, column_type in df.dtypes.items()]})
 
-for name in file_names:
+for name in files_names:
     run(folder_id, name)
