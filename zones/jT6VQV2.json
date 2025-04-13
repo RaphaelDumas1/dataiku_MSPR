@@ -73,6 +73,10 @@
     {
       "objectId": "Demographie_Nombre_dimmigre",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "Demographie_Taux_de_pauvrete",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
