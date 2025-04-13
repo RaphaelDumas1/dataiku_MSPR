@@ -41,7 +41,15 @@ def run(folder_id, files_names):
             headers = data[0]
             print(headers)
             rows = data[1:]
-            df = pd.DataFrame(rows, columns=headers)
+            # Garder uniquement les colonnes dont l'en-tête n'est pas None ou vide
+            valid_columns = [(i, h) for i, h in enumerate(headers) if h is not None and str(h).strip() != '']
+
+            # Extraire les colonnes valides pour le DataFrame
+            filtered_headers = [h for _, h in valid_columns]
+            filtered_rows = [[row[i] for i, _ in valid_columns] for row in rows]
+
+            # Construire le DataFrame propre
+            df = pd.DataFrame(filtered_rows, columns=filtered_headers)
             test = dataiku.Dataset(title)
             test.write_with_schema(df)
 
