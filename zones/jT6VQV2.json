@@ -3,10 +3,6 @@
   "color": "#C54F00",
   "items": [
     {
-      "objectId": "MSPR_-_Demographie_Taux_de_natalite",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "MSPR_-_Demographie_Taux_de_mortalite",
       "objectType": "DATASET"
     },
