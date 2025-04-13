@@ -32,10 +32,6 @@ def run(folder_id, files_names):
             ss_sheet = ss[sheet]
             title = ss_sheet.title
 
-            # Ensure the file name is in the title for the dataset (prepend if missing)
-            if not file_name.split(".")[0] in title:
-                title = file_name.replace("MSPR - ", "").split(".")[0] + "_" + sheet
-
             # Convert whitespace to underscores, remove unacceptable characters
             title = '_'.join(title.split())
             title = title.replace(')', '')
