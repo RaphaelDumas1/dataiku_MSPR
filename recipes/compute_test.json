@@ -34,6 +34,10 @@
         {
           "ref": "test",
           "appendMode": false
+        },
+        {
+          "ref": "Nombre_detranger",
+          "appendMode": false
         }
       ]
     }
