@@ -65,6 +65,10 @@
     {
       "objectId": "Demographie_Repartition_sexe",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "Demographie_Nombre_detranger",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
