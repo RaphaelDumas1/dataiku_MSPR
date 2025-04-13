@@ -11,7 +11,7 @@ def run(folder_id, files_names):
 
     # Get project and folder containing the Excel files
     client = dataiku.api_client()
-    project = client.get_project()
+    project = client.get_project("MSPR")
 
     folder = dataiku.Folder(folder_id, project_key=project.project_key)
     folder_paths = [name.strip() for name in files_names.split(";") if name.strip()]
