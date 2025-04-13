@@ -4,11 +4,9 @@ import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
 client = dataiku.api_client()
-project = client.get_default_project()
 
-# Appel du runnable depuis un plugin
-plugin = project.get_plugin("excel-sheet-importer")
-runnables = plugin.list_runnables()
+# Lister tous les plugins installés
+plugins = client.list_plugins()
 
-# Affiche tous les runnables
-print(runnables)
+for plugin in plugins:
+    print(f"Plugin ID: {plugin['id']}, Plugin Label: {plugin['label']}")
