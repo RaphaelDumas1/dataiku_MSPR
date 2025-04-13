@@ -53,6 +53,10 @@
     {
       "objectId": "Demographie_Taux_de_mortalite",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "Demographie_Population",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
