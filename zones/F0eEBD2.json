@@ -69,6 +69,10 @@
     {
       "objectId": "MSPR_-_Demographie_Nombre_dimmigre",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "MSPR_-_Demographie_Taux_de_pauvrete",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
