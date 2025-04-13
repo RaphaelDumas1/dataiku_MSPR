@@ -66,6 +66,22 @@
         {
           "ref": "Taux_de_pauvrete",
           "appendMode": false
+        },
+        {
+          "ref": "Salaire_moyen",
+          "appendMode": false
+        },
+        {
+          "ref": "Impot_moyen",
+          "appendMode": false
+        },
+        {
+          "ref": "Pib",
+          "appendMode": false
+        },
+        {
+          "ref": "Inflation",
+          "appendMode": false
         }
       ]
     }
