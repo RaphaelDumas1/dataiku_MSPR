@@ -33,10 +33,6 @@
     {
       "objectId": "aPmnwurD",
       "objectType": "MANAGED_FOLDER"
-    },
-    {
-      "objectId": "Demographie_Taux_de_mortalite",
-      "objectType": "DATASET"
     }
   ],
   "shared": [],
