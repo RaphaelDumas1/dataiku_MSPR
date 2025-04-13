@@ -32,10 +32,10 @@ def run(folder_id, files_names):
             
             if sheet in exclude_sheets:
                 continue
-            print(sheet)
+            
             ss_sheet = ss[sheet]
             title = ss_sheet.title
-
+            print(title)
             title = '_'.join(title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
 
             for sheet in ss.sheetnames:
