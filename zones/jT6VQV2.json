@@ -41,6 +41,10 @@
     {
       "objectId": "aPmnwurD",
       "objectType": "MANAGED_FOLDER"
+    },
+    {
+      "objectId": "Demographie_Quotient_familiale",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
