@@ -87,8 +87,8 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Nombre","type":"bigint"}
+      {"name":"Année","type":"double"},
+      {"name":"Nombre","type":"double"}
     ],
     "userModified": false
   },
