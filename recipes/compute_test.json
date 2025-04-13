@@ -32,11 +32,39 @@
     "main": {
       "items": [
         {
-          "ref": "test",
+          "ref": "Nombre_detranger",
           "appendMode": false
         },
         {
-          "ref": "Nombre_detranger",
+          "ref": "Quotient_familiale",
+          "appendMode": false
+        },
+        {
+          "ref": "Taux_de_natalite",
+          "appendMode": false
+        },
+        {
+          "ref": "Taux_de_mortalite",
+          "appendMode": false
+        },
+        {
+          "ref": "Population",
+          "appendMode": false
+        },
+        {
+          "ref": "Repartition_age",
+          "appendMode": false
+        },
+        {
+          "ref": "Repartition_sexe",
+          "appendMode": false
+        },
+        {
+          "ref": "Nombre_dimmigre",
+          "appendMode": false
+        },
+        {
+          "ref": "Taux_de_pauvrete",
           "appendMode": false
         }
       ]
