@@ -8,8 +8,6 @@ folder_id = "aPmnwurD"
 files_names = ["MSPR - Demographie.xlsx"]
 
 def run(folder_id, files_names):
-
-    # Get project and folder containing the Excel files
     client = dataiku.api_client()
     project = client.get_project("MSPR")
 
@@ -32,35 +30,20 @@ def run(folder_id, files_names):
             ss_sheet = ss[sheet]
             title = ss_sheet.title
 
-            # Convert whitespace to underscores, remove unacceptable characters
-            title = '_'.join(title.split())
-            title = title.replace(')', '')
-            title = title.replace('(', '')
-            title = title.replace('/', '_')
-            title = title.replace('.', '_')
+            title = '_'.join(title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
 
-            create_dataset = True
-            if title in datasets_in_project:
-                create_dataset = False
-                project.get_dataset(title).clear()
-            if create_dataset:
-                dataset = project.create_dataset(
-                    title,
-                    'FilesInFolder',
-                    params={
-                        'folderSmartId': folder_id,
-                        'filesSelectionRules': {
-                            'mode': 'EXPLICIT_SELECT_FILES',
-                            'explicitFiles': [file_name]
-                        }
-                    },
-                    formatType='excel',
-                    formatParams={"xlsx": True, "sheets": "*" + ss_sheet.title, 'parseHeaderRow': True}
-                )
+            for sheet in ss.sheetnames:
+            ss_sheet = ss[sheet]
+            title = ss_sheet.title
 
-                with folder.get_download_stream(file_name) as file_handle:
-                    df = pd.read_excel(BytesIO(file_handle.read()), sheet_name=ss_sheet.title, nrows=1000)
-                    dataset.set_schema({'columns': [{'name': column, 'type': 'string'} for column, column_type in df.dtypes.items()]})
+            title = '_'.join(title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
+
+            data = list(ss_sheet.values)
+            headers = data[0]
+            rows = data[1:]
+            df = pd.DataFrame(rows, columns=headers)
+            test = dataiku.Dataset(title)
+            test.write_with_schema(df)
 
 for name in files_names:
     run(folder_id, name)
