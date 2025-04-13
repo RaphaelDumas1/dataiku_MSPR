@@ -71,7 +71,10 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"Année","type":"string"},
+      {"name":"Taux de natalite","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
