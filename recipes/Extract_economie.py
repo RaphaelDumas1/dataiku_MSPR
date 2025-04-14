@@ -14,11 +14,11 @@ datasets = [
             },
             {
                 "name" : columns_to_int,
-                "args" : ["Année"]
+                "args" : [["Année"]]
             },
             {
                 "name" : columns_to_float,
-                "args" : ["Produit intérieur brut (PIB)", "Importations de biens et de services", "Dépense de consommation finale"]
+                "args" : [["Produit intérieur brut (PIB)", "Importations de biens et de services", "Dépense de consommation finale"]]
             },
         ]
     },
