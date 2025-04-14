@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, pivot, copy_years_range, columns_to_int
+from utils import create_datasets_from_file_sheets, pivot, copy_years_range, columns_to_int, add_columns
 
 datasets = [
     {
@@ -52,7 +52,12 @@ datasets = [
     },
     {
         "name": "Repartition_sexe",
-        "functions": []
+        "functions": [
+            {
+                 "name" : add_columns,
+                 "args" : ["Population femme", "Population homme", "Population totale"]
+            },
+        ]
     },
     {
         "name": "Nombre_dimmigre",
