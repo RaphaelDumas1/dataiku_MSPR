@@ -1,9 +1,14 @@
-from utils import create_datasets_from_file_sheets
+from utils import create_datasets_from_file_sheets, columns_to_int
 
 datasets = [
     {
         "name": "Taux_scolarisation",
-        "functions": []
+        "functions": [
+            {
+                 "name" : columns_to_int,
+                 "args" : ["Année"]
+            }
+        ]
     },
     {
         "name": "annuaire_des_ecoles_en_france",
