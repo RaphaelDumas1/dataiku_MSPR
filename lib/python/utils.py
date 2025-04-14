@@ -68,6 +68,12 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
         
         execute_instruction_on_dataframe(df, instruction)
 
+def delete_where_equal(df, column, value):
+    if column not in df.columns:
+        raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
+    
+    return df[df[column] != value].reset_index(drop=True)
+    
 # 
 # FUNCTIONS
 #
