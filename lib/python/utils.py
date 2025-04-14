@@ -113,7 +113,7 @@ def process_category_metier(df):
     
     return df
 
-def to_intt(df, columns):
+def to_int(df, columns):
     for column in columns:
         column = column.strip() if isinstance(column, str) else column
 
