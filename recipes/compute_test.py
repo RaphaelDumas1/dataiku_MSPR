@@ -21,6 +21,10 @@ datasets = [
         "name": "Population",
         "functions": []
     },
+    {
+        "name": "Repartition_age",
+        "functions": []
+    },
 ]
 
 create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Demographie.xlsx", datasets, [])
