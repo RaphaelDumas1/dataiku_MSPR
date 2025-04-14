@@ -1,3 +1,14 @@
-from utils import run
+from utils import create_datasets_from_file_sheets
 
-run("MSPR", "aPmnwurD", "MSPR - Securite.xlsx", [])
+datasets = [
+    {
+        "name": "Taux_scolarisation",
+        "functions": []
+    },
+    {
+        "name": "annuaire_des_ecoles_en_france",
+        "functions": []
+    },
+]
+
+create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Securite.xlsx", datasets, [])
