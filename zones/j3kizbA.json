@@ -1,7 +1,36 @@
 {
   "name": "Logement",
   "color": "#D03713",
-  "items": [],
+  "items": [
+    {
+      "objectId": "Logement",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Type_logement",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Categorie_logement",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Statut_occupation_logement",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Composition_menage",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Nombre_enfant",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_Logement",
+      "objectType": "RECIPE"
+    }
+  ],
   "shared": [],
   "tags": [],
   "customFields": {},
