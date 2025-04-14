@@ -20,7 +20,12 @@ datasets = [
     },
     {
         "name": "Delinquance",
-        "functions": []
+        "functions": [
+            {
+                 "name" : columns_to_int,
+                 "args" : [{"Année", "nombre", }]
+            }
+        ]
     },
 ]
 
