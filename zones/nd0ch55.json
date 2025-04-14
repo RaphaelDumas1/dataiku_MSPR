@@ -1,7 +1,20 @@
 {
   "name": "Securite",
   "color": "#465A64",
-  "items": [],
+  "items": [
+    {
+      "objectId": "Delinquance",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Administration_penitentiaire",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_Administration_penitentiaire",
+      "objectType": "RECIPE"
+    }
+  ],
   "shared": [],
   "tags": [],
   "customFields": {},
