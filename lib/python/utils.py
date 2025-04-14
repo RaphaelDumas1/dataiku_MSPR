@@ -33,8 +33,14 @@ def create_dataframe_from_sheet(sheet):
     rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
     return pd.DataFrame(rows, columns=headers)
 
+def find_dataset_entry(title, datasets_instructions):
+    entry = next((d for d in datasets_instructions if d["name"] == title), None)
+    if entry is None:
+        raise ValueError(f"Aucune entrée trouvée pour le nom : '{title}'")
+    return entry
 
-def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets, sheets_to_exclude):
+
+def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_instructions, sheets_to_exclude):
     client = dataiku.api_client()
     project = client.get_project(project_id)
     folder = dataiku.Folder(folder_id, project_key=project.project_key)
@@ -54,17 +60,9 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets,
         sheet = ss[sheet_name]
         title = clean_title(sheet_name)
         df = create_dataframe_from_sheet(sheet)
-        
-        entry = next((d for d in datasets if d["name"] == title), None)
-        
-        if entry is None:
-            raise ValueError(f"Aucune entrée trouvée pour le nom : '{title}'")
+        entry = find_dataset_entry(title, datasets_instructions)
         
         df = process(df, entry)
-        
-import dataiku
-import pandas as pd, numpy as np
-from dataiku import pandasutils as pdu
 
 # 
 # FUNCTIONS
