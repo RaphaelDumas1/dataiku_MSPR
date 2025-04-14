@@ -1,4 +1,4 @@
-from utils import run, process, process_category_metier, pivot_years, to_intt
+from utils import create_datasets_from_file_sheets, process, process_category_metier, pivot_years, to_intt
 
 datasets = [
     {
@@ -40,5 +40,5 @@ datasets = [
     },
 ]
 
-run("MSPR", "aPmnwurD", "MSPR - Emploi.xlsx", ["Categorie metiers"], datasets)
+create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Emploi.xlsx", ["Categorie metiers"], datasets)
 
