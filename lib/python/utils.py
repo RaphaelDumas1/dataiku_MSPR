@@ -228,7 +228,7 @@ def process_pib(df):
     
     df = df[df.index <= 17]
     
-    rows_to_prefix = [10, 11, 14, 15, 16]
+    rows_to_prefix = [9, 10, 13, 14, 15]
     first_col = df.columns[0]
 
     for i in rows_to_prefix:
@@ -237,6 +237,7 @@ def process_pib(df):
             if pd.notnull(val) and not str(val).startswith("dont "):
                 df.at[i, first_col] = "dont " + str(val)
 
+    
 
 
     
