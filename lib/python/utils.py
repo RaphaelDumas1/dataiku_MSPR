@@ -215,6 +215,11 @@ def add_columns(df, col1, col2, result_column):
 
     return df
 
+def rename_column(df, old_name, new_name):
+    if old_name not in df.columns:
+        raise ValueError(f"La colonne '{old_name}' n'existe pas dans le DataFrame.")
+    return df.rename(columns={old_name: new_name})
+
 def execute_instruction_on_dataframe(df, instruction):
     functions = instruction["functions"]
     instruction_name = instruction["name"]
