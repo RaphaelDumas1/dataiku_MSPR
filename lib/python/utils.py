@@ -44,9 +44,9 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
     client = dataiku.api_client()
     project = client.get_project(project_id)
     folder = dataiku.Folder(folder_id, project_key=project.project_key)
-    
+    print(folder)
+
     with folder.get_download_stream(file_name) as file_handle:
-        print(file_handle)
 # 
 # FUNCTIONS
 #
