@@ -3,14 +3,14 @@ import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
-legislative_2024 = dataiku.Dataset("MSPR_Legislative_2024")
-legislative_2022 = dataiku.Dataset("MSPR_Legislative_2022")
-legislative_2017 = dataiku.Dataset("MSPR_Legislative_2017")
-legislative_2012 = dataiku.Dataset("MSPR_Legislative_2012")
-legislative_2007 = dataiku.Dataset("MSPR_Legislative_2007")
-legislative_2002 = dataiku.Dataset("MSPR_Legislative_2002")
-legislative_1997 = dataiku.Dataset("MSPR_Legislative_1997")
-legislative_1993 = dataiku.Dataset("MSPR_Legislative_1993")
+legislative_2024 = dataiku.Dataset("Legislative_2024")
+legislative_2022 = dataiku.Dataset("Legislative_2022")
+legislative_2017 = dataiku.Dataset("Legislative_2017")
+legislative_2012 = dataiku.Dataset("Legislative_2012")
+legislative_2007 = dataiku.Dataset("Legislative_2007")
+legislative_2002 = dataiku.Dataset("Legislative_2002")
+legislative_1997 = dataiku.Dataset("Legislative_1997")
+legislative_1993 = dataiku.Dataset("Legislative_1993")
 
 
 dfs = {
