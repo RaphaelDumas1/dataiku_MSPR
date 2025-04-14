@@ -3,7 +3,12 @@ from utils import run, process, process_category_metier, pivot_years, to_int
 datasets = [
     {
         "name": "Taux_de_chomage",
-        "functions": []
+        "functions": [
+            {
+                "name" : to_int,
+                "args" : ["Année"]
+            }
+        ]
     },
     {
         "name": "Repartition_des_contrats",
