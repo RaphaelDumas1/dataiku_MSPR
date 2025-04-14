@@ -16,7 +16,12 @@ datasets = [
     },
     {
         "name": "Taux_de_natalite",
-        "functions": []
+        "functions": [
+             {
+                 "name" : columns_to_int,
+                 "args" : [["Année"]]
+            },
+        ]
     },
     {
         "name": "Taux_de_mortalite",
