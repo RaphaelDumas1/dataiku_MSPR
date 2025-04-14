@@ -87,7 +87,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
+      {"name":"Année","type":"double"},
       {"name":"2 - 5 ans","type":"double"},
       {"name":"6 - 14 ans","type":"double"},
       {"name":"15 - 17 ans","type":"double"},
