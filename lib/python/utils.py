@@ -169,7 +169,7 @@ def execute_instruction_on_dataframe(df, instruction):
         # Set variables for iteration
         name = function["name"]
         args = function["args"] if function["args"] is not None else []
-        print("yep", instruction_name, name)
+        print("yep", instruction_name, name, args)
         # Use function
         df = name(df, *args)
 
