@@ -231,6 +231,7 @@ def process_pib(df):
             if pd.notnull(val) and not str(val).startswith("dont "):
                 df.at[i, first_col] = "dont " + str(val)
 
+    print("yepa", df.iloc[3])
     # 2. Utiliser la ligne 4 (index 3) comme en-têtes de colonnes
     if len(df) > 3:
         df.columns = df.iloc[3]
