@@ -1,7 +1,32 @@
 {
   "name": "Emploi",
   "color": "#0F786B",
-  "items": [],
+  "items": [
+    {
+      "objectId": "Taux_de_chomage",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Repartition_des_contrats",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Categorie_metiers",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Nombre_de_salarie",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_Evolution_trimestrielle_emploi_marchand",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "Evolution_trimestrielle_emploi",
+      "objectType": "DATASET"
+    }
+  ],
   "shared": [],
   "tags": [],
   "customFields": {},
