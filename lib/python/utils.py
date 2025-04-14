@@ -44,7 +44,25 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
     client = dataiku.api_client()
     project = client.get_project(project_id)
     folder = dataiku.Folder(folder_id, project_key=project.project_key)
-    print(file_name, folder.list_paths_in_partition())
+
+    with folder.get_download_stream(file_name) as file_handle:
+        try:
+            ss = openpyxl.load_workbook(BytesIO(file_handle.read()))
+        except InvalidFileException:
+            raise InvalidFileException("Fichier Excel invalide ou corrompu")
+        except Exception as e:
+            raise RuntimeError(f"Erreur inattendue lors du chargement du fichier : {e}")
+
+    for sheet_name in ss.sheetnames:
+        if sheet_name in sheets_to_exclude:
+            continue
+
+        sheet = ss[sheet_name]
+        title = clean_title(sheet_name)
+        df = create_dataframe_from_sheet(sheet)
+        instruction = find_entry_in_instructions(title, datasets_instructions)
+        
+        execute_instruction_on_dataframe(df, instruction)
 
 # 
 # FUNCTIONS
