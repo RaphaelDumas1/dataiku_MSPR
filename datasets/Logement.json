@@ -87,15 +87,11 @@
   },
   "schema": {
     "columns": [
-      {"name":"Indicateurs","type":"string"},
-      {"name":"1968.0","type":"string"},
-      {"name":"1975.0","type":"string"},
-      {"name":"1982.0","type":"string"},
-      {"name":"1990.0","type":"string"},
-      {"name":"1999.0","type":"string"},
-      {"name":"2010.0","type":"string"},
-      {"name":"2015.0","type":"string"},
-      {"name":"2021.0","type":"string"}
+      {"name":"Année","type":"bigint"},
+      {"name":"Nombre de logements","type":"string"},
+      {"name":"Part des résidences principales (%)","type":"string"},
+      {"name":"Part des rés. secondaires (yc log. occasionnels) (%)","type":"string"},
+      {"name":"Part des logements vacants (%)","type":"string"}
     ],
     "userModified": false
   },
