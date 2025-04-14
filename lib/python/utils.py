@@ -220,6 +220,35 @@ def rename_column(df, old_name, new_name):
         raise ValueError(f"La colonne '{old_name}' n'existe pas dans le DataFrame.")
     return df.rename(columns={old_name: new_name})
 
+def process_pib(df):
+    # 1. Ajouter "dont " dans la première colonne aux lignes 11, 12, 15, 16, 17 (index 0-based)
+    rows_to_prefix = [11, 12, 15, 16, 17]
+    first_col = df.columns[0]
+
+    for i in rows_to_prefix:
+        if i < len(df):
+            val = df.at[i, first_col]
+            if pd.notnull(val) and not str(val).startswith("dont "):
+                df.at[i, first_col] = "dont " + str(val)
+
+    # 2. Utiliser la ligne 4 (index 3) comme en-têtes de colonnes
+    if len(df) > 3:
+        df.columns = df.iloc[3]
+    else:
+        raise ValueError("Le DataFrame ne contient pas au moins 4 lignes pour définir les headers")
+
+    # 3. Supprimer lignes 1 à 4, 5, 8, 10, 14 et toutes les lignes après 19
+    rows_to_drop = list(range(0, 4)) + [5, 8, 10, 14]
+    df = df.drop(index=[i for i in rows_to_drop if i < len(df)], errors='ignore')
+
+    # Supprimer toutes les lignes après la 19e (index 18)
+    df = df[df.index <= 18]
+
+    # Réinitialiser les index
+    df = df.reset_index(drop=True)
+
+    return df
+
 def execute_instruction_on_dataframe(df, instruction):
     functions = instruction["functions"]
     instruction_name = instruction["name"]
