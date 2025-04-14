@@ -87,16 +87,16 @@
   },
   "schema": {
     "columns": [
-      {"name":"Population de 15 ans ou plus par CSP","type":"string"},
-      {"name":"None","type":"string"},
-      {"name":"None_1","type":"string"},
-      {"name":"None_2","type":"string"},
-      {"name":"None_3","type":"string"},
-      {"name":"None_4","type":"string"},
-      {"name":"None_5","type":"string"},
-      {"name":"None_6","type":"string"},
-      {"name":"None_7","type":"string"},
-      {"name":"None_8","type":"string"}
+      {"name":"Année","type":"double"},
+      {"name":"Agriculteurs exploitants","type":"string"},
+      {"name":"Artisans, commerçants, chefs entreprise","type":"string"},
+      {"name":"Cadres et professions intellectuelles supérieures","type":"string"},
+      {"name":"Professions intermédiaires","type":"string"},
+      {"name":"Employés","type":"string"},
+      {"name":"Ouvriers","type":"string"},
+      {"name":"Retraités","type":"string"},
+      {"name":"Autres personnes sans activité professionnelle","type":"string"},
+      {"name":"Total","type":"string"}
     ],
     "userModified": false
   },
