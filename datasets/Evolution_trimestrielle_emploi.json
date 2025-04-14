@@ -92,8 +92,7 @@
       {"name":"Tertiaire principalement marchand hors intérim","type":"double"},
       {"name":"dont Commerce","type":"double"},
       {"name":"Emploi hors intérim Ille-et-Vilaine","type":"double"},
-      {"name":"Emploi hors intérim Bretagne","type":"double"},
-      {"name":"None","type":"double"}
+      {"name":"Emploi hors intérim Bretagne","type":"double"}
     ],
     "userModified": false
   },
