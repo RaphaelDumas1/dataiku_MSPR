@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, process_category_metier, pivot, columns_to_int
+from utils import create_datasets_from_file_sheets, process_category_metier, pivot, columns_to_int, process_evolution_trimestrielle_emploi
 
 datasets = [
     {
@@ -48,7 +48,12 @@ datasets = [
     },
     {
         "name": "Evolution_trimestrielle_emploi",
-        "functions": []
+        "functions": [
+            {
+                "name" : process_evolution_trimestrielle_emploi,
+                "args" : []
+            }
+        ]
     },
 ]
 
