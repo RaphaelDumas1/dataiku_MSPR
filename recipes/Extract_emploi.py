@@ -53,7 +53,14 @@ datasets = [
                 "name" : process_evolution_trimestrielle_emploi,
                 "args" : []
             },
-       
+            {
+                "name" : process_evolution_trimestrielle_emploi,
+                "args" : ["None", "Année"]
+            },
+            {
+                "name" : columns_to_int,
+                "args" : [["Année"]]
+            }
         ]
     },
 ]
