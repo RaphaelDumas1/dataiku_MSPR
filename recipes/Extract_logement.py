@@ -1,15 +1,15 @@
-from utils import create_datasets_from_file_sheets, pivot_years, column_from_float_to_string
+from utils import create_datasets_from_file_sheets, pivot, column_from_float_to_string, columns_to_int
 
 datasets = [
     {
         "name": "Logement",
         "functions": [
             {
-                 "name" : pivot_years,
-                 "args" : None
+                 "name" : pivot,
+                 "args" : ["Année"]
             },
             {
-                 "name" : column_from_float_to_string,
+                 "name" : columns_to_int,
                  "args" : ["Année"]
             }
         ]
