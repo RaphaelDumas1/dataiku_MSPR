@@ -28,7 +28,8 @@ def clean_title(title):
 
 def create_dataframe_from_sheet(sheet):
     data = list(sheet.values)
-    valid_columns = [(i, h) for i, h in enumerate(data[0]) if h and str(h).strip()]
+    transposed = list(zip(*data))
+    valid_columns = [(i, col[0]) for i, col in enumerate(transposed) if any(cell is not None and str(cell).strip() for cell in col)]
     headers = make_unique([str(h).strip() for _, h in valid_columns])
     rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
     return pd.DataFrame(rows, columns=headers)
@@ -114,7 +115,12 @@ def process_category_metier(df):
     # Remove headers rows
     df = df.drop(index=1)
     df = df.loc[:10]
-    
+    df.loc[0, "Unnamed: 3"] = df.loc[0, "Unnamed: 1"]  
+    df.loc[0, "Unnamed: 6"] = df.loc[0, "Unnamed: 4"]  
+    df.loc[0, "Unnamed: 9"] = df.loc[0, "Unnamed: 7"]  
+    df = df.drop(columns=["Unnamed: 1", "Unnamed: 2", "Unnamed: 4", "Unnamed: 5", "Unnamed: 7", "Unnamed: 8"])
+    df.columns = df.iloc[0] 
+    df = df[1:].reset_index(drop=True) 
     
     return df
 
