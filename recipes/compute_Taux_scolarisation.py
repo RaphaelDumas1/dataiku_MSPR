@@ -10,8 +10,7 @@ datasets = [
         "functions": []
     },
     {
-        "input": "MSPR_Delinquance",
-        "output": "Delinquance",
+        "name": "Delinquance",
         "functions": []
     },
 ]
