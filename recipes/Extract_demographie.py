@@ -43,7 +43,12 @@ datasets = [
     },
     {
         "name": "Repartition_age",
-        "functions": []
+        "functions": [
+            {
+                 "name" : columns_to_int,
+                 "args" : [["Année"]]
+            },
+        ]
     },
     {
         "name": "Repartition_sexe",
