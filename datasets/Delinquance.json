@@ -87,15 +87,15 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
+      {"name":"Année","type":"double"},
       {"name":"Indicateur","type":"string"},
       {"name":"unite_de_compte","type":"string"},
-      {"name":"nombre","type":"bigint"},
+      {"name":"nombre","type":"double"},
       {"name":"taux_pour_mille","type":"double"},
-      {"name":"insee_pop","type":"bigint"},
-      {"name":"insee_pop_millesime","type":"bigint"},
-      {"name":"insee_log","type":"bigint"},
-      {"name":"insee_log_millesime","type":"bigint"}
+      {"name":"insee_pop","type":"double"},
+      {"name":"insee_pop_millesime","type":"double"},
+      {"name":"insee_log","type":"double"},
+      {"name":"insee_log_millesime","type":"double"}
     ],
     "userModified": false
   },
