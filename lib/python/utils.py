@@ -139,6 +139,28 @@ def columns_to_int(df, columns=None):
 
     return df
 
+def columns_to_float(df, columns=None):
+    if columns is None:
+        columns = df.columns
+
+    for column in columns:
+        column = column.strip() if isinstance(column, str) else column
+
+        if column not in df.columns:
+            raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
+
+        try:
+            df[column] = df[column].apply(lambda x: float(
+                str(x)
+                .replace('\xa0', '')  # espace insécable
+                .replace(' ', '')     # espace classique
+                .replace(',', '.')    # virgule -> point
+            ) if pd.notnull(x) else x)
+        except Exception as e:
+            raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
+
+    return df
+
 def execute_instruction_on_dataframe(df, instruction):
     functions = instruction["functions"]
     instruction_name = instruction["name"]
