@@ -6,9 +6,9 @@ datasets = [
         "functions": []
     },
     {
-        "name": "MSPR_Taux_scolarisation",
+        "name": "annuaire_des_ecoles_en_france",
         "functions": []
     },
 ]
 
-create_datasets_from_file_sheets("MSPR", "aPmnwurD", "MSPR - Education.xlsx", [])
+create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Education.xlsx", datasets, [])
