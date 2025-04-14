@@ -121,14 +121,19 @@ def process_category_metier(df):
     
     return df
 
-def to_int(columns):
+def to_int(df, columns):
     for column in columns:
-        if isinstance(column, str):
-            column = column.strip()
+        column = column.strip() if isinstance(column, str) else column
+
+        if column not in df.columns:
+            raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
+
         try:
-            return int(float(column))
-        except (ValueError, TypeError) as e:
-            raise ValueError(f"Impossible de convertir '{column}' en int.") from e
+            df[column] = df[column].apply(lambda x: int(float(x)) if pd.notnull(x) else x)
+        except Exception as e:
+            raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
+
+    return df
 
 def process(df, dataset):
     # Set variables for iteration
