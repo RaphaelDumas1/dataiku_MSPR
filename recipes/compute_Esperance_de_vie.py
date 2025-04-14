@@ -2,7 +2,7 @@ from utils import create_datasets_from_file_sheets
 
 datasets = [
     {
-        "name": "Taux_scolarisation",
+        "name": "Esperance_de_vie",
         "functions": []
     },
 ]
