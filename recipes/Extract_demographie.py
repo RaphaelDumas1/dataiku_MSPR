@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, pivot_years, copy_years_range, columns_to_int
+from utils import create_datasets_from_file_sheets, pivot, copy_years_range, columns_to_int
 
 datasets = [
     {
@@ -46,8 +46,8 @@ datasets = [
         "name": "Evolution_population",
         "functions": [
             {
-                 "name" : pivot_years,
-                 "args" : None
+                 "name" : pivot,
+                 "args" : [["Année"]]
             },
             {
                  "name" : copy_years_range,
