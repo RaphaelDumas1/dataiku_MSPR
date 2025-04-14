@@ -72,13 +72,13 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
 # FUNCTIONS
 #
 
-def pivot_years(df):
+def pivot(df, first_column_name):
     # Pivot
     df.set_index(df.columns[0], inplace=True)
     df = df.T.reset_index()
 
     # Rename column
-    df = df.rename(columns={df.columns[0]: "Année"})
+    df = df.rename(columns={df.columns[0]: first_column_name})
     
     return df
 
