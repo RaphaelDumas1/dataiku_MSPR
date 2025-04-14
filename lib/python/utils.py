@@ -124,6 +124,33 @@ def process_category_metier(df):
     
     return df
 
+def process_evolution_trimestrielle_emploi(df):
+    df = df.reset_index(drop=True)
+    new_rows = []
+
+    for i in range(0, len(df), 4):
+        group = df.iloc[i:i+4]
+        
+        if group.empty:
+            continue
+        
+        # Créer une nouvelle ligne
+        new_row = {}
+
+        # Nommer la 1ère colonne : "Bloc 1", "Bloc 2", etc.
+        new_row[df.columns[0]] = f"Bloc {i//4 + 1}"
+
+        # Moyenne des autres colonnes
+        for col in df.columns[1:]:
+            try:
+                new_row[col] = pd.to_numeric(group[col], errors='coerce').mean()
+            except:
+                new_row[col] = None
+
+        new_rows.append(new_row)
+
+    return pd.DataFrame(new_rows)
+
 def columns_to_int(df, columns=None):
     if columns is None:
         columns = df.columns
