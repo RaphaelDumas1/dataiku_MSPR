@@ -87,7 +87,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"None","type":"string"},
+      {"name":"Année","type":"bigint"},
       {"name":"Industrie","type":"double"},
       {"name":"Construction","type":"double"},
       {"name":"Tertiaire principalement marchand hors intérim","type":"double"},
