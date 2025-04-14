@@ -235,8 +235,11 @@ def process_pib(df):
     for i in rows_to_prefix:
         if i < len(df):
             val = df.at[i, first_col]
-            if pd.notnull(val) and not str(val).startswith("dont "):
-                df.at[i, first_col] = "dont" + str(val).strip()
+            if pd.notnull(val):
+            new_val = "dont " + str(val).strip()
+            if new_val in df[first_col].values:
+                new_val += " 2"
+            df.at[i, first_col] = new_val
 
     
     # 3. Supprimer lignes 1 à 4, 5, 8, 10, 14 et toutes les lignes après 19
