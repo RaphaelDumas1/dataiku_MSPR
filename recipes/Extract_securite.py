@@ -1,12 +1,12 @@
-from utils import create_datasets_from_file_sheets, pivot_years, strip_headers, columns_to_int
+from utils import create_datasets_from_file_sheets, strip_headers, columns_to_int, pivot
 
 datasets = [
     {
         "name": "Administration_penitentiaire",
         "functions": [
             {
-                 "name" : pivot_years,
-                 "args" : None
+                 "name" : pivot,
+                 "args" : ["Année"]
             },
             {
                  "name" : strip_headers,
