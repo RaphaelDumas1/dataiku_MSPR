@@ -65,7 +65,12 @@ datasets = [
     },
     {
         "name": "Nombre_dimmigre",
-        "functions": []
+        "functions": [
+            {
+                 "name" : columns_to_int,
+                 "args" : []
+            },
+        ]
     },
     {
         "name": "Taux_de_pauvrete",
