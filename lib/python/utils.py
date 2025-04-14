@@ -57,7 +57,6 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
         if sheet_name in sheets_to_exclude:
             continue
         print(sheet_name)
-        
 
 # 
 # FUNCTIONS
