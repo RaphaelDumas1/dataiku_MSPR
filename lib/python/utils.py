@@ -142,5 +142,4 @@ def execute_instruction_on_dataframe(df, instruction):
     df = df.dropna(how="all")
 
     # Write datas
-    result_dataset = dataiku.Dataset(namee)
     result_dataset.write_with_schema(df)
