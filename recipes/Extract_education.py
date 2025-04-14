@@ -6,7 +6,7 @@ datasets = [
         "functions": [
             {
                  "name" : columns_to_int,
-                 "args" : ["Année"]
+                 "args" : [["Année"]]
             }
         ]
     },
