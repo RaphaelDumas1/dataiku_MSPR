@@ -54,6 +54,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets,
         
         # Construire le DataFrame propre
         df = pd.DataFrame(filtered_rows, columns=filtered_headers)
+        
         entry = next((d for d in datasets if d["name"] == title), None)
         
         if entry is None:
