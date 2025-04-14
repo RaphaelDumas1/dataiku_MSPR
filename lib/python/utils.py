@@ -24,7 +24,7 @@ def make_unique(headers):
     return result
 
 def clean_title(title):
-    return '_'.join(sheet.title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
+    return '_'.join(title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
 
 def create_dataframe_from_sheet(sheet):
     data = list(sheet.values)
