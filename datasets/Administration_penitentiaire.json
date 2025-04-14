@@ -87,24 +87,13 @@
   },
   "schema": {
     "columns": [
-      {"name":"Mesure","type":"string"},
-      {"name":"2000.0","type":"double"},
-      {"name":"2005.0","type":"double"},
-      {"name":"2009.0","type":"double"},
-      {"name":"2010.0","type":"double"},
-      {"name":"2011.0","type":"double"},
-      {"name":"2012.0","type":"double"},
-      {"name":"2013.0","type":"double"},
-      {"name":"2014.0","type":"double"},
-      {"name":"2015.0","type":"double"},
-      {"name":"2016.0","type":"double"},
-      {"name":"2017.0","type":"double"},
-      {"name":"2018.0","type":"double"},
-      {"name":"2019.0","type":"double"},
-      {"name":"2020.0","type":"double"},
-      {"name":"2021.0","type":"double"},
-      {"name":"2022.0","type":"double"},
-      {"name":"2023.0","type":"double"}
+      {"name":"Année","type":"string"},
+      {"name":"Personnes prises en charge","type":"double"},
+      {"name":"Mesures en cours","type":"double"},
+      {"name":"    Sursis1 ","type":"double"},
+      {"name":"    Travail d\u0027intérêt général (TIG)2","type":"double"},
+      {"name":"    Libérations conditionnelles3","type":"double"},
+      {"name":"    Autres mesures","type":"double"}
     ],
     "userModified": false
   },
