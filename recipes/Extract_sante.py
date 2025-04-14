@@ -16,7 +16,7 @@ datasets = [
             },
             {
                 "name" : columns_to_float,
-                "args" : [["Espérance de vie femme"]]
+                "args" : [["Espérance de vie femme"], 1]
             
             }
         ]
