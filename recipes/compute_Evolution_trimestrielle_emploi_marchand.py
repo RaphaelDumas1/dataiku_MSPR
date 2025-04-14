@@ -1,4 +1,4 @@
-from utils import run, process, process_category_metier, pivot_years
+from utils import run, process, process_category_metier, pivot_years, to_int
 
 datasets = [
     {
@@ -7,7 +7,12 @@ datasets = [
     },
     {
         "name": "Repartition_des_contrats",
-        "functions": []
+        "functions": [
+            {
+                "name" : to_int,
+                "args" : ["Année"]
+            }
+        ]
     },
     {
         "name": "Categorie_metiers",
