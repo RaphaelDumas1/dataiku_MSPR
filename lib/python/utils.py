@@ -33,7 +33,7 @@ def create_dataframe_from_sheet(sheet):
     rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
     return pd.DataFrame(rows, columns=headers)
 
-def find_entry_in_instructions(datasets_instructions):
+def find_entry_in_instructions(title, datasets_instructions):
     entry = next((d for d in datasets_instructions if d["name"] == title), None)
     if entry is None:
         raise ValueError(f"Aucune entrée trouvée pour le nom : '{title}'")
