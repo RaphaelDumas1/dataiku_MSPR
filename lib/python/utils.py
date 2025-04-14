@@ -26,6 +26,14 @@ def make_unique(headers):
 def clean_title(title):
     return '_'.join(sheet.title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
 
+def create_dataframe_from_sheet(sheet):
+    data = list(sheet.values)
+    valid_columns = [(i, h) for i, h in enumerate(data[0]) if h and str(h).strip()]
+    headers = make_unique([h for _, h in valid_columns])
+    rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
+    return pd.DataFrame(rows, columns=headers)
+
+
 def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets, sheets_to_exclude):
     client = dataiku.api_client()
     project = client.get_project(project_id)
