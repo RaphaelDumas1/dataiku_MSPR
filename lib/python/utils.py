@@ -135,7 +135,7 @@ def execute_instruction_on_dataframe(df, instruction):
         name = function["name"]
         args = function["args"] if function["args"] is not None else []
 
-        # Transform
+        # Use function
         df = name(df, *args)
 
     # Drop empty rows
