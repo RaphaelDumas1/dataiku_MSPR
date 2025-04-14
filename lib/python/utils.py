@@ -62,6 +62,10 @@ def run(project_id, folder_id, file_name, exclude_sheets, datasets):
         # Construire le DataFrame propre
         df = pd.DataFrame(filtered_rows, columns=filtered_headers)
         entry = next((d for d in datasets if d["name"] == title), None)
+        
+        if entry is None:
+            raise ValueError(f"Aucune entrée trouvée pour le nom : '{title}'")
+        
         process(df, entry)
         
 import dataiku
