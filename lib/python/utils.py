@@ -28,15 +28,13 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets,
     project = client.get_project(project_id)
     folder = dataiku.Folder(folder_id, project_key=project.project_key)
 
-    datasets_in_project = []
-    for dataset in project.list_datasets():
-        datasets_in_project.append(dataset.get('name'))
-
     with folder.get_download_stream(file_name) as file_handle:
         try:
             ss = openpyxl.load_workbook(BytesIO(file_handle.read()))
-        except Exception:
-            print("tz")
+        except InvalidFileException:
+            raise InvalidFileException("Fichier Excel invalide ou corrompu")
+        except Exception as e:
+            raise RuntimeError(f"Erreur inattendue lors du chargement du fichier : {e}")
 
     for sheet in ss.sheetnames:
         if sheet in exclude_sheets:
