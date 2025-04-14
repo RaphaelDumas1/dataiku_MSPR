@@ -29,6 +29,10 @@ datasets = [
         "name": "Repartition_sexe",
         "functions": []
     },
+    {
+        "name": "Nombre_dimmigre",
+        "functions": []
+    },
 ]
 
 create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Demographie.xlsx", datasets, [])
