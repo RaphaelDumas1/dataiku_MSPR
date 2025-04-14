@@ -74,7 +74,12 @@ datasets = [
     },
     {
         "name": "Taux_de_pauvrete",
-        "functions": []
+        "functions": [
+            {
+                 "name" : columns_to_int,
+                 "args" : [["Année"]]
+            },
+        ]
     },
     {
         "name": "Evolution_population",
