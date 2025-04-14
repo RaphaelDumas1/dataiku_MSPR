@@ -40,7 +40,7 @@ datasets = [
             },
             {
                  "name" : columns_to_int,
-                 "args" : [["Année"]]
+                 "args" : []
             }
         ]
     },
