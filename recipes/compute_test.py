@@ -17,6 +17,10 @@ datasets = [
         "name": "Taux_de_mortalite",
         "functions": []
     },
+    {
+        "name": "Population",
+        "functions": []
+    },
 ]
 
 create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Demographie.xlsx", datasets, [])
