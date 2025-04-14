@@ -87,10 +87,12 @@
   },
   "schema": {
     "columns": [
-      {"name":"Indicateurs","type":"string"},
-      {"name":"2010.0","type":"double"},
-      {"name":"2015.0","type":"double"},
-      {"name":"2021.0","type":"double"}
+      {"name":"Année","type":"bigint"},
+      {"name":"Aucun enfant","type":"double"},
+      {"name":"1 enfant","type":"double"},
+      {"name":"2 enfants","type":"double"},
+      {"name":"3 enfants","type":"double"},
+      {"name":"4 enfants ou plus","type":"double"}
     ],
     "userModified": false
   },
