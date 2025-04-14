@@ -57,6 +57,10 @@ datasets = [
                  "name" : add_columns,
                  "args" : ["Population femme", "Population homme", "Population totale"]
             },
+            {
+                 "name" : columns_to_int,
+                 "args" : []
+            },
         ]
     },
     {
