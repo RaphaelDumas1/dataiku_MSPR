@@ -87,10 +87,16 @@
   },
   "schema": {
     "columns": [
-      {"name":"Indicateurs","type":"string"},
-      {"name":"2010.0","type":"string"},
-      {"name":"2015.0","type":"string"},
-      {"name":"2021.0","type":"string"}
+      {"name":"Année","type":"bigint"},
+      {"name":"Ménages d\u0027une personne","type":"string"},
+      {"name":"- hommes seuls","type":"string"},
+      {"name":"- femmes seules","type":"string"},
+      {"name":"Autres ménages sans famille","type":"string"},
+      {"name":"Ménages avec famille(s) dont la famille principale est","type":"string"},
+      {"name":"- un couple sans enfant","type":"string"},
+      {"name":"- un couple avec enfant(s)","type":"string"},
+      {"name":"- une famille monoparentale","type":"string"},
+      {"name":"Ensemble","type":"string"}
     ],
     "userModified": false
   },
