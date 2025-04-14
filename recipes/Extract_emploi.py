@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, process_category_metier, pivot_years, to_int
+from utils import create_datasets_from_file_sheets, process_category_metier, pivot, to_int
 
 datasets = [
     {
@@ -27,8 +27,8 @@ datasets = [
                  "args" : []   
             },
             {
-                 "name" : pivot_years,
-                 "args" : []   
+                 "name" : pivot,
+                 "args" : ["Année"]   
             },
             
         ]
