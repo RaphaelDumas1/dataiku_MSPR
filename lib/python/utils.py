@@ -234,7 +234,7 @@ def process_pib(df):
     
     # 2. Utiliser la ligne 4 (index 3) comme en-têtes de colonnes
     if len(df) > 3:
-        df.columns = df.iloc[3]
+        df.columns = df.iloc[2]
     else:
         raise ValueError("Le DataFrame ne contient pas au moins 4 lignes pour définir les headers")
     print("yepa", df.columns)
