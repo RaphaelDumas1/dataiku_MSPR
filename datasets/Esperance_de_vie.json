@@ -86,8 +86,10 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Figure 1 - Espérance de vie et espérance de vie sans incapacité (EVSI) à la naissance entre 1995 et 2022 par sexe","type":"string"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
