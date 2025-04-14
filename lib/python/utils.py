@@ -3,6 +3,7 @@ import pandas as pd
 import openpyxl
 import time
 from io import BytesIO
+import re
 
 def make_unique(headers):
     seen = {}
