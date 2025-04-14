@@ -90,7 +90,7 @@
       {"name":"Année","type":"double"},
       {"name":"Population femme","type":"double"},
       {"name":"Population homme","type":"double"},
-      {"name":"Population totale","type":"string"}
+      {"name":"Population totale","type":"double"}
     ],
     "userModified": false
   },
