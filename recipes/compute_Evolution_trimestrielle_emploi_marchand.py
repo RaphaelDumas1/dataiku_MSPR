@@ -1,11 +1,11 @@
-from utils import create_datasets_from_file_sheets, process, process_category_metier, pivot_years, to_intt
+from utils import create_datasets_from_file_sheets, process, process_category_metier, pivot_years, to_int
 
 datasets = [
     {
         "name": "Taux_de_chomage",
         "functions": [
             {
-                "name" : to_intt,
+                "name" : to_int,
                 "args" : [["Année"]]
             }
         ]
@@ -40,5 +40,5 @@ datasets = [
     },
 ]
 
-create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Emploi.xlsx", ["Categorie metiers"], datasets)
+create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Emploi.xlsx", datasets, ["Categorie metiers"])
 
