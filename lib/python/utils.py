@@ -225,7 +225,7 @@ def process_pib(df):
         df.columns = df.iloc[2]
         print("ici", df.columns)
         df.columns = df.columns.str.replace(" (r)", "")
-        print(df.columns)
+        print("la", df.columns)
     else:
         raise ValueError("Le DataFrame ne contient pas au moins 4 lignes pour définir les headers")
     
