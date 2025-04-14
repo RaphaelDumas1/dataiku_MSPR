@@ -3,7 +3,12 @@ from utils import create_datasets_from_file_sheets, pivot_years, copy_years_rang
 datasets = [
     {
         "name": "Nombre_detranger",
-        "functions": []
+        "functions": [
+            {
+                 "name" : columns_to_int,
+                 "args" : []
+            },
+        ]
     },
     {
         "name": "Quotient_familiale",
