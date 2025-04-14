@@ -86,8 +86,31 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Code du département","type":"double"},
+      {"name":"Libellé du département","type":"string"},
+      {"name":"Etat saisie","type":"string"},
+      {"name":"Inscrits","type":"double"},
+      {"name":"Abstentions","type":"double"},
+      {"name":"% Abs/Ins","type":"double"},
+      {"name":"Votants","type":"double"},
+      {"name":"% Vot/Ins","type":"double"},
+      {"name":"Blancs","type":"double"},
+      {"name":"% Blancs/Ins","type":"double"},
+      {"name":"% Blancs/Vot","type":"double"},
+      {"name":"Nuls","type":"double"},
+      {"name":"% Nuls/Ins","type":"double"},
+      {"name":"% Nuls/Vot","type":"double"},
+      {"name":"Exprimés","type":"double"},
+      {"name":"% Exp/Ins","type":"double"},
+      {"name":"% Exp/Vot","type":"double"},
+      {"name":"Code Nuance","type":"string"},
+      {"name":"Voix","type":"double"},
+      {"name":"% Voix/Ins","type":"double"},
+      {"name":"% Voix/Exp","type":"double"},
+      {"name":"Sièges","type":"double"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
