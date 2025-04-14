@@ -3,12 +3,12 @@ import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
-presidentielle_2022 = dataiku.Dataset("MSPR_Presidentielle_2022")
-presidentielle_2017 = dataiku.Dataset("MSPR_Presidentielle_2017")
-presidentielle_2012 = dataiku.Dataset("MSPR_Presidentielle_2012")
-presidentielle_2007 = dataiku.Dataset("MSPR_Presidentielle_2007")
-presidentielle_2002 = dataiku.Dataset("MSPR_Presidentielle_2002")
-presidentielle_1995 = dataiku.Dataset("MSPR_Presidentielle_1995")
+presidentielle_2022 = dataiku.Dataset("Presidentielle_2022")
+presidentielle_2017 = dataiku.Dataset("Presidentielle_2017")
+presidentielle_2012 = dataiku.Dataset("Presidentielle_2012")
+presidentielle_2007 = dataiku.Dataset("Presidentielle_2007")
+presidentielle_2002 = dataiku.Dataset("Presidentielle_2002")
+presidentielle_1995 = dataiku.Dataset("Presidentielle_1995")
 
 dfs = {
     "2022" : presidentielle_2022.get_dataframe(),
