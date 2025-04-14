@@ -23,7 +23,7 @@ def make_unique(headers):
             result.append(new_h)
     return result
 
-def run(project_id, folder_id, file_name, exclude_sheets, datasets):
+def create_datasets_from_file_sheets(project_id, folder_id, file_name, exclude_sheets, datasets):
     client = dataiku.api_client()
     project = client.get_project(project_id)
 
