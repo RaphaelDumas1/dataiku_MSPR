@@ -44,11 +44,10 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets,
         title = '_'.join(sheet.title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
         
         data = list(sheet.values)
-        headers = data[0]
         rows = data[1:]
         
         # Garder uniquement les colonnes dont l'en-tête n'est pas None ou vide
-        valid_columns = [(i, h) for i, h in enumerate(headers) if h is not None and str(h).strip() != '']
+        valid_columns = [(i, h) for i, h in enumerate(data[0]) if h is not None and str(h).strip() != '']
 
         # Extraire les colonnes valides pour le DataFrame
         filtered_headers = make_unique([h for _, h in valid_columns])
