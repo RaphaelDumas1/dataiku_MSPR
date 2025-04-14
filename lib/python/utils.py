@@ -40,11 +40,10 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets,
         if sheet_name in sheets_to_exclude:
             continue
 
-        ss_sheet = ss[sheet]
-        title = ss_sheet.title
-        title = '_'.join(title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
+        sheet = ss[sheet_name]
+        title = '_'.join(sheet.title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
         
-        data = list(ss_sheet.values)
+        data = list(sheet.values)
         
         headers = data[0]
         rows = data[1:]
