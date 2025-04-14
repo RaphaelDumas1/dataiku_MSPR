@@ -147,7 +147,7 @@ def columns_to_int(df, columns=None):
 
     return df
 
-def columns_to_float(df, columns=None):
+def columns_to_float(df, columns=None, round=none):
     if columns is None:
         columns = df.columns
 
@@ -166,7 +166,10 @@ def columns_to_float(df, columns=None):
             ) if pd.notnull(x) else x)
         except Exception as e:
             raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
-
+    
+        if round is not None:
+            df[column] = df[column].round(1)
+    
     return df
 
 def add_columns(df, col1, col2, result_column):
