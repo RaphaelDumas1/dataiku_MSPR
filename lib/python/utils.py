@@ -144,7 +144,7 @@ def process_evolution_trimestrielle_emploi(df):
         # Moyenne des autres colonnes
         for col in df.columns[1:]:
             try:
-                new_row[col] = pd.to_numeric(group[col], errors='coerce').mean().round(1)
+                new_row[col] = pd.to_numeric(group[col], errors='coerce').mean().round(2)
             except:
                 new_row[col] = None
 
