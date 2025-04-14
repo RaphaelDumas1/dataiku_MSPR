@@ -223,6 +223,7 @@ def rename_column(df, old_name, new_name):
 def process_pib(df):
     if len(df) > 3:
         df.columns = df.iloc[2]
+        print("ici", df.columns)
         df.columns = df.columns.str.replace(" (r)", "")
         print(df.columns)
     else:
