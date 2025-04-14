@@ -87,10 +87,12 @@
   },
   "schema": {
     "columns": [
-      {"name":"Indicateurs","type":"string"},
-      {"name":"2010.0","type":"string"},
-      {"name":"2015.0","type":"double"},
-      {"name":"2021.0","type":"double"}
+      {"name":"Année","type":"bigint"},
+      {"name":"Propriétaires","type":"string"},
+      {"name":"Locataires","type":"string"},
+      {"name":"- dont locataires d\u0027un logement HLM loué vide","type":"string"},
+      {"name":"Logés gratuitement","type":"string"},
+      {"name":"Ensemble","type":"string"}
     ],
     "userModified": false
   },
