@@ -14,7 +14,7 @@ datasets = [
             },
             {
                  "name" : columns_to_float,
-                 "args" : [["Année", "Nombre de logements"]]
+                 "args" : [["Part des résidences principales (%)", "Part des rés. secondaires (yc log. occasionnels) (%)", "Part des logements vacants (%)"]]
             }
         ]
     },
