@@ -23,7 +23,7 @@ def make_unique(headers):
             result.append(new_h)
     return result
 
-def run(project_id, folder_id, file_name, exclude_sheets):
+def run(project_id, folder_id, file_name, exclude_sheets, datasets):
     client = dataiku.api_client()
     project = client.get_project(project_id)
 
@@ -61,8 +61,8 @@ def run(project_id, folder_id, file_name, exclude_sheets):
 
         # Construire le DataFrame propre
         df = pd.DataFrame(filtered_rows, columns=filtered_headers)
-        test = dataiku.Dataset(title)
-        test.write_with_schema(df)
+        entry = next((d for d in datasets if d["name"] == title), None)
+        process(df, entry)
         
 import dataiku
 import pandas as pd, numpy as np
@@ -117,28 +117,22 @@ def process_category_metier(df):
     
     return df
 
-def process(datasets):
-    for dataset in datasets:
+def process(df, dataset):
+    # Set variables for iteration
+    name = dataset["name"]
+    functions = dataset["functions"]
+
+    for function in functions:
         # Set variables for iteration
-        input_name = dataset["input"]
-        output_name = dataset["output"]
-        functions = dataset["functions"]
+        name = function["name"]
+        args = function["args"] if function["args"] is not None else []
 
-        # Get datas
-        dataset = dataiku.Dataset(input_name)
-        df = dataset.get_dataframe()
+        # Transform
+        df = name(df, *args)
 
-        for function in functions:
-            # Set variables for iteration
-            name = function["name"]
-            args = function["args"] if function["args"] is not None else []
+    # Drop empty rows
+    df = df.dropna(how="all")
 
-            # Transform
-            df = name(df, *args)
-
-        # Drop empty rows
-        df = df.dropna(how="all")
-
-        # Write datas
-        result_dataset = dataiku.Dataset(output_name)
-        result_dataset.write_with_schema(df)
+    # Write datas
+    result_dataset = dataiku.Dataset(name)
+    result_dataset.write_with_schema(df)
