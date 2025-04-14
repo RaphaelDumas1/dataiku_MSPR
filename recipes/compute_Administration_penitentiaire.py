@@ -14,6 +14,10 @@ datasets = [
             }
         ]
     },
+    {
+        "name": "Delinquance",
+        "functions": []
+    },
 ]
 
 create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Securite.xlsx", datasets, [])
