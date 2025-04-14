@@ -9,10 +9,6 @@ datasets = [
         "name": "annuaire_des_ecoles_en_france",
         "functions": []
     },
-    {
-        "name": "Delinquance",
-        "functions": []
-    },
 ]
 
 create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Education.xlsx", datasets, [])
