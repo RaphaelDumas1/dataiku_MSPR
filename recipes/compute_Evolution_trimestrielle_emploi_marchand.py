@@ -40,5 +40,5 @@ datasets = [
     },
 ]
 
-create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Emploi.xlsx", datasets, ["Evolution_trimestrielle_emploi", "Categorie_metiers"])
+create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Emploi.xlsx", datasets, ["Evolution_trimestrielle_emploi_marchand", "Categorie_metiers"])
 
