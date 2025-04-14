@@ -137,7 +137,7 @@ def to_intt(df, columns):
 
 def process(df, dataset):
     # Set variables for iteration
-    name = dataset["name"]
+    namee = dataset["name"]
     functions = dataset["functions"]
 
     for function in functions:
@@ -152,5 +152,5 @@ def process(df, dataset):
     df = df.dropna(how="all")
 
     # Write datas
-    result_dataset = dataiku.Dataset(name)
+    result_dataset = dataiku.Dataset(namee)
     result_dataset.write_with_schema(df)
