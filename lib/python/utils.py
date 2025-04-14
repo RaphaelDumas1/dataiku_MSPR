@@ -121,13 +121,14 @@ def process_category_metier(df):
     
     return df
 
-def to_int(value):
-    if isinstance(value, str):
-        value = value.strip()
-    try:
-        return int(float(value))
-    except (ValueError, TypeError) as e:
-        raise ValueError(f"Impossible de convertir '{value}' en int.") from e
+def to_int(columns):
+    for column in columns:
+        if isinstance(value, str):
+            value = value.strip()
+        try:
+            return int(float(value))
+        except (ValueError, TypeError) as e:
+            raise ValueError(f"Impossible de convertir '{value}' en int.") from e
 
 def process(df, dataset):
     # Set variables for iteration
