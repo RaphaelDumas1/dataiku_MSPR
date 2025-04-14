@@ -163,6 +163,20 @@ def columns_to_float(df, columns=None):
 
     return df
 
+def add_columns(df, col1, col2, result_column):
+    if col1 not in df.columns or col2 not in df.columns:
+        raise ValueError(f"Colonnes '{col1}' ou '{col2}' non trouvées dans le DataFrame.")
+
+    try:
+        df[result_column] = (
+            pd.to_numeric(df[col1], errors='coerce')
+            + pd.to_numeric(df[col2], errors='coerce')
+        )
+    except Exception as e:
+        raise ValueError(f"Erreur lors de l'addition des colonnes : {e}")
+
+    return df
+
 def execute_instruction_on_dataframe(df, instruction):
     functions = instruction["functions"]
     instruction_name = instruction["name"]
