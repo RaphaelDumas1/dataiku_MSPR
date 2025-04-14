@@ -28,11 +28,7 @@ def clean_title(title):
 
 def create_dataframe_from_sheet(sheet):
     data = list(sheet.values)
-     # Transpose pour travailler colonne par colonne
-    transposed = list(zip(*data))
-
-    # Filtrer les colonnes avec au moins une cellule non vide
-    valid_columns = [(i, col[0]) for i, col in enumerate(transposed) if any(cell is not None and str(cell).strip() for cell in col)]
+    valid_columns = [(i, h) for i, h in enumerate(data[0]) if h and str(h).strip()]
     headers = make_unique([str(h).strip() for _, h in valid_columns])
     rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
     return pd.DataFrame(rows, columns=headers)
@@ -118,7 +114,7 @@ def process_category_metier(df):
     # Remove headers rows
     df = df.drop(index=1)
     df = df.loc[:10]
-
+    
     
     return df
 
