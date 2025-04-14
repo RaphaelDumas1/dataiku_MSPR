@@ -33,14 +33,6 @@
     {
       "objectId": "MSPR_Legislative_1993",
       "objectType": "DATASET"
-    },
-    {
-      "objectId": "Merge_legislatives",
-      "objectType": "RECIPE"
-    },
-    {
-      "objectId": "Legislatives",
-      "objectType": "DATASET"
     }
   ],
   "shared": [],
