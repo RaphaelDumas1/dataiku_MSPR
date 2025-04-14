@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, pivot_years, column_from_float_to_string
+from utils import create_datasets_from_file_sheets, pivot_years, column_from_float_to_string, strip_headers
 
 datasets = [
     {
@@ -11,6 +11,10 @@ datasets = [
             {
                  "name" : column_from_float_to_string,
                  "args" : ["Année"]
+            },
+            {
+                 "name" : strip_headers,
+                 "args" : []
             }
         ]
     },
