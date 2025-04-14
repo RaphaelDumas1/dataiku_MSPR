@@ -57,6 +57,13 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
         if sheet_name in sheets_to_exclude:
             continue
         print(sheet_name)
+        sheet = ss[sheet_name]
+        title = clean_title(sheet_name)
+        print(title)
+        df = create_dataframe_from_sheet(sheet)
+        instruction = find_entry_in_instructions(title, datasets_instructions)
+        
+        execute_instruction_on_dataframe(df, instruction)
 
 # 
 # FUNCTIONS
