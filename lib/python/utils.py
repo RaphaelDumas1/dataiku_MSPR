@@ -136,6 +136,8 @@ def columns_to_int(df, columns=None):
             )) if pd.notnull(x) else x)
         except Exception as e:
             raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
+            
+        df[column] = df[column].astype("Int64")
 
     return df
 
