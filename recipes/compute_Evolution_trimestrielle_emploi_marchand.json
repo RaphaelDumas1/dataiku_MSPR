@@ -46,6 +46,10 @@
         {
           "ref": "Categorie_metiers",
           "appendMode": false
+        },
+        {
+          "ref": "Nombre_de_salarie",
+          "appendMode": false
         }
       ]
     }
