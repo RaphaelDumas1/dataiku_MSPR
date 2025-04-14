@@ -239,7 +239,7 @@ def process_pib(df):
 
     
     # 3. Supprimer lignes 1 à 4, 5, 8, 10, 14 et toutes les lignes après 19
-    rows_to_drop = list(range(0, 4))
+    rows_to_drop = list(range(0, 4)) + [2, 4, 8]
     df = df.drop(index=[i for i in rows_to_drop if i < len(df)], errors='ignore')
 
     
