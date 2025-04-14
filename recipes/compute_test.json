@@ -66,6 +66,10 @@
         {
           "ref": "Taux_de_pauvrete",
           "appendMode": false
+        },
+        {
+          "ref": "Evolution_population",
+          "appendMode": false
         }
       ]
     }
