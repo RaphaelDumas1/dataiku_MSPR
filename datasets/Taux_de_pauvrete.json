@@ -87,7 +87,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"double"},
+      {"name":"Année","type":"bigint"},
       {"name":"Taux de pauvrete","type":"double"}
     ],
     "userModified": false
