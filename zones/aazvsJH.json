@@ -3,10 +3,6 @@
   "color": "#31439C",
   "items": [
     {
-      "objectId": "MSPR_Legislative_2024",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "MSPR_Legislative_2002",
       "objectType": "DATASET"
     }
