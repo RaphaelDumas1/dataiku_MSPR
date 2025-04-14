@@ -142,4 +142,4 @@ def execute_instruction_on_dataframe(df, instruction):
     df = df.dropna(how="all")
 
     # Write datas
-    result_dataset.write_with_schema(df)
+    df.write_with_schema(df)
