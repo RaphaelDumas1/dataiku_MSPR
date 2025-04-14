@@ -60,9 +60,9 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
         sheet = ss[sheet_name]
         title = clean_title(sheet_name)
         df = create_dataframe_from_sheet(sheet)
-        entry = find_entry_in_instructions(title, datasets_instructions)
+        instruction = find_entry_in_instructions(title, datasets_instructions)
         
-        df = process(df, entry)
+        df = execute_instruction_on_dataframe(df, instruction)
 
 # 
 # FUNCTIONS
@@ -127,10 +127,8 @@ def to_int(df, columns):
 
     return df
 
-def process(df, dataset):
-    # Set variables for iteration
-    namee = dataset["name"]
-    functions = dataset["functions"]
+def execute_instruction_on_dataframe(df, instruction):
+    functions = instruction["functions"]
 
     for function in functions:
         # Set variables for iteration
