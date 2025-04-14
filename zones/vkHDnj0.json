@@ -1,7 +1,16 @@
 {
   "name": "Sante",
   "color": "#465A64",
-  "items": [],
+  "items": [
+    {
+      "objectId": "compute_Esperance_de_vie",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "Esperance_de_vie",
+      "objectType": "DATASET"
+    }
+  ],
   "shared": [],
   "tags": [],
   "customFields": {},
