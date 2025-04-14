@@ -23,7 +23,7 @@ datasets = [
         "functions": [
             {
                  "name" : columns_to_int,
-                 "args" : [{"Année", "nombre", }]
+                 "args" : [{"Année", "nombre", "insee_pop", "insee_pop_millesime", "insee_log", "insee_log_millesime"}]
             }
         ]
     },
