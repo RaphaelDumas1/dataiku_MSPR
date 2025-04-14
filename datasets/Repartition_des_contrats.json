@@ -87,9 +87,9 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"CDD","type":"bigint"},
-      {"name":"CDI","type":"bigint"}
+      {"name":"Année","type":"double"},
+      {"name":"CDD","type":"string"},
+      {"name":"CDI","type":"string"}
     ],
     "userModified": false
   },
