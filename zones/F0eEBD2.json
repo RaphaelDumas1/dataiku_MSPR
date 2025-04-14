@@ -3,10 +3,6 @@
   "color": "#31439C",
   "items": [
     {
-      "objectId": "MSPR_Presidentielle_2012",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "MSPR_Presidentielle_2022",
       "objectType": "DATASET"
     }
