@@ -29,7 +29,7 @@ def clean_title(title):
 def create_dataframe_from_sheet(sheet):
     data = list(sheet.values)
     valid_columns = [(i, h) for i, h in enumerate(data[0]) if h and str(h).strip()]
-    headers = make_unique([h for _, h in valid_columns])
+    headers = make_unique([str(h).strip() for _, h in valid_columns])
     rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
     return pd.DataFrame(rows, columns=headers)
 
