@@ -1,4 +1,4 @@
-from utils import run, process
+from utils import run, process, process_category_metier
 
 run("MSPR", "aPmnwurD", "MSPR - Emploi.xlsx", [])
 
