@@ -33,8 +33,5 @@ datasets = [
     },
 ]
 
-run("MSPR", "aPmnwurD", "MSPR - Emploi.xlsx", [])
-
-
-process(datasets)
+run("MSPR", "aPmnwurD", "MSPR - Emploi.xlsx", [], datasets)
 
