@@ -87,7 +87,8 @@
   },
   "schema": {
     "columns": [
-      {"name":"Taux d’inflation","type":"string"}
+      {"name":"Taux d’inflation","type":"string"},
+      {"name":"None","type":"string"}
     ],
     "userModified": false
   },
