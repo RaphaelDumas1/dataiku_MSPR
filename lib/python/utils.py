@@ -4,6 +4,25 @@ import openpyxl
 import time
 from io import BytesIO
 
+def make_unique(headers):
+    seen = {}
+    result = []
+    for h in headers:
+        h = str(h).strip()
+        if h not in seen:
+            seen[h] = 1
+            result.append(h)
+        else:
+            count = seen[h]
+            new_h = f"{h}_{count}"
+            while new_h in seen:
+                count += 1
+                new_h = f"{h}_{count}"
+            seen[h] = count + 1
+            seen[new_h] = 1
+            result.append(new_h)
+    return result
+
 def run(project_id, folder_id, file_name, exclude_sheets):
     client = dataiku.api_client()
     project = client.get_project(project_id)
@@ -29,14 +48,16 @@ def run(project_id, folder_id, file_name, exclude_sheets):
         title = '_'.join(title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
         
         data = list(ss_sheet.values)
+        
         headers = data[0]
         rows = data[1:]
         # Garder uniquement les colonnes dont l'en-tête n'est pas None ou vide
         valid_columns = [(i, h) for i, h in enumerate(headers) if h is not None and str(h).strip() != '']
 
         # Extraire les colonnes valides pour le DataFrame
-        filtered_headers = [h for _, h in valid_columns]
+        filtered_headers = make_unique([h for _, h in valid_columns])
         filtered_rows = [[row[i] for i, _ in valid_columns] for row in rows]
+        
 
         # Construire le DataFrame propre
         df = pd.DataFrame(filtered_rows, columns=filtered_headers)
