@@ -1,12 +1,7 @@
 {
   "name": "Elections legislatives",
   "color": "#31439C",
-  "items": [
-    {
-      "objectId": "MSPR_Legislative_2002",
-      "objectType": "DATASET"
-    }
-  ],
+  "items": [],
   "shared": [],
   "tags": [],
   "customFields": {},
