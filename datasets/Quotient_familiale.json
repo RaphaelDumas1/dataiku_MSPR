@@ -86,8 +86,31 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Date référence","type":"string"},
+      {"name":"Numéro département","type":"string"},
+      {"name":"Nom département","type":"string"},
+      {"name":"Numéro région","type":"string"},
+      {"name":"Nom région","type":"string"},
+      {"name":"Quotient familial","type":"string"},
+      {"name":"Nombre foyers NDUR","type":"string"},
+      {"name":"Nombre personnes NDUR","type":"string"},
+      {"name":"Montant total NDUR","type":"string"},
+      {"name":"Nombre foyers NDURPAJE","type":"string"},
+      {"name":"Nombre personnes NDURPAJE","type":"string"},
+      {"name":"Montant total NDURPAJE","type":"string"},
+      {"name":"Nombre foyers NDUREJ","type":"string"},
+      {"name":"Nombre personnes NDUREJ","type":"string"},
+      {"name":"Montant total NDUREJ","type":"string"},
+      {"name":"Nombre foyers NDURAL","type":"string"},
+      {"name":"Nombre personnes NDURAL","type":"string"},
+      {"name":"Montant total NDURAL","type":"string"},
+      {"name":"Nombre foyers NDURINS","type":"string"},
+      {"name":"Nombre personnes NDURINS","type":"string"},
+      {"name":"Montant total NDURINS","type":"string"},
+      {"name":"Lieu résidence","type":"string"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
