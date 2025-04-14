@@ -37,6 +37,19 @@ datasets = [
         "name": "Taux_de_pauvrete",
         "functions": []
     },
+    {
+        "name": "Evolution_population",
+        "functions": [
+            {
+                 "name" : pivot_years,
+                 "args" : None
+            },
+            {
+                 "name" : copy_years_range,
+                 "args" : None
+            },
+        ]
+    },
 ]
 
 create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Demographie.xlsx", datasets, [])
