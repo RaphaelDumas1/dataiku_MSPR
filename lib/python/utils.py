@@ -44,7 +44,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets,
             continue
 
         sheet = ss[sheet_name]
-        title = 
+        title = clean_title(sheet_name)
         
         data = list(sheet.values)
         
