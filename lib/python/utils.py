@@ -223,6 +223,10 @@ def rename_column(df, old_name, new_name):
 def process_pib(df):
     if len(df) > 3:
         df.columns = df.iloc[2]
+        df.columns = df.columns.astype(str)  # Convertir toutes les colonnes en chaîne
+
+        # Supprimer les ".0" et les espaces
+        df.columns = df.columns.str.replace('.0', '').str.strip()
         print("ici", df.columns)
         df.columns = df.columns.astype(str).str.replace(" (r)", "", regex=False)
         print("la", df.columns)
