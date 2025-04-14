@@ -62,7 +62,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
         df = create_dataframe_from_sheet(sheet)
         instruction = find_entry_in_instructions(title, datasets_instructions)
         
-        df = execute_instruction_on_dataframe(df, instruction)
+        execute_instruction_on_dataframe(df, instruction)
 
 # 
 # FUNCTIONS
