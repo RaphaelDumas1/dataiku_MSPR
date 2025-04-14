@@ -2,18 +2,15 @@ from utils import run, process, process_category_metier, pivot_years
 
 datasets = [
     {
-        "input": "Taux_de_chomage",
-        "output": "Taux_de_chomage",
+        "name": "Taux_de_chomage",
         "functions": []
     },
     {
-        "input": "Repartition_des_contrats",
-        "output": "Repartition_des_contrats",
+        "name": "Repartition_des_contrats",
         "functions": []
     },
     {
-        "input": "Categorie_metiers",
-        "output": "Categorie_metiers",
+        "name": "Categorie_metiers",
         "functions": [
             {
                  "name" : process_category_metier,
@@ -27,8 +24,7 @@ datasets = [
         ]
     },
     {
-        "input": "Nombre_de_salarie",
-        "output": "Nombre_de_salarie",
+        "name": "Nombre_de_salarie",
         "functions": []
     },
 ]
