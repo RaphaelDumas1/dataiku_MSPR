@@ -1,9 +1,14 @@
-from utils import create_datasets_from_file_sheets
+from utils import create_datasets_from_file_sheets, process_pib
 
 datasets = [
     {
         "name": "Pib",
-        "functions": []
+        "functions": [
+            {
+                "name" : process_pib,
+                "args" : []
+            }
+        ]
     },
     {
         "name": "Inflation",
