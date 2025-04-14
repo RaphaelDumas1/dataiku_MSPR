@@ -53,18 +53,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets,
 
         sheet = ss[sheet_name]
         title = clean_title(sheet_name)
-        
-        data = list(sheet.values)
-        
-        # Garder uniquement les colonnes dont l'en-tête n'est pas None ou vide
-        valid_columns = [(i, h) for i, h in enumerate(data[0]) if h is not None and str(h).strip() != '']
-
-        # Extraire les colonnes valides pour le DataFrame
-        filtered_headers = make_unique([h for _, h in valid_columns])
-        filtered_rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
-        
-        # Construire le DataFrame propre
-        df = pd.DataFrame(filtered_rows, columns=filtered_headers)
+        df = create_dataframe_from_sheet(sheet)
         
         entry = next((d for d in datasets if d["name"] == title), None)
         
