@@ -34,7 +34,12 @@ datasets = [
     },
     {
         "name": "Population",
-        "functions": []
+        "functions": [
+            {
+                 "name" : columns_to_int,
+                 "args" : []
+            },
+        ]
     },
     {
         "name": "Repartition_age",
