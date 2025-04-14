@@ -87,16 +87,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Agriculteurs exploitants","type":"bigint"},
-      {"name":"Artisans, commerçants, chefs entreprise","type":"bigint"},
-      {"name":"Cadres et professions intellectuelles supérieures","type":"bigint"},
-      {"name":"Professions intermédiaires","type":"bigint"},
-      {"name":"Employés","type":"bigint"},
-      {"name":"Ouvriers","type":"bigint"},
-      {"name":"Retraités","type":"bigint"},
-      {"name":"Autres personnes sans activité professionnelle","type":"bigint"},
-      {"name":"Total","type":"bigint"}
+      {"name":"Population de 15 ans ou plus par CSP","type":"string"}
     ],
     "userModified": false
   },
