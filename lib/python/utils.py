@@ -23,7 +23,7 @@ def make_unique(headers):
             result.append(new_h)
     return result
 
-def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets, exclude_sheets):
+def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets, sheets_to_exclude):
     client = dataiku.api_client()
     project = client.get_project(project_id)
     folder = dataiku.Folder(folder_id, project_key=project.project_key)
@@ -36,8 +36,8 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets,
         except Exception as e:
             raise RuntimeError(f"Erreur inattendue lors du chargement du fichier : {e}")
 
-    for sheet in ss.sheetnames:
-        if sheet in exclude_sheets:
+    for sheet_name in ss.sheetnames:
+        if sheet_name in sheets_to_exclude:
             continue
 
         ss_sheet = ss[sheet]
