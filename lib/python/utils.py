@@ -134,11 +134,11 @@ def process_evolution_trimestrielle_emploi(df):
         if group.empty:
             continue
         
-        # Créer une nouvelle ligne
-        new_row = {}
+        first_label = str(group.iloc[0, 0])
+        match = re.search(r'\b(20\d{2}|19\d{2})\b', first_label)
+        year = match.group(0) if match else f"Année_{i//4 + 1}"
 
-        # Nommer la 1ère colonne : "Bloc 1", "Bloc 2", etc.
-        new_row[df.columns[0]] = f"Bloc {i//4 + 1}"
+        new_row = {df.columns[0]: year}
 
         # Moyenne des autres colonnes
         for col in df.columns[1:]:
