@@ -8,10 +8,7 @@ datasets = [
     {
         "name": "Repartition_des_contrats",
         "functions": [
-            {
-                "name" : to_int,
-                "args" : ["Année"]
-            }
+            
         ]
     },
     {
