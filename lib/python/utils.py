@@ -231,13 +231,13 @@ def process_pib(df):
             if pd.notnull(val) and not str(val).startswith("dont "):
                 df.at[i, first_col] = "dont " + str(val)
 
-    print("yepa", df.iloc[3])
+    
     # 2. Utiliser la ligne 4 (index 3) comme en-têtes de colonnes
     if len(df) > 3:
         df.columns = df.iloc[3]
     else:
         raise ValueError("Le DataFrame ne contient pas au moins 4 lignes pour définir les headers")
-
+    print("yepa", df.columns)
     # 3. Supprimer lignes 1 à 4, 5, 8, 10, 14 et toutes les lignes après 19
     rows_to_drop = list(range(0, 4)) + [5, 8, 10, 14]
     df = df.drop(index=[i for i in rows_to_drop if i < len(df)], errors='ignore')
