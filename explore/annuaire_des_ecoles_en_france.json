@@ -1,0 +1,185 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "identifiant_de_l_etablissement": 240,
+      "nom_etablissement": 300,
+      "type_etablissement": 150,
+      "statut_public_prive": 158,
+      "adresse_1": 281,
+      "adresse_2": 106,
+      "adresse_3": 197,
+      "code_postal": 134,
+      "code_commune": 134,
+      "nom_commune": 211,
+      "code_departement": 135,
+      "code_academie": 134,
+      "code_region": 134,
+      "ecole_maternelle": 135,
+      "ecole_elementaire": 143,
+      "voie_generale": 113,
+      "voie_technologique": 150,
+      "voie_professionnelle": 165,
+      "telephone": 134,
+      "fax": 100,
+      "web": 100,
+      "mail": 300,
+      "restauration": 134,
+      "hebergement": 134,
+      "ulis": 134,
+      "apprentissage": 113,
+      "segpa": 100,
+      "section_arts": 105,
+      "section_cinema": 120,
+      "section_theatre": 128,
+      "section_sport": 113,
+      "section_internationale": 180,
+      "section_europeenne": 150,
+      "lycee_agricole": 120,
+      "lycee_militaire": 128,
+      "lycee_des_metiers": 143,
+      "post_bac": 100,
+      "appartenance_education_prioritaire": 270,
+      "greta": 100,
+      "siren_siret": 134,
+      "nombre_d_eleves": 134,
+      "fiche_onisep": 105,
+      "position": 295,
+      "type_contrat_prive": 197,
+      "libelle_departement": 158,
+      "libelle_academie": 135,
+      "libelle_region": 190,
+      "coordx_origine": 134,
+      "coordy_origine": 148,
+      "epsg_origine": 134,
+      "nom_circonscription": 300,
+      "latitude": 148,
+      "longitude": 169,
+      "precision_localisation": 180,
+      "date_ouverture": 232,
+      "date_maj_ligne": 232,
+      "etat": 100,
+      "ministere_tutelle": 253,
+      "multi_uai": 134,
+      "rpi_concentre": 134,
+      "rpi_disperse": 134,
+      "code_nature": 134,
+      "libelle_nature": 288,
+      "code_type_contrat_prive": 188,
+      "pial": 100,
+      "etablissement_mere": 150,
+      "type_rattachement_etablissement_mere": 285,
+      "code_circonscription": 165,
+      "code_zone_animation_pedagogique": 248,
+      "libelle_zone_animation_pedagogique": 270,
+      "code_bassin_formation": 173,
+      "libelle_bassin_formation": 195
+    },
+    "columnUseScientificNotationByName": {},
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "individualColumnsRules": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxRecordsForDisplay": -1,
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "FULL",
+        "maxRecords": -1,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [
+      {
+        "column": "adresse_1",
+        "type": "columnFilter",
+        "currentMode": "FACET",
+        "active": true,
+        "facet": {
+          "type": "facet",
+          "column": "adresse_1",
+          "columnType": "ALPHANUM",
+          "currentMode": "ALPHANUM",
+          "sort": "count",
+          "selectedValues": {}
+        },
+        "alphanumFilter": {
+          "type": "alphanum",
+          "column": "adresse_1",
+          "selectedValues": [],
+          "params": {
+            "mode": "full_string",
+            "normalization": "exact"
+          }
+        },
+        "validityFilter": {
+          "type": "validity",
+          "column": "adresse_1",
+          "params": {
+            "type": "Text",
+            "ok": false,
+            "nok": false,
+            "empty": true
+          }
+        }
+      }
+    ],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [],
+  "interactiveSearch": {
+    "savedQueries": []
+  },
+  "customMeasures": []
+}
