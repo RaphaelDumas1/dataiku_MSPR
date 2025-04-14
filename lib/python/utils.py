@@ -23,6 +23,9 @@ def make_unique(headers):
             result.append(new_h)
     return result
 
+def clean_title(title):
+    return '_'.join(sheet.title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
+
 def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets, sheets_to_exclude):
     client = dataiku.api_client()
     project = client.get_project(project_id)
@@ -41,7 +44,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets,
             continue
 
         sheet = ss[sheet_name]
-        title = '_'.join(sheet.title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
+        title = 
         
         data = list(sheet.values)
         
