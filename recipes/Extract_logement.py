@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, pivot, column_from_float_to_string, columns_to_int
+from utils import create_datasets_from_file_sheets, pivot, columns_to_int, columns_to_float
 
 datasets = [
     {
@@ -7,6 +7,10 @@ datasets = [
             {
                  "name" : pivot,
                  "args" : ["Année"]
+            },
+            {
+                 "name" : columns_to_int,
+                 "args" : [["Année", "Nombre de logements"]]
             },
             {
                  "name" : columns_to_int,
