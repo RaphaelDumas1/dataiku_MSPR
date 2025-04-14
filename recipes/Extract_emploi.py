@@ -1,11 +1,11 @@
-from utils import create_datasets_from_file_sheets, process_category_metier, pivot, to_int
+from utils import create_datasets_from_file_sheets, process_category_metier, pivot, columns_to_int
 
 datasets = [
     {
         "name": "Taux_de_chomage",
         "functions": [
             {
-                "name" : to_int,
+                "name" : columns_to_int,
                 "args" : [["Année"]]
             }
         ]
@@ -14,7 +14,7 @@ datasets = [
         "name": "Repartition_des_contrats",
         "functions": [
             {
-                "name" : to_int,
+                "name" : columns_to_int,
                 "args" : []
             }
         ]
