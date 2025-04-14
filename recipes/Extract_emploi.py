@@ -26,10 +26,6 @@ datasets = [
                  "name" : process_category_metier,
                  "args" : []   
             },
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]   
-            },
             
         ]
     },
