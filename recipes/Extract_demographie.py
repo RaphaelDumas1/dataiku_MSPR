@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, pivot_years, copy_years_range
+from utils import create_datasets_from_file_sheets, pivot_years, copy_years_range, columns_to_int
 
 datasets = [
     {
