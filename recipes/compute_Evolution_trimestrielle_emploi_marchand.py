@@ -1,11 +1,11 @@
-from utils import run, process, process_category_metier, pivot_years, to_int
+from utils import run, process, process_category_metier, pivot_years, to_intt
 
 datasets = [
     {
         "name": "Taux_de_chomage",
         "functions": [
             {
-                "name" : to_int,
+                "name" : to_intt,
                 "args" : [["Année"]]
             }
         ]
