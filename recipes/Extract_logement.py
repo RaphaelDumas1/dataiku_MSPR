@@ -18,11 +18,11 @@ datasets = [
         "name": "Type_logement",
         "functions": [
             {
-                 "name" : pivot_years,
-                 "args" : None
+                 "name" : pivot,
+                 "args" : ["Année"]
             },
             {
-                 "name" : column_from_float_to_string,
+                 "name" : columns_to_int,
                  "args" : ["Année"]
             }
         ]
@@ -31,11 +31,11 @@ datasets = [
         "name": "Categorie_logement",
         "functions": [
             {
-                 "name" : pivot_years,
-                 "args" : None
+                 "name" : pivot,
+                 "args" : ["Année"]
             },
             {
-                 "name" : column_from_float_to_string,
+                 "name" : columns_to_int,
                  "args" : ["Année"]
             }
         ]
@@ -44,11 +44,11 @@ datasets = [
         "name": "Statut_occupation_logement",
         "functions": [
             {
-                 "name" : pivot_years,
-                 "args" : None
+                 "name" : pivot,
+                 "args" : ["Année"]
             },
             {
-                 "name" : column_from_float_to_string,
+                 "name" : columns_to_int,
                  "args" : ["Année"]
             }
         ]
@@ -57,11 +57,11 @@ datasets = [
         "name": "Composition_menage",
        "functions": [
             {
-                 "name" : pivot_years,
-                 "args" : None
+                 "name" : pivot,
+                 "args" : ["Année"]
             },
            {
-                 "name" : column_from_float_to_string,
+                 "name" : columns_to_int,
                  "args" : ["Année"]
             }
         ]
@@ -70,11 +70,11 @@ datasets = [
         "name": "Nombre_enfant",
         "functions": [
             {
-                 "name" : pivot_years,
-                 "args" : None
+                 "name" : pivot,
+                 "args" : ["Année"]
             },
             {
-                 "name" : column_from_float_to_string,
+                 "name" : columns_to_int,
                  "args" : ["Année"]
             }
         ]
