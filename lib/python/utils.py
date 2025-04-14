@@ -126,7 +126,7 @@ def columns_to_int(df, columns=None):
 
         if column not in df.columns:
             raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
-
+        print(column)
         try:
             df[column] = df[column].apply(lambda x: int(float(
                 str(x)
