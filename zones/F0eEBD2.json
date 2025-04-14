@@ -25,14 +25,6 @@
     {
       "objectId": "MSPR_Presidentielle_2022",
       "objectType": "DATASET"
-    },
-    {
-      "objectId": "Presidentielles",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "Merge_presidentielles",
-      "objectType": "RECIPE"
     }
   ],
   "shared": [],

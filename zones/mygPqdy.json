@@ -3,19 +3,7 @@
   "color": "#D03713",
   "items": [
     {
-      "objectId": "Presidentielle_2022",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "Presidentielle_2017",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "Presidentielle_2012",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "Presidentielle_2007",
+      "objectId": "Presidentielle_1995",
       "objectType": "DATASET"
     },
     {
@@ -23,7 +11,27 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "Presidentielle_1995",
+      "objectId": "Presidentielle_2007",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Presidentielle_2012",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Presidentielle_2017",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Presidentielle_2022",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Merge_presidentielles",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "Presidentielles",
       "objectType": "DATASET"
     },
     {
