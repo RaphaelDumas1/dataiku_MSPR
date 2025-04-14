@@ -10,7 +10,7 @@ datasets = [
             },
             {
                  "name" : columns_to_int,
-                 "args" : [["Année"]]
+                 "args" : [["Année", "Nombre de logements"]]
             }
         ]
     },
