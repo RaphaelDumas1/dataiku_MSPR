@@ -87,11 +87,10 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Maisons","type":"bigint"},
-      {"name":"Appartements","type":"bigint"},
-      {"name":"Autres logements","type":"bigint"},
-      {"name":"Total","type":"bigint"}
+      {"name":"Indicateurs","type":"string"},
+      {"name":"2010.0","type":"string"},
+      {"name":"2015.0","type":"double"},
+      {"name":"2021.0","type":"double"}
     ],
     "userModified": false
   },
