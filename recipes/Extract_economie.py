@@ -4,10 +4,7 @@ datasets = [
     {
         "name": "Pib",
         "functions": [
-            {
-                "name" : process_pib,
-                "args" : []
-            }
+           
         ]
     },
     {
