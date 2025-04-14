@@ -1,7 +1,20 @@
 {
   "name": "Education",
   "color": "#087ABF",
-  "items": [],
+  "items": [
+    {
+      "objectId": "compute_Taux_scolarisation",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "annuaire_des_ecoles_en_france",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Taux_scolarisation",
+      "objectType": "DATASET"
+    }
+  ],
   "shared": [],
   "tags": [],
   "customFields": {},
