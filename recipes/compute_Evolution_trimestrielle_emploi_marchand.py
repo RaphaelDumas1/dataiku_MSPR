@@ -1,7 +1,5 @@
 from utils import run, process, process_category_metier, pivot_years
 
-run("MSPR", "aPmnwurD", "MSPR - Emploi.xlsx", [])
-
 datasets = [
     {
         "input": "Taux_de_chomage",
@@ -34,5 +32,9 @@ datasets = [
         "functions": []
     },
 ]
+
+run("MSPR", "aPmnwurD", "MSPR - Emploi.xlsx", [])
+
+
 process(datasets)
 
