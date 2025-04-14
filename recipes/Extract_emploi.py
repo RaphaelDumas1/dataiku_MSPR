@@ -49,10 +49,7 @@ datasets = [
     {
         "name": "Evolution_trimestrielle_emploi",
         "functions": [
-            {
-                "name" : process_evolution_trimestrielle_emploi,
-                "args" : []
-            },
+            
        
         ]
     },
