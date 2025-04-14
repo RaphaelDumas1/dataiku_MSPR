@@ -66,7 +66,7 @@ def run(project_id, folder_id, file_name, exclude_sheets, datasets):
         if entry is None:
             raise ValueError(f"Aucune entrée trouvée pour le nom : '{title}'")
         
-        process(df, entry)
+        df = process(df, entry)
         
 import dataiku
 import pandas as pd, numpy as np
