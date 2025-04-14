@@ -147,7 +147,7 @@ def columns_to_int(df, columns=None):
 
     return df
 
-def columns_to_float(df, columns=None, round=none):
+def columns_to_float(df, columns=None, round=None):
     if columns is None:
         columns = df.columns
 
