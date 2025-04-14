@@ -129,7 +129,7 @@ def to_int(df, columns):
 
 def execute_instruction_on_dataframe(df, instruction):
     functions = instruction["functions"]
-    name = instruction["name"]
+    instruction_name = instruction["name"]
 
     for function in functions:
         # Set variables for iteration
@@ -143,5 +143,5 @@ def execute_instruction_on_dataframe(df, instruction):
     df = df.dropna(how="all")
 
     # Write datas
-    dataset = dataiku.Dataset(name)
+    dataset = dataiku.Dataset(instruction_name)
     dataset.write_with_schema(df)
