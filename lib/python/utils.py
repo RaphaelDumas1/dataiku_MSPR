@@ -120,7 +120,7 @@ def process_category_metier(df):
 def columns_to_int(df, columns=None):
     if columns is None:
         columns = df.columns
-    
+    print(columns)
     for column in columns:
         column = column.strip() if isinstance(column, str) else column
 
@@ -164,7 +164,7 @@ def columns_to_float(df, columns=None):
 def execute_instruction_on_dataframe(df, instruction):
     functions = instruction["functions"]
     instruction_name = instruction["name"]
-
+   
     for function in functions:
         # Set variables for iteration
         name = function["name"]
