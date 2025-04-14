@@ -15,32 +15,17 @@ datasets = [
         ]
     },
     {
-        "name": "Repartition_des_contrats",
+        "name": "Type_logement",
         "functions": [
-            
-        ]
-    },
-    {
-        "name": "Categorie_metiers",
-        "functions": [
-            {
-                 "name" : process_category_metier,
-                 "args" : []   
-            },
             {
                  "name" : pivot_years,
-                 "args" : []   
+                 "args" : None
             },
-            
+            {
+                 "name" : column_from_float_to_string,
+                 "args" : ["Année"]
+            }
         ]
-    },
-    {
-        "name": "Nombre_de_salarie",
-        "functions": []
-    },
-    {
-        "name": "Evolution_trimestrielle_emploi",
-        "functions": []
     },
 ]
 
