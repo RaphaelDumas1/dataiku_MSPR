@@ -235,7 +235,7 @@ def process_pib(df):
         if i < len(df):
             val = df.at[i, first_col]
             if pd.notnull(val) and not str(val).startswith("dont "):
-                df.at[i, first_col] = "dont " + str(val)
+                df.at[i, first_col] = "dont" + str(val)
 
     
 
