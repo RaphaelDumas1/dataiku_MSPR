@@ -25,7 +25,7 @@ def run(project_id, folder_id, file_name, exclude_sheets):
     for sheet in ss.sheetnames:
         if sheet in exclude_sheets:
             continue
-
+        print(sheet)
         ss_sheet = ss[sheet]
         title = ss_sheet.title
         title = '_'.join(title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
