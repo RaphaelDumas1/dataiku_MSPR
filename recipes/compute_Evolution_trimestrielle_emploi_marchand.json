@@ -32,10 +32,6 @@
     "main": {
       "items": [
         {
-          "ref": "Evolution_trimestrielle_emploi_marchand",
-          "appendMode": false
-        },
-        {
           "ref": "Taux_de_chomage",
           "appendMode": false
         },
@@ -49,6 +45,10 @@
         },
         {
           "ref": "Nombre_de_salarie",
+          "appendMode": false
+        },
+        {
+          "ref": "Evolution_trimestrielle_emploi",
           "appendMode": false
         }
       ]
