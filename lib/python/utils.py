@@ -115,7 +115,12 @@ def process_category_metier(df):
     # Remove headers rows
     df = df.drop(index=1)
     df = df.loc[:10]
-  
+    df.loc[0, "None_2"] = df.loc[0, "None"]  
+    df.loc[0, "None_5"] = df.loc[0, "None_3"]  
+    df.loc[0, "None_8"] = df.loc[0, "None_6"]  
+    df = df.drop(columns=["None", "None_1", "None_3", "None_4", "None_6", "None_7"])
+    df.columns = df.iloc[0] 
+    df = df[1:].reset_index(drop=True) 
     
     return df
 
