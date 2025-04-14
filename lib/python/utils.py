@@ -33,6 +33,10 @@ def create_dataframe_from_sheet(sheet):
     rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
     return pd.DataFrame(rows, columns=headers)
 
+def strip_headers(df):
+    df.columns = df.columns.str.strip()
+    return df
+
 def find_entry_in_instructions(title, datasets_instructions):
     entry = next((d for d in datasets_instructions if d["name"] == title), None)
     if entry is None:
