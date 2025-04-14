@@ -27,6 +27,10 @@ datasets = [
         "name": "Nombre_de_salarie",
         "functions": []
     },
+    {
+        "name": "Evolution_trimestrielle_emploi",
+        "functions": []
+    },
 ]
 
 run("MSPR", "aPmnwurD", "MSPR - Emploi.xlsx", [], datasets)
