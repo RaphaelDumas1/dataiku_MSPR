@@ -35,7 +35,12 @@ datasets = [
     },
     {
         "name": "Nombre_de_salarie",
-        "functions": []
+        "functions": [
+            {
+                "name" : columns_to_int,
+                "args" : []
+            }
+        ]
     },
     {
         "name": "Evolution_trimestrielle_emploi",
