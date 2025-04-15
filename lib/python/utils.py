@@ -405,6 +405,9 @@ def extract_and_concat_to_original(df, interval1, interval2):
     all_rows_to_drop = set(idx1 + idx2)
     df_cleaned = df.drop(index=all_rows_to_drop).reset_index(drop=True)
     print("lll", df_cleaned.columns, df1.columns)
+    
+    df1.rename(columns={'ancien_nom': 'nouveau_nom'}, inplace=True)
+    
     # On ne réindexe pas ici, on s'assure juste que les colonnes sont bien dans df_cleaned
     columns_to_add_1 = [col for col in df1.columns if col in df_cleaned.columns]
     columns_to_add_2 = [col for col in df2.columns if col in df_cleaned.columns]
