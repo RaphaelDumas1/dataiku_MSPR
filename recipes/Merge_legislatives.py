@@ -4,26 +4,21 @@ import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
 party_orientation = {
-    // Left-wing parties
     'EXG': 'Left', 'COM': 'Left', 'FG': 'Left', 'SOC': 'Left', 'RDG': 'Left',
     'DVG': 'Left', 'VEC': 'Left', 'ECO': 'Left', 'FI': 'Left', 'NUP': 'Left',
     'UG': 'Left', 'DXG': 'Left', 'PRS': 'Left', 'GEC': 'Left', 'LO': 'Left',
     'LCR': 'Left', 'PRG': 'Left',
 
-    // Center parties
     'CEN': 'Right', 'MDM': 'Right', 'UDI': 'Right', 'DVC': 'Right', 'UDFD': 'Right',
     'REM': 'Right', 'ENS': 'Right', 'ALLI': 'Right', 'UDF': 'Right',
 
-    // Right-wing parties
     'UMP': 'Right', 'RPR': 'Right', 'LR': 'Right', 'DVD': 'Right', 'DIV': 'Right',
     'MAJ': 'Right', 'PRV': 'Right', 'NCE': 'Right', 'DL': 'Right',
 
-    // Far-right parties
     'FN': 'Far_Right', 'RN': 'Far_Right', 'FRN': 'Far_Right', 'MNR': 'Far_Right',
     'EXD': 'Far_Right', 'DLF': 'Far_Right', 'DSV': 'Far_Right', 'REC': 'Far_Right',
     'MPF': 'Far_Right', 'RPF': 'Far_Right',
 
-    // Others
     'REG': 'Right', 'CPNT': 'Right', 'AUT': 'Right', 'PREP': 'Right'
 }
 
