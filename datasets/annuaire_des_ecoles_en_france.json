@@ -94,7 +94,7 @@
       {"name":"adresse_1","type":"string"},
       {"name":"adresse_2","type":"string"},
       {"name":"adresse_3","type":"string"},
-      {"name":"code_postal","type":"string"},
+      {"name":"code_postal","type":"string","meaning":"Text"},
       {"name":"code_commune","type":"string"},
       {"name":"nom_commune","type":"string"},
       {"name":"code_departement","type":"string"},
@@ -160,7 +160,7 @@
       {"name":"code_bassin_formation","type":"string"},
       {"name":"libelle_bassin_formation","type":"string"}
     ],
-    "userModified": false
+    "userModified": true
   },
   "dkuProperties": [],
   "metrics": {
