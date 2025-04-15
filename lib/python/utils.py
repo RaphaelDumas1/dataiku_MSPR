@@ -316,7 +316,10 @@ def process_annuaire(df):
         "appartenance_education_prioritaire": "Aucune",
         "greta": 0.0,
         "siren_siret": "Inconnu",
+        "fiche_onisep": "Inconnue"
         "position": "48.856614,2.3522219",
+        "type_contrat_prive": "Inconnu",
+
         
 
 
