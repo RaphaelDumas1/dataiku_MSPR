@@ -19,7 +19,10 @@ datasets = [
             },
             {
                  "name" : columns_to_int,
-                 "args" : [["Année"]]
+                 "args" : [["Année", "Nombre foyers NDUR", "Nombre personnes NDUR", "Montant total NDUR", "Nombre foyers NDURPAJE",
+                           "Nombre personnes NDURPAJE", "Montant total NDURPAJE", "Nombre foyers NDUREJ", "Nombre personnes NDUREJ",
+                           "Montant total NDUREJ", "Nombre foyers NDURAL", "Nombre personnes NDURAL", "Montant total NDURAL", 
+                           "Nombre foyers NDURINS", "Nombre personnes NDURINS", "Montant total NDURINS"]]
             },
             {
                  "name" : columns_to_string,
