@@ -389,7 +389,7 @@ def execute_instruction_on_dataframe(df, instruction):
     dataset.write_with_schema(df)
 
 def extract_and_concat_to_original(df, interval1, interval2):
-    len(df)
+    print("llll", len(df))
     # Fonction d'extraction
     def extract(df, start, end):
         block = df.iloc[start:end+1].copy()
