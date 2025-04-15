@@ -8,7 +8,14 @@ datasets = [
                 "name" : process_pib,
                 "args" : []
             },
-            
+            {
+                "name" : pivot,
+                "args" : ["Année"]
+            },
+            {
+                "name" : columns_to_int,
+                "args" : [["Année"]]
+            },
         ]
     },
     {
