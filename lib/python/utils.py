@@ -322,6 +322,7 @@ def process_annuaire(df):
         "coordx_origine": "2.3522",
         "coordy_origine": "48.8566",
         "epsg_rogine": "EPSG:2154",
+        "nom_circonscription": "Inconnu",
 
 
         
