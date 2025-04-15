@@ -29,6 +29,9 @@ datasets_names = [
   "Quotient_familiale",
   "Taux_de_natalite",
   "Taux_de_mortalite",
+  "Population",
+  "Repartition_age",
+    
     
   
   "Impot_moyen", 
@@ -38,8 +41,8 @@ datasets_names = [
    
   "Nombre_dimmigre", 
    
-  "Population", 
-  "Repartition_age", 
+   
+   
   "Repartition_des_contrats", 
   "Repartition_sexe", 
   "Salaire_moyen", 
