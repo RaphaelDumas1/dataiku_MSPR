@@ -204,19 +204,22 @@ def columns_to_float(df, columns=None, round=None):
 def columns_to_string(df, columns=None):
     if columns is None:
         columns = df.columns
-    
+
     for column in columns:
         column = column.strip() if isinstance(column, str) else column
 
         if column not in df.columns:
             raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
-        
+
         try:
-            df[column] = df[column].apply(lambda x: str(x) if pd.notnull(x) else x)
+            df[column] = df[column].apply(
+                lambda x: str(int(x)) if isinstance(x, float) and x.is_integer()
+                else str(x) if pd.notnull(x)
+                else x
+            )
         except Exception as e:
             raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
-            
-        # Convertir explicitement la colonne en type 'string'
+
         df[column] = df[column].astype("string")
 
     return df
