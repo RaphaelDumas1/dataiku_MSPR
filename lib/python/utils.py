@@ -311,7 +311,7 @@ def process_inflation(df):
     return df
         
 def process_annuaire(df):  
-    delete_columns = ['B', 'D']
+    delete_columns = ['code_departement', 'code_region', 'libelle_departement', 'libelle_region']
 
     df = df.drop(columns=delete_columns)
     df = df.dropna(how="all")
