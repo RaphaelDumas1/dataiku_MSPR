@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, process_pib, pivot, columns_to_int, columns_to_float, process_inflation
+from utils import create_datasets_from_file_sheets, process_pib, pivot, columns_to_int, columns_to_float, process_inflation, columns_to_float
 
 datasets = [
     {
@@ -56,7 +56,11 @@ datasets = [
         "functions": [
             {
                 "name" : columns_to_int,
-                "args" : []
+                "args" : [["Année"]]
+            },
+            {
+                "name" : columns_to_float,
+                "args" : [["Impot"]]
             },
         ]
     },
