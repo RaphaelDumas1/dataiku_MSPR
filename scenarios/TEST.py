@@ -23,9 +23,9 @@ datasets_names = [
   "Type_logement",
   "Categorie_logement", 
   "Statut_occupation_logement",
+  "Composition_menage",
+  "Nombre_enfant",
     
-    
-  "Composition_menage", 
   
   "Impot_moyen", 
   
@@ -33,7 +33,7 @@ datasets_names = [
    
   "Nombre_detranger", 
   "Nombre_dimmigre", 
-  "Nombre_enfant", 
+   
   "Population", 
   "Repartition_age", 
   "Repartition_des_contrats", 
