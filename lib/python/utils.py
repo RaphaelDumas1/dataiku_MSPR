@@ -399,12 +399,12 @@ def extract_and_concat_to_original(df, interval1, interval2):
     df1, idx1 = extract(df, *interval1)
     df2, idx2 = extract(df, *interval2)
     
-    print("lll", df1.columns, df2.columns)
+    
 
     # Supprimer les lignes d'origine
     all_rows_to_drop = set(idx1 + idx2)
     df_cleaned = df.drop(index=all_rows_to_drop).reset_index(drop=True)
-
+    print("lll", df_cleaned.columns, df1.columns, df2.columns)
     # On ne réindexe pas ici, on s'assure juste que les colonnes sont bien dans df_cleaned
     columns_to_add_1 = [col for col in df1.columns if col in df_cleaned.columns]
     columns_to_add_2 = [col for col in df2.columns if col in df_cleaned.columns]
