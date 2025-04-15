@@ -131,7 +131,8 @@ for key, df in dfs.items():
         if(col_count == df["cycle_length"]):
             col_count = 0
             count += 1
-        
+
+final_df['Couleur'] = df['Couleur'].map(party_orientation)
 
 test = dataiku.Dataset("Legislatives")
 test.write_with_schema(final_df)
