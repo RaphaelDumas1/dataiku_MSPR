@@ -301,6 +301,7 @@ def process_annuaire(df):
         "restauration": 0.0,
         "hebergement": 0.0,
         "ulis": 0.0,
+        "apprentissage": "false",
         "segpa": 0.0,
         "segpa": 0.0,
         "lycee_des_metiers": 0.0,
