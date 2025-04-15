@@ -24,10 +24,6 @@ datasets = [
                            "Montant total NDUREJ", "Nombre foyers NDURAL", "Nombre personnes NDURAL", "Montant total NDURAL", 
                            "Nombre foyers NDURINS", "Nombre personnes NDURINS", "Montant total NDURINS"]]
             },
-            {
-                 "name" : columns_to_string,
-                 "args" : [["Numéro département", "Numéro région"]]
-            },
         ]
     },
     {
