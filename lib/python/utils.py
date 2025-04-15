@@ -319,6 +319,10 @@ def process_annuaire(df):
         "fiche_onisep": "Inconnue"
         "position": "48.856614,2.3522219",
         "type_contrat_prive": "Inconnu",
+        "coordx_origine": "2.3522",
+        "coordy_origine": "48.8566",
+
+        
 
         
 
