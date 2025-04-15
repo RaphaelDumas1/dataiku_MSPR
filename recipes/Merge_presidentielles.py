@@ -52,6 +52,8 @@ candidate_orientation = {
     'MEGRET': 'Far_Right',
     'de VILLIERS': 'Far_Right',
     'VILLIERS DE': 'Far_Right',
+    
+    'Blanc': 'Blank'
 }
 
 presidentielle_2022 = dataiku.Dataset("Presidentielle_2022")
