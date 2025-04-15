@@ -411,7 +411,4 @@ def extract_and_concat_to_original(df, interval1, interval2):
     
     df_cleaned = df_cleaned[columns_to_add_1]
 
-    # Ajouter les lignes de df1 et df2 à la fin de df_cleaned
-    df_cleaned = pd.concat([df_cleaned, df1, df2], axis=0, ignore_index=True)
-
     return df_cleaned
