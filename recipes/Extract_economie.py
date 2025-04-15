@@ -45,7 +45,10 @@ datasets = [
     {
         "name": "Salaire_moyen",
         "functions": [
-            
+            {
+                "name" : columns_to_int,
+                "args" : []
+            },
         ]
     },
     {
