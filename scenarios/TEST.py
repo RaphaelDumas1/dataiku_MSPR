@@ -9,6 +9,7 @@ project = client.get_project(dataiku.default_project_key())
 # Liste des datasets à exporter
 datasets_names = [
   "Esperance_de_vie",
+  "Taux_scolarisation",
   "Categorie_logement", 
   "Composition_menage", 
   "Delinquance", 
@@ -29,8 +30,7 @@ datasets_names = [
  "Taux_de_mortalite", 
   "Taux_de_natalite", 
   "Taux_de_pauvrete", 
-  "Type_logement", 
-  "Taux_scolarisation", 
+  "Type_logement",  
   "Categorie_metiers", 
   "Presidentielles", 
   "Legislatives"
