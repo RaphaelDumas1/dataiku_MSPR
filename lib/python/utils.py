@@ -299,7 +299,9 @@ def process_annuaire(df):
         "segpa": 0.0,
         "segpa": 0.0,
         "lycee_des_metiers": 0.0,
-            
+        "appartenance_education_prioritaire": "Aucune",
+        "greta": 0.0,
+        
 
 
 
