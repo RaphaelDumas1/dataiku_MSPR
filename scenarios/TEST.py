@@ -11,11 +11,14 @@ datasets_names = [
   "Esperance_de_vie",
   "Taux_scolarisation",
   "annuaire_des_ecoles_en_france",
+  "Administration_penitentiaire", 
+  "Delinquance", 
+  "Presidentielles", 
   "Categorie_logement", 
   "Composition_menage", 
-  "Delinquance", 
+  
   "Impot_moyen", 
-  "Administration_penitentiaire", 
+  
   "Logement", "Evolution_population", 
   "Nombre_de_salarie", 
   "Nombre_detranger", 
@@ -33,7 +36,7 @@ datasets_names = [
   "Taux_de_pauvrete", 
   "Type_logement",  
   "Categorie_metiers", 
-  "Presidentielles", 
+  
   "Legislatives"
 ]
 # Ajoutez vos datasets ici
