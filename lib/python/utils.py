@@ -311,7 +311,9 @@ def process_annuaire(df):
         
     for col, default in columns_with_defaults.items():
         df[col] = df[col].fillna("").apply(lambda x: x if str(x).strip() else default)
-        
+    
+    df["nombre_d_eleves"] = df["nombre_d_eleves"].fillna(df["nombre_d_eleves"].mean())
+    
     return df
     
     
