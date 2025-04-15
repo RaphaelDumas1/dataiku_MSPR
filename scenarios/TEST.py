@@ -31,6 +31,7 @@ datasets_names = [
   "Taux_de_mortalite",
   "Population",
   "Repartition_age",
+  "Repartition_sexe",
     
     
   
@@ -44,7 +45,7 @@ datasets_names = [
    
    
   "Repartition_des_contrats", 
-  "Repartition_sexe", 
+   
   "Salaire_moyen", 
    
   
