@@ -34,11 +34,11 @@ datasets_names = [
   "Repartition_sexe",
   "Nombre_dimmigre",
   "Taux_de_pauvrete",
-    
+  "Evolution_population",
   
   "Impot_moyen", 
   
-  , "Evolution_population", 
+  ,  
    
    
    
