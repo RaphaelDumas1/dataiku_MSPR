@@ -20,7 +20,7 @@ dfs = {
 }
 
 # Create empty dataframe with columns needed
-final_df = pd.DataFrame(columns=["Année", "Genre", "Nom", "Prénom", "Voix"])
+final_df = pd.DataFrame(columns=["Année", "Genre", "Nom", "Prénom", "Voix", "Couleur"])
 
 count = 0
 
@@ -62,7 +62,8 @@ for key, df in dfs.items():
         if(col_count == 6):
             col_count = 0
             count += 1
-            
+
+final_df['Couleur'] = final_df['Parti'].map(party_orientation)
         
 
 # Dataset Presidentielle renamed to Presidentielles by admin on 2025-02-11 18:01:24
