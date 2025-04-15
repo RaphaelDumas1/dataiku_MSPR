@@ -87,8 +87,8 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"double"},
-      {"name":"Salaire Net","type":"double"}
+      {"name":"Année","type":"bigint"},
+      {"name":"Salaire Net","type":"bigint"}
     ],
     "userModified": false
   },
