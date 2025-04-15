@@ -26,7 +26,7 @@ datasets = [
             {
                  "name" : columns_to_int,
                  "args" : [["ecole_maternelle", "ecole_elementaire", "voie_generale", "voie_technologique", "voie_professionnelle",
-                           "restauration", "hebergement", "ulis" "apprentissage", "segpa", "section_arts", "section_cinema", "section_theatre",
+                           "restauration", "hebergement", "ulis", "apprentissage", "segpa", "section_arts", "section_cinema", "section_theatre",
                            "section_sport", "section_internationale", "section_europeenne", "lycee_agricole", "lycee_militaire", "lycee_des_metiers",
                            "post_bac", "greta", "nombre_d_eleves", "multi_uai", "rpi_concentre"]]
             }
