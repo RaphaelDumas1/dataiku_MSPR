@@ -18,15 +18,18 @@ datasets_names = [
   "Repartition_des_contrats",
   "Categorie_metiers",
   "Nombre_de_salarie",
-  "Evolution_trimestrielle_emploi"
-    
-    
+  "Evolution_trimestrielle_emploi",
+  "Logement", 
+  "Type_logement",
   "Categorie_logement", 
+  "Statut_occupation_logement",
+    
+    
   "Composition_menage", 
   
   "Impot_moyen", 
   
-  "Logement", "Evolution_population", 
+  , "Evolution_population", 
    
   "Nombre_detranger", 
   "Nombre_dimmigre", 
@@ -36,12 +39,12 @@ datasets_names = [
   "Repartition_des_contrats", 
   "Repartition_sexe", 
   "Salaire_moyen", 
-  "Statut_occupation_logement", 
+   
   
  "Taux_de_mortalite", 
   "Taux_de_natalite", 
   "Taux_de_pauvrete", 
-  "Type_logement",  
+    
    
   
   "Legislatives"
