@@ -261,7 +261,7 @@ def process_inflation(df):
     else:
         raise ValueError("Le DataFrame ne contient pas au moins 4 lignes pour définir les headers")
         
-    rows_to_drop = list(range(0, 4))
+    rows_to_drop = list(range(0, 3))
     df = df.drop(index=[i for i in rows_to_drop if i < len(df)], errors='ignore')
     
     df = df.reset_index(drop=True)
