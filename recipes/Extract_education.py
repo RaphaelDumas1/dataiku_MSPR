@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, columns_to_int, process_annuaire, columns_to_string
+from utils import create_datasets_from_file_sheets, columns_to_int, process_annuaire, columns_to_string, delete_where_not_equal
 
 datasets = [
     {
@@ -13,6 +13,10 @@ datasets = [
     {
         "name": "annuaire_des_ecoles_en_france",
         "functions": [
+            {
+                "name" : delete_where_not_equal,
+                "args" : ["code_departement", "35"]
+            },
             {
                 "name" : process_annuaire,
                 "args" : []
