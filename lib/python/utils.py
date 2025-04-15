@@ -204,26 +204,26 @@ def columns_to_float(df, columns=None, round=None):
 def columns_to_string(df, columns=None):
     if columns is None:
         columns = df.columns
-
+    
     for column in columns:
         column = column.strip() if isinstance(column, str) else column
 
         if column not in df.columns:
             raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
-
+        print(column)
         try:
-            df[column] = df[column].apply(lambda x: float(
+            df[column] = df[column].apply(lambda x: str(
                 str(x)
-                .replace('\xa0', '')  # espace insécable
-                .replace(' ', '')     # espace classique
-                .replace(',', '.')    # virgule -> point
+                .replace('\xa0', '')  # Supprimer les espaces insécables
+                .replace(' ', '')     # Supprimer les espaces
+                .replace(',', '.')    # Remplacer les virgules par des points
             ) if pd.notnull(x) else x)
         except Exception as e:
             raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
-    
-        if round is not None:
-            df[column] = df[column].round(1)
-    
+            
+        # Convertir explicitement la colonne en type 'string'
+        df[column] = df[column].astype("string")
+
     return df
 
 def add_columns(df, col1, col2, result_column):
