@@ -87,7 +87,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"Date référence","type":"date"},
+      {"name":"Date référence","type":"string"},
       {"name":"Numéro département","type":"string"},
       {"name":"Nom département","type":"string"},
       {"name":"Numéro région","type":"string"},
