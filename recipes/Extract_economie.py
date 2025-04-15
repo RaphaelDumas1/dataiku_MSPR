@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, process_pib, pivot, columns_to_int, columns_to_float
+from utils import create_datasets_from_file_sheets, process_pib, pivot, columns_to_int, columns_to_float, process_inflation
 
 datasets = [
     {
@@ -27,11 +27,18 @@ datasets = [
     },
     {
         "name": "Inflation",
-        "functions": []
+        "functions": [
+            {
+                "name" : process_inflation,
+                "args" : []
+            },
+        ]
     },
     {
         "name": "Salaire_moyen",
-        "functions": []
+        "functions": [
+            
+        ]
     },
     {
         "name": "Impot_moyen",
