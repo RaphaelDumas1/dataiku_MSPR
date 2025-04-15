@@ -21,7 +21,7 @@ datasets = [
                  "name" : columns_to_string,
                  "args" : [["code_postal", "code_commune", "code_departement", "code_academie", "code_region", "telephone",
                            "siren_siret", "coordx_origine", "coordy_origine", "rpi_disperse", "code_type_contrat_prive", "code_bassin_formation",
-                           "code_nature]]
+                           "code_nature"]]
             },
             {
                  "name" : columns_to_int,
