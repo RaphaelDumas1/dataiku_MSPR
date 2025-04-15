@@ -233,11 +233,11 @@ def process_pib(df):
     first_col = df.columns[0]
 
     prefix_sources = {
-        9: 5,
-        10: 5,
-        13: 9,
-        14: 9,
-        15: 9
+        9: 7,
+        10: 7,
+        13: 11,
+        14: 11,
+        15: 11
     }
 
     for i in rows_to_prefix:
