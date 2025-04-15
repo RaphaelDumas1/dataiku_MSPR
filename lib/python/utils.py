@@ -404,7 +404,7 @@ def extract_and_concat_to_original(df, interval1, interval2):
     # Supprimer les lignes d'origine
     all_rows_to_drop = set(idx1 + idx2)
     df_cleaned = df.drop(index=all_rows_to_drop).reset_index(drop=True)
-    
+    df_cleaned = df_cleaned.dropna(how="all")
     
     df_cleaned.rename(columns={'Quotient familial': 'Caracteristiques'}, inplace=True)
     df1.rename(columns={'Situation familiale': 'Caracteristiques'}, inplace=True)
