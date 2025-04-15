@@ -368,9 +368,6 @@ def process_annuaire(df):
     
     return df
     
-    
-
-
         
 def execute_instruction_on_dataframe(df, instruction):
     functions = instruction["functions"]
@@ -390,3 +387,38 @@ def execute_instruction_on_dataframe(df, instruction):
     # Write datas
     dataset = dataiku.Dataset(instruction_name)
     dataset.write_with_schema(df)
+
+def extract_two_sub_dataframes_and_clean(df, interval1, interval2):
+    """
+    Extrait deux sous-DataFrames à partir de deux intervalles de lignes,
+    utilise la première ligne de chaque comme header,
+    supprime les lignes correspondantes du DataFrame d'origine,
+    et supprime les colonnes qui ne sont pas dans le premier sous-DataFrame.
+
+    Args:
+        df (pd.DataFrame): Le DataFrame d'origine.
+        interval1 (tuple): (start_row_1, end_row_1) pour le premier bloc.
+        interval2 (tuple): (start_row_2, end_row_2) pour le second bloc.
+
+    Returns:
+        tuple: (df1, df2, df_cleaned)
+    """
+
+    # Extraire les deux intervalles
+    def extract(df, start, end):
+        block = df.iloc[start:end+1].copy()
+        headers = block.iloc[0]
+        sub_df = pd.DataFrame(block.values[1:], columns=headers)
+        return sub_df.reset_index(drop=True), list(range(start, end+1))
+
+    df1, idx1 = extract(df, *interval1)
+    df2, idx2 = extract(df, *interval2)
+
+    # Supprimer toutes les lignes extraites
+    all_rows_to_drop = set(idx1 + idx2)
+    df_remaining = df.drop(index=all_rows_to_drop).reset_index(drop=True)
+
+    # Supprimer les colonnes qui ne sont pas dans df1
+    df_remaining = df_remaining[[col for col in df1.columns if col in df_remaining.columns]]
+
+    return df1, df2, df_remaining
