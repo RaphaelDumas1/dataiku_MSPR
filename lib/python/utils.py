@@ -410,5 +410,9 @@ def extract_and_concat_to_original(df, interval1, interval2):
     columns_to_add_2 = [col for col in df2.columns if col in df_cleaned.columns]
     
     df_cleaned = df_cleaned[columns_to_add_1]
+    df1 = df1[columns_to_add_1]
+    df2 = df2[columns_to_add_1]
+    
+    df_cleaned = pd.concat([df_cleaned, df1, df2], axis=0, ignore_index=True)
 
     return df_cleaned
