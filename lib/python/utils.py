@@ -281,7 +281,9 @@ def process_inflation(df):
     df = df.reset_index(drop=True)
     return df
         
-        
+def process_annuaire(df):  
+    df["adresse_2"] = df["adresse_2"].fillna("").apply(lambda x: x if str(x).strip() else "Aucune")
+
         
 def execute_instruction_on_dataframe(df, instruction):
     functions = instruction["functions"]
