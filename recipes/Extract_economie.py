@@ -60,7 +60,7 @@ datasets = [
             },
             {
                 "name" : columns_to_float,
-                "args" : [["Impot"]]
+                "args" : [["Impot"], 2]
             },
         ]
     },
