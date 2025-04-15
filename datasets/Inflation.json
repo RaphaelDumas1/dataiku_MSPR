@@ -87,8 +87,8 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"string"},
-      {"name":"Taux d\u0027inflation","type":"string"}
+      {"name":"Année","type":"bigint"},
+      {"name":"Taux d\u0027inflation","type":"double"}
     ],
     "userModified": false
   },
