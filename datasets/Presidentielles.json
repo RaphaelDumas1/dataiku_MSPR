@@ -87,11 +87,11 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"string"},
+      {"name":"Année","type":"bigint"},
       {"name":"Genre","type":"string"},
       {"name":"Nom","type":"string"},
       {"name":"Prénom","type":"string"},
-      {"name":"Voix","type":"string"},
+      {"name":"Voix","type":"bigint"},
       {"name":"Couleur","type":"string"}
     ],
     "userModified": false
