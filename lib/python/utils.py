@@ -323,6 +323,22 @@ def process_annuaire(df):
         "coordy_origine": "48.8566",
         "epsg_rogine": "EPSG:2154",
         "nom_circonscription": "Inconnu",
+        "latitude": "48.856614",
+        "longitude": "2.3522219",
+        "precision_localisation": "Inconnue",
+        "rpi_concentre" : 0.0,
+        "rpi_disperse" : 0.0,
+        "pial" : "Inconnu",
+        "etablissement_mere" : "Inconnu",
+        "type_rattachement_etablissement_mere" : "Inconnu",
+        "code_circonscription" : "Inconnu",
+        "code_zone_animation_pedagogique" : "Inconnu",
+        "libelle_zone_animation_pedagogique" : "Inconnu",
+        "code_bassin_formation" : "Inconnu",
+        "libelle_bassin_formation" : "Inconnu",
+        
+
+
 
 
         
