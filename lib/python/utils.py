@@ -284,9 +284,13 @@ def process_inflation(df):
 def process_annuaire(df):  
     df = df.dropna(how="all")
         columns_defaults = {
+        "type_etablissement": "Inconnu",
+        "statut_public_prive": "Inconnu",
         "adresse_1": "Inconnue",
         "adresse_2": "Inconnue",
-        "ville": "Non précisé"
+        "ecole_maternelle": 0.0,
+        "ecole_elementaire": 0.0,
+        "telephone": "Inconnu", 
     }
         
     for col, default in columns_with_defaults.items():
