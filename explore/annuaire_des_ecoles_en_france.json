@@ -152,7 +152,9 @@
           "columnType": "ALPHANUM",
           "currentMode": "ALPHANUM",
           "sort": "count",
-          "selectedValues": {}
+          "selectedValues": {
+            "___dku_no_value___": true
+          }
         },
         "alphanumFilter": {
           "type": "alphanum",
@@ -168,8 +170,8 @@
           "column": "identifiant_de_l_etablissement",
           "params": {
             "type": "Text",
-            "ok": false,
-            "nok": false,
+            "ok": true,
+            "nok": true,
             "empty": true
           }
         }
