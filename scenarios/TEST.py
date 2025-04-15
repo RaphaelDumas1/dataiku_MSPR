@@ -32,7 +32,8 @@ datasets_names = [
   "Population",
   "Repartition_age",
   "Repartition_sexe",
-  "Nombre_dimmigre", 
+  "Nombre_dimmigre",
+  "Taux_de_pauvrete",
     
   
   "Impot_moyen", 
@@ -51,7 +52,7 @@ datasets_names = [
   
   
    
-  "Taux_de_pauvrete", 
+   
     
    
   
