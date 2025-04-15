@@ -409,14 +409,23 @@ def extract_and_concat_to_original(df, interval1, interval2):
     columns_to_add_1 = [col for col in df1.columns if col in df_cleaned.columns]
     columns_to_add_2 = [col for col in df2.columns if col in df_cleaned.columns]
     
-    print(columns_to_add_1, columns_to_add_2)
+    # Drop les colonnes dans df1 et df2 qui ne sont pas dans columns_to_add
+    df1 = df1[columns_to_add_1]
+    df2 = df2[columns_to_add_2]
 
-     # Ajouter les colonnes de df1 qui existent dans df_cleaned
-    for col in columns_to_add_1:
-        df_cleaned[col] = df1[col]
+    # On réduit df1 et df2 pour qu'ils aient les mêmes colonnes que df_cleaned
+    # Ajouter des colonnes vides si nécessaire pour faire correspondre les colonnes de df_cleaned
+    for col in df_cleaned.columns:
+        if col not in df1.columns:
+            df1[col] = pd.NA  # Ajouter une colonne vide si elle est absente dans df1
+        if col not in df2.columns:
+            df2[col] = pd.NA  # Ajouter une colonne vide si elle est absente dans df2
 
-    # Ajouter les colonnes de df2 qui existent dans df_cleaned
-    for col in columns_to_add_2:
-        df_cleaned[col] = df2[col]
+    # Réindexer df1 et df2 pour qu'ils aient la même taille que df_cleaned
+    df1 = df1.reindex(df_cleaned.index)
+    df2 = df2.reindex(df_cleaned.index)
+
+    # Ajouter les lignes de df1 et df2 à la fin de df_cleaned
+    df_cleaned = pd.concat([df_cleaned, df1, df2], axis=0, ignore_index=True)
 
     return df_cleaned
