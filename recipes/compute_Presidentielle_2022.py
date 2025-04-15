@@ -18,21 +18,13 @@ datasets = [
         "functions": []
     },
     {
-        "name": "Presidentielle_1995",
-        "functions": []
-    },
-    {
         "name": "Presidentielle_2002",
         "functions": []
     },
     {
-        "name": "Legislative_1997",
+        "name": "Presidentielle_1995",
         "functions": []
-    },
-    {
-        "name": "Legislative_1993",
-        "functions": []
-    },
+    }
 ]
 
 create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Presidentielle.xlsx", datasets, [])
