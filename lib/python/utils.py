@@ -316,7 +316,7 @@ def process_annuaire(df):
         "appartenance_education_prioritaire": "Aucune",
         "greta": 0.0,
         "siren_siret": "Inconnu",
-        "fiche_onisep": "Inconnue"
+        "fiche_onisep": "Inconnue",
         "position": "48.856614,2.3522219",
         "type_contrat_prive": "Inconnu",
         "coordx_origine": "2.3522",
@@ -335,19 +335,7 @@ def process_annuaire(df):
         "code_zone_animation_pedagogique" : "Inconnu",
         "libelle_zone_animation_pedagogique" : "Inconnu",
         "code_bassin_formation" : "Inconnu",
-        "libelle_bassin_formation" : "Inconnu",
-        
-
-
-
-
-        
-
-        
-
-
-
-
+        "libelle_bassin_formation" : "Inconnu"
     }
         
     for col, default in columns_defaults.items():
