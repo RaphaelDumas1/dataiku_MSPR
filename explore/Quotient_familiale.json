@@ -1,0 +1,179 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "Date référence": 148,
+      "Numéro département": 150,
+      "Nom département": 155,
+      "Numéro région": 134,
+      "Nom région": 120,
+      "Quotient familial": 281,
+      "Nombre foyers NDUR": 150,
+      "Nombre personnes NDUR": 173,
+      "Montant total NDUR": 150,
+      "Nombre foyers NDURPAJE": 180,
+      "Nombre personnes NDURPAJE": 203,
+      "Montant total NDURPAJE": 180,
+      "Nombre foyers NDUREJ": 165,
+      "Nombre personnes NDUREJ": 188,
+      "Montant total NDUREJ": 165,
+      "Nombre foyers NDURAL": 165,
+      "Nombre personnes NDURAL": 188,
+      "Montant total NDURAL": 165,
+      "Nombre foyers NDURINS": 173,
+      "Nombre personnes NDURINS": 195,
+      "Montant total NDURINS": 173,
+      "Lieu résidence": 134,
+      "None": 134,
+      "None_1": 134,
+      "None_2": 134,
+      "None_3": 134,
+      "None_4": 134,
+      "None_5": 134,
+      "None_6": 134,
+      "None_7": 134,
+      "None_8": 134,
+      "None_9": 134,
+      "None_10": 134,
+      "None_11": 134,
+      "None_12": 134,
+      "None_13": 134,
+      "None_14": 134,
+      "None_15": 134,
+      "None_16": 134,
+      "None_17": 134,
+      "None_18": 134,
+      "None_19": 134,
+      "None_20": 134,
+      "None_21": 134,
+      "None_22": 134,
+      "None_23": 134,
+      "None_24": 134,
+      "None_25": 134,
+      "None_26": 134,
+      "None_27": 134,
+      "None_28": 134,
+      "None_29": 134,
+      "None_30": 134,
+      "None_31": 134,
+      "None_32": 134,
+      "None_33": 134,
+      "None_34": 134,
+      "None_35": 134,
+      "None_36": 134,
+      "None_37": 134,
+      "None_38": 134,
+      "None_39": 134,
+      "None_40": 134,
+      "None_41": 134,
+      "None_42": 134,
+      "None_43": 134,
+      "None_44": 134,
+      "None_45": 134,
+      "None_46": 134,
+      "None_47": 134,
+      "None_48": 134,
+      "None_49": 134,
+      "None_50": 134,
+      "None_51": 134,
+      "None_52": 134,
+      "None_53": 134,
+      "None_54": 134,
+      "None_55": 134,
+      "None_56": 134,
+      "None_57": 134,
+      "None_58": 134,
+      "None_59": 134,
+      "None_60": 134,
+      "None_61": 134,
+      "None_62": 134,
+      "None_63": 134,
+      "None_64": 134,
+      "None_65": 134,
+      "None_66": 134,
+      "None_67": 134,
+      "None_68": 134,
+      "None_69": 134,
+      "None_70": 134,
+      "None_71": 134,
+      "None_72": 183
+    },
+    "columnUseScientificNotationByName": {},
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "individualColumnsRules": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [
+      {
+        "column": "Date référence",
+        "ascending": true
+      }
+    ],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxRecordsForDisplay": -1,
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "FULL",
+        "maxRecords": -1,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [],
+  "interactiveSearch": {
+    "savedQueries": []
+  },
+  "customMeasures": []
+}
