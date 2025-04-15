@@ -321,6 +321,8 @@ def process_annuaire(df):
         "type_contrat_prive": "Inconnu",
         "coordx_origine": "2.3522",
         "coordy_origine": "48.8566",
+        "epsg_rogine": "EPSG:2154",
+
 
         
 
