@@ -237,7 +237,7 @@ def process_pib(df):
         if i < len(df):
             val = df.at[i, first_col]
             if pd.notnull(val):
-                new_val = "dont " + str(val).strip()
+                new_val = "Dont " + str(val).strip()
                 if new_val in df[first_col].values:
                     new_val += " 2"
                 df.at[i, first_col] = new_val
