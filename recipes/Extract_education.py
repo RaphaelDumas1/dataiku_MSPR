@@ -15,7 +15,7 @@ datasets = [
         "functions": [
             {
                 "name" : delete_where_not_equal,
-                "args" : ["code_departement", "35"]
+                "args" : ["code_departement", "35.0"]
             },
             {
                 "name" : process_annuaire,
