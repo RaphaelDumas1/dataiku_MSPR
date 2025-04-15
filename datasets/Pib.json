@@ -88,17 +88,17 @@
   "schema": {
     "columns": [
       {"name":"Année","type":"bigint"},
-      {"name":"Produit intérieur brut (PIB)","type":"string"},
-      {"name":"Importations de biens et de services","type":"string"},
-      {"name":"Dépense de consommation finale","type":"string"},
-      {"name":"Dépense de consommation finale dont ménages","type":"string"},
-      {"name":"Dépense de consommation finale dont administrations publiques","type":"string"},
-      {"name":"Formation brute de capital fixe","type":"string"},
-      {"name":"Formation brute de capital fixe dont sociétés et entreprises individuelles non financières","type":"string"},
-      {"name":"Formation brute de capital fixe dont administrations publiques","type":"string"},
-      {"name":"Formation brute de capital fixe dont ménages hors entrepreneurs individuels","type":"string"},
-      {"name":"Exportations de biens et de services","type":"string"},
-      {"name":"Demande intérieure hors stocks","type":"string"}
+      {"name":"Produit intérieur brut (PIB)","type":"double"},
+      {"name":"Importations de biens et de services","type":"double"},
+      {"name":"Dépense de consommation finale","type":"double"},
+      {"name":"Dépense de consommation finale dont ménages","type":"double"},
+      {"name":"Dépense de consommation finale dont administrations publiques","type":"double"},
+      {"name":"Formation brute de capital fixe","type":"double"},
+      {"name":"Formation brute de capital fixe dont sociétés et entreprises individuelles non financières","type":"double"},
+      {"name":"Formation brute de capital fixe dont administrations publiques","type":"double"},
+      {"name":"Formation brute de capital fixe dont ménages hors entrepreneurs individuels","type":"double"},
+      {"name":"Exportations de biens et de services","type":"double"},
+      {"name":"Demande intérieure hors stocks","type":"double"}
     ],
     "userModified": false
   },
