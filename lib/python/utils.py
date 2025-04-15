@@ -388,8 +388,8 @@ def execute_instruction_on_dataframe(df, instruction):
     dataset = dataiku.Dataset(instruction_name)
     dataset.write_with_schema(df)
 
-def extract_two_sub_dataframes_and_clean(df, interval1, interval2):
-    # Extraire les deux intervalles
+def extract_and_concat_to_original(df, interval1, interval2):
+    # Fonction d'extraction
     def extract(df, start, end):
         block = df.iloc[start:end+1].copy()
         headers = block.iloc[0]
@@ -399,11 +399,17 @@ def extract_two_sub_dataframes_and_clean(df, interval1, interval2):
     df1, idx1 = extract(df, *interval1)
     df2, idx2 = extract(df, *interval2)
 
-    # Supprimer toutes les lignes extraites
+    # Supprimer les lignes d'origine
     all_rows_to_drop = set(idx1 + idx2)
-    df_remaining = df.drop(index=all_rows_to_drop).reset_index(drop=True)
+    df_cleaned = df.drop(index=all_rows_to_drop).reset_index(drop=True)
 
-    # Supprimer les colonnes qui ne sont pas dans df1
-    df_remaining = df_remaining[[col for col in df1.columns if col in df_remaining.columns]]
+    # Assurer que toutes les dataframes ont la même longueur (remplir si nécessaire)
+    max_len = max(len(df_cleaned), len(df1), len(df2))
+    df_cleaned = df_cleaned.reindex(range(max_len))
+    df1 = df1.reindex(range(max_len))
+    df2 = df2.reindex(range(max_len))
 
-    return df1, df2, df_remaining
+    # Fusionner les colonnes horizontalement
+    final_df = pd.concat([df_cleaned, df1, df2], axis=1)
+
+    return final_df
