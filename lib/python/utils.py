@@ -283,6 +283,8 @@ def process_inflation(df):
         
 def process_annuaire(df):  
     df["adresse_2"] = df["adresse_2"].fillna("").apply(lambda x: x if str(x).strip() else "Aucune")
+    df["adresse_1"] = df["adresse_1"].fillna("").apply(lambda x: x if str(x).strip() else "Aucune")
+
 
         
 def execute_instruction_on_dataframe(df, instruction):
