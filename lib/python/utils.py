@@ -284,10 +284,11 @@ def process_inflation(df):
 def process_annuaire(df):  
     columns_to_remove = ["voie_generale", "voie_technologique", "voie_professionnelle", "fax", "web", "apprentissage",
                         " section_arts", "section_cinema", " section_theatre", " section_sport", "section_internationale", 
-                        "section_europeenne", "lycee_agricole", "lycee_militaire", "post_bac"]
+                        "section_europeenne", "lycee_agricole", "lycee_militaire", "post_bac", "fiche_onisep"]
     df = df.drop(columns=[col for col in columns_to_remove if col in df.columns])
     df["adresse_2"] = df["adresse_2"].fillna("").apply(lambda x: x if str(x).strip() else "Aucune")
     df["adresse_1"] = df["adresse_1"].fillna("").apply(lambda x: x if str(x).strip() else "Aucune")
+    return df
     
     
 
