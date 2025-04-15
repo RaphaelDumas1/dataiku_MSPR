@@ -93,6 +93,7 @@ for key, df in dfs.items():
             final_df.loc[count, "Nom"] = "Blanc"
             final_df.loc[count, "Prénom"] = "Blanc"
             final_df.loc[count, "Voix"] = value
+            final_df.loc[count, "Genre"] = "NA"
             count += 1
         
         # Increment since first candidate
