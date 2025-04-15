@@ -288,8 +288,10 @@ def process_annuaire(df):
         "adresse_2": "Inconnue",
         "ville": "Non précisé"
     }
-    df["adresse_2"] = df["adresse_2"].fillna("").apply(lambda x: x if str(x).strip() else "Inconnue")
-    df["adresse_1"] = df["adresse_1"].fillna("").apply(lambda x: x if str(x).strip() else "Aucune")
+        
+    for col, default in columns_with_defaults.items():
+        df[col] = df[col].fillna("").apply(lambda x: x if str(x).strip() else default)
+        
     return df
     
     
