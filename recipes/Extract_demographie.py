@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, pivot, copy_years_range, columns_to_int, add_columns, extract_and_concat_to_original
+from utils import create_datasets_from_file_sheets, pivot, copy_years_range, columns_to_int, add_columns, extract_and_concat_to_original, columns_to_string
 
 datasets = [
     {
@@ -16,6 +16,14 @@ datasets = [
             {
                  "name" : extract_and_concat_to_original,
                  "args" : [(802, 1604), (1606, 2804)]
+            },
+            {
+                 "name" : columns_to_int,
+                 "args" : [["Année"]]
+            },
+            {
+                 "name" : columns_to_string,
+                 "args" : [["Numéro département"]]
             },
         ]
     },
