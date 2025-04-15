@@ -1,3 +1,3 @@
-from utils import run
+from utils import create_datasets_from_file_sheets
 
-run("MSPR", "aPmnwurD", "MSPR - Legislative.xlsx", [])
+create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Legislative.xlsx", [])
