@@ -389,21 +389,6 @@ def execute_instruction_on_dataframe(df, instruction):
     dataset.write_with_schema(df)
 
 def extract_two_sub_dataframes_and_clean(df, interval1, interval2):
-    """
-    Extrait deux sous-DataFrames à partir de deux intervalles de lignes,
-    utilise la première ligne de chaque comme header,
-    supprime les lignes correspondantes du DataFrame d'origine,
-    et supprime les colonnes qui ne sont pas dans le premier sous-DataFrame.
-
-    Args:
-        df (pd.DataFrame): Le DataFrame d'origine.
-        interval1 (tuple): (start_row_1, end_row_1) pour le premier bloc.
-        interval2 (tuple): (start_row_2, end_row_2) pour le second bloc.
-
-    Returns:
-        tuple: (df1, df2, df_cleaned)
-    """
-
     # Extraire les deux intervalles
     def extract(df, start, end):
         block = df.iloc[start:end+1].copy()
