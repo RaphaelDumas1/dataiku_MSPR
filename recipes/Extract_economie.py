@@ -32,6 +32,14 @@ datasets = [
                 "name" : process_inflation,
                 "args" : []
             },
+            {
+                "name" : columns_to_int,
+                "args" : [["Année"]]
+            },
+            {
+                "name" : columns_to_float,
+                "args" : [["Taux d'inflation"]]
+            },
         ]
     },
     {
