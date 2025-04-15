@@ -13,7 +13,9 @@ datasets_names = [
   "annuaire_des_ecoles_en_france",
   "Administration_penitentiaire", 
   "Delinquance", 
-  "Presidentielles", 
+  "Presidentielles",
+  "Taux_de_chomage",
+    
   "Categorie_logement", 
   "Composition_menage", 
   
@@ -30,7 +32,7 @@ datasets_names = [
   "Repartition_sexe", 
   "Salaire_moyen", 
   "Statut_occupation_logement", 
-  "Taux_de_chomage",
+  
  "Taux_de_mortalite", 
   "Taux_de_natalite", 
   "Taux_de_pauvrete", 
