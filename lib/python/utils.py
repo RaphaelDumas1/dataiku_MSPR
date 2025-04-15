@@ -222,6 +222,7 @@ def rename_column(df, old_name, new_name):
 
 def process_pib(df):
     if len(df) > 3:
+        print("Ligne 2 :", df.iloc[2].tolist())
         df.columns = df.iloc[2]
         df.columns = df.columns.str.replace(" \(r\)", "", regex=True)
         df.columns = make_unique(df.columns)
