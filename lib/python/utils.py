@@ -311,10 +311,8 @@ def process_annuaire(df):
         "section_europeenne": 0.0,
         "lycee_agricole": 0.0,
         "lycee_militaire": 0.0,
-
-
-
         "lycee_des_metiers": 0.0,
+        "post_bac": 0.0,
         "appartenance_education_prioritaire": "Aucune",
         "greta": 0.0,
         "siren_siret": "Inconnu",
