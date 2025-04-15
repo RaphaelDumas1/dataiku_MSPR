@@ -127,7 +127,7 @@ for key, df in dfs.items():
             col_count = 0
             count += 1
 
-final_df['Couleur'] = df['Couleur'].map(party_orientation)
+final_df['Couleur'] = final_df['Couleur'].map(party_orientation)
 
 test = dataiku.Dataset("Legislatives")
 test.write_with_schema(final_df)
