@@ -404,14 +404,13 @@ def extract_and_concat_to_original(df, interval1, interval2):
     # Supprimer les lignes d'origine
     all_rows_to_drop = set(idx1 + idx2)
     df_cleaned = df.drop(index=all_rows_to_drop).reset_index(drop=True)
-    print(len(df_cleaned))
-    # Assurer que toutes les dataframes ont la même longueur (remplir si nécessaire)
-    max_len = max(len(df_cleaned), len(df1), len(df2))
-    df_cleaned = df_cleaned.reindex(range(max_len))
-    df1 = df1.reindex(range(max_len))
-    df2 = df2.reindex(range(max_len))
 
-    # Fusionner les colonnes horizontalement
-    final_df = pd.concat([df_cleaned, df1, df2], axis=1)
+    # On ne réindexe pas ici, on s'assure juste que les colonnes sont bien dans df_cleaned
+    columns_to_add_1 = [col for col in df1.columns if col in df_cleaned.columns]
+    columns_to_add_2 = [col for col in df2.columns if col in df_cleaned.columns]
+
+    # Ajouter les colonnes de df1 et df2 qui existent dans df_cleaned
+    df_cleaned[columns_to_add_1] = df1[columns_to_add_1]
+    df_cleaned[columns_to_add_2] = df2[columns_to_add_2]
 
     return final_df
