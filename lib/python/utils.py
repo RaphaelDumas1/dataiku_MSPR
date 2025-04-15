@@ -413,4 +413,4 @@ def extract_and_concat_to_original(df, interval1, interval2):
     df_cleaned[columns_to_add_1] = df1[columns_to_add_1]
     df_cleaned[columns_to_add_2] = df2[columns_to_add_2]
 
-    return final_df
+    return df_cleaned
