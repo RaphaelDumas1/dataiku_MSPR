@@ -210,14 +210,9 @@ def columns_to_string(df, columns=None):
 
         if column not in df.columns:
             raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
-        print(column)
+        
         try:
-            df[column] = df[column].apply(lambda x: str(
-                str(x)
-                .replace('\xa0', '')  # Supprimer les espaces insécables
-                .replace(' ', '')     # Supprimer les espaces
-                .replace(',', '.')    # Remplacer les virgules par des points
-            ) if pd.notnull(x) else x)
+            df[column] = df[column].apply(lambda x: str(x) if pd.notnull(x) else x)
         except Exception as e:
             raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
             
