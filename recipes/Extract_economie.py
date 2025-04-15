@@ -53,7 +53,12 @@ datasets = [
     },
     {
         "name": "Impot_moyen",
-        "functions": []
+        "functions": [
+            {
+                "name" : columns_to_int,
+                "args" : []
+            },
+        ]
     },
 ]
 
