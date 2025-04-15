@@ -10,6 +10,7 @@ project = client.get_project(dataiku.default_project_key())
 datasets_names = [
   "Esperance_de_vie",
   "Taux_scolarisation",
+  "annuaire_des_ecoles_en_france",
   "Categorie_logement", 
   "Composition_menage", 
   "Delinquance", 
