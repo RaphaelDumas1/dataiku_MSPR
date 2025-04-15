@@ -422,7 +422,7 @@ def extract_and_concat_to_original(df, interval1, interval2):
     
     df_cleaned = pd.concat([df_cleaned, df1, df2], axis=0, ignore_index=True)
     
-    df_cleaned["Date référence"] = pd.to_datetime(df["Date référence"], errors='coerce')  # s'assurer que c'est bien une date
-    df["Date référence"] = df["Date référence"].dt.year
+    df_cleaned["Date référence"] = df_cleaned["Date référence"].astype(str).str[:4]
+    df_cleaned.rename(columns={'Date référence': 'Année'}, inplace=True)
 
     return df_cleaned
