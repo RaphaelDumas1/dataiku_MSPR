@@ -404,12 +404,12 @@ def extract_and_concat_to_original(df, interval1, interval2):
     # Supprimer les lignes d'origine
     all_rows_to_drop = set(idx1 + idx2)
     df_cleaned = df.drop(index=all_rows_to_drop).reset_index(drop=True)
-    print("lll", df_cleaned.columns, df1.columns)
+    
     
     df_cleaned.rename(columns={'Quotient familial': 'Caracteristiques'}, inplace=True)
     df1.rename(columns={'Age responsable dossier': 'Caracteristiques'}, inplace=True)
     df2.rename(columns={'Situation familiale': 'Caracteristiques'}, inplace=True)
-
+    print("lll", df_cleaned.columns, df1.columns, df2.columns)
     
     # On ne réindexe pas ici, on s'assure juste que les colonnes sont bien dans df_cleaned
     columns_to_add_1 = [col for col in df1.columns if col in df_cleaned.columns]
