@@ -119,7 +119,7 @@ for key, df in dfs.items():
             count += 1
 
 final_df['Couleur'] = final_df['Nom'].map(candidate_orientation)
-        
+final_df = columns_to_int(df, ["Année", "Voix"])
 
 # Dataset Presidentielle renamed to Presidentielles by admin on 2025-02-11 18:01:24
 results = dataiku.Dataset("Presidentielles")
