@@ -19,7 +19,12 @@ datasets = [
             },
             {
                  "name" : columns_to_string,
-                 "args" : [["Année"]]
+                 "args" : [["code_postal", "code_commune", "code_departement", "code_academie", "code_region", ""]]
+            },
+            {
+                 "name" : columns_to_int,
+                 "args" : [["ecole_maternelle", "ecole_elementaire", "voie_generale", "voie_technologique", "voie_professionnelle",
+                           ]]
             }
         ]
     },
