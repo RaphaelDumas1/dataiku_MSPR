@@ -17,6 +17,8 @@ datasets_names = [
   "Taux_de_chomage",
   "Repartition_des_contrats",
   "Categorie_metiers",
+  "Nombre_de_salarie",
+  "Evolution_trimestrielle_emploi"
     
     
   "Categorie_logement", 
@@ -25,7 +27,7 @@ datasets_names = [
   "Impot_moyen", 
   
   "Logement", "Evolution_population", 
-  "Nombre_de_salarie", 
+   
   "Nombre_detranger", 
   "Nombre_dimmigre", 
   "Nombre_enfant", 
