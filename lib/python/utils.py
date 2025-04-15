@@ -222,7 +222,6 @@ def rename_column(df, old_name, new_name):
 
 def process_pib(df):
     if len(df) > 3:
-        print("Ligne 2 :", df.iloc[2].tolist())
         df.columns = df.iloc[2].astype(str).str.strip().str.replace(" \(r\)", "", regex=True)
         df.columns = make_unique(df.columns)
     else:
@@ -254,6 +253,20 @@ def process_pib(df):
     print("pib", df.columns)
     return df
 
+def process_inflation(df):
+    if len(df) > 3:
+        df.columns = df.iloc[2]
+    else:
+        raise ValueError("Le DataFrame ne contient pas au moins 4 lignes pour définir les headers")
+        
+    rows_to_drop = list(range(0, 4))
+    df = df.drop(index=[i for i in rows_to_drop if i < len(df)], errors='ignore')
+    
+    df = df.reset_index(drop=True)
+    return df
+        
+        
+        
 def execute_instruction_on_dataframe(df, instruction):
     functions = instruction["functions"]
     instruction_name = instruction["name"]
