@@ -25,13 +25,15 @@ datasets_names = [
   "Statut_occupation_logement",
   "Composition_menage",
   "Nombre_enfant",
+  "Nombre_detranger",
+  "Quotient_familiale", 
     
   
   "Impot_moyen", 
   
   , "Evolution_population", 
    
-  "Nombre_detranger", 
+   
   "Nombre_dimmigre", 
    
   "Population", 
