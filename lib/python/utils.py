@@ -406,9 +406,9 @@ def extract_and_concat_to_original(df, interval1, interval2):
     df_cleaned = df.drop(index=all_rows_to_drop).reset_index(drop=True)
     print("lll", df_cleaned.columns, df1.columns)
     
-    df_cleaned.rename(columns={'Age responsable dossier': 'Quotient familial'}, inplace=True)
-    df1.rename(columns={'Age responsable dossier': 'Quotient familial'}, inplace=True)
-    df2.rename(columns={'Situation familiale': 'Quotient familial'}, inplace=True)
+    df_cleaned.rename(columns={'Quotient familial': 'Caracteristiques'}, inplace=True)
+    df1.rename(columns={'Age responsable dossier': 'Caracteristiques'}, inplace=True)
+    df2.rename(columns={'Situation familiale': 'Caracteristiques'}, inplace=True)
 
     
     # On ne réindexe pas ici, on s'assure juste que les colonnes sont bien dans df_cleaned
