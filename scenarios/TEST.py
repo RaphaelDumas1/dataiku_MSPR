@@ -35,27 +35,10 @@ datasets_names = [
   "Nombre_dimmigre",
   "Taux_de_pauvrete",
   "Evolution_population",
-  
+  "Pib",
+  "Inflation",
+  "Salaire_moyen",
   "Impot_moyen", 
-  
-  ,  
-   
-   
-   
-   
-   
-   
-  "Repartition_des_contrats", 
-   
-  "Salaire_moyen", 
-   
-  
-  
-   
-   
-    
-   
-  
   "Legislatives"
 ]
 # Ajoutez vos datasets ici
