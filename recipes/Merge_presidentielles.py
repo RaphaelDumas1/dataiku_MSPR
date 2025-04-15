@@ -3,6 +3,57 @@ import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
+candidate_orientation = {
+    'MÉLENCHON': 'Far_Left',
+    'ARTHAUD': 'Far_Left',
+    'ROUSSEL': 'Far_Left',
+    'POUTOU': 'Far_Left',
+    'BESANCENOT': 'Far_Left',
+    'GLUCKSTEIN': 'Far_Left',
+    'LAGUILLER': 'Far_Left',
+    'BUFFET': 'Far_Left',
+    'HUE': 'Far_Left',
+    'SCHIVARDI': 'Far_Left',
+
+    'HOLLANDE': 'Left',
+    'ROYAL': 'Left',
+    'JOSPIN': 'Left',
+    'HAMON': 'Left',
+    'HIDALGO': 'Left',
+    'TAUBIRA': 'Left',
+    'CHEVENEMENT': 'Left',
+
+    'JADOT': 'Green',
+    'JOLY': 'Green',
+    'VOYNET': 'Green',
+    'MAMERE': 'Green',
+    'BOVÉ': 'Green',
+    'LEPAGE': 'Green',
+
+    'MACRON': 'Center',
+    'BAYROU': 'Center',
+    'CHEMINADE': 'Center',
+    'LASSALLE': 'Center',
+    'BOUTIN': 'Center',
+
+    'SARKOZY': 'Right',
+    'FILLON': 'Right',
+    'BALLADUR': 'Right',
+    'CHIRAC': 'Right',
+    'PÉCRESSE': 'Right',
+    'MADELIN': 'Right',
+    'SAINT-JOSSE': 'Right',
+
+    'LE PEN': 'Far_Right',
+    'ZEMMOUR': 'Far_Right',
+    'DUPONT-AIGNAN': 'Far_Right',
+    'ASSELINEAU': 'Far_Right',
+    'NIHOUS': 'Far_Right',
+    'MEGRET': 'Far_Right',
+    'de VILLIERS': 'Far_Right',
+    'VILLIERS DE': 'Far_Right',
+}
+
 presidentielle_2022 = dataiku.Dataset("Presidentielle_2022")
 presidentielle_2017 = dataiku.Dataset("Presidentielle_2017")
 presidentielle_2012 = dataiku.Dataset("Presidentielle_2012")
