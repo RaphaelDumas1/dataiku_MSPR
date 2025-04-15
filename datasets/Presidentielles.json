@@ -91,7 +91,8 @@
       {"name":"Genre","type":"string"},
       {"name":"Nom","type":"string"},
       {"name":"Prénom","type":"string"},
-      {"name":"Voix","type":"string"}
+      {"name":"Voix","type":"string"},
+      {"name":"Couleur","type":"string"}
     ],
     "userModified": false
   },
