@@ -291,6 +291,13 @@ def process_annuaire(df):
         "ecole_maternelle": 0.0,
         "ecole_elementaire": 0.0,
         "telephone": "Inconnu", 
+        "mail": "Inconnu", 
+        "telephone": "Inconnu", 
+        "restauration": 0.0,
+        "hebergement": 0.0,
+        "ulis": 0.0,
+
+
     }
         
     for col, default in columns_with_defaults.items():
