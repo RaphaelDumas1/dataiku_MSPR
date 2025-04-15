@@ -76,6 +76,12 @@ def delete_where_equal(df, column, value):
     
     return df[df[column] != value].reset_index(drop=True)
     
+def delete_where_not_equal(df, column, value):
+    if column not in df.columns:
+        raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
+    
+    return df[df[column] == value].reset_index(drop=True)
+
 # 
 # FUNCTIONS
 #
@@ -305,6 +311,9 @@ def process_inflation(df):
     return df
         
 def process_annuaire(df):  
+    delete_columns = ['B', 'D']
+
+    df = df.drop(columns=delete_columns)
     df = df.dropna(how="all")
     columns_defaults = {
         "type_etablissement": "Inconnu",
