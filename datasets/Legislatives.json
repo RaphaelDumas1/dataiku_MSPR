@@ -89,7 +89,8 @@
     "columns": [
       {"name":"Année","type":"string"},
       {"name":"Parti","type":"string"},
-      {"name":"Voix","type":"string"}
+      {"name":"Voix","type":"string"},
+      {"name":"Couleur","type":"string"}
     ],
     "userModified": false
   },
