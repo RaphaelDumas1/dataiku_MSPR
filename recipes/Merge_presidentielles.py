@@ -114,7 +114,7 @@ for key, df in dfs.items():
             col_count = 0
             count += 1
 
-final_df['Couleur'] = final_df['Nom'].map(party_orientation)
+final_df['Couleur'] = final_df['Nom'].map(candidate_orientation)
         
 
 # Dataset Presidentielle renamed to Presidentielles by admin on 2025-02-11 18:01:24
