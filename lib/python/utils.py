@@ -250,7 +250,7 @@ def process_pib(df):
 
     # Réinitialiser les index
     df = df.reset_index(drop=True)
-
+    print("pib", df.columns)
     return df
 
 def execute_instruction_on_dataframe(df, instruction):
