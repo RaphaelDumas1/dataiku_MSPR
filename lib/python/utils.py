@@ -248,7 +248,7 @@ def process_pib(df):
                 reference_value = str(df.at[source_row, first_col]).strip() if source_row in df.index else ""
 
                 current_val = str(val).strip()
-                new_val = f"{reference_value} - Dont {current_val}"
+                new_val = f"{reference_value} dont {current_val}"
 
                 if new_val in df[first_col].values:
                     new_val += " 2"
