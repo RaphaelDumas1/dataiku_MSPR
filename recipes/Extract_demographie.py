@@ -23,7 +23,7 @@ datasets = [
             },
             {
                  "name" : columns_to_string,
-                 "args" : [["Numéro département"]]
+                 "args" : [["Numéro département", "Numéro région"]]
             },
         ]
     },
