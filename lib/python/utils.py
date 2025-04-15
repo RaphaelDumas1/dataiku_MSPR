@@ -411,8 +411,12 @@ def extract_and_concat_to_original(df, interval1, interval2):
     
     print(columns_to_add_1, columns_to_add_2)
 
-    # Ajouter les colonnes de df1 et df2 qui existent dans df_cleaned
-    df_cleaned[columns_to_add_1] = df1[columns_to_add_1]
-    df_cleaned[columns_to_add_2] = df2[columns_to_add_2]
+     # Ajouter les colonnes de df1 qui existent dans df_cleaned
+    for col in columns_to_add_1:
+        df_cleaned[col] = df1[col]
+
+    # Ajouter les colonnes de df2 qui existent dans df_cleaned
+    for col in columns_to_add_2:
+        df_cleaned[col] = df2[col]
 
     return df_cleaned
