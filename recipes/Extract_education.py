@@ -19,7 +19,7 @@ datasets = [
             },
             {
                  "name" : columns_to_string,
-                 "args" : [["code_postal", "code_commune", "code_departement", "code_academie", "code_region", ""]]
+                 "args" : [["code_postal", "code_commune", "code_departement", "code_academie", "code_region", "telephone"]]
             },
             {
                  "name" : columns_to_int,
