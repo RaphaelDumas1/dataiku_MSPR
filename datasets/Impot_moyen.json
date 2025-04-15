@@ -87,8 +87,8 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"double"},
-      {"name":"Impot","type":"double"}
+      {"name":"Année","type":"bigint"},
+      {"name":"Impot","type":"bigint"}
     ],
     "userModified": false
   },
