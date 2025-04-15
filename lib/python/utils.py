@@ -290,7 +290,12 @@ def process_annuaire(df):
         "adresse_2": "Inconnue",
         "ecole_maternelle": 0.0,
         "ecole_elementaire": 0.0,
-        "telephone": "Inconnu", 
+        "voie_generale" : "false",
+        "voie_technologique" : "false",
+        "voie_professionnelle" : "false",
+        "telephone": "Inconnu",
+        "fax": "Inconnu", 
+        "web": "Inconnu", 
         "mail": "Inconnu", 
         "telephone": "Inconnu", 
         "restauration": 0.0,
@@ -302,6 +307,7 @@ def process_annuaire(df):
         "appartenance_education_prioritaire": "Aucune",
         "greta": 0.0,
         "siren_siret": "Inconnu",
+        "position": "48.856614,2.3522219",
         
 
 
