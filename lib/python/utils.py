@@ -383,6 +383,7 @@ def execute_instruction_on_dataframe(df, instruction):
 
     # Drop empty rows
     df = df.dropna(how="all")
+    df.columns = df.columns.str.lower()
 
     # Write datas
     dataset = dataiku.Dataset(instruction_name)
