@@ -15,6 +15,9 @@ datasets_names = [
   "Delinquance", 
   "Presidentielles",
   "Taux_de_chomage",
+  "Repartition_des_contrats",
+  "Categorie_metiers",
+    
     
   "Categorie_logement", 
   "Composition_menage", 
@@ -37,7 +40,7 @@ datasets_names = [
   "Taux_de_natalite", 
   "Taux_de_pauvrete", 
   "Type_logement",  
-  "Categorie_metiers", 
+   
   
   "Legislatives"
 ]
