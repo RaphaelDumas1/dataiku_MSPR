@@ -12,7 +12,12 @@ datasets = [
     },
     {
         "name": "Quotient_familiale",
-        "functions": []
+        "functions": [
+            {
+                 "name" : extract_and_concat_to_original,
+                 "args" : [["Année"]]
+            },
+        ]
     },
     {
         "name": "Taux_de_natalite",
