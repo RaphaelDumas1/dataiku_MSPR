@@ -232,13 +232,27 @@ def process_pib(df):
     rows_to_prefix = [9, 10, 13, 14, 15]
     first_col = df.columns[0]
 
+    prefix_sources = {
+        9: 5,
+        10: 5,
+        13: 9,
+        14: 9,
+        15: 9
+    }
+
     for i in rows_to_prefix:
         if i < len(df):
             val = df.at[i, first_col]
             if pd.notnull(val):
-                new_val = "Dont " + str(val).strip()
+                source_row = prefix_sources.get(i)
+                reference_value = str(df.at[source_row, first_col]).strip() if source_row in df.index else ""
+
+                current_val = str(val).strip()
+                new_val = f"{reference_value} - Dont {current_val}"
+
                 if new_val in df[first_col].values:
                     new_val += " 2"
+
                 df.at[i, first_col] = new_val
 
     
