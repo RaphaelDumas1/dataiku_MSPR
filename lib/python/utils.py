@@ -301,6 +301,7 @@ def process_annuaire(df):
         "lycee_des_metiers": 0.0,
         "appartenance_education_prioritaire": "Aucune",
         "greta": 0.0,
+        "siren_siret": "Inconnu",
         
 
 
