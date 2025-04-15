@@ -254,7 +254,7 @@ def process_pib(df):
     return df
 
 def process_inflation(df):
-    df = df[df.index <= 17]
+    df = df[df.index <= 35]
     
     if len(df) > 3:
         df.columns = df.iloc[2]
