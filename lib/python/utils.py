@@ -389,7 +389,6 @@ def execute_instruction_on_dataframe(df, instruction):
     dataset.write_with_schema(df)
 
 def extract_and_concat_to_original(df, interval1, interval2):
-    print("llll", len(df))
     # Fonction d'extraction
     def extract(df, start, end):
         block = df.iloc[start:end+1].copy()
@@ -399,6 +398,8 @@ def extract_and_concat_to_original(df, interval1, interval2):
 
     df1, idx1 = extract(df, *interval1)
     df2, idx2 = extract(df, *interval2)
+    
+    print("lll", df1.columns, df2.columns)
 
     # Supprimer les lignes d'origine
     all_rows_to_drop = set(idx1 + idx2)
