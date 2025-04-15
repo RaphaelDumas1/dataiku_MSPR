@@ -2,6 +2,7 @@
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
+from utils import columns_to_int
 
 party_orientation = {
     'EXG': 'Left', 'COM': 'Left', 'FG': 'Left', 'SOC': 'Left', 'RDG': 'Left',
@@ -130,6 +131,7 @@ for key, df in dfs.items():
             count += 1
 
 final_df['Couleur'] = final_df['Parti'].map(party_orientation)
+final_df = columns_to_int(final_df, ["Année", "Voix"])
 
 test = dataiku.Dataset("Legislatives")
 test.write_with_schema(final_df)
