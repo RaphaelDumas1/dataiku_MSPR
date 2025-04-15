@@ -7,9 +7,31 @@ client = dataiku.api_client()
 project = client.get_project(dataiku.default_project_key())
 
 # Liste des datasets à exporter
-datasets_names = ["Categorie_logement", "Composition_menage", "Delinquance", "Impot_moyen", "Administration_penitentiaire", "Logement", "Evolution_population", "Nombre_de_salarie", "Nombre_detranger", 
-                  "Nombre_dimmigre", "Nombre_enfant", "Population", "Repartition_age", "Repartition_des_contrats", "Repartition_sexe", "Salaire_moyen", "Statut_occupation_logement", "Taux_de_chomage",
-                 "Taux_de_mortalite", "Taux_de_natalite", "Taux_de_pauvrete", "Type_logement", "Taux_scolarisation", "Categorie_metiers", "Presidentielles", "Legislatives"]  # Ajoutez vos datasets ici
+datasets_names = ["Categorie_logement", 
+                  "Composition_menage", 
+                  "Delinquance", 
+                  "Impot_moyen", 
+                  "Administration_penitentiaire", 
+                  "Logement", "Evolution_population", 
+                  "Nombre_de_salarie", 
+                  "Nombre_detranger", 
+                  "Nombre_dimmigre", 
+                  "Nombre_enfant", 
+                  "Population", 
+                  "Repartition_age", 
+                  "Repartition_des_contrats", 
+                  "Repartition_sexe", 
+                  "Salaire_moyen", 
+                  "Statut_occupation_logement", 
+                  "Taux_de_chomage",
+                 "Taux_de_mortalite", 
+                  "Taux_de_natalite", 
+                  "Taux_de_pauvrete", 
+                  "Type_logement", 
+                  "Taux_scolarisation", 
+                  "Categorie_metiers", 
+                  "Presidentielles", 
+                  "Legislatives"]  # Ajoutez vos datasets ici
 folder = dataiku.Folder("test")  # ID du dossier de destination
 
 for dataset_name in datasets_names:
