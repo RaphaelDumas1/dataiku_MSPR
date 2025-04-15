@@ -404,7 +404,7 @@ def extract_and_concat_to_original(df, interval1, interval2):
     # Supprimer les lignes d'origine
     all_rows_to_drop = set(idx1 + idx2)
     df_cleaned = df.drop(index=all_rows_to_drop).reset_index(drop=True)
-
+    print(len(df_cleaned))
     # Assurer que toutes les dataframes ont la même longueur (remplir si nécessaire)
     max_len = max(len(df_cleaned), len(df1), len(df2))
     df_cleaned = df_cleaned.reindex(range(max_len))
