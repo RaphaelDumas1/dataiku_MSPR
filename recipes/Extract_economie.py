@@ -4,25 +4,7 @@ datasets = [
     {
         "name": "Pib",
         "functions": [
-            {
-                "name" : process_pib,
-                "args" : []
-            },
-            {
-                "name" : pivot,
-                "args" : ["Année"]
-            },
-            {
-                "name" : columns_to_int,
-                "args" : [["Année"]]
-            },
-            {
-                "name" : columns_to_float,
-                "args" : [[" Produit intérieur brut (PIB)", "Importations de biens et de services", "Dépense de consommation finale", "Dépense de consommation finale dont ménages",
-                          "Dépense de consommation finale dont administrations publiques", "Formation brute de capital fixe", "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
-                          "Formation brute de capital fixe dont administrations publiques", " Formation brute de capital fixe dont ménages hors entrepreneurs individuels", "Exportations de biens et de services",
-                          "Demande intérieure hors stocks"], 1]
-            },
+            
         ]
     },
     {
