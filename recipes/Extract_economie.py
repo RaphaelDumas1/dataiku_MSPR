@@ -36,14 +36,7 @@ datasets = [
                 "name" : delete_rows_by_index,
                 "args" : [[0, 1, 2], 35]
             },
-            {
-                "name" : columns_to_int,
-                "args" : [["Année"]]
-            },
-            {
-                "name" : columns_to_float,
-                "args" : [["Taux d'inflation"]]
-            },
+            
         ]
     },
     {
