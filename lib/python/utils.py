@@ -303,7 +303,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
         # Set variables for iteration
         name = function["name"]
         args = function["args"] if function["args"] is not None else []
-        print("yes", df.columns)
+        print("yes", name)
         # Use function
         df = name(df, *args)
 
