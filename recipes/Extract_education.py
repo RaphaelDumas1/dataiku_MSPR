@@ -19,7 +19,7 @@ datasets = [
             },
             {
                 "name" : delete_columns_by_name,
-                "args" : ["code_departement", 35.0]
+                "args" : [['code_departement', 'code_region', 'libelle_departement', 'libelle_region']]
             },
             {
                 "name" : process_annuaire,
