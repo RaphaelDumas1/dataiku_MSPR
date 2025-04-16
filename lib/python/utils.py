@@ -69,7 +69,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
         df = create_dataframe_from_sheet(sheet)
         instruction = find_entry_in_instructions(title, datasets_instructions)
         
-        execute_instruction_on_dataframe(df, instruction)
+        execute_instruction_on_dataframe(df, title, instruction)
 
 def delete_where_equal(df, column, value):
     if column not in df.columns:
@@ -379,7 +379,7 @@ def process_annuaire(df):
     return df
     
         
-def execute_instruction_on_dataframe(df, instruction):
+def execute_instruction_on_dataframe(df, title, instruction):
     functions = instruction["functions"]
     instruction_name = instruction["name"]
    
