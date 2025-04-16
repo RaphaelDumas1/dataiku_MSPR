@@ -341,7 +341,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
     table_name = title.lower()
 
     # Exportation vers PostgreSQL
-    df.to_sql(table_name, engine, if_exists='replace', index=False)
+    # df.to_sql(table_name, engine, if_exists='replace', index=False)
 
     # Write datas
     dataset = dataiku.Dataset(instruction_name)
