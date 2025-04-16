@@ -318,15 +318,8 @@ def process_pib(df):
 
     return df
 
-def process_inflation(df):
-    
-
-    if len(df) > 3:
-        df.columns = df.iloc[2]
-    else:
-        raise ValueError("Le DataFrame ne contient pas au moins 4 lignes pour définir les headers")
-        
-    
+def set_row_as_headers(df, index):
+    df.columns = df.iloc[2]
     return df
 
 def fill_empty_values(df, columns_defaults):
