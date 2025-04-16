@@ -182,7 +182,6 @@ def process_evolution_trimestrielle_emploi(df):
     return pd.DataFrame(new_rows)
 
 def columns_to_int(df, columns=None):
-    print("rrr", df.columns)
     if columns is None:
         columns = df.columns
     
@@ -340,8 +339,6 @@ def extract_and_concat_to_original(df, interval1, interval2):
     df_cleaned.rename(columns={'Quotient familial': 'Caracteristiques'}, inplace=True)
     df1.rename(columns={'Situation familiale': 'Caracteristiques'}, inplace=True)
     df2.rename(columns={'Age responsable dossier': 'Caracteristiques'}, inplace=True)
-    
-    print("lll", df_cleaned.columns, df1.columns, df2.columns)
     
     # On ne réindexe pas ici, on s'assure juste que les colonnes sont bien dans df_cleaned
     columns_to_add_1 = [col for col in df1.columns if col in df_cleaned.columns]
