@@ -1,16 +1,12 @@
-from utils import create_datasets_from_file_sheets, pivot, columns_to_int, columns_to_float, process_inflation, columns_to_float, delete_rows_by_index, set_row_as_headers
+from utils import create_datasets_from_file_sheets, process_pib, pivot, columns_to_int, columns_to_float, columns_to_float, set_row_as_headers, delete_rows_by_index
 
 datasets = [
     {
         "name": "Pib",
         "functions": [
             {
-                "name" : set_row_as_headers,
-                "args" : [2]
-            },
-            {
-                "name" : delete_rows_by_index,
-                "args" : [[0, 1, 2], 35]
+                "name" : process_pib,
+                "args" : []
             },
             {
                 "name" : pivot,
@@ -33,8 +29,12 @@ datasets = [
         "name": "Inflation",
         "functions": [
             {
-                "name" : process_inflation,
-                "args" : []
+                "name" : set_row_as_headers,
+                "args" : [2]
+            },
+            {
+                "name" : delete_rows_by_index,
+                "args" : [[0, 1, 2], 35]
             },
             {
                 "name" : columns_to_int,
