@@ -5,12 +5,12 @@ datasets = [
         "name": "Pib",
         "functions": [
             {
-                "name" : delete_rows_by_index,
-                "args" : [[0, 1, 2], 35]
+                "name" : set_row_as_headers,
+                "args" : []
             },
             {
-                "name" : process_pib,
-                "args" : []
+                "name" : delete_rows_by_index,
+                "args" : [[0, 1, 2], 35]
             },
             {
                 "name" : pivot,
