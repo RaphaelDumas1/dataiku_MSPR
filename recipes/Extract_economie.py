@@ -9,7 +9,7 @@ datasets = [
         "functions": [
             {
                 "name" : set_row_as_headers,
-                "args" : []
+                "args" : [1, pib_column]
             },
             {
                 "name" : process_pib,
