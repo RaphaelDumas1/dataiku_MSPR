@@ -12,6 +12,14 @@ datasets = [
                 "args" : [1, pib_column]
             },
             {
+                "name" : delete_rows_by_index,
+                "args" : [[0, 1, 2, 3, 6, 8, 12], 17]
+            },
+            {
+                "name" : pivot,
+                "args" : ["Année"]
+            },
+            {
                 "name" : rename_columns,
                 "args" : [{
                     "ménages": "Dépense de consommation finale dont ménages",
@@ -20,14 +28,6 @@ datasets = [
                     "administrations publiques 2": "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
                     "formation brute de capital fixe dont sociétés et entreprises individuelles non financières": "Formation brute de capital fixe dont formation brute de capital fixe dont sociétés et entreprises individuelles non financières"
                 }]
-            },
-            {
-                "name" : delete_rows_by_index,
-                "args" : [[0, 1, 2, 3, 6, 8, 12], 17]
-            },
-            {
-                "name" : pivot,
-                "args" : ["Année"]
             },
             {
                 "name" : columns_to_int,
