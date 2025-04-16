@@ -298,17 +298,6 @@ def process_pib(df):
 
                 df.at[i, first_col] = new_val
 
-    df = df[df.index <= 17]
-    
-    # 3. Supprimer lignes 1 à 4, 5, 8, 10, 14 et toutes les lignes après 19
-    rows_to_drop = list(range(0, 4)) + [6, 8, 12]
-    df = df.drop(index=[i for i in rows_to_drop if i < len(df)], errors='ignore')
-
-    
-
-    # Réinitialiser les index
-    df = df.reset_index(drop=True)
-
     return df
 
 def set_row_as_headers(df, index, function=None):
