@@ -71,6 +71,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
         
         execute_instruction_on_dataframe(df, title, instruction)
 
+# Check if column exists in dataframe
 def is_column_in_dataframe(df, column):
     if column not in df.columns:
         raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
