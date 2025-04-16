@@ -303,7 +303,7 @@ def set_row_as_headers(df, index, function=None):
     
     if function is not None:
         df.columns = function(df.columns)
-    print("ppp", df.columns)
+
     return df
 
 def fill_empty_values(df, columns_defaults):
