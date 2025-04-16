@@ -17,7 +17,7 @@ datasets = [
             },
             {
                 "name" : delete_rows_by_index,
-                "args" : [[0, 1, 2, 6, 8, 12], 17]
+                "args" : [[0, 1, 2, 3, 6, 8, 12], 17]
             },
             {
                 "name" : pivot,
