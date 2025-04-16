@@ -12,11 +12,7 @@ datasets = [
                 "name" : pivot,
                 "args" : ["Année"]
             },
-            {
-                "name" : columns_to_int,
-                "args" : [["Année"]]
-            },
-           
+            
         ]
     },
     {
