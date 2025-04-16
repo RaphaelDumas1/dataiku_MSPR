@@ -20,7 +20,10 @@ datasets = [
     {
         "name": "annuaire_des_ecoles_en_france",
         "functions": [
-           
+            {
+                "name" : delete_where_not_equal,
+                "args" : ["code_departement", 35.0]
+            },
             {
                 "name" : delete_columns_by_name,
                 "args" : [['code_departement', 'code_region', 'libelle_departement', 'libelle_region']]
