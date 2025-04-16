@@ -323,10 +323,7 @@ def process_inflation(df):
     df = df.reset_index(drop=True)
     return df
         
-def process_annuaire(df):  
-    delete_columns = ['code_departement', 'code_region', 'libelle_departement', 'libelle_region']
-
-    
+def process_annuaire(df):      
     df = df.dropna(how="all")
     columns_defaults = {
         "type_etablissement": "Inconnu",
