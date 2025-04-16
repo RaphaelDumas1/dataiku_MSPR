@@ -380,6 +380,7 @@ def process_annuaire(df):
     
         
 def execute_instruction_on_dataframe(df, title, instruction):
+    engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
     functions = instruction["functions"]
     instruction_name = instruction["name"]
    
@@ -395,7 +396,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
     df = df.dropna(how="all")
     df.columns = df.columns.str.lower()
     
-    table_name = dataset_name.lower()
+    table_name = title.lower()
 
     # Exportation vers PostgreSQL
     df.to_sql(table_name, engine, if_exists='replace', index=False)
