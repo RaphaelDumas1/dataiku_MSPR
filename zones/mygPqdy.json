@@ -37,6 +37,14 @@
     {
       "objectId": "compute_Presidentielle_2022",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "compute_Presidentielles_copy",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "Presidentielles_copy",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
