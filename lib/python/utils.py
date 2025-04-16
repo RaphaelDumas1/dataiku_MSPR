@@ -320,6 +320,7 @@ def process_pib(df):
 
 def set_row_as_headers(df, index):
     df.columns = df.iloc[index]
+    print("ooo", df.columns)
     return df
 
 def fill_empty_values(df, columns_defaults):
