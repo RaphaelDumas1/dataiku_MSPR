@@ -8,7 +8,11 @@ datasets = [
                 "name" : process_pib,
                 "args" : []
             },
-          
+            {
+                "name" : pivot,
+                "args" : ["Année"]
+            },
+            
         ]
     },
     {
