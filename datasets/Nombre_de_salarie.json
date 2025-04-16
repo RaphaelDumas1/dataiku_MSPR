@@ -87,8 +87,8 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Nombre de salarie","type":"bigint"}
+      {"name":"année","type":"bigint"},
+      {"name":"nombre de salarie","type":"bigint"}
     ],
     "userModified": false
   },
