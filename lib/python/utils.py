@@ -342,7 +342,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
 
     # Exportation vers PostgreSQL
     # df.to_sql(table_name, engine, if_exists='replace', index=False)
-
+    print('yeee', df.columns)
     # Write datas
     dataset = dataiku.Dataset(instruction_name)
     dataset.write_with_schema(df)
