@@ -71,6 +71,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
         
         execute_instruction_on_dataframe(df, title, instruction)
 
+# Delete row in dataframe where column equal value
 def delete_where_equal(df, column, value):
     if column not in df.columns:
         raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
