@@ -329,12 +329,8 @@ def fill_empty_values(df, columns_defaults):
     return df
 
 def fill_empty_values_with_mean(df, column):
-    return df["nombre_d_eleves"].fillna(df["nombre_d_eleves"].mean())
-        
-def process_annuaire(df):      
-   
-    
-    return df
+    is_column_in_dataframe(df, col)
+    return df[column].fillna(df[column].mean())
     
         
 def execute_instruction_on_dataframe(df, title, instruction):
