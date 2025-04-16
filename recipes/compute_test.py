@@ -3,7 +3,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Connexion à PostgreSQL
-engine = create_engine('postgresql://postgres:test@localhost:5432/MSPR')
+engine = create_engine('postgresql://docker.host.internal:test@localhost:5432/MSPR')
 
 # Liste des datasets du projet
 project = dataiku.api_client().get_project("MSPR")
