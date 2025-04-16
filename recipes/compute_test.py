@@ -8,10 +8,6 @@ engine = create_engine('postgresql://postgres:test@localhost:5432/MSPR')
 # Liste des datasets du projet
 project = dataiku.api_client().get_project("MSPR")
 recipe = project.get_recipe("compute_test")
-
-# Récupérer les datasets d'entrée de la recette
-print("yess", recipe.get_settings().get_recipe_inputs())
-
 input_datasets = recipe.get_settings().get_recipe_inputs()
 
 
