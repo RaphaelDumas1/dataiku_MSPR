@@ -14,12 +14,12 @@ datasets = [
         "name": "Quotient_familiale",
         "functions": [
             {
-                 "name" : delete_columns_by_name,
-                 "args" : [['Numéro département', 'Nom département', 'Numéro région', 'Nom région', "Lieu résidence"]]
-            },
-            {
                  "name" : extract_and_concat_to_original,
                  "args" : [(802, 1604), (1606, 2804)]
+            },
+            {
+                 "name" : delete_columns_by_name,
+                 "args" : [['Numéro département', 'Nom département', 'Numéro région', 'Nom région', "Lieu résidence"]]
             },
             {
                  "name" : columns_to_int,
