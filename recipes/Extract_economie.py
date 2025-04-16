@@ -14,11 +14,11 @@ datasets = [
             {
                 "name" : rename_columns,
                 "args" : [{
-                    "ménages": "dépense de consommation finale dont ménages",
-                    "administrations publiques": "dépense de consommation finale dont administrations publiques",
-                    "sociétés et entreprises individuelles non financières": "formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
-                    "administrations publiques 2": "formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
-                    "formation brute de capital fixe dont sociétés et entreprises individuelles non financières": "formation brute de capital fixe dont formation brute de capital fixe dont sociétés et entreprises individuelles non financières"
+                    "ménages": "Dépense de consommation finale dont ménages",
+                    "administrations publiques": "Dépense de consommation finale dont administrations publiques",
+                    "sociétés et entreprises individuelles non financières": "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
+                    "administrations publiques 2": "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
+                    "formation brute de capital fixe dont sociétés et entreprises individuelles non financières": "Formation brute de capital fixe dont formation brute de capital fixe dont sociétés et entreprises individuelles non financières"
                 }]
             },
             {
