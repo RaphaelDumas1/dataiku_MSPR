@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, process_category_metier, pivot, columns_to_int, process_evolution_trimestrielle_emploi, rename_column, delete_rows_by_index, make_unique, set_row_as_headers  
+from utils import create_datasets_from_file_sheets, process_category_metier, pivot, columns_to_int, process_evolution_trimestrielle_emploi, rename_columns, delete_rows_by_index, make_unique, set_row_as_headers  
 
 datasets = [
     {
@@ -53,7 +53,7 @@ datasets = [
                 "args" : []
             },
             {
-                "name" : rename_column,
+                "name" : rename_columns,
                 "args" : [{"None" : "Année"}]
             },
             {
