@@ -1,10 +1,4 @@
-from utils import (
-    create_datasets_from_file_sheets, 
-    columns_to_int, 
-    process_annuaire, 
-    columns_to_string, 
-    delete_where_not_equal
-)
+from utils import create_datasets_from_file_sheets, columns_to_int, process_annuaire, columns_to_string, delete_where_not_equal, delete_columns_by_name
 
 datasets = [
     {
