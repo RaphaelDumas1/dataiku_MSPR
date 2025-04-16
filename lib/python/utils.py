@@ -97,6 +97,9 @@ def delete_where_not_equal(df, column, value):
 def delete_columns_by_name(df, columns_to_delete):
     return df.drop(columns=columns_to_delete)
 
+def delete_rows_by_index(df, ):
+    
+
 #
 # CONVERT
 #
