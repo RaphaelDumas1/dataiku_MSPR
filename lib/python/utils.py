@@ -394,6 +394,11 @@ def execute_instruction_on_dataframe(df, instruction):
     # Drop empty rows
     df = df.dropna(how="all")
     df.columns = df.columns.str.lower()
+    
+    table_name = dataset_name.lower()
+
+    # Exportation vers PostgreSQL
+    df.to_sql(table_name, engine, if_exists='replace', index=False)
 
     # Write datas
     dataset = dataiku.Dataset(instruction_name)
