@@ -12,8 +12,11 @@ recipe = project.get_recipe("compute_test")
 # Récupérer les datasets d'entrée de la recette
 print("yess", recipe.get_settings().get_recipe_inputs())
 
+input_datasets = recipe.get_settings().get_recipe_inputs()
+
+
 for ds in input_datasets:
-    dataset_name = ds["name"]
+    dataset_name = ds["refs"]
     dku_dataset = dataiku.Dataset(dataset_name)
     
     # Lecture des données
