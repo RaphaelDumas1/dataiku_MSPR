@@ -328,7 +328,7 @@ def fill_empty_values(df, columns_defaults):
         df[col] = df[col].fillna("").apply(lambda x: x if str(x).strip() else default)
     return df
 
-def fill_empty_values_with_mean(df, column):
+def fill_empty_values_with_mean(df, columns):
     is_column_in_dataframe(df, col)
     return df[column].fillna(df[column].mean())
         
