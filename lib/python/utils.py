@@ -98,7 +98,7 @@ def delete_columns_by_name(df, columns_to_delete):
     return df.drop(columns=columns_to_delete)
 
 def delete_rows_by_index(df, indexes, delete_after_index=None):
-    if columns is not None:
+    if delete_after_index is not None:
         df = df[df.index <= delete_after_index]
         
     df = df.drop(index=[i for i in indexes if i < len(df)]) 
