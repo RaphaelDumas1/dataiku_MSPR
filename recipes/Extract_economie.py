@@ -10,7 +10,7 @@ datasets = [
             },
             {
                 "name" : pivot,
-                "args" : ["Année"]
+                "args" : ["année"]
             },
             {
                 "name" : columns_to_int,
