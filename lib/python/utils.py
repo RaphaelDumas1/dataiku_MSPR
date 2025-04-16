@@ -4,6 +4,7 @@ import openpyxl
 import time
 from io import BytesIO
 import re
+from sqlalchemy import create_engine
 
 def make_unique(headers):
     seen = {}
