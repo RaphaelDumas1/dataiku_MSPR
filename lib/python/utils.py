@@ -94,8 +94,8 @@ def delete_where_not_equal(df, column, value):
     return df[df[column] == value].reset_index(drop=True)
 
 # Delete columns(s) by name in list
-def delete_columns_by_name(df, columns):
-    return df.drop(columns=columns)
+def delete_columns_by_name(df, columns_to_delete):
+    return df.drop(columns=columns_to_delete)
 
 #
 # CONVERT
