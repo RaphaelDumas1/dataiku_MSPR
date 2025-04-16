@@ -268,7 +268,9 @@ def add_columns(df, col1, col2, result_column):
     return df
 
 def rename_columns(df, columns_dict):
-    return df.rename(columns=columns_dict)
+    df.rename(columns=columns_dict, inplace=True)
+    print("mmm", df.columns)
+    return df
 
 def process_pib(df):
     rows_to_prefix = [9, 10, 13, 14, 15]
