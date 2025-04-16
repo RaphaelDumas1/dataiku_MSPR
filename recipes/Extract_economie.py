@@ -1,9 +1,13 @@
-from utils import create_datasets_from_file_sheets, process_pib, pivot, columns_to_int, columns_to_float, process_inflation, columns_to_float
+from utils import create_datasets_from_file_sheets, process_pib, pivot, columns_to_int, columns_to_float, process_inflation, columns_to_float, delete_rows_by_index
 
 datasets = [
     {
         "name": "Pib",
         "functions": [
+            {
+                "name" : delete_rows_by_index,
+                "args" : [[0, 1, 2], 35]
+            },
             {
                 "name" : process_pib,
                 "args" : []
