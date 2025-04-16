@@ -31,18 +31,7 @@ datasets = [
                  "args" : [1, categorie_metier_column]   
             },
             
-            {
-                 "name" : process_category_metier,
-                 "args" : []   
-            },
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]   
-            },
-            {
-                "name" : columns_to_int,
-                "args" : []
-            }
+          
             
         ]
     },
