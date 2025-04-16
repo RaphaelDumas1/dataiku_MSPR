@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, process_pib, pivot, columns_to_int, columns_to_float, columns_to_float, set_row_as_headers, delete_rows_by_index
+from utils import create_datasets_from_file_sheets, process_pib, pivot, columns_to_int, columns_to_float, columns_to_float, set_row_as_headers, delete_rows_by_index, make_unique
 
 def pib_column(columns):
     return make_unique(columns.astype(str).str.strip().str.replace(" \(r\)", "", regex=True))
