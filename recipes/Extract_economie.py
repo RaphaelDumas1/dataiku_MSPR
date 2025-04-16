@@ -28,11 +28,7 @@ datasets = [
     {
         "name": "Inflation",
         "functions": [
-            {
-                "name" : set_row_as_headers,
-                "args" : [2]
-            },
-
+            
         ]
     },
     {
