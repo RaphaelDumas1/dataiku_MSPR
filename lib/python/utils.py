@@ -97,10 +97,6 @@ def pivot(df, first_column_name):
     
     return df
 
-def column_from_float_to_string(df, column):
-    df["Année"] = df["Année"].astype(float).astype(int).astype(str)
-    return df
-
 def copy_years_range(df):
     # Add row for each year in range
     rows = []
