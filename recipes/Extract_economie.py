@@ -6,7 +6,7 @@ datasets = [
         "functions": [
             {
                 "name" : set_row_as_headers,
-                "args" : []
+                "args" : [1]
             },
             {
                 "name" : delete_rows_by_index,
