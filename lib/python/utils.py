@@ -271,35 +271,6 @@ def add_columns(df, col1, col2, result_column):
 def rename_columns(df, columns_dict):
     return df.rename(columns=columns_dict)
 
-def process_pib(df):
-    rows_to_prefix = [9, 10, 13, 14, 15]
-    first_col = df.columns[0]
-
-    prefix_sources = {
-        9: 7,
-        10: 7,
-        13: 11,
-        14: 11,
-        15: 11
-    }
-    
-    for i in rows_to_prefix:
-        if i < len(df):
-            val = df.at[i, first_col]
-            if pd.notnull(val):
-                source_row = prefix_sources.get(i)
-                reference_value = str(df.at[source_row, first_col]).strip() if source_row in df.index else ""
-
-                current_val = str(val).strip()
-                new_val = f"{reference_value} dont {current_val}"
-
-                if new_val in df[first_col].values:
-                    new_val += " 2"
-
-                df.at[i, first_col] = new_val
-
-    return df
-
 def set_row_as_headers(df, index, function=None):
     df.columns = df.iloc[index]
     
