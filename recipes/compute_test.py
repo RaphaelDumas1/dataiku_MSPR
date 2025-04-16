@@ -12,7 +12,7 @@ input_datasets = recipe.get_settings().get_recipe_inputs()
 
 # Boucle sur les datasets d'entrée
 for ds_info in input_datasets.values():
-    dataset_name = ds_info["ref"]  # Récupère la référence (le nom du dataset)
+    dataset_name = ds_info["refs"]  # Récupère la référence (le nom du dataset)
     
     # Crée un objet dataset Dataiku
     dku_dataset = dataiku.Dataset(dataset_name)
