@@ -14,6 +14,10 @@ datasets = [
         "name": "Quotient_familiale",
         "functions": [
             {
+                 "name" : delete_columns_by_name,
+                 "args" : [(802, 1604), (1606, 2804)]
+            },
+            {
                  "name" : extract_and_concat_to_original,
                  "args" : [(802, 1604), (1606, 2804)]
             },
