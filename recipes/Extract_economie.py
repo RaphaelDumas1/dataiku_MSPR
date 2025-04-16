@@ -8,6 +8,10 @@ datasets = [
         "name": "Pib",
         "functions": [
             {
+                "name" : set_row_as_headers,
+                "args" : []
+            },
+            {
                 "name" : process_pib,
                 "args" : []
             },
