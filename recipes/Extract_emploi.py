@@ -54,7 +54,7 @@ datasets = [
             },
             {
                 "name" : rename_column,
-                "args" : ["None", "Année"]
+                "args" : [{"None" : "Année"}]
             },
             {
                 "name" : columns_to_int,
