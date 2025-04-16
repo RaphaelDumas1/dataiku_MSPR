@@ -101,7 +101,7 @@ def delete_rows_by_index(df, indexes, delete_after_index=None):
     if delete_after_index is not None:
         df = df[df.index <= delete_after_index]
         
-    df = df.drop(index=[i for i in indexes if i < len(df)]) 
+    df = df.drop(index=[i for i in indexes if i < len(df)], errors='ignore') 
     df = df.reset_index(drop=True)
     
     return df
