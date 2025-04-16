@@ -154,12 +154,7 @@
   },
   "outputs": {
     "main": {
-      "items": [
-        {
-          "ref": "test",
-          "appendMode": false
-        }
-      ]
+      "items": []
     }
   },
   "labels": [],
