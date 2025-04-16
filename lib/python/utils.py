@@ -383,8 +383,6 @@ def process_annuaire(df):
         "code_bassin_formation" : "Inconnu",
         "libelle_bassin_formation" : "Inconnu"
     }
-        
-    
     
     df["nombre_d_eleves"] = df["nombre_d_eleves"].fillna(df["nombre_d_eleves"].mean())
     
