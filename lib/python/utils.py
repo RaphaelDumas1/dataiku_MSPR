@@ -267,7 +267,6 @@ def add_columns(df, col1, col2, result_column):
     return df
 
 def rename_columns(df, columns_dict):
-    print("ppp", df.columns)
     return df.rename(columns=columns_dict)
 
 def process_pib(df):
@@ -300,11 +299,11 @@ def process_pib(df):
     return df
 
 def set_row_as_headers(df, index, function=None):
-    df.columns = [col.strip() for col in df.iloc[index]]
+    df.columns = df.iloc[index]
     
     if function is not None:
         df.columns = function(df.columns)
-    
+
     return df
 
 def fill_empty_values(df, columns_defaults):
