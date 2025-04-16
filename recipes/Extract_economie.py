@@ -16,7 +16,7 @@ datasets = [
                 "args" : [{
                     "ménages": "dépense de consommation finale dont ménages",
                     "administrations publiques": "dépense de consommation finale dont administrations publiques",
-                    13: 11,
+                    "sociétés et entreprises individuelles non financières": "formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
                     14: 11,
                     15: 11
                 }]
