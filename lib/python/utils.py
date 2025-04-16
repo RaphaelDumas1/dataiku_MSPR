@@ -93,6 +93,9 @@ def delete_where_not_equal(df, column, value):
     is_column_in_dataframe(df, column)
     return df[df[column] == value].reset_index(drop=True)
 
+#
+# CONVERT
+#
 
 
 def pivot(df, first_column_name):
@@ -192,7 +195,8 @@ def columns_to_float(df, columns=None, round=None):
         columns = df.columns
 
     for column in columns:
-        column = column.strip() if isinstance(column, str) else column
+        column = column.
+        () if isinstance(column, str) else column
 
         if column not in df.columns:
             raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
