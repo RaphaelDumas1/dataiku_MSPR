@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, process_category_metier, pivot, columns_to_int, process_evolution_trimestrielle_emploi, rename_column
+from utils import create_datasets_from_file_sheets, process_category_metier, pivot, columns_to_int, process_evolution_trimestrielle_emploi, rename_column, delete_rows_by_index
 
 datasets = [
     {
