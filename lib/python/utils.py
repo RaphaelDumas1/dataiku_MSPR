@@ -323,7 +323,6 @@ def process_inflation(df):
     return df
         
 def process_annuaire(df):      
-    df = df.dropna(how="all")
     columns_defaults = {
         "type_etablissement": "Inconnu",
         "statut_public_prive": "Inconnu",
@@ -391,6 +390,8 @@ def execute_instruction_on_dataframe(df, title, instruction):
     engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
     functions = instruction["functions"]
     instruction_name = instruction["name"]
+    
+    df = df.dropna(how="all")
    
     for function in functions:
         # Set variables for iteration
@@ -401,7 +402,6 @@ def execute_instruction_on_dataframe(df, title, instruction):
         df = name(df, *args)
 
     # Drop empty rows
-    df = df.dropna(how="all")
     df.columns = df.columns.str.lower()
     
     table_name = title.lower()
