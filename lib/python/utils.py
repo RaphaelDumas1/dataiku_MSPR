@@ -269,7 +269,7 @@ def add_columns(df, col1, col2, result_column):
 
 def rename_columns(df, columns_dict):
     df.rename(columns=columns_dict)
-    print(df.columns)
+    print("mmm", df.columns)
     return df
 
 def process_pib(df):
