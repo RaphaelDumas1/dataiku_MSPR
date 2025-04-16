@@ -272,6 +272,17 @@ def rename_column(df, old_name, new_name):
     return df.rename(columns={old_name: new_name})
 
 def process_pib(df):
+    rows_to_prefix = [9, 10, 13, 14, 15]
+    first_col = df.columns[0]
+
+    prefix_sources = {
+        9: 7,
+        10: 7,
+        13: 11,
+        14: 11,
+        15: 11
+    }
+    
     for i in rows_to_prefix:
         if i < len(df):
             val = df.at[i, first_col]
@@ -289,16 +300,7 @@ def process_pib(df):
 
     df = df[df.index <= 17]
     
-    rows_to_prefix = [9, 10, 13, 14, 15]
-    first_col = df.columns[0]
-
-    prefix_sources = {
-        9: 7,
-        10: 7,
-        13: 11,
-        14: 11,
-        15: 11
-    }
+    
 
     
 
