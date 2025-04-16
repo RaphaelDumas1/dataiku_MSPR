@@ -19,7 +19,27 @@ datasets = [
                 "name" : pivot,
                 "args" : ["Année"]
             },
-            
+            {
+                "name" : rename_columns,
+                "args" : [{
+                    "ménages": "Dépense de consommation finale dont ménages",
+                    "administrations publiques": "Dépense de consommation finale dont administrations publiques",
+                    "sociétés et entreprises individuelles non financières": "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
+                    "administrations publiques 2": "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
+                    "formation brute de capital fixe dont sociétés et entreprises individuelles non financières": "Formation brute de capital fixe dont formation brute de capital fixe dont sociétés et entreprises individuelles non financières"
+                }]
+            },
+            {
+                "name" : columns_to_int,
+                "args" : [["Année"]]
+            },
+            {
+                "name" : columns_to_float,
+                "args" : [["Produit intérieur brut (PIB)", "Importations de biens et de services", "Dépense de consommation finale", "Dépense de consommation finale dont ménages",
+                          "Dépense de consommation finale dont administrations publiques", "Formation brute de capital fixe", "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
+                          "Formation brute de capital fixe dont administrations publiques", " Formation brute de capital fixe dont ménages hors entrepreneurs individuels", "Exportations de biens et de services",
+                          "Demande intérieure hors stocks"], 1]
+            },
         ]
     },
     {
