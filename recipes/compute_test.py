@@ -10,10 +10,10 @@ project = dataiku.api_client().get_project("MSPR")
 recipe = project.get_recipe("compute_test")
 input_datasets = recipe.get_settings().get_recipe_inputs()
 print("yesss", input_datasets)
-
+datasets = input_datasets['main']['items']
 # Boucle sur les datasets d'entrée
-for ds_info in input_datasets.values():
-    dataset_name = ds_info["refs"]  # Récupère la référence (le nom du dataset)
+for ds_info in datasets:
+    dataset_name = ds_info["ref"]  # Récupère la référence (le nom du dataset)
     
     # Crée un objet dataset Dataiku
     dku_dataset = dataiku.Dataset(dataset_name)
