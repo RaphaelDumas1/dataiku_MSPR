@@ -26,7 +26,7 @@ datasets = [
                     "administrations publiques": "Dépense de consommation finale dont administrations publiques",
                     "sociétés et entreprises individuelles non financières": "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
                     "administrations publiques 2": "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
-                    "formation brute de capital fixe dont sociétés et entreprises individuelles non financières": "Formation brute de capital fixe dont formation brute de capital fixe dont sociétés et entreprises individuelles non financières"
+                    "ménages hors entrepreneurs individuels": "Formation brute de capital fixe dont formation brute de capital fixe dont ménages hors entrepreneurs individuels"
                 }]
             },
             {
