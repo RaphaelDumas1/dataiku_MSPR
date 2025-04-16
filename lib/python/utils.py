@@ -272,12 +272,7 @@ def rename_column(df, old_name, new_name):
     return df.rename(columns={old_name: new_name})
 
 def process_pib(df):
-    if len(df) > 3:
-        df.columns = df.iloc[1].astype(str).str.strip().str.replace(" \(r\)", "", regex=True)
-        df.columns = make_unique(df.columns)
-    else:
-        raise ValueError("Le DataFrame ne contient pas au moins 4 lignes pour définir les headers")
-    
+
     df = df[df.index <= 17]
     
     rows_to_prefix = [9, 10, 13, 14, 15]
