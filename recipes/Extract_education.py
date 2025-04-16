@@ -3,8 +3,7 @@ from utils import (
     columns_to_int, 
     process_annuaire, 
     columns_to_string, 
-    delete_where_not_equal, 
-    delete_columns_by_name
+    delete_where_not_equal
 )
 
 datasets = [
