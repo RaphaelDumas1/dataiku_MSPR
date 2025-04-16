@@ -78,7 +78,11 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
 def is_column_in_dataframe(df, column):
     if column not in df.columns:
         raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
-        
+
+#
+# DELETE
+#
+
 # Delete row(s) in dataframe where column equal value
 def delete_where_equal(df, column, value):
     is_column_in_dataframe(df, column)
