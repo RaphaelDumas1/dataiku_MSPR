@@ -3,15 +3,15 @@
   "color": "#087ABF",
   "items": [
     {
-      "objectId": "annuaire_des_ecoles_en_france",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "Extract_education",
       "objectType": "RECIPE"
     },
     {
       "objectId": "scolarisation",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "ecole",
       "objectType": "DATASET"
     }
   ],
