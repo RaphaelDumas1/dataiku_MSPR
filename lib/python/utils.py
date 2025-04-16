@@ -332,7 +332,7 @@ def fill_empty_values_with_mean(df, columns):
     for col in columns:
         is_column_in_dataframe(df, col)
         df[col].fillna(df[col].mean())
-    return col 
+    return df
     
         
 def execute_instruction_on_dataframe(df, title, instruction):
