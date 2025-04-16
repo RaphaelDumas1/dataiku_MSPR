@@ -15,7 +15,7 @@ datasets = [
         "functions": [
             {
                  "name" : delete_columns_by_name,
-                 "args" : [(802, 1604), (1606, 2804)]
+                 "args" : [['Numéro département', 'Nom département', 'Numéro région', 'Nom région', "Lieu résidence"]]
             },
             {
                  "name" : extract_and_concat_to_original,
