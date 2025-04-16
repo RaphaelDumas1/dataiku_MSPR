@@ -1,7 +1,4 @@
-recipe = project.get_recipe(recipe_name)
-
-# Récupérer les datasets d'entrée de la recette
-input_datasets = recipe.list_input_names()import dataiku
+import dataiku
 import pandas as pd
 from sqlalchemy import create_engine
 
@@ -10,6 +7,11 @@ engine = create_engine('postgresql://postgres:test@localhost:5432/MSPR')
 
 # Liste des datasets du projet
 project = dataiku.api_client().get_project("MSPR")
+
+recipe = project.get_recipe(recipe_name)
+
+# Récupérer les datasets d'entrée de la recette
+input_datasets = recipe.list_input_names()
 datasets = project.list_datasets()recipe = project.get_recipe("compute_test")
 
 # Récupérer les datasets d'entrée de la recette
