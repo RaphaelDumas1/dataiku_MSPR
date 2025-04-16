@@ -10,7 +10,7 @@ project = dataiku.api_client().get_project("MSPR")
 recipe = project.get_recipe("compute_test")
 
 # Récupérer les datasets d'entrée de la recette
-print("yess", recipe.get_recipe_inputs())
+print("yess", recipe.get_settings().get_recipe_inputs())
 
 for ds in input_datasets:
     dataset_name = ds["name"]
