@@ -199,8 +199,7 @@ def columns_to_float(df, columns=None, round=None):
         columns = df.columns
 
     for column in columns:
-        column = column.
-        () if isinstance(column, str) else column
+        column = column.strip() if isinstance(column, str) else column
 
         if column not in df.columns:
             raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
