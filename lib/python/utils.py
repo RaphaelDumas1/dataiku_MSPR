@@ -157,7 +157,12 @@ def process_category_metier(df):
 def process_evolution_trimestrielle_emploi(df):
     new_rows = []
 
-    for i in range(0, len(df), 4):
+    
+
+def merge_rows(df, size, function):
+    new_rows = []
+    
+    for i in range(0, len(df), size):
         group = df.iloc[i:i+4]
         
         if group.empty:
@@ -179,9 +184,6 @@ def process_evolution_trimestrielle_emploi(df):
         new_rows.append(new_row)
 
     return pd.DataFrame(new_rows)
-
-def merge_rows(df):
-    
 
 def columns_to_int(df, columns=None):
     print("rrr", df.columns)
