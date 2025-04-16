@@ -182,6 +182,7 @@ def process_evolution_trimestrielle_emploi(df):
     return pd.DataFrame(new_rows)
 
 def columns_to_int(df, columns=None):
+    print("rrr", df.columns)
     if columns is None:
         columns = df.columns
     
