@@ -321,6 +321,12 @@ def process_inflation(df):
     
     df = df.reset_index(drop=True)
     return df
+
+def fill_empty_values(df, columns_dict):
+    for col, default in columns_dict.items():
+        is_column_in_dataframe(df, col)
+        df[col] = df[col].fillna("").apply(lambda x: x if str(x).strip() else default)
+    return df
         
 def process_annuaire(df):      
     columns_defaults = {
@@ -378,8 +384,7 @@ def process_annuaire(df):
         "libelle_bassin_formation" : "Inconnu"
     }
         
-    for col, default in columns_defaults.items():
-        df[col] = df[col].fillna("").apply(lambda x: x if str(x).strip() else default)
+    
     
     df["nombre_d_eleves"] = df["nombre_d_eleves"].fillna(df["nombre_d_eleves"].mean())
     
