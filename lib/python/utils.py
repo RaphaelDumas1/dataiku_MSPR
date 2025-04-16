@@ -318,7 +318,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
     dataset.write_with_schema(df)
 
 def extract_and_concat_to_original(df, interval1, interval2):
-    
+    df = df.reset_index(drop=True)
     # Fonction d'extraction
     def extract(df, start, end):
         block = df.iloc[start:end+1].copy()
