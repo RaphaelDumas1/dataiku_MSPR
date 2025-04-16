@@ -7,12 +7,12 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "Taux_scolarisation",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "Extract_education",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "scolarisation",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
