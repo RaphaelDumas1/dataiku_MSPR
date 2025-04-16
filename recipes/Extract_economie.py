@@ -13,7 +13,7 @@ datasets = [
             },
             {
                 "name" : delete_rows_by_index,
-                "args" : [1, pib_column]
+                "args" : [[0, 1, 2, 6, 8, 12], 17]
             },
             {
                 "name" : process_pib,
