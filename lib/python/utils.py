@@ -331,7 +331,6 @@ def fill_empty_values(df, columns_defaults):
 def fill_empty_values_with_mean(df, column):
     is_column_in_dataframe(df, col)
     return df[column].fillna(df[column].mean())
-    
         
 def execute_instruction_on_dataframe(df, title, instruction):
     engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
