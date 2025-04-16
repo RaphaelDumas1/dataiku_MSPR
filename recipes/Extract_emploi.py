@@ -1,4 +1,8 @@
-from utils import create_datasets_from_file_sheets, process_category_metier, pivot, columns_to_int, process_evolution_trimestrielle_emploi, rename_column, delete_rows_by_index
+from utils import create_datasets_from_file_sheets, process_category_metier, pivot, columns_to_int, process_evolution_trimestrielle_emploi, rename_column, delete_rows_by_index, make_unique, set_row_as_headers
+
+def categorie_metier_column(columns):
+    return make_unique(columns.astype(str).str.strip().str.replace(" \(r\)", "", regex=True))
+    
 
 datasets = [
     {
@@ -23,9 +27,10 @@ datasets = [
         "name": "Categorie_metiers",
         "functions": [
             {
-                 "name" : delete_rows_by_index,
-                 "args" : []   
+                 "name" : set_row_as_headers,
+                 "args" : [1, categorie_metier_column]   
             },
+            
             {
                  "name" : process_category_metier,
                  "args" : []   
