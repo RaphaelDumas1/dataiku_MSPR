@@ -29,10 +29,6 @@ datasets = [
                     "ménages hors entrepreneurs individuels": "Formation brute de capital fixe dont formation brute de capital fixe dont ménages hors entrepreneurs individuels"
                 }]
             },
-            {
-                "name" : columns_to_int,
-                "args" : [["Année"]]
-            },
             
         ]
     },
