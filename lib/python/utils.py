@@ -320,7 +320,7 @@ def process_pib(df):
 
 def process_inflation(df):
     
-    
+
     if len(df) > 3:
         df.columns = df.iloc[2]
     else:
