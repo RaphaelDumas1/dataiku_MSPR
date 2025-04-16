@@ -318,7 +318,7 @@ def process_pib(df):
 
     return df
 
-def set_row_as_headers(df, index, replace):
+def set_row_as_headers(df, index, replace=None):
     df.columns = df.iloc[index]
     return df
 
