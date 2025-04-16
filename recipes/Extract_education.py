@@ -80,7 +80,7 @@ datasets = [
             },
             {
                  "name" : fill_empty_values_with_mean,
-                 "args" : ["nombre_d_eleves"]
+                 "args" : [["nombre_d_eleves"]]
             },
             {
                  "name" : columns_to_string,
