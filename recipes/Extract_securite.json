@@ -32,7 +32,7 @@
     "main": {
       "items": [
         {
-          "ref": "Administration_penitentiaire",
+          "ref": "administration_penitentiaire",
           "appendMode": false
         },
         {

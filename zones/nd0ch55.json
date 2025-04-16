@@ -7,12 +7,12 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "Administration_penitentiaire",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "Extract_securite",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "administration_penitentiaire",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
