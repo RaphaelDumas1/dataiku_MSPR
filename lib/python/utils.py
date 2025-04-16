@@ -335,7 +335,7 @@ def extract_and_concat_to_original(df, interval1, interval2):
     all_rows_to_drop = set(idx1 + idx2)
     df_cleaned = df.drop(index=all_rows_to_drop).reset_index(drop=True)
     df_cleaned = df_cleaned.dropna(how="all")
-    
+    print("ici", df_cleaned.columns)
     df_cleaned.rename(columns={'Quotient familial': 'Caracteristiques'}, inplace=True)
     df1.rename(columns={'Situation familiale': 'Caracteristiques'}, inplace=True)
     df2.rename(columns={'Age responsable dossier': 'Caracteristiques'}, inplace=True)
@@ -349,7 +349,7 @@ def extract_and_concat_to_original(df, interval1, interval2):
     df2 = df2[columns_to_add_1]
     
     df_cleaned = pd.concat([df_cleaned, df1, df2], axis=0, ignore_index=True)
-    print("ici", df_cleaned.columns)
+    
     df_cleaned["Date référence"] = df_cleaned["Date référence"].astype(str).str[:4]
     df_cleaned.rename(columns={'Date référence': 'Année'}, inplace=True)
 
