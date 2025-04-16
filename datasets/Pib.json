@@ -88,7 +88,6 @@
   "schema": {
     "columns": [
       {"name":"année","type":"bigint"},
-      {"name":"ressources","type":"string"},
       {"name":"produit intérieur brut (pib)","type":"double"},
       {"name":"importations de biens et de services","type":"double"},
       {"name":"dépense de consommation finale","type":"double"},
