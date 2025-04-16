@@ -322,8 +322,8 @@ def process_inflation(df):
     df = df.reset_index(drop=True)
     return df
 
-def fill_empty_values(df, columns_dict):
-    for col, default in columns_dict.items():
+def fill_empty_values(df, columns_defaults):
+    for col, default in columns_defaults.items():
         is_column_in_dataframe(df, col)
         df[col] = df[col].fillna("").apply(lambda x: x if str(x).strip() else default)
     return df
