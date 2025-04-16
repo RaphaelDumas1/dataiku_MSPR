@@ -300,11 +300,11 @@ def process_pib(df):
     return df
 
 def set_row_as_headers(df, index, function=None):
-    df.columns = df.iloc[index]
+    df.columns = [col.strip() for col in df.iloc[index]]
     
     if function is not None:
         df.columns = function(df.columns)
-
+    
     return df
 
 def fill_empty_values(df, columns_defaults):
