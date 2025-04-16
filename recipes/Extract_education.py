@@ -22,10 +22,6 @@ datasets = [
                 "args" : [['code_departement', 'code_region', 'libelle_departement', 'libelle_region']]
             },
             {
-                "name" : process_annuaire,
-                "args" : []
-            },
-            {
                 "name" : fill_empty_values,
                 "args" : [{
                     "type_etablissement": "Inconnu",
