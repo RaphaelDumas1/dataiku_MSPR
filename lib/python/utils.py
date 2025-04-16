@@ -303,7 +303,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
         # Set variables for iteration
         name = function["name"]
         args = function["args"] if function["args"] is not None else []
-        print("yes", name)
+        print("yes", title, name)
         # Use function
         df = name(df, *args)
 
@@ -314,7 +314,6 @@ def execute_instruction_on_dataframe(df, title, instruction):
 
     # Exportation vers PostgreSQL
     # df.to_sql(table_name, engine, if_exists='replace', index=False)
-    print('yeee', df.columns)
     # Write datas
     dataset = dataiku.Dataset(instruction_name)
     dataset.write_with_schema(df)
