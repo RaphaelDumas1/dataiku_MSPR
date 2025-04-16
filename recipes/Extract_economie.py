@@ -13,7 +13,13 @@ datasets = [
             },
             {
                 "name" : rename_columns,
-                "args" : []
+                "args" : [{
+                    "ménages": "dépense de consommation finale dont ménages",
+                    "administrations publiques": "dépense de consommation finale dont administrations publiques",
+                    13: 11,
+                    14: 11,
+                    15: 11
+                }]
             },
             {
                 "name" : delete_rows_by_index,
