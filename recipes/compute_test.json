@@ -154,7 +154,12 @@
   },
   "outputs": {
     "main": {
-      "items": []
+      "items": [
+        {
+          "ref": "99Mf2oDg",
+          "appendMode": false
+        }
+      ]
     }
   },
   "labels": [],
