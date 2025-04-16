@@ -23,6 +23,10 @@ datasets = [
         "name": "Categorie_metiers",
         "functions": [
             {
+                 "name" : delete_rows_by_index,
+                 "args" : []   
+            },
+            {
                  "name" : process_category_metier,
                  "args" : []   
             },
