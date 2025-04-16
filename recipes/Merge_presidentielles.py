@@ -2,13 +2,67 @@
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
+from utils import columns_to_int
 
-presidentielle_2022 = dataiku.Dataset("MSPR_Presidentielle_2022")
-presidentielle_2017 = dataiku.Dataset("MSPR_Presidentielle_2017")
-presidentielle_2012 = dataiku.Dataset("MSPR_Presidentielle_2012")
-presidentielle_2007 = dataiku.Dataset("MSPR_Presidentielle_2007")
-presidentielle_2002 = dataiku.Dataset("MSPR_Presidentielle_2002")
-presidentielle_1995 = dataiku.Dataset("MSPR_Presidentielle_1995")
+candidate_orientation = {
+    'MÉLENCHON': 'Far_Left',
+    'ARTHAUD': 'Far_Left',
+    'ROUSSEL': 'Far_Left',
+    'POUTOU': 'Far_Left',
+    'BESANCENOT': 'Far_Left',
+    'GLUCKSTEIN': 'Far_Left',
+    'LAGUILLER': 'Far_Left',
+    'BUFFET': 'Far_Left',
+    'HUE': 'Far_Left',
+    'SCHIVARDI': 'Far_Left',
+
+    'HOLLANDE': 'Left',
+    'ROYAL': 'Left',
+    'JOSPIN': 'Left',
+    'HAMON': 'Left',
+    'HIDALGO': 'Left',
+    'TAUBIRA': 'Left',
+    'CHEVENEMENT': 'Left',
+
+    'JADOT': 'Green',
+    'JOLY': 'Green',
+    'VOYNET': 'Green',
+    'MAMERE': 'Green',
+    'BOVÉ': 'Green',
+    'LEPAGE': 'Green',
+
+    'MACRON': 'Center',
+    'BAYROU': 'Center',
+    'CHEMINADE': 'Center',
+    'LASSALLE': 'Center',
+    'BOUTIN': 'Center',
+
+    'SARKOZY': 'Right',
+    'FILLON': 'Right',
+    'BALLADUR': 'Right',
+    'CHIRAC': 'Right',
+    'PÉCRESSE': 'Right',
+    'MADELIN': 'Right',
+    'SAINT-JOSSE': 'Right',
+
+    'LE PEN': 'Far_Right',
+    'ZEMMOUR': 'Far_Right',
+    'DUPONT-AIGNAN': 'Far_Right',
+    'ASSELINEAU': 'Far_Right',
+    'NIHOUS': 'Far_Right',
+    'MEGRET': 'Far_Right',
+    'de VILLIERS': 'Far_Right',
+    'VILLIERS DE': 'Far_Right',
+    
+    'Blanc': 'Blank'
+}
+
+presidentielle_2022 = dataiku.Dataset("Presidentielle_2022")
+presidentielle_2017 = dataiku.Dataset("Presidentielle_2017")
+presidentielle_2012 = dataiku.Dataset("Presidentielle_2012")
+presidentielle_2007 = dataiku.Dataset("Presidentielle_2007")
+presidentielle_2002 = dataiku.Dataset("Presidentielle_2002")
+presidentielle_1995 = dataiku.Dataset("Presidentielle_1995")
 
 dfs = {
     "2022" : presidentielle_2022.get_dataframe(),
@@ -20,7 +74,7 @@ dfs = {
 }
 
 # Create empty dataframe with columns needed
-final_df = pd.DataFrame(columns=["Année", "Genre", "Nom", "Prénom", "Voix"])
+final_df = pd.DataFrame(columns=["Année", "Genre", "Nom", "Prénom", "Voix", "Couleur"])
 
 count = 0
 
@@ -40,6 +94,7 @@ for key, df in dfs.items():
             final_df.loc[count, "Nom"] = "Blanc"
             final_df.loc[count, "Prénom"] = "Blanc"
             final_df.loc[count, "Voix"] = value
+            final_df.loc[count, "Genre"] = "NA"
             count += 1
         
         # Increment since first candidate
@@ -62,8 +117,9 @@ for key, df in dfs.items():
         if(col_count == 6):
             col_count = 0
             count += 1
-            
-        
+
+final_df['Couleur'] = final_df['Nom'].map(candidate_orientation)
+final_df = columns_to_int(final_df, ["Année", "Voix"])
 
 # Dataset Presidentielle renamed to Presidentielles by admin on 2025-02-11 18:01:24
 results = dataiku.Dataset("Presidentielles")

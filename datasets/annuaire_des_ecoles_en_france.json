@@ -1,0 +1,244 @@
+{
+  "type": "Filesystem",
+  "managed": true,
+  "featureGroup": false,
+  "formatType": "csv",
+  "checklists": {
+    "checklists": []
+  },
+  "checks": [],
+  "customMeta": {
+    "kv": {}
+  },
+  "flowOptions": {
+    "virtualizable": false,
+    "rebuildBehavior": "NORMAL",
+    "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "readWriteOptions": {
+    "preserveOrder": false,
+    "writeBuckets": 1,
+    "forceSingleOutputFile": false,
+    "defaultReadOrdering": {
+      "enabled": false,
+      "rules": []
+    }
+  },
+  "formatParams": {
+    "style": "unix",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "maxRowChars": 100000000,
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
+    "skipRowsBeforeHeader": 0,
+    "parseHeaderRow": false,
+    "skipRowsAfterHeader": 0,
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": "gz"
+  },
+  "partitioning": {
+    "ignoreNonMatchingFile": false,
+    "considerMissingRequestedPartitionsAsEmpty": false,
+    "dimensions": []
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1744615459140,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "params": {
+    "connection": "filesystem_managed",
+    "path": "${projectKey}/annuaire_des_ecoles_en_france",
+    "notReadyIfEmpty": false,
+    "filesSelectionRules": {
+      "mode": "ALL",
+      "excludeRules": [],
+      "includeRules": [],
+      "explicitFiles": []
+    },
+    "variablesExpansionLoopConfig": {
+      "enabled": false,
+      "mode": "CREATE_VARIABLE_FOR_EACH_COLUMN",
+      "replacements": []
+    }
+  },
+  "schema": {
+    "columns": [
+      {"name":"identifiant_de_l_etablissement","type":"string"},
+      {"name":"nom_etablissement","type":"string"},
+      {"name":"type_etablissement","type":"string"},
+      {"name":"statut_public_prive","type":"string"},
+      {"name":"adresse_1","type":"string"},
+      {"name":"adresse_2","type":"string"},
+      {"name":"adresse_3","type":"string"},
+      {"name":"code_postal","type":"string"},
+      {"name":"code_commune","type":"string"},
+      {"name":"nom_commune","type":"string"},
+      {"name":"code_academie","type":"string"},
+      {"name":"ecole_maternelle","type":"bigint"},
+      {"name":"ecole_elementaire","type":"bigint"},
+      {"name":"voie_generale","type":"bigint"},
+      {"name":"voie_technologique","type":"bigint"},
+      {"name":"voie_professionnelle","type":"bigint"},
+      {"name":"telephone","type":"string"},
+      {"name":"fax","type":"string"},
+      {"name":"web","type":"string"},
+      {"name":"mail","type":"string"},
+      {"name":"restauration","type":"bigint"},
+      {"name":"hebergement","type":"bigint"},
+      {"name":"ulis","type":"bigint"},
+      {"name":"apprentissage","type":"bigint"},
+      {"name":"segpa","type":"bigint"},
+      {"name":"section_arts","type":"bigint"},
+      {"name":"section_cinema","type":"bigint"},
+      {"name":"section_theatre","type":"bigint"},
+      {"name":"section_sport","type":"bigint"},
+      {"name":"section_internationale","type":"bigint"},
+      {"name":"section_europeenne","type":"bigint"},
+      {"name":"lycee_agricole","type":"bigint"},
+      {"name":"lycee_militaire","type":"bigint"},
+      {"name":"lycee_des_metiers","type":"bigint"},
+      {"name":"post_bac","type":"bigint"},
+      {"name":"appartenance_education_prioritaire","type":"string"},
+      {"name":"greta","type":"bigint"},
+      {"name":"siren_siret","type":"string"},
+      {"name":"nombre_d_eleves","type":"bigint"},
+      {"name":"fiche_onisep","type":"string"},
+      {"name":"position","type":"string"},
+      {"name":"type_contrat_prive","type":"string"},
+      {"name":"libelle_academie","type":"string"},
+      {"name":"coordx_origine","type":"string"},
+      {"name":"coordy_origine","type":"string"},
+      {"name":"epsg_origine","type":"string"},
+      {"name":"nom_circonscription","type":"string"},
+      {"name":"latitude","type":"string"},
+      {"name":"longitude","type":"string"},
+      {"name":"precision_localisation","type":"string"},
+      {"name":"date_ouverture","type":"date"},
+      {"name":"date_maj_ligne","type":"date"},
+      {"name":"etat","type":"string"},
+      {"name":"ministere_tutelle","type":"string"},
+      {"name":"multi_uai","type":"bigint"},
+      {"name":"rpi_concentre","type":"bigint"},
+      {"name":"rpi_disperse","type":"string"},
+      {"name":"code_nature","type":"string"},
+      {"name":"libelle_nature","type":"string"},
+      {"name":"code_type_contrat_prive","type":"string"},
+      {"name":"pial","type":"string"},
+      {"name":"etablissement_mere","type":"string"},
+      {"name":"type_rattachement_etablissement_mere","type":"string"},
+      {"name":"code_circonscription","type":"string"},
+      {"name":"code_zone_animation_pedagogique","type":"string"},
+      {"name":"libelle_zone_animation_pedagogique","type":"string"},
+      {"name":"code_bassin_formation","type":"string"},
+      {"name":"libelle_bassin_formation","type":"string"}
+    ],
+    "userModified": false
+  },
+  "dkuProperties": [],
+  "metrics": {
+    "probes": [
+      {
+        "type": "basic",
+        "enabled": true,
+        "computeOnBuildMode": "PARTITION",
+        "meta": {
+          "name": "Basic data",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "records",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Record count",
+          "level": 0
+        },
+        "configuration": {}
+      }
+    ],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": []
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "ascending": true,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
+      "python": {}
+    },
+    "displayedState": {
+      "columns": [],
+      "metrics": [
+        "basic:COUNT_COLUMNS",
+        "basic:COUNT_FILES",
+        "basic:SIZE",
+        "records:COUNT_RECORDS"
+      ]
+    }
+  },
+  "metricsChecks": {
+    "monitor": false,
+    "checks": [],
+    "displayedState": {
+      "checks": []
+    }
+  },
+  "customFields": {}
+}

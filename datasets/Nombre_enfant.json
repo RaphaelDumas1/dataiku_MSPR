@@ -87,7 +87,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"string"},
+      {"name":"Année","type":"bigint"},
       {"name":"Aucun enfant","type":"bigint"},
       {"name":"1 enfant","type":"bigint"},
       {"name":"2 enfants","type":"bigint"},

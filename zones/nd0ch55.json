@@ -1,0 +1,24 @@
+{
+  "name": "Securite",
+  "color": "#D03713",
+  "items": [
+    {
+      "objectId": "Delinquance",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Administration_penitentiaire",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Extract_securite",
+      "objectType": "RECIPE"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

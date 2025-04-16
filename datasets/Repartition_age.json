@@ -87,13 +87,13 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"double"},
-      {"name":"Population de 0-14 ans","type":"double"},
-      {"name":"Population de 15-29 ans","type":"double"},
-      {"name":"Population de 30-44 ans","type":"double"},
-      {"name":"Population de 45-59 ans","type":"double"},
-      {"name":"Population de 60-74 ans","type":"double"},
-      {"name":"Population de plus de 75 ans","type":"double"}
+      {"name":"année","type":"bigint"},
+      {"name":"population de 0-14 ans","type":"double"},
+      {"name":"population de 15-29 ans","type":"double"},
+      {"name":"population de 30-44 ans","type":"double"},
+      {"name":"population de 45-59 ans","type":"double"},
+      {"name":"population de 60-74 ans","type":"double"},
+      {"name":"population de plus de 75 ans","type":"double"}
     ],
     "userModified": false
   },

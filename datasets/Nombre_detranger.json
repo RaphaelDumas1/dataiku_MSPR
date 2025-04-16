@@ -65,7 +65,7 @@
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1743024289849,
+    "lastModifiedOn": 1744577652566,
     "extendedProperties": {}
   },
   "tags": [],
@@ -87,8 +87,8 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Nombre","type":"bigint"}
+      {"name":"année","type":"bigint"},
+      {"name":"nombre","type":"bigint"}
     ],
     "userModified": false
   },

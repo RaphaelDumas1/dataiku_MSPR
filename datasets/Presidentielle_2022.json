@@ -1,0 +1,265 @@
+{
+  "type": "Filesystem",
+  "managed": true,
+  "featureGroup": false,
+  "formatType": "csv",
+  "checklists": {
+    "checklists": []
+  },
+  "checks": [],
+  "customMeta": {
+    "kv": {}
+  },
+  "flowOptions": {
+    "virtualizable": false,
+    "rebuildBehavior": "NORMAL",
+    "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "readWriteOptions": {
+    "preserveOrder": false,
+    "writeBuckets": 1,
+    "forceSingleOutputFile": false,
+    "defaultReadOrdering": {
+      "enabled": false,
+      "rules": []
+    }
+  },
+  "formatParams": {
+    "style": "unix",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "maxRowChars": 100000000,
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
+    "skipRowsBeforeHeader": 0,
+    "parseHeaderRow": false,
+    "skipRowsAfterHeader": 0,
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": "gz"
+  },
+  "partitioning": {
+    "ignoreNonMatchingFile": false,
+    "considerMissingRequestedPartitionsAsEmpty": false,
+    "dimensions": []
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1744618150012,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "params": {
+    "connection": "filesystem_managed",
+    "path": "${projectKey}/Presidentielle_2022",
+    "notReadyIfEmpty": false,
+    "filesSelectionRules": {
+      "mode": "ALL",
+      "excludeRules": [],
+      "includeRules": [],
+      "explicitFiles": []
+    },
+    "variablesExpansionLoopConfig": {
+      "enabled": false,
+      "mode": "CREATE_VARIABLE_FOR_EACH_COLUMN",
+      "replacements": []
+    }
+  },
+  "schema": {
+    "columns": [
+      {"name":"Code du département","type":"string"},
+      {"name":"Libellé du département","type":"string"},
+      {"name":"Etat saisie","type":"string"},
+      {"name":"Inscrits","type":"string"},
+      {"name":"Abstentions","type":"double"},
+      {"name":"% Abs/Ins","type":"double"},
+      {"name":"Votants","type":"double"},
+      {"name":"% Vot/Ins","type":"double"},
+      {"name":"Blancs","type":"double"},
+      {"name":"% Blancs/Ins","type":"double"},
+      {"name":"% Blancs/Vot","type":"double"},
+      {"name":"Nuls","type":"double"},
+      {"name":"% Nuls/Ins","type":"double"},
+      {"name":"% Nuls/Vot","type":"double"},
+      {"name":"Exprimés","type":"double"},
+      {"name":"% Exp/Ins","type":"double"},
+      {"name":"% Exp/Vot","type":"double"},
+      {"name":"Sexe","type":"string"},
+      {"name":"Nom","type":"string"},
+      {"name":"Prénom","type":"string"},
+      {"name":"Voix","type":"double"},
+      {"name":"% Voix/Ins","type":"double"},
+      {"name":"% Voix/Exp","type":"double"},
+      {"name":"None","type":"string"},
+      {"name":"None_1","type":"string"},
+      {"name":"None_2","type":"string"},
+      {"name":"None_3","type":"double"},
+      {"name":"None_4","type":"double"},
+      {"name":"None_5","type":"double"},
+      {"name":"None_6","type":"string"},
+      {"name":"None_7","type":"string"},
+      {"name":"None_8","type":"string"},
+      {"name":"None_9","type":"double"},
+      {"name":"None_10","type":"double"},
+      {"name":"None_11","type":"double"},
+      {"name":"None_12","type":"string"},
+      {"name":"None_13","type":"string"},
+      {"name":"None_14","type":"string"},
+      {"name":"None_15","type":"double"},
+      {"name":"None_16","type":"double"},
+      {"name":"None_17","type":"double"},
+      {"name":"None_18","type":"string"},
+      {"name":"None_19","type":"string"},
+      {"name":"None_20","type":"string"},
+      {"name":"None_21","type":"double"},
+      {"name":"None_22","type":"double"},
+      {"name":"None_23","type":"double"},
+      {"name":"None_24","type":"string"},
+      {"name":"None_25","type":"string"},
+      {"name":"None_26","type":"string"},
+      {"name":"None_27","type":"double"},
+      {"name":"None_28","type":"double"},
+      {"name":"None_29","type":"double"},
+      {"name":"None_30","type":"string"},
+      {"name":"None_31","type":"string"},
+      {"name":"None_32","type":"string"},
+      {"name":"None_33","type":"double"},
+      {"name":"None_34","type":"double"},
+      {"name":"None_35","type":"double"},
+      {"name":"None_36","type":"string"},
+      {"name":"None_37","type":"string"},
+      {"name":"None_38","type":"string"},
+      {"name":"None_39","type":"double"},
+      {"name":"None_40","type":"double"},
+      {"name":"None_41","type":"double"},
+      {"name":"None_42","type":"string"},
+      {"name":"None_43","type":"string"},
+      {"name":"None_44","type":"string"},
+      {"name":"None_45","type":"double"},
+      {"name":"None_46","type":"double"},
+      {"name":"None_47","type":"double"},
+      {"name":"None_48","type":"string"},
+      {"name":"None_49","type":"string"},
+      {"name":"None_50","type":"string"},
+      {"name":"None_51","type":"double"},
+      {"name":"None_52","type":"double"},
+      {"name":"None_53","type":"double"},
+      {"name":"None_54","type":"string"},
+      {"name":"None_55","type":"string"},
+      {"name":"None_56","type":"string"},
+      {"name":"None_57","type":"double"},
+      {"name":"None_58","type":"double"},
+      {"name":"None_59","type":"double"},
+      {"name":"None_60","type":"string"},
+      {"name":"None_61","type":"string"},
+      {"name":"None_62","type":"string"},
+      {"name":"None_63","type":"double"},
+      {"name":"None_64","type":"double"},
+      {"name":"None_65","type":"double"}
+    ],
+    "userModified": false
+  },
+  "dkuProperties": [],
+  "metrics": {
+    "probes": [
+      {
+        "type": "basic",
+        "enabled": true,
+        "computeOnBuildMode": "PARTITION",
+        "meta": {
+          "name": "Basic data",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "records",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Record count",
+          "level": 0
+        },
+        "configuration": {}
+      }
+    ],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": []
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "ascending": true,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
+      "python": {}
+    },
+    "displayedState": {
+      "columns": [],
+      "metrics": [
+        "basic:COUNT_COLUMNS",
+        "basic:COUNT_FILES",
+        "basic:SIZE",
+        "records:COUNT_RECORDS"
+      ]
+    }
+  },
+  "metricsChecks": {
+    "monitor": false,
+    "checks": [],
+    "displayedState": {
+      "checks": []
+    }
+  },
+  "customFields": {}
+}

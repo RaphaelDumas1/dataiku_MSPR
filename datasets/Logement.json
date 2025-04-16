@@ -87,11 +87,11 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"string"},
-      {"name":"Nombre de logements","type":"string"},
-      {"name":"Part des résidences principales (%)","type":"string"},
-      {"name":"Part des rés. secondaires (yc log. occasionnels) (%)","type":"string"},
-      {"name":"Part des logements vacants (%)","type":"string"}
+      {"name":"Année","type":"bigint"},
+      {"name":"Nombre de logements","type":"bigint"},
+      {"name":"Part des résidences principales (%)","type":"double"},
+      {"name":"Part des rés. secondaires (yc log. occasionnels) (%)","type":"double"},
+      {"name":"Part des logements vacants (%)","type":"double"}
     ],
     "userModified": false
   },

@@ -1,0 +1,24 @@
+{
+  "name": "Education",
+  "color": "#087ABF",
+  "items": [
+    {
+      "objectId": "annuaire_des_ecoles_en_france",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Taux_scolarisation",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Extract_education",
+      "objectType": "RECIPE"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

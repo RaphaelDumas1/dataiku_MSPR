@@ -87,8 +87,8 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Taux de deces","type":"double"}
+      {"name":"année","type":"bigint"},
+      {"name":"taux de deces","type":"double"}
     ],
     "userModified": false
   },

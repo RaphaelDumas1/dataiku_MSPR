@@ -2,15 +2,37 @@
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
+from utils import columns_to_int
 
-legislative_2024 = dataiku.Dataset("MSPR_Legislative_2024")
-legislative_2022 = dataiku.Dataset("MSPR_Legislative_2022")
-legislative_2017 = dataiku.Dataset("MSPR_Legislative_2017")
-legislative_2012 = dataiku.Dataset("MSPR_Legislative_2012")
-legislative_2007 = dataiku.Dataset("MSPR_Legislative_2007")
-legislative_2002 = dataiku.Dataset("MSPR_Legislative_2002")
-legislative_1997 = dataiku.Dataset("MSPR_Legislative_1997")
-legislative_1993 = dataiku.Dataset("MSPR_Legislative_1993")
+party_orientation = {
+    'EXG': 'Left', 'COM': 'Left', 'FG': 'Left', 'SOC': 'Left', 'RDG': 'Left',
+    'DVG': 'Left', 'VEC': 'Left', 'ECO': 'Left', 'FI': 'Left', 'NUP': 'Left',
+    'UG': 'Left', 'DXG': 'Left', 'PRS': 'Left', 'GEC': 'Left', 'LO': 'Left',
+    'LCR': 'Left', 'PRG': 'Left',
+
+    'CEN': 'Right', 'MDM': 'Right', 'UDI': 'Right', 'DVC': 'Right', 'UDFD': 'Right',
+    'REM': 'Right', 'ENS': 'Right', 'ALLI': 'Right', 'UDF': 'Right',
+
+    'UMP': 'Right', 'RPR': 'Right', 'LR': 'Right', 'DVD': 'Right', 'DIV': 'Right',
+    'MAJ': 'Right', 'PRV': 'Right', 'NCE': 'Right', 'DL': 'Right',
+
+    'FN': 'Far_Right', 'RN': 'Far_Right', 'FRN': 'Far_Right', 'MNR': 'Far_Right',
+    'EXD': 'Far_Right', 'DLF': 'Far_Right', 'DSV': 'Far_Right', 'REC': 'Far_Right',
+    'MPF': 'Far_Right', 'RPF': 'Far_Right',
+
+    'REG': 'Right', 'CPNT': 'Right', 'AUT': 'Right', 'PREP': 'Right',
+    
+    'Blanc' : 'Blank'
+}
+
+legislative_2024 = dataiku.Dataset("Legislative_2024")
+legislative_2022 = dataiku.Dataset("Legislative_2022")
+legislative_2017 = dataiku.Dataset("Legislative_2017")
+legislative_2012 = dataiku.Dataset("Legislative_2012")
+legislative_2007 = dataiku.Dataset("Legislative_2007")
+legislative_2002 = dataiku.Dataset("Legislative_2002")
+legislative_1997 = dataiku.Dataset("Legislative_1997")
+legislative_1993 = dataiku.Dataset("Legislative_1993")
 
 
 dfs = {
@@ -65,7 +87,7 @@ dfs = {
 }
 
 # Create empty dataframe with columns needed
-final_df = pd.DataFrame(columns=["Année", "Parti", "Voix"])
+final_df = pd.DataFrame(columns=["Année", "Parti", "Voix", "Couleur"])
 
 count = 0
 
@@ -107,7 +129,9 @@ for key, df in dfs.items():
         if(col_count == df["cycle_length"]):
             col_count = 0
             count += 1
-        
+
+final_df['Couleur'] = final_df['Parti'].map(party_orientation)
+final_df = columns_to_int(final_df, ["Année", "Voix"])
 
 test = dataiku.Dataset("Legislatives")
 test.write_with_schema(final_df)

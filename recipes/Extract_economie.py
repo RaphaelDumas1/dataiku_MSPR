@@ -1,0 +1,69 @@
+from utils import create_datasets_from_file_sheets, process_pib, pivot, columns_to_int, columns_to_float, process_inflation, columns_to_float
+
+datasets = [
+    {
+        "name": "Pib",
+        "functions": [
+            {
+                "name" : process_pib,
+                "args" : []
+            },
+            {
+                "name" : pivot,
+                "args" : ["Année"]
+            },
+            {
+                "name" : columns_to_int,
+                "args" : [["Année"]]
+            },
+            {
+                "name" : columns_to_float,
+                "args" : [[" Produit intérieur brut (PIB)", "Importations de biens et de services", "Dépense de consommation finale", "Dépense de consommation finale dont ménages",
+                          "Dépense de consommation finale dont administrations publiques", "Formation brute de capital fixe", "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
+                          "Formation brute de capital fixe dont administrations publiques", " Formation brute de capital fixe dont ménages hors entrepreneurs individuels", "Exportations de biens et de services",
+                          "Demande intérieure hors stocks"], 1]
+            },
+        ]
+    },
+    {
+        "name": "Inflation",
+        "functions": [
+            {
+                "name" : process_inflation,
+                "args" : []
+            },
+            {
+                "name" : columns_to_int,
+                "args" : [["Année"]]
+            },
+            {
+                "name" : columns_to_float,
+                "args" : [["Taux d'inflation"]]
+            },
+        ]
+    },
+    {
+        "name": "Salaire_moyen",
+        "functions": [
+            {
+                "name" : columns_to_int,
+                "args" : []
+            },
+        ]
+    },
+    {
+        "name": "Impot_moyen",
+        "functions": [
+            {
+                "name" : columns_to_int,
+                "args" : [["Année"]]
+            },
+            {
+                "name" : columns_to_float,
+                "args" : [["Impot"], 2]
+            },
+        ]
+    },
+]
+
+create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Economie.xlsx", datasets, [])
