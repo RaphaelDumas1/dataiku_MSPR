@@ -93,6 +93,10 @@ def delete_where_not_equal(df, column, value):
     is_column_in_dataframe(df, column)
     return df[df[column] == value].reset_index(drop=True)
 
+# Delete columns(s) by name in list
+def delete_columns_by_name(df, columns):
+    return df.drop(columns=delete_columns)
+
 #
 # CONVERT
 #
@@ -322,7 +326,7 @@ def process_inflation(df):
 def process_annuaire(df):  
     delete_columns = ['code_departement', 'code_region', 'libelle_departement', 'libelle_region']
 
-    df = df.drop(columns=delete_columns)
+    
     df = df.dropna(how="all")
     columns_defaults = {
         "type_etablissement": "Inconnu",
