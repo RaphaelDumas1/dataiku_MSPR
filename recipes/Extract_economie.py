@@ -8,7 +8,6 @@ datasets = [
                 "name" : process_pib,
                 "args" : []
             },
-            {
             
         ]
     },
