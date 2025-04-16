@@ -119,7 +119,7 @@ def pivot(df, first_column_name):
 
     # Rename column
     df = df.rename(columns={df.columns[0]: first_column_name})
-    df.columns = [col.strip() for col in df.columns]
+    df.columns = make_unique(df.columns)
     
     return df
 
