@@ -331,7 +331,7 @@ def fill_empty_values(df, columns_defaults):
 def fill_empty_values_with_mean(df, columns):
     for col in columns:
         is_column_in_dataframe(df, col)
-        df[col].fillna(df[col].mean())
+        df[col] = df[col].fillna(df[col].mean())
     return df
     
         
