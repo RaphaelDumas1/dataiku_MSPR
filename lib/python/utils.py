@@ -77,7 +77,8 @@ def delete_where_equal(df, column, value):
         raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
     
     return df[df[column] != value].reset_index(drop=True)
-    
+
+# Delete row(s) in dataframe where column not equal value
 def delete_where_not_equal(df, column, value):
     if column not in df.columns:
         raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
