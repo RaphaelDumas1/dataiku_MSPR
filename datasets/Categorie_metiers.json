@@ -87,16 +87,16 @@
   },
   "schema": {
     "columns": [
-      {"name":"none","type":"string"},
-      {"name":"hommes","type":"string"},
-      {"name":"femmes","type":"string"},
-      {"name":"total","type":"string"},
-      {"name":"hommes_1","type":"string"},
-      {"name":"femmes_1","type":"string"},
-      {"name":"total_1","type":"string"},
-      {"name":"hommes_2","type":"string"},
-      {"name":"femmes_2","type":"string"},
-      {"name":"total_2","type":"string"}
+      {"name":"année","type":"bigint"},
+      {"name":"agriculteurs exploitants","type":"bigint"},
+      {"name":"artisans, commerçants, chefs entreprise","type":"bigint"},
+      {"name":"cadres et professions intellectuelles supérieures","type":"bigint"},
+      {"name":"professions intermédiaires","type":"bigint"},
+      {"name":"employés","type":"bigint"},
+      {"name":"ouvriers","type":"bigint"},
+      {"name":"retraités","type":"bigint"},
+      {"name":"autres personnes sans activité professionnelle","type":"bigint"},
+      {"name":"total","type":"bigint"}
     ],
     "userModified": false
   },
