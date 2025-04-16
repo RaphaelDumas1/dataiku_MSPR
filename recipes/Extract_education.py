@@ -84,6 +84,10 @@ datasets = [
                 }]
             },
             {
+                 "name" : fill_empty_values_with_mean,
+                 "args" : []
+            },
+            {
                  "name" : columns_to_string,
                  "args" : [["code_postal", "code_commune", "code_academie", "telephone",
                            "siren_siret", "coordx_origine", "coordy_origine", "rpi_disperse", "code_type_contrat_prive", "code_bassin_formation",
