@@ -7,10 +7,6 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "Repartition_des_contrats",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "Categorie_metiers",
       "objectType": "DATASET"
     },
@@ -25,6 +21,10 @@
     {
       "objectId": "Extract_emploi",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "contrat",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
