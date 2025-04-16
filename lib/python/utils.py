@@ -450,9 +450,5 @@ def extract_and_concat_to_original(df, interval1, interval2):
     
     df_cleaned["Date référence"] = df_cleaned["Date référence"].astype(str).str[:4]
     df_cleaned.rename(columns={'Date référence': 'Année'}, inplace=True)
-    
-    delete_columns = ['Numéro département', 'Nom département', 'Numéro région', 'Nom région', "Lieu résidence"]
-
-    df_cleaned = df_cleaned.drop(columns=delete_columns)
 
     return df_cleaned
