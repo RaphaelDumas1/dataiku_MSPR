@@ -27,12 +27,17 @@ datasets = [
         "name": "Categorie_metiers",
         "functions": [
             {
-                 "name" : set_row_as_headers,
-                 "args" : [1, categorie_metier_column]   
+                 "name" : process_category_metier,
+                 "args" : []   
             },
-            
-          
-            
+            {
+                 "name" : pivot,
+                 "args" : ["Année"]   
+            },
+            {
+                "name" : columns_to_int,
+                "args" : []
+            }
         ]
     },
     {
