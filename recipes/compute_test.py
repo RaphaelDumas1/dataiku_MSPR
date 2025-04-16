@@ -9,6 +9,7 @@ engine = create_engine('postgresql://postgres:test@localhost:5432/MSPR')
 project = dataiku.api_client().get_project("MSPR")
 recipe = project.get_recipe("compute_test")
 input_datasets = recipe.get_settings().get_recipe_inputs()
+print("yesss", input_datasets)
 
 # Boucle sur les datasets d'entrée
 for ds_info in input_datasets.values():
