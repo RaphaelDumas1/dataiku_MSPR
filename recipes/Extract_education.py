@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, columns_to_int, columns_to_string, delete_where_not_equal, fill_empty_values, fill_empty_values_with_mean, delete_columns__not_in_list
+from utils import create_datasets_from_file_sheets, columns_to_int, columns_to_string, delete_where_not_equal, fill_empty_values, fill_empty_values_with_mean, delete_columns__not_in_list, complete_with_inteprolate
 
 datasets = [
     {
@@ -7,6 +7,10 @@ datasets = [
             {
                  "name" : columns_to_int,
                  "args" : [["Année"]]
+            },
+            {
+                 "name" : complete_with_inteprolate,
+                 "args" : []
             }
         ]
     },
