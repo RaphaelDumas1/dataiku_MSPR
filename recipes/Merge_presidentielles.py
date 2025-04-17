@@ -74,7 +74,7 @@ dfs = {
 }
 
 # Create empty dataframe with columns needed
-final_df = pd.DataFrame(columns=["Année", "Genre", "Nom", "Prénom", "Voix", "Couleur"])
+final_df = pd.DataFrame(columns=["année", "genre", "nom", "prénom", "voix", "couleur"])
 
 count = 0
 
@@ -90,36 +90,36 @@ for key, df in dfs.items():
         # Create new row for blank votes
         if(header == "Blancs" or header == "Blancs et nuls"):
             print("yes")
-            final_df.loc[count, "Année"] = key
-            final_df.loc[count, "Nom"] = "Blanc"
-            final_df.loc[count, "Prénom"] = "Blanc"
-            final_df.loc[count, "Voix"] = value
-            final_df.loc[count, "Genre"] = "NA"
+            final_df.loc[count, "année"] = key
+            final_df.loc[count, "nom"] = "Blanc"
+            final_df.loc[count, "prénom"] = "Blanc"
+            final_df.loc[count, "voix"] = value
+            final_df.loc[count, "genre"] = "NA"
             count += 1
         
         # Increment since first candidate
-        if(headers.get_loc("Sexe") <= index):
+        if(headers.get_loc("sexe") <= index):
             col_count += 1
             
         if(col_count == 1):
-            final_df.loc[count, "Année"] = key
-            final_df.loc[count, "Genre"] = value   
+            final_df.loc[count, "année"] = key
+            final_df.loc[count, "genre"] = value   
             
         if(col_count == 2):
-            final_df.loc[count, "Nom"] = value
+            final_df.loc[count, "nom"] = value
             
         if(col_count == 3):
-            final_df.loc[count, "Prénom"] = value
+            final_df.loc[count, "prénom"] = value
 
         if(col_count == 4):
-            final_df.loc[count, "Voix"] = value
+            final_df.loc[count, "voix"] = value
          
         if(col_count == 6):
             col_count = 0
             count += 1
 
-final_df['Couleur'] = final_df['Nom'].map(candidate_orientation)
-final_df = columns_to_int(final_df, ["Année", "Voix"])
+final_df['couleur'] = final_df['nom'].map(candidate_orientation)
+final_df = columns_to_int(final_df, ["année", "voix"])
 
 # Dataset Presidentielle renamed to Presidentielles by admin on 2025-02-11 18:01:24
 results = dataiku.Dataset("Presidentielles")
