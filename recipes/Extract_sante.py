@@ -26,7 +26,7 @@ datasets = [
             },
             {
                 "name" : columns_to_float,
-                "args" : [["Espérance de vie sans incapacité femme", "Espérance de vie femme", "Espérance de vie sans incapacité homme", "Espérance de vie homme"], 1]
+                "args" : [["femmes_sans_incapacite", "femme_total", "homme_sans_incapacite", "homme_total"], 1]
             
             },
             
