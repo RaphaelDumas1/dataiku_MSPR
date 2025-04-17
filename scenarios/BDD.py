@@ -50,4 +50,4 @@ for name in datasets_names:
 
 # Trouver le dataset avec l'année la plus ancienne
 oldest = min(min_years, key=lambda x: x[1])
-print(oldest)
+print("test", oldest)
