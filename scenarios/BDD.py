@@ -39,7 +39,7 @@ datasets_names = [
 
 min_years = []
 
-for name in dataset_names:
+for name in datasets_names:
     ds = Dataset(name)
     df = ds.get_dataframe(columns=['année'])  # suppose que la colonne s'appelle exactement "année"
     min_year = df['année'].min()
