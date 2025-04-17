@@ -4,22 +4,29 @@ from dataiku import pandasutils as pdu
 from utils import columns_to_int
 
 party_orientation = {
-    'EXG': 'Left', 'COM': 'Left', 'FG': 'Left', 'SOC': 'Left', 'RDG': 'Left',
-    'DVG': 'Left', 'VEC': 'Left', 'ECO': 'Left', 'FI': 'Left', 'NUP': 'Left',
-    'UG': 'Left', 'DXG': 'Left', 'PRS': 'Left', 'GEC': 'Left', 'LO': 'Left',
-    'LCR': 'Left', 'PRG': 'Left',
+    # Far-left parties
+    'EXG': 'Far_Left', 'LO': 'Far_Left', 'LCR': 'Far_Left',
 
-    'CEN': 'Right', 'MDM': 'Right', 'UDI': 'Right', 'DVC': 'Right', 'UDFD': 'Right',
-    'REM': 'Right', 'ENS': 'Right', 'ALLI': 'Right', 'UDF': 'Right',
+    # Left-wing parties
+    'COM': 'Left', 'FG': 'Left', 'SOC': 'Left', 'RDG': 'Left',
+    'DVG': 'Left', 'VEC': 'Left', 'ECO': 'Left', 'FI': 'Left',
+    'NUP': 'Left', 'UG': 'Left', 'DXG': 'Left', 'PRS': 'Left',
+    'GEC': 'Left', 'PRG': 'Left',
 
-    'UMP': 'Right', 'RPR': 'Right', 'LR': 'Right', 'DVD': 'Right', 'DIV': 'Right',
+    # Center parties
+    'CEN': 'Center', 'MDM': 'Center', 'UDI': 'Center', 'DVC': 'Center',
+    'REM': 'Center', 'ENS': 'Center', 'ALLI': 'Center', 'UDF': 'Center', 'UDFD': 'Center',
+
+    # Right-wing parties
+    'UMP': 'Right', 'RPR': 'Right', 'LR': 'Right', 'DVD': 'Right', 
     'MAJ': 'Right', 'PRV': 'Right', 'NCE': 'Right', 'DL': 'Right',
+    'DIV': 'Right', 'CPNT': 'Right', 'REG': 'Right', 'PREP': 'Right',
+    'AUT': 'Right',
 
+    # Far-right parties
     'FN': 'Far_Right', 'RN': 'Far_Right', 'FRN': 'Far_Right', 'MNR': 'Far_Right',
     'EXD': 'Far_Right', 'DLF': 'Far_Right', 'DSV': 'Far_Right', 'REC': 'Far_Right',
-    'MPF': 'Far_Right', 'RPF': 'Far_Right',
-
-    'REG': 'Right', 'CPNT': 'Right', 'AUT': 'Right', 'PREP': 'Right',
+    'MPF': 'Far_Right', 'RPF': 'Far_Right'
     
     'Blanc' : 'Blank'
 }
