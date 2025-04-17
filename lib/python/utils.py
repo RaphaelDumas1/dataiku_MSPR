@@ -316,7 +316,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
     if title != "annuaire_des_ecoles_en_france":
         df = df[df['année'] >= 2006]
     
-        year_window = set(range(2006, 2024))
+        year_window = set(range(2006, 2025))
         df_years = set(df['année'])
         missing_years = sorted(year_window - df_years)
         print("Années manquantes :", missing_years)
