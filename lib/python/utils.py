@@ -296,13 +296,12 @@ def fill_empty_values_with_mean(df, columns):
     return df
     
         
-def execute_instruction_on_dataframe(df, table_name, instruction):
+def execute_instruction_on_dataframe(df, title, instruction):
     engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
     functions = instruction["functions"]
     instruction_name = instruction["name"]
     
     df = df.dropna(how="all")
-    print("yess", table_name)
    
     for function in functions:
         # Set variables for iteration
@@ -314,7 +313,8 @@ def execute_instruction_on_dataframe(df, table_name, instruction):
 
     # Drop empty rows
     df.columns = df.columns.str.lower()
-    df = df[df['année'] >= 2006]
+    if title != "annuaire_des_ecoles_en_france"
+        df = df[df['année'] >= 2006]
 
     # Exportation vers PostgreSQL
     # df.to_sql(table_name, engine, if_exists='replace', index=False)
