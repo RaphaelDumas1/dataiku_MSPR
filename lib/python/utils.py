@@ -315,7 +315,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
     df.columns = df.columns.str.lower()
     if title != "annuaire_des_ecoles_en_france":
         df = df[df['année'] >= 2006]
-    
+        print("yes")
         # Créer DataFrame avec toutes les années
         full_years = pd.DataFrame({'année': range(2006, 2025)})
 
