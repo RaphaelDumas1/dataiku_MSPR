@@ -294,6 +294,8 @@ def fill_empty_values_with_mean(df, columns):
         is_column_in_dataframe(df, col)
         df[col] = df[col].fillna(df[col].mean())
     return df
+
+def complete_with_inteprolate(df):
     
         
 def execute_instruction_on_dataframe(df, title, instruction):
@@ -313,25 +315,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
 
     # Drop empty rows
     df.columns = df.columns.str.lower()
-    if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:
-        
-        # Créer DataFrame avec toutes les années
-        full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
-        
-        # Fusionner avec df
-        df_full = pd.merge(full_years, df, on='année', how='left')
-        print("aaa", df_full['année'])
-        # Interpolation + extrapolation
-        num_cols = df_full.select_dtypes(include='number').columns.drop('année')
-
-        df_full[num_cols] = df_full[num_cols]\
-            .interpolate(method='linear', limit_direction='both')\
-            .ffill().bfill()
-
-        df = df_full
-        
-        
-        
+    if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:  
         df = df[df['année'] >= 2006]
         
         
