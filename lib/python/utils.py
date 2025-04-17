@@ -321,9 +321,10 @@ def execute_instruction_on_dataframe(df, title, instruction):
 
         # Fusionner avec df
         df_full = pd.merge(full_years, df, on='année', how='left')
-        print("yes", df_full.columns)
+        
         # Interpolation + extrapolation
         num_cols = df_full.select_dtypes(include='number').columns.drop('année')
+        print("yes", num_cols)
         df_full[num_cols] = df_full[num_cols]\
             .interpolate(method='linear', limit_direction='both')\
             .ffill().bfill()
