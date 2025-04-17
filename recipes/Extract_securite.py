@@ -15,7 +15,7 @@ datasets = [
             {
                  "name" : complete_with_inteprolate,
                  "args" : []
-            }
+            },
             {
                  "name" : columns_to_int,
                  "args" : []
