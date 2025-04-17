@@ -324,7 +324,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
         
         # Interpolation + extrapolation
         num_cols = df_full.select_dtypes(include='number').columns.drop('année')
-        print("yes", num_cols)
+
         df_full[num_cols] = df_full[num_cols]\
             .interpolate(method='linear', limit_direction='both')\
             .ffill().bfill()
