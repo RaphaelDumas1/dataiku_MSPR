@@ -329,7 +329,8 @@ def execute_instruction_on_dataframe(df, title, instruction):
 
         colonnes_numeriques = df_complet.select_dtypes(include='number').columns.drop(colonne_annee, errors='ignore')
         df_complet[colonnes_numeriques] = df_complet[colonnes_numeriques].interpolate(method='linear')
-        print("Années manquantes :", missing_years)
+        
+        df = df_complet
         
         
     # Exportation vers PostgreSQL
