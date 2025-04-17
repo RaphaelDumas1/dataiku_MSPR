@@ -300,6 +300,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
     engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
     functions = instruction["functions"]
     instruction_name = instruction["name"]
+    complete_function = instruction["complete"]
     
     df = df.dropna(how="all")
    
