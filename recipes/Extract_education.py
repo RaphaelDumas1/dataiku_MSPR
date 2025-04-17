@@ -23,9 +23,7 @@ datasets = [
             },
             {
                 "name" : fill_empty_values,
-                "args" : [{
-                    "type_etablissement": "Inconnu",
-                }]
+                "args" : [{"type_etablissement": "Inconnu"}]
             },
             {
                  "name" : fill_empty_values_with_mean,
