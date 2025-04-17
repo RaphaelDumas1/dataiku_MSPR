@@ -40,6 +40,7 @@ datasets_names = [
 ]  # à adapter
 
 min_years = []
+max_years = []
 
 for name in datasets_names:
     ds = Dataset(name)
