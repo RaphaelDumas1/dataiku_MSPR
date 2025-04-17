@@ -87,7 +87,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"année","type":"string"},
+      {"name":"année","type":"bigint"},
       {"name":"variation de population (%)","type":"double"},
       {"name":"- due au solde naturel (%)","type":"double"},
       {"name":"- due au solde entrées/sorties (%)","type":"double"}
