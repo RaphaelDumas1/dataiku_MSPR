@@ -269,8 +269,9 @@ def add_columns(df, col1, col2, result_column):
     return df
 
 def rename_columns(df, columns_dict):
+    df = df.rename(columns=columns_dict, inplace=True)
     print("ooo", df.columns)
-    return df.rename(columns=columns_dict)
+    return df
 
 def set_row_as_headers(df, index, function=None):
     df.columns = df.iloc[index]
