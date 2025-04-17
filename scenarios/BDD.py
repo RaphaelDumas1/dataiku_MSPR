@@ -53,7 +53,7 @@ for name in datasets_names:
 oldest = min(min_years, key=lambda x: x[1])
 newest = max(max_years, key=lambda x: x[1])
 
-print(min_years, max_years)
+print("ici", min_years, max_years)
 
 #for year in range(oldest[1], newest[1] + 1):
 #   print(year)
