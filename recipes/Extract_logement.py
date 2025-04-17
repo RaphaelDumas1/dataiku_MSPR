@@ -15,7 +15,11 @@ datasets = [
             {
                  "name" : columns_to_float,
                  "args" : [["Part des résidences principales (%)", "Part des rés. secondaires (yc log. occasionnels) (%)", "Part des logements vacants (%)"]]
-            }
+            },
+            {
+                 "name" : complete_with_inteprolate,
+                 "args" : []
+            },
         ]
     },
     {
