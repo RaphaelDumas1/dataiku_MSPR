@@ -313,7 +313,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
 
     # Drop empty rows
     df.columns = df.columns.str.lower()
-    if title != "annuaire_des_ecoles_en_france":
+    if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:
         
         # Créer DataFrame avec toutes les années
         full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
