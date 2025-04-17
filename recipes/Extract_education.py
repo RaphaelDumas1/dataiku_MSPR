@@ -30,12 +30,6 @@ datasets = [
                  "args" : [["nombre_d_eleves"]]
             },
             {
-                 "name" : columns_to_string,
-                 "args" : [["code_postal", "code_commune", "code_academie", "telephone",
-                           "siren_siret", "coordx_origine", "coordy_origine", "rpi_disperse", "code_type_contrat_prive", "code_bassin_formation",
-                           "code_nature", "code_zone_animation_pedagogique"]]
-            },
-            {
                  "name" : columns_to_int,
                  "args" : [["ecole_maternelle", "ecole_elementaire", "voie_generale", "voie_technologique", "voie_professionnelle",
                            "restauration", "hebergement", "ulis", "apprentissage", "segpa", "section_arts", "section_cinema", "section_theatre",
