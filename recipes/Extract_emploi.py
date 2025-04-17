@@ -16,7 +16,11 @@ datasets = [
             {
                 "name" : columns_to_int,
                 "args" : []
-            }
+            },
+            {
+                "name" : complete_with_inteprolate,
+                "args" : []
+            },
         ]
     },
     {
