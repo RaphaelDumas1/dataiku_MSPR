@@ -317,7 +317,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
         
         # Créer DataFrame avec toutes les années
         full_years = pd.DataFrame({'année': range(2006, 2025)})
-
+        print("aaa", df['année'])
         # Fusionner avec df
         df_full = pd.merge(full_years, df, on='année', how='left')
         
@@ -330,7 +330,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
 
         df = df_full
         
-        print("aaa", df['année'])
+        
         
         df = df[df['année'] >= 2006]
         
