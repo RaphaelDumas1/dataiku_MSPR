@@ -37,4 +37,4 @@ datasets = [
     },
 ]
 
-create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Education.xlsx", datasets, [])
+create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Education.xlsx", datasets, ["annuaire des ecoles en france"])
