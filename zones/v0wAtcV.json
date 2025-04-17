@@ -7,11 +7,11 @@
       "objectType": "RECIPE"
     },
     {
-      "objectId": "ecole",
+      "objectId": "Taux_scolarisation",
       "objectType": "DATASET"
     },
     {
-      "objectId": "Taux_scolarisation",
+      "objectId": "annuaire_des_ecoles_en_france",
       "objectType": "DATASET"
     }
   ],
