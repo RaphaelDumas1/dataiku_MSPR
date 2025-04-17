@@ -5,11 +5,6 @@ datasets = [
         "name": "Esperance_de_vie",
         "functions": [
             {
-                "name" : delete_where_equal,
-                "args" : ["Espérance de vie sans incapacité femme", "nd"]
-            
-            },
-            {
                 "name" : rename_columns,
                 "args" : [{
                     "Espérance de vie sans incapacité femme" : "femmes_sans_incapacite",
@@ -17,6 +12,11 @@ datasets = [
                     "Espérance de vie sans incapacité homme" : "homme_sans_incapacite",
                     "Espérance de vie homme" : "homme_total"
                 }]
+            
+            },
+            {
+                "name" : delete_where_equal,
+                "args" : ["femmes_sans_incapacite", "nd"]
             
             },
             {
