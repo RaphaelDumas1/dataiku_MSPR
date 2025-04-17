@@ -107,6 +107,9 @@ def delete_rows_by_index(df, indexes, delete_after_index=None):
     
     return df
     
+# Delete columns(s) by name in list
+def delete_columns__not_in_list(df, columns_to_keep):
+    return df[columns_to_keep]
 
 #
 # CONVERT
