@@ -7,7 +7,7 @@ engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSP
 datasets_names = [
   "Esperance_de_vie",
   "Taux_scolarisation",
-  "annuaire_des_ecoles_en_france",
+  # "annuaire_des_ecoles_en_france",
   "Administration_penitentiaire", 
   "Delinquance", 
   "Presidentielles",
