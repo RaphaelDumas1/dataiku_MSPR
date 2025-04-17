@@ -1,4 +1,6 @@
 from sqlalchemy import create_engine
+import dataiku
+from dataiku import Dataset
 
 engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
 
