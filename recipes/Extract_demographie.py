@@ -10,24 +10,24 @@ datasets = [
             },
         ]
     },
-    {
-        "name": "Quotient_familiale",
-        "functions": [
-            {
-                 "name" : extract_and_concat_to_original,
-                 "args" : [(801, 1603), (1604, 2802)]
-            },
-            {
-                 "name" : delete_columns_by_name,
-                 "args" : [['Numéro département', 'Nom département', 'Numéro région', 'Nom région', "Lieu résidence"]]
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : [["Année", "Nombre foyers NDUR", "Nombre personnes NDUR", "Montant total NDUR", "Nombre foyers NDURPAJE",
-                           "Nombre personnes NDURPAJE", "Montant total NDURPAJE", "Nombre foyers NDUREJ", "Nombre personnes NDUREJ",
-                           "Montant total NDUREJ", "Nombre foyers NDURAL", "Nombre personnes NDURAL", "Montant total NDURAL", 
-                           "Nombre foyers NDURINS", "Nombre personnes NDURINS", "Montant total NDURINS"]]
-            },
+    # {
+    #    "name": "Quotient_familiale",
+    #    "functions": [
+    #        {
+    #             "name" : extract_and_concat_to_original,
+    #             "args" : [(801, 1603), (1604, 2802)]
+    #        },
+    #        {
+    #             "name" : delete_columns_by_name,
+    #             "args" : [['Numéro département', 'Nom département', 'Numéro région', 'Nom région', "Lieu résidence"]]
+    #        },
+    #        {
+    #             "name" : columns_to_int,
+    #             "args" : [["Année", "Nombre foyers NDUR", "Nombre personnes NDUR", "Montant total NDUR", "Nombre foyers NDURPAJE",
+    #                       "Nombre personnes NDURPAJE", "Montant total NDURPAJE", "Nombre foyers NDUREJ", "Nombre personnes NDUREJ",
+    #                       "Montant total NDUREJ", "Nombre foyers NDURAL", "Nombre personnes NDURAL", "Montant total NDURAL", 
+    #                       "Nombre foyers NDURINS", "Nombre personnes NDURINS", "Montant total NDURINS"]]
+    #        },
         ]
     },
     {
