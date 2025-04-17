@@ -131,6 +131,7 @@ for key, df in dfs.items():
 
 final_df['couleur'] = final_df['parti'].map(party_orientation)
 final_df = columns_to_int(final_df, ["année", "voix"])
+final_df = final_df[final_df['année'] >= 2006]
 
 test = dataiku.Dataset("Legislatives")
 test.write_with_schema(final_df)
