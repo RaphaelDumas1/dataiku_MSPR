@@ -314,7 +314,6 @@ def execute_instruction_on_dataframe(df, title, instruction):
     # Drop empty rows
     df.columns = df.columns.str.lower()
     if title != "annuaire_des_ecoles_en_france":
-        df = df[df['année'] >= 2006]
         
         # Créer DataFrame avec toutes les années
         full_years = pd.DataFrame({'année': range(2006, 2025)})
@@ -330,6 +329,8 @@ def execute_instruction_on_dataframe(df, title, instruction):
             .ffill().bfill()
 
         df = df_full
+        
+        df = df[df['année'] >= 2006]
         
         
         
