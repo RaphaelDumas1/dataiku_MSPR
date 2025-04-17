@@ -296,7 +296,20 @@ def fill_empty_values_with_mean(df, columns):
     return df
 
 def complete_with_inteprolate(df):
-    
+    # Créer DataFrame avec toutes les années
+    full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
+
+    # Fusionner avec df
+    df_full = pd.merge(full_years, df, on='année', how='left')
+    print("aaa", df_full['année'])
+    # Interpolation + extrapolation
+    num_cols = df_full.select_dtypes(include='number').columns.drop('année')
+
+    df_full[num_cols] = df_full[num_cols]\
+        .interpolate(method='linear', limit_direction='both')\
+        .ffill().bfill()
+
+    return df_full
         
 def execute_instruction_on_dataframe(df, title, instruction):
     engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
