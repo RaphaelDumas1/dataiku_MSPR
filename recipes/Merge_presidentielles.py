@@ -120,7 +120,7 @@ for key, df in dfs.items():
 
 final_df['couleur'] = final_df['nom'].map(candidate_orientation)
 final_df = columns_to_int(final_df, ["année", "voix"])
-
+final_df = final_df[final_df['année'] >= 2006]
 
 # Dataset Presidentielle renamed to Presidentielles by admin on 2025-02-11 18:01:24
 results = dataiku.Dataset("Presidentielles")
