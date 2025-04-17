@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, columns_to_int, columns_to_string, delete_where_not_equal, delete_columns_by_name, fill_empty_values, fill_empty_values_with_mean
+from utils import create_datasets_from_file_sheets, columns_to_int, columns_to_string, delete_where_not_equal, fill_empty_values, fill_empty_values_with_mean, delete_columns__not_in_list
 
 datasets = [
     {
@@ -18,7 +18,7 @@ datasets = [
                 "args" : ["code_departement", 35.0]
             },
             {
-                "name" : delete_columns_by_name,
+                "name" : delete_columns__not_in_list,
                 "args" : [['code_departement', 'code_region', 'libelle_departement', 'libelle_region']]
             },
             {
