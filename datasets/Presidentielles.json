@@ -87,12 +87,12 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Genre","type":"string"},
-      {"name":"Nom","type":"string"},
-      {"name":"Prénom","type":"string"},
-      {"name":"Voix","type":"bigint"},
-      {"name":"Couleur","type":"string"}
+      {"name":"année","type":"bigint"},
+      {"name":"genre","type":"string"},
+      {"name":"nom","type":"string"},
+      {"name":"prénom","type":"string"},
+      {"name":"voix","type":"bigint"},
+      {"name":"couleur","type":"string"}
     ],
     "userModified": false
   },
