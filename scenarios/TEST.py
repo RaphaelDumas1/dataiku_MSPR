@@ -26,7 +26,7 @@ datasets_names = [
   "Composition_menage",
   "Nombre_enfant",
   "Nombre_detranger",
-  "Quotient_familiale",
+  # "Quotient_familiale",
   "Taux_de_natalite",
   "Taux_de_mortalite",
   "Population",
