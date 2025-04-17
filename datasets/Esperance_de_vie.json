@@ -88,10 +88,10 @@
   "schema": {
     "columns": [
       {"name":"année","type":"bigint"},
-      {"name":"espérance de vie sans incapacité femme","type":"double"},
-      {"name":"espérance de vie femme","type":"double"},
-      {"name":"espérance de vie sans incapacité homme","type":"double"},
-      {"name":"espérance de vie homme","type":"double"}
+      {"name":"femmes_sans_incapacite","type":"double"},
+      {"name":"femme_total","type":"double"},
+      {"name":"homme_sans_incapacite","type":"double"},
+      {"name":"homme_total","type":"double"}
     ],
     "userModified": false
   },
