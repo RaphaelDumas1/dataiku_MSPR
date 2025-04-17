@@ -120,18 +120,18 @@ for key, df in dfs.items():
             col_count += 1
             
         if(col_count == 1):
-            final_df.loc[count, "Année"] = key
+            final_df.loc[count, "année"] = key
             final_df.loc[count, "Parti"] = value   
             
         if(col_count == df["votes_col_nb"]):
-            final_df.loc[count, "Voix"] = value
+            final_df.loc[count, "voix"] = value
             
         if(col_count == df["cycle_length"]):
             col_count = 0
             count += 1
 
-final_df['Couleur'] = final_df['Parti'].map(party_orientation)
-final_df = columns_to_int(final_df, ["Année", "Voix"])
+final_df['couleur'] = final_df['parti'].map(party_orientation)
+final_df = columns_to_int(final_df, ["année", "voix"])
 
 test = dataiku.Dataset("Legislatives")
 test.write_with_schema(final_df)
