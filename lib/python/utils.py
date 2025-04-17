@@ -330,6 +330,8 @@ def execute_instruction_on_dataframe(df, title, instruction):
 
         df = df_full
         
+        print("aaa", df['année'])
+        
         df = df[df['année'] >= 2006]
         
         
