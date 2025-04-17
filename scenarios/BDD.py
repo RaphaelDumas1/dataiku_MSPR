@@ -49,11 +49,17 @@ for name in datasets_names:
     max_year = df['année'].max()
     min_years.append((name, min_year))
     max_years.append((name, max_year))
+    
+print("min")  
+for _, year in min_years:
+    print(year)
+    
+print("max")  
+for _, year in max_years:
+    print(year)
 
 oldest = min(min_years, key=lambda x: x[1])
 newest = max(max_years, key=lambda x: x[1])
-
-print("ici", min_years, max_years)
 
 #for year in range(oldest[1], newest[1] + 1):
 #   print(year)
