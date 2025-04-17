@@ -28,8 +28,8 @@ datasets = [
     #                       "Montant total NDUREJ", "Nombre foyers NDURAL", "Nombre personnes NDURAL", "Montant total NDURAL", 
     #                       "Nombre foyers NDURINS", "Nombre personnes NDURINS", "Montant total NDURINS"]]
     #        },
-        ]
-    },
+    #    ]
+    #},
     {
         "name": "Taux_de_natalite",
         "functions": [
