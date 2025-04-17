@@ -298,8 +298,19 @@ def fill_empty_values_with_mean(df, columns):
 def complete_with_inteprolate(df):
     df.columns = df.columns.str.lower()
 
-    # Sauvegarder les colonnes int d'origine
+    # Sauvegarder les colonnes int et float d'origine
     int_cols = df.select_dtypes(include='int').columns.drop('année', errors='ignore')
+    float_cols = df.select_dtypes(include='float').columns.drop('année', errors='ignore')
+
+    # Calculer le nombre de décimales significatives par colonne float
+    float_precision = {}
+    for col in float_cols:
+        non_null = df[col].dropna()
+        if not non_null.empty:
+            # Max des nombres de chiffres après la virgule
+            float_precision[col] = non_null.map(lambda x: len(str(x).split(".")[1]) if "." in str(x) else 0).max()
+        else:
+            float_precision[col] = 2  # Valeur par défaut
 
     # Créer DataFrame avec toutes les années
     full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
@@ -316,7 +327,11 @@ def complete_with_inteprolate(df):
 
     # Reconvertir les colonnes int d'origine
     for col in int_cols:
-        df_full[col] = df_full[col].round().astype('int')
+        df_full[col] = df_full[col].round().astype(int)
+
+    # Arrondir les colonnes float au bon nombre de décimales
+    for col, precision in float_precision.items():
+        df_full[col] = df_full[col].round(precision)
 
     return df_full
         
