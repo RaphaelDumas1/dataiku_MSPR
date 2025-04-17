@@ -54,4 +54,7 @@ oldest = min(min_years, key=lambda x: x[1])
 newest = max(max_years, key=lambda x: x[1])
 
 for year in range(oldest[1], newest[1] + 1):
-    print(year)  
+    print(year)
+    for name in datasets_names:
+        
+    
