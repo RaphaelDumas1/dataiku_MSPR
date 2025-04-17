@@ -296,6 +296,7 @@ def fill_empty_values_with_mean(df, columns):
     return df
 
 def complete_with_inteprolate(df):
+    df.columns = df.columns.str.lower()
     # Créer DataFrame avec toutes les années
     full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
 
