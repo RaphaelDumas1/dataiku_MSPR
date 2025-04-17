@@ -15,10 +15,6 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "Evolution_trimestrielle_emploi",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "Extract_emploi",
       "objectType": "RECIPE"
     },
