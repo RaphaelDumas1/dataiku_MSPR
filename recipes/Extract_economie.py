@@ -96,6 +96,10 @@ datasets = [
                 "name" : columns_to_float,
                 "args" : [["Impot"], 2]
             },
+            {
+                "name" : complete_with_inteprolate,
+                "args" : []
+            },
         ]
     },
 ]
