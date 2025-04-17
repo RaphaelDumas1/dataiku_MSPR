@@ -8,7 +8,7 @@
     "containerSelection": {
       "containerMode": "INHERIT"
     },
-    "skipPrerunValidate": false
+    "skipPrerunValidate": true
   },
   "customMeta": {
     "kv": {}
