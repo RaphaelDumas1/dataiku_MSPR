@@ -311,6 +311,7 @@ def execute_instruction_on_dataframe(df, table_name, instruction):
 
     # Drop empty rows
     df.columns = df.columns.str.lower()
+    df = df[df['année'] >= 2006]
 
     # Exportation vers PostgreSQL
     # df.to_sql(table_name, engine, if_exists='replace', index=False)
