@@ -66,7 +66,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
 
         sheet = ss[sheet_name]
         title = clean_title(sheet_name)
-        print("iii", title)
+
         df = create_dataframe_from_sheet(sheet)
         instruction = find_entry_in_instructions(title, datasets_instructions)
         
@@ -339,7 +339,7 @@ def extract_and_concat_to_original(df, interval1, interval2):
     df_cleaned.rename(columns={'Quotient familial': 'Caracteristiques'}, inplace=True)
     df1.rename(columns={'Situation familiale': 'Caracteristiques'}, inplace=True)
     df2.rename(columns={'Age responsable dossier': 'Caracteristiques'}, inplace=True)
-    print("ici", df_cleaned.columns, df1.columns, df2.columns)
+
     # On ne réindexe pas ici, on s'assure juste que les colonnes sont bien dans df_cleaned
     columns_to_add_1 = [col for col in df1.columns if col in df_cleaned.columns]
     columns_to_add_2 = [col for col in df2.columns if col in df_cleaned.columns]
