@@ -106,10 +106,10 @@ for key, df in dfs.items():
             final_df.loc[count, "Parti"] = "Blanc"
             
             # Add blank and nulls if needed
-            if pd.isna(final_df.at[count, "Voix"]):
-                final_df.loc[count, "Voix"] = value
+            if pd.isna(final_df.at[count, "voix"]):
+                final_df.loc[count, "voix"] = value
             else:
-                final_df.loc[count, "Voix"] += value
+                final_df.loc[count, "voix"] += value
             
             if(header == "Nuls" or header == "Blancs et nuls"):
                 count += 1
