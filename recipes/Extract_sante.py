@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, delete_where_equal, columns_to_int, columns_to_float, rename_columns
+from utils import create_datasets_from_file_sheets, delete_where_equal, columns_to_int, columns_to_float, rename_columns, complete_with_inteprolate
 
 datasets = [
     {
@@ -29,7 +29,11 @@ datasets = [
                 "args" : [["femmes_sans_incapacite", "femme_total", "homme_sans_incapacite", "homme_total"], 1]
             
             },
+            {
+                "name" : complete_with_inteprolate,
+                "args" : []
             
+            },
         ]
     },
 ]
