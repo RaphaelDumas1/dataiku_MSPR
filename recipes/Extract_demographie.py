@@ -50,6 +50,10 @@ datasets = [
                  "name" : columns_to_int,
                  "args" : [["Année"]]
             },
+            {
+                 "name" : complete_with_inteprolate,
+                 "args" : []
+            },
         ]
     },
     {
@@ -57,6 +61,10 @@ datasets = [
         "functions": [
             {
                  "name" : columns_to_int,
+                 "args" : []
+            },
+            {
+                 "name" : complete_with_inteprolate,
                  "args" : []
             },
         ]
