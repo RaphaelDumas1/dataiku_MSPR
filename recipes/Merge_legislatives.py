@@ -121,7 +121,7 @@ for key, df in dfs.items():
             
         if(col_count == 1):
             final_df.loc[count, "année"] = key
-            final_df.loc[count, "Parti"] = value   
+            final_df.loc[count, "parti"] = value   
             
         if(col_count == df["votes_col_nb"]):
             final_df.loc[count, "voix"] = value
