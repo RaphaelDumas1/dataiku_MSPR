@@ -87,6 +87,7 @@
   },
   "schema": {
     "columns": [
+      {"name":"année","type":"bigint"},
       {"name":"femmes_sans_incapacite","type":"double"},
       {"name":"femme_total","type":"double"},
       {"name":"homme_sans_incapacite","type":"double"},
