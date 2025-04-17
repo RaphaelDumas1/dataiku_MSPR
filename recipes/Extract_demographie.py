@@ -91,6 +91,7 @@ datasets = [
     {
         "name": "Taux_de_pauvrete",
         "functions": [
+            
             {
                  "name" : columns_to_int,
                  "args" : [["Année"]]
@@ -107,6 +108,10 @@ datasets = [
             {
                  "name" : copy_years_range,
                  "args" : []
+            },
+            {
+                 "name" : columns_to_int,
+                 "args" : [["Année"]]
             },
             
         ]
