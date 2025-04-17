@@ -102,7 +102,7 @@ datasets = [
         "functions": [
             {
                  "name" : pivot,
-                 "args" : [["Année"]]
+                 "args" : [["année"]]
             },
             {
                  "name" : copy_years_range,
