@@ -129,7 +129,7 @@ for key, df in dfs.items():
         if(col_count == df["cycle_length"]):
             col_count = 0
             count += 1
-
+print("testtt")
 final_df['couleur'] = final_df['parti'].map(party_orientation)
 final_df = columns_to_int(final_df, ["année", "voix"])
 
