@@ -316,20 +316,19 @@ def execute_instruction_on_dataframe(df, title, instruction):
     if title != "annuaire_des_ecoles_en_france":
         df = df[df['année'] >= 2006]
     
-        year_window = set(range(2006, 2025))
-        df_years = set(df['année'])
-        missing_years = sorted(year_window - df_years)
+        # Créer DataFrame avec toutes les années
+        full_years = pd.DataFrame({'année': range(annee_min, annee_max + 1)})
 
-        df_manquantes = pd.DataFrame({"année": missing_years})
+        # Fusionner avec df
+        df_full = pd.merge(full_years, df, on='année', how='left')
 
-        df_complet = pd.concat([df, df_manquantes], ignore_index=True)
+        # Interpolation + extrapolation
+        num_cols = df_full.select_dtypes(include='number').columns.drop('année')
+        df_full[num_cols] = df_full[num_cols]\
+            .interpolate(method='linear', limit_direction='both')\
+            .ffill().bfill()
 
-        df_complet = df_complet.sort_values(by="année").reset_index(drop=True)
-
-        colonnes_numeriques = df_complet.select_dtypes(include='number').columns.drop("année", errors='ignore')
-        df_complet[colonnes_numeriques] = df_complet[colonnes_numeriques].interpolate(method='linear', limit_direction='both').ffill().bfill()
-        
-        df = df_complet
+        return df_full
         
         
     # Exportation vers PostgreSQL
