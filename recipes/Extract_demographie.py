@@ -105,6 +105,10 @@ datasets = [
                  "args" : [["Année"]]
             },
             {
+                 "name" : rename_columns,
+                 "args" : [{"Année": "année"}]
+            },
+            {
                  "name" : copy_years_range,
                  "args" : []
             },
