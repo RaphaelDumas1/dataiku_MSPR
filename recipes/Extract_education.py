@@ -29,6 +29,10 @@ datasets = [
                  "name" : fill_empty_values_with_mean,
                  "args" : [["nombre_d_eleves"]]
             },
+            {
+                 "name" : columns_to_int,
+                 "args" : [["nombre_d_eleves"]]
+            }
         ]
     },
 ]
