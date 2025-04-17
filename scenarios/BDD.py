@@ -15,7 +15,7 @@ datasets_names = [
   "Repartition_des_contrats",
   "Categorie_metiers",
   "Nombre_de_salarie",
-  "Evolution_trimestrielle_emploi",
+  # "Evolution_trimestrielle_emploi",
   "Logement", 
   "Type_logement",
   "Categorie_logement", 
