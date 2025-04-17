@@ -45,23 +45,23 @@ datasets = [
             }
         ]
     },
-    {
-        "name": "Evolution_trimestrielle_emploi",
-        "functions": [
-            {
-                "name" : process_evolution_trimestrielle_emploi,
-                "args" : []
-            },
-            {
-                "name" : rename_columns,
-                "args" : [{"None" : "Année"}]
-            },
-            {
-                "name" : columns_to_int,
-                "args" : [["Année"]]
-            }
-        ]
-    },
+    #{
+    #    "name": "Evolution_trimestrielle_emploi",
+    #    "functions": [
+    #        {
+    #            "name" : process_evolution_trimestrielle_emploi,
+    #            "args" : []
+    #        },
+    #        {
+    #            "name" : rename_columns,
+    #            "args" : [{"None" : "Année"}]
+    #        },
+    #        {
+    #            "name" : columns_to_int,
+    #            "args" : [["Année"]]
+    #        }
+    #    ]
+    #},
 ]
 
 create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Emploi.xlsx", datasets, [])
