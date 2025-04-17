@@ -297,6 +297,10 @@ def fill_empty_values_with_mean(df, columns):
 
 def complete_with_inteprolate(df):
     df.columns = df.columns.str.lower()
+
+    # Sauvegarder les colonnes int d'origine
+    int_cols = df.select_dtypes(include='int').columns.drop('année', errors='ignore')
+
     # Créer DataFrame avec toutes les années
     full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
 
@@ -309,6 +313,10 @@ def complete_with_inteprolate(df):
     df_full[num_cols] = df_full[num_cols]\
         .interpolate(method='linear', limit_direction='both')\
         .ffill().bfill()
+
+    # Reconvertir les colonnes int d'origine
+    for col in int_cols:
+        df_full[col] = df_full[col].round().astype('int')
 
     return df_full
         
