@@ -327,7 +327,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
         df_complet = df_complet.sort_values(by="année").reset_index(drop=True)
 
         colonnes_numeriques = df_complet.select_dtypes(include='number').columns.drop("année", errors='ignore')
-        df_complet[colonnes_numeriques] = df_complet[colonnes_numeriques].interpolate(method='linear')
+        df_complet[colonnes_numeriques] = df_complet[colonnes_numeriques].interpolate(method='linear', limit_direction='both').ffill().bfill()
         
         df = df_complet
         
