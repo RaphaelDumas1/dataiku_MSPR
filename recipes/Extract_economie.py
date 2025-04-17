@@ -40,6 +40,10 @@ datasets = [
                           "Formation brute de capital fixe dont administrations publiques", " Formation brute de capital fixe dont ménages hors entrepreneurs individuels", "Exportations de biens et de services",
                           "Demande intérieure hors stocks"], 1]
             },
+            {
+                "name" : complete_with_inteprolate,
+                "args" : []
+            },
             
         ]
     },
