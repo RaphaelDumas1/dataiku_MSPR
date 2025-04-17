@@ -19,7 +19,7 @@ datasets = [
             },
             {
                 "name" : delete_columns__not_in_list,
-                "args" : [['code_departement', 'code_region', 'libelle_departement', 'libelle_region']]
+                "args" : [['identifiant_de_l_etablissement', 'nom_etablissement', 'nombre_d_eleves', 'type_etablissement']]
             },
             {
                 "name" : fill_empty_values,
