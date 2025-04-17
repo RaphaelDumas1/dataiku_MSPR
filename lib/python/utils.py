@@ -299,7 +299,7 @@ def execute_instruction_on_dataframe(df, table_name, instruction):
     instruction_name = instruction["name"]
     
     df = df.dropna(how="all")
-    print(table_name)
+    print("yess", table_name)
    
     for function in functions:
         # Set variables for iteration
