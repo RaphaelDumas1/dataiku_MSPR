@@ -26,7 +26,7 @@ party_orientation = {
     # Far-right parties
     'FN': 'Far_Right', 'RN': 'Far_Right', 'FRN': 'Far_Right', 'MNR': 'Far_Right',
     'EXD': 'Far_Right', 'DLF': 'Far_Right', 'DSV': 'Far_Right', 'REC': 'Far_Right',
-    'MPF': 'Far_Right', 'RPF': 'Far_Right'
+    'MPF': 'Far_Right', 'RPF': 'Far_Right',
     
     'Blanc' : 'Blank'
 }
