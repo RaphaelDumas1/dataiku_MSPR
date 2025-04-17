@@ -66,6 +66,10 @@ datasets = [
                 "name" : columns_to_float,
                 "args" : [["Taux d'inflation"]]
             },
+            {
+                "name" : complete_with_inteprolate,
+                "args" : []
+            },
         ]
     },
     {
