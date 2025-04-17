@@ -102,8 +102,8 @@ for key, df in dfs.items():
         
         # Create new row for blank votes
         if(header == "Blancs" or header == "Nuls" or header == "Blancs et nuls"):
-            final_df.loc[count, "Année"] = key
-            final_df.loc[count, "Parti"] = "Blanc"
+            final_df.loc[count, "année"] = key
+            final_df.loc[count, "parti"] = "Blanc"
             
             # Add blank and nulls if needed
             if pd.isna(final_df.at[count, "voix"]):
