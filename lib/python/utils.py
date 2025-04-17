@@ -319,7 +319,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
         year_window = set(range(2006, 2024))
         df_years = set(df['année'])
         missing_years = sorted(year_window - df_year)
-        
+        print("Années manquantes :", missing_years)
         
         
     # Exportation vers PostgreSQL
