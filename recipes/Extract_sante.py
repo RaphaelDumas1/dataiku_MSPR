@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, delete_where_equal, columns_to_int, columns_to_float
+from utils import create_datasets_from_file_sheets, delete_where_equal, columns_to_int, columns_to_float, rename_columns
 
 datasets = [
     {
@@ -10,6 +10,16 @@ datasets = [
             
             },
             {
+                "name" : rename_columns,
+                "args" : [{
+                    "Espérance de vie sans incapacité femme" : "femmes_sans_incapacite",
+                    "Espérance de vie femme" : "femme_total",
+                    "Espérance de vie sans incapacité homme" : "homme_sans_incapacite",
+                    "Espérance de vie homme" : "homme_total"
+                }]
+            
+            },
+            {
                 "name" : columns_to_int,
                 "args" : [["Année"]]
             
@@ -18,7 +28,8 @@ datasets = [
                 "name" : columns_to_float,
                 "args" : [["Espérance de vie sans incapacité femme", "Espérance de vie femme", "Espérance de vie sans incapacité homme", "Espérance de vie homme"], 1]
             
-            }
+            },
+            
         ]
     },
 ]
