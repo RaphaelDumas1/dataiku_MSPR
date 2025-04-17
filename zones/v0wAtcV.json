@@ -7,11 +7,11 @@
       "objectType": "RECIPE"
     },
     {
-      "objectId": "scolarisation",
+      "objectId": "ecole",
       "objectType": "DATASET"
     },
     {
-      "objectId": "ecole",
+      "objectId": "Taux_scolarisation",
       "objectType": "DATASET"
     }
   ],

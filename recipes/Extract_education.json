@@ -32,7 +32,7 @@
     "main": {
       "items": [
         {
-          "ref": "scolarisation",
+          "ref": "Taux_scolarisation",
           "appendMode": false
         },
         {
