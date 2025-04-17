@@ -315,7 +315,13 @@ def execute_instruction_on_dataframe(df, title, instruction):
     df.columns = df.columns.str.lower()
     if title != "annuaire_des_ecoles_en_france":
         df = df[df['année'] >= 2006]
-
+    
+        year_window = set(range(2006, 2024))
+        df_years = set(df['année'])
+        missing_years = sorted(year_window - df_year)
+        
+        
+        
     # Exportation vers PostgreSQL
     # df.to_sql(table_name, engine, if_exists='replace', index=False)
     # Write datas
