@@ -316,7 +316,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
     if title != "annuaire_des_ecoles_en_france":
         
         # Créer DataFrame avec toutes les années
-        full_years = pd.DataFrame({'année': range(2006, 2025)})
+        full_years = pd.DataFrame({'année': range(df['année'].min(), 2025)})
         
         # Fusionner avec df
         df_full = pd.merge(full_years, df, on='année', how='left')
