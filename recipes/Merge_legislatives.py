@@ -90,7 +90,7 @@ dfs = {
 final_df = pd.DataFrame(columns=["année", "parti", "voix", "couleur"])
 
 count = 0
-
+print("testtt")
 # Iterate over dataframes
 for key, df in dfs.items():
     headers = df["df"].columns 
@@ -129,7 +129,7 @@ for key, df in dfs.items():
         if(col_count == df["cycle_length"]):
             col_count = 0
             count += 1
-print("testtt")
+
 final_df['couleur'] = final_df['parti'].map(party_orientation)
 final_df = columns_to_int(final_df, ["année", "voix"])
 
