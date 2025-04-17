@@ -313,7 +313,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
 
     # Drop empty rows
     df.columns = df.columns.str.lower()
-    if title != "annuaire_des_ecoles_en_france"
+    if title != "annuaire_des_ecoles_en_france":
         df = df[df['année'] >= 2006]
 
     # Exportation vers PostgreSQL
