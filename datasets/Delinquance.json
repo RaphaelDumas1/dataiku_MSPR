@@ -90,12 +90,12 @@
       {"name":"année","type":"bigint"},
       {"name":"indicateur","type":"string"},
       {"name":"unite_de_compte","type":"string"},
-      {"name":"nombre","type":"string"},
+      {"name":"nombre","type":"bigint"},
       {"name":"taux_pour_mille","type":"double"},
-      {"name":"insee_pop","type":"string"},
-      {"name":"insee_pop_millesime","type":"string"},
-      {"name":"insee_log","type":"string"},
-      {"name":"insee_log_millesime","type":"string"}
+      {"name":"insee_pop","type":"bigint"},
+      {"name":"insee_pop_millesime","type":"bigint"},
+      {"name":"insee_log","type":"bigint"},
+      {"name":"insee_log_millesime","type":"bigint"}
     ],
     "userModified": false
   },
