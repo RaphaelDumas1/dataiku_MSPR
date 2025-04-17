@@ -98,7 +98,7 @@ for key, df in dfs.items():
             count += 1
         
         # Increment since first candidate
-        if(headers.get_loc("sexe") <= index):
+        if(headers.get_loc("Sexe") <= index):
             col_count += 1
             
         if(col_count == 1):
