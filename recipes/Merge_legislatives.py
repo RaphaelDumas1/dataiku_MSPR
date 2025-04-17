@@ -87,7 +87,7 @@ dfs = {
 }
 
 # Create empty dataframe with columns needed
-final_df = pd.DataFrame(columns=["année", "Parti", "Voix", "Couleur"])
+final_df = pd.DataFrame(columns=["année", "parti", "voix", "couleur"])
 
 count = 0
 
