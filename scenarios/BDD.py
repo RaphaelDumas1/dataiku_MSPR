@@ -43,10 +43,9 @@ min_years = []
 
 for name in datasets_names:
     ds = Dataset(name)
-    df = ds.get_dataframe(columns=['année'])  # suppose que la colonne s'appelle exactement "année"
+    df = ds.get_dataframe(columns=['année']) 
     min_year = df['année'].min()
     min_years.append((name, min_year))
 
-# Trouver le dataset avec l'année la plus ancienne
 oldest = min(min_years, key=lambda x: x[1])
 print("test", oldest)
