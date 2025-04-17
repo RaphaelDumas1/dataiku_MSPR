@@ -46,10 +46,6 @@
         {
           "ref": "Nombre_de_salarie",
           "appendMode": false
-        },
-        {
-          "ref": "Evolution_trimestrielle_emploi",
-          "appendMode": false
         }
       ]
     }
