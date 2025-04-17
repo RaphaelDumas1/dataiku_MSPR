@@ -320,6 +320,18 @@ def execute_instruction_on_dataframe(df, title, instruction):
         year_window = set(range(2006, 2025))
         df_years = set(df['année'])
         missing_years = sorted(year_window - df_years)
+        # Étape 2 : Créer un DataFrame vide avec les années manquantes
+        df_manquantes = pd.DataFrame({colonne_annee: missing_years})
+
+        # Étape 3 : Fusionner avec les données existantes
+        df_complet = pd.concat([df, df_manquantes], ignore_index=True)
+
+        # Étape 4 : Trier par année
+        df_complet = df_complet.sort_values(by=colonne_annee).reset_index(drop=True)
+
+        # Étape 5 : Interpolation des colonnes numériques
+        colonnes_numeriques = df_complet.select_dtypes(include='number').columns.drop(colonne_annee, errors='ignore')
+        df_complet[colonnes_numeriques] = df_complet[colonnes_numeriques].interpolate(method='linear')
         print("Années manquantes :", missing_years)
         
         
