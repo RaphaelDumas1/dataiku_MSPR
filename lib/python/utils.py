@@ -320,7 +320,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
         df_years = set(df['année'])
         missing_years = sorted(year_window - df_years)
 
-        df_manquantes = pd.DataFrame({colonne_annee: missing_years})
+        df_manquantes = pd.DataFrame({"année": missing_years})
 
         df_complet = pd.concat([df, df_manquantes], ignore_index=True)
 
