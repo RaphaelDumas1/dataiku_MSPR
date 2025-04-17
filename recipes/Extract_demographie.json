@@ -36,10 +36,6 @@
           "appendMode": false
         },
         {
-          "ref": "Quotient_familiale",
-          "appendMode": false
-        },
-        {
           "ref": "Taux_de_natalite",
           "appendMode": false
         },
