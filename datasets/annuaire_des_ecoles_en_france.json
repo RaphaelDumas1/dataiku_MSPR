@@ -89,7 +89,7 @@
     "columns": [
       {"name":"identifiant_de_l_etablissement","type":"string"},
       {"name":"nom_etablissement","type":"string"},
-      {"name":"nombre_d_eleves","type":"double"},
+      {"name":"nombre_d_eleves","type":"bigint"},
       {"name":"type_etablissement","type":"string"}
     ],
     "userModified": false
