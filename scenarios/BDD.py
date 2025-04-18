@@ -112,7 +112,7 @@ for index, row in final_df.iterrows():
             VALUES ({placeholders})
             RETURNING id;
         """)
-
+        print("sql", insert_sql)
         # Connexion à la base de données et exécution de la requête
         with engine.connect() as conn:
             try:
