@@ -352,7 +352,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
         df = name(df, *args)
 
     # Drop empty rows
-    df.columns = df.columns.str.lower()
+    df.columns = [unidecode(col).lower() for col in df.columns]
     if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:  
         df = df[df['année'] >= 2006]
         
