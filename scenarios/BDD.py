@@ -61,20 +61,24 @@ for ds_name in datasets_names:
     inspector = inspect(engine)
     
     for index, row in final_df.iterrows():
-        # Exemple : accéder à une colonne
-        annee = row['année']
-        
-        # Liste des colonnes de la table dans PostgreSQL
-        table_columns = [column['name'] for column in inspector.get_columns(table_name)]
+        row_to_insert = row[[col for col in final_df.columns if col in table_columns]].dropna()
+    
+        if row_to_insert.empty:
+            continue  # Skip si la ligne est vide après filtrage
 
-        # Filtrer les colonnes du DataFrame pour qu'elles correspondent à la table
-        df_columns_to_insert = [col for col in final_df.columns if col in table_columns]
+        columns_str = ", ".join(row_to_insert.index)
+        placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
 
-        # Filtrer le DataFrame
-        df_to_insert = final_df[df_columns_to_insert]
+        insert_sql = text(f"""
+            INSERT INTO {table_name} ({columns_str})
+            VALUES ({placeholders})
+            RETURNING id;
+        """)  # Assure-toi que la colonne auto-incrémentée s'appelle bien "id"
 
-        # Insérer dans la table PostgreSQL
-        df_to_insert.to_sql(table_name, engine, if_exists='append', index=False)
+        with engine.connect() as conn:
+            result = conn.execute(insert_sql, row_to_insert.to_dict())
+            inserted_id = result.scalar()  # Récupère la valeur retournée par RETURNING id
+            print(f"Ligne insérée avec ID : {inserted_id}")
     
     
 print("mmm", final_df.columns)
