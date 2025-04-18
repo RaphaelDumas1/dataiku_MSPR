@@ -138,7 +138,7 @@ tables = [
             "cadres et professions intellectuelles superieures" : "nombre_cadres",
             "professions intermediaires" : "nombre_professions_intermediaires",
             "employes" : "nombre_employes",
-            "formation brute de capital fixe dont societes et entreprises individuelles non financieres" : "nombre_ouvriers",
+            "ouvriers" : "nombre_ouvriers",
             "formation brute de capital fixe dont administrations_publiques" : "nombre_retraites",
             "formation brute de capital fixe dont menages hors entrepreneurs individuels" : "nombre_sans_emploi",
             "exportations de biens et de services" : "nombre_cdi",
