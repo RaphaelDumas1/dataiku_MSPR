@@ -85,26 +85,39 @@ for index, row in final_df.iterrows():
         table_name = table["name"]
         columns = table["columns"]
         
-        # Itérer sur les clés et les valeurs
-        for key, value in columns.items():
-            print(f"Clé: {clé}, Valeur: {valeur}")
+        # Sélectionner les colonnes à insérer, en fonction des colonnes définies dans `columns`
+        row_to_insert = row[[key for key in columns.keys() if key in final_df.columns]].dropna()
 
+        # Si la ligne à insérer est vide après le filtrage, passer à la ligne suivante
+        if row_to_insert.empty:
+            print(f"Skipping year {row['annee']} as no valid data found for table {table_name}.")
+            continue
+
+        # Construire la chaîne des colonnes à insérer
         columns_str = ", ".join(row_to_insert.index)
+        # Créer les placeholders pour les valeurs
         placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
 
+        # Créer la requête SQL pour l'insertion
         insert_sql = text(f"""
             INSERT INTO {table_name} ({columns_str})
             VALUES ({placeholders})
             RETURNING id;
-        """)  # Assure-toi que la colonne auto-incrémentée s'appelle bien "id"
+        """)
 
+        # Connexion à la base de données et exécution de la requête
         with engine.connect() as conn:
             try:
+                # Exécution de la requête avec les valeurs du DataFrame
                 result = conn.execute(insert_sql, row_to_insert.to_dict())
-                inserted_id = result.scalar()  # Récupère la valeur retournée par RETURNING id
-                conn.commit()
+                # Récupérer l'ID auto-incrémenté retourné par la requête
+                inserted_id = result.scalar()
+                print(f"Inserted row for year {row['annee']} into table {table_name} with ID: {inserted_id}")
+                conn.commit()  # Valider la transaction
             except Exception as e:
+                # En cas d'erreur, rollback de la transaction
                 conn.rollback()
+                print(f"Error inserting row for year {row['annee']} into table {table_name}: {e}")
 
         
     
