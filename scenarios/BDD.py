@@ -118,7 +118,7 @@ tables = [
             "depense de consommation finale dont administrations_publiques" : "taux_consommation_gouvernement",
             "formation brute de capital fixe" : "taux_investissement",
             "formation brute de capital fixe dont societes et entreprises individuelles non financieres" : "taux_investissement_entreprises",
-            "homme_total" : "taux_investissement_gouvernement",
+            "formation brute de capital fixe dont administrations_publiques" : "taux_investissement_gouvernement",
             "femmes_sans_incapacite" : "taux_investissement_menages",
             "femme_total" : "taux_exportations",
             "hommes_sans_incapacite" : "moyenne_import",
