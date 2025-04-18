@@ -133,7 +133,7 @@ tables = [
         "name": "fait_travail",
         "columns": {
             "salaire net": "total",
-            "importations de biens et de services" : "nombre_agriculteurs",
+            "agriculteurs exploitants" : "nombre_agriculteurs",
             "population femme" : "nombre_artisans",
             "depense de consommation finale dont menages" : "nombre_cadres",
             "depense de consommation finale dont administrations_publiques" : "nombre_professions_intermediaires",
