@@ -136,7 +136,7 @@ tables = [
             "agriculteurs exploitants" : "nombre_agriculteurs",
             "artisans, commercants, chefs entreprise" : "nombre_artisans",
             "cadres et professions intellectuelles superieures" : "nombre_cadres",
-            "depense de consommation finale dont administrations_publiques" : "nombre_professions_intermediaires",
+            "professions intermediaires" : "nombre_professions_intermediaires",
             "formation brute de capital fixe" : "nombre_employes",
             "formation brute de capital fixe dont societes et entreprises individuelles non financieres" : "nombre_ouvriers",
             "formation brute de capital fixe dont administrations_publiques" : "nombre_retraites",
