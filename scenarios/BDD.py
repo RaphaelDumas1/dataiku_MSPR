@@ -10,7 +10,7 @@ datasets_names = [
   "Taux_scolarisation",
   # "annuaire_des_ecoles_en_france",
   "Administration_penitentiaire", 
-  "Delinquance", 
+  # "Delinquance", 
   # "Presidentielles",
   "Taux_de_chomage",
   "Repartition_des_contrats",
