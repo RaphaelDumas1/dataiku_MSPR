@@ -41,6 +41,8 @@ datasets_names = [
 ]  # à adapter
 
 final_df = None
+inspector = inspect(engine)
+table_columns = [col['name'] for col in inspector.get_columns(table_name)]
 
 for ds_name in datasets_names:
     ds = dataiku.Dataset(ds_name)
