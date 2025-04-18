@@ -95,7 +95,7 @@ tables = [
             "population homme" : "nombre_hommes",
             "population femme" : "nombre_femmes",
             "taux de natalite" : "nombre_naissance",
-            "- un couple sans enfant" : "nombre_mortalite",
+            "taux de deces" : "nombre_mortalite",
             "- une famille monoparentale" : "famille_monoparentale",
             "aucun enfant" : "sans_enfant",
             "1 enfant" : "un",
