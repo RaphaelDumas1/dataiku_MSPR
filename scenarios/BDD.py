@@ -47,13 +47,6 @@ tables = [
             "annee" : "annee"
         },
         "id" : None
-    },
-    {
-        "name" : "dim_annee",
-        "columns" : {
-            "annee" : "annee"
-        },
-        "id" : None
     }
 ]
 
