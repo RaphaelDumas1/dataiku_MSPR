@@ -98,7 +98,7 @@ tables = [
             "taux de deces" : "nombre_mortalite",
             "nombre" : "nombre_immigrant",
             "nombre" : "nombre_etranger",
-            "1 enfant" : "un",
+            "homme_total" : "esperance_homme",
             "2 enfants" : "deux",
             "3 enfants" : "trois",
             "4 enfants ou plus" : "quatre_et_plus"
