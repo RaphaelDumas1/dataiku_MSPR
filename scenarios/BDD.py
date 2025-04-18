@@ -134,7 +134,7 @@ tables = [
         "columns": {
             "salaire net": "total",
             "agriculteurs exploitants" : "nombre_agriculteurs",
-            "population femme" : "nombre_artisans",
+            "artisans, commercants, chefs entreprise" : "nombre_artisans",
             "depense de consommation finale dont menages" : "nombre_cadres",
             "depense de consommation finale dont administrations_publiques" : "nombre_professions_intermediaires",
             "formation brute de capital fixe" : "nombre_employes",
