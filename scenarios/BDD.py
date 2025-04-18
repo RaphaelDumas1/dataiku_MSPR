@@ -132,7 +132,7 @@ tables = [
     {
         "name": "fait_travail",
         "columns": {
-            "produit interieur brut (pib)": "total",
+            "salaire net": "total",
             "importations de biens et de services" : "nombre_agriculteurs",
             "population femme" : "nombre_artisans",
             "depense de consommation finale dont menages" : "nombre_cadres",
