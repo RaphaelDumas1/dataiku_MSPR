@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, inspect
 import dataiku
 from dataiku import Dataset
 import pandas as pd
