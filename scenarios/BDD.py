@@ -80,6 +80,7 @@ table_columns = [col['name'] for col in inspector.get_columns(table_name)]
 
 # Foreach year
 for index, row in final_df.iterrows():
+    # Foreach table
     for key, value in tables.items():
     
     row_to_insert = row[[col for col in final_df.columns if col in table_columns]].dropna()
