@@ -129,6 +129,27 @@ tables = [
             {"name": "dim_annee_id", "value": "dim_annee"}  # Ajouter une colonne avec l'ID de dim_annee
         ]  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
     },
+    {
+        "name": "fait_travail",
+        "columns": {
+            "produit interieur brut (pib)": "pib_total",
+            "importations de biens et de services" : "taux_importation",
+            "population femme" : "taux_consommation",
+            "depense de consommation finale dont menages" : "taux_consommation_menages",
+            "depense de consommation finale dont administrations_publiques" : "taux_consommation_gouvernement",
+            "formation brute de capital fixe" : "taux_investissement",
+            "formation brute de capital fixe dont societes et entreprises individuelles non financieres" : "taux_investissement_entreprises",
+            "formation brute de capital fixe dont administrations_publiques" : "taux_investissement_gouvernement",
+            "formation brute de capital fixe dont menages hors entrepreneurs individuels" : "taux_investissement_menages",
+            "exportations de biens et de services" : "taux_exportations",
+            "Impot" : "moyenne_impot",
+            "taux d'inflation" : "taux_inflation"
+        },
+        "id": None,
+        "add": [
+            {"name": "dim_annee_id", "value": "dim_annee"}  # Ajouter une colonne avec l'ID de dim_annee
+        ]  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
+    },
 ]
 
 ids = {
