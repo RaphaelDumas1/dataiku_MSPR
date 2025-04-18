@@ -139,7 +139,7 @@ tables = [
             "professions intermediaires" : "nombre_professions_intermediaires",
             "employes" : "nombre_employes",
             "ouvriers" : "nombre_ouvriers",
-            "formation brute de capital fixe dont administrations_publiques" : "nombre_retraites",
+            "retraites" : "nombre_retraites",
             "formation brute de capital fixe dont menages hors entrepreneurs individuels" : "nombre_sans_emploi",
             "exportations de biens et de services" : "nombre_cdi",
             "Impot" : "nombre_cdd",
