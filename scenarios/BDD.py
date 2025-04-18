@@ -140,7 +140,7 @@ tables = [
             "employes" : "nombre_employes",
             "ouvriers" : "nombre_ouvriers",
             "retraites" : "nombre_retraites",
-            "formation brute de capital fixe dont menages hors entrepreneurs individuels" : "nombre_sans_emploi",
+            "autres personnes sans activite professionnelle" : "nombre_sans_emploi",
             "exportations de biens et de services" : "nombre_cdi",
             "Impot" : "nombre_cdd",
             "taux d'inflation" : "taux_chomage"
