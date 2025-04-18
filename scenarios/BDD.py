@@ -72,7 +72,16 @@ tables = [
         "name": "fait_menage",
         "columns": {
             "ensemble": "total",
-            " - hommes seuls" : "homme_seul"
+            " - hommes seuls" : "homme_seul",
+            " - femmes seules" : "femme seule",
+            "- un couple avec enfant(s)" : "couple_avec_enfant",
+            "- un couple sans enfant" : "couple_sans_enfant",
+            "- une famille monoparentale" : "famille_monoparentale",
+            "aucun enfant" : "sans_enfant",
+            "1 enfant" : "un",
+            "2 enfants" : "deux",
+            "3 enfants" : "trois",
+            "4 enfants ou plus" : "quatre_ou_plus"
         },
         "id": None,
         "add": []  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
