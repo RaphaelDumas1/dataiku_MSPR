@@ -76,11 +76,10 @@ for ds_name in datasets_names:
         final_df = pd.merge(final_df, df, on="annee", how="outer")  # merge avec le reste
     
 inspector = inspect(engine)
-table_columns = [col['name'] for col in inspector.get_columns(table_name)]
 
 for index, row in final_df.iterrows():
     for key, value in table.items():
-    print(clé, valeur)
+
     row_to_insert = row[[col for col in final_df.columns if col in table_columns]].dropna()
 
     if row_to_insert.empty:
