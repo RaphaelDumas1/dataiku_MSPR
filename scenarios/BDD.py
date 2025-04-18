@@ -58,32 +58,32 @@ for ds_name in datasets_names:
     else:
         final_df = pd.merge(final_df, df, on="année", how="outer")  # merge avec le reste
     
-    table_name = "dim_annee"  # Remplace par le nom de ta table PostgreSQL
-    inspector = inspect(engine)
-    table_columns = [col['name'] for col in inspector.get_columns(table_name)]
-    
-    print("Table columns:", table_columns)
-    
-    for index, row in final_df.iterrows():
-        row_to_insert = row[[col for col in final_df.columns if col in table_columns]].dropna()
-        
-        print("ttt", row_to_insert)
-        if row_to_insert.empty:
-            continue  # Skip si la ligne est vide après filtrage
+table_name = "dim_annee"  # Remplace par le nom de ta table PostgreSQL
+inspector = inspect(engine)
+table_columns = [col['name'] for col in inspector.get_columns(table_name)]
 
-        columns_str = ", ".join(row_to_insert.index)
-        placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
+print("Table columns:", table_columns)
 
-        insert_sql = text(f"""
-            INSERT INTO {table_name} ({columns_str})
-            VALUES ({placeholders})
-            RETURNING id;
-        """)  # Assure-toi que la colonne auto-incrémentée s'appelle bien "id"
+for index, row in final_df.iterrows():
+    row_to_insert = row[[col for col in final_df.columns if col in table_columns]].dropna()
 
-        with engine.connect() as conn:
-            result = conn.execute(insert_sql, row_to_insert.to_dict())
-            inserted_id = result.scalar()  # Récupère la valeur retournée par RETURNING id
-            print(f"ooo : {inserted_id}")
+    print("ttt", row_to_insert)
+    if row_to_insert.empty:
+        continue  # Skip si la ligne est vide après filtrage
+
+    columns_str = ", ".join(row_to_insert.index)
+    placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
+
+    insert_sql = text(f"""
+        INSERT INTO {table_name} ({columns_str})
+        VALUES ({placeholders})
+        RETURNING id;
+    """)  # Assure-toi que la colonne auto-incrémentée s'appelle bien "id"
+
+    with engine.connect() as conn:
+        result = conn.execute(insert_sql, row_to_insert.to_dict())
+        inserted_id = result.scalar()  # Récupère la valeur retournée par RETURNING id
+        print(f"ooo : {inserted_id}")
     
     
 print("mmm", final_df.columns)
