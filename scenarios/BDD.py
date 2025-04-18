@@ -45,7 +45,11 @@ final_df = None
 for ds_name in datasets_names:
     ds = dataiku.Dataset(ds_name)
     df = ds.get_dataframe()
-    final_df = pd.merge(final_df, df, on="année", how="outer")
+    
+    if final_df is None:
+        final_df = df  # première itération, on initialise
+    else:
+        final_df = pd.merge(final_df, df, on="année", how="outer")  # merge avec le reste
 
 print("mmm", final_df.columns)
         
