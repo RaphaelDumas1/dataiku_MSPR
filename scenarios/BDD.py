@@ -171,7 +171,7 @@ tables = [
         ]  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
     },
     {
-        "name": "fait_logement",
+        "name": "dim_delinquance",
         "columns": {
             "nombre de logements": "total",
             "maisons" : "nombre_maisons",
