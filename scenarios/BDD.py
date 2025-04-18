@@ -51,9 +51,12 @@ tables = [
     {
         "name" : "fait_administration_penitentiaire",
         "columns" : {
-            "dim_annee" : "dim_annee"
+            
         },
         "id" : None
+        "add": [
+            {"name": "dim_annee_id", "value": "dim_annee"}  # Ajouter une colonne avec l'ID de dim_annee
+        ]
     }
 ]
 
