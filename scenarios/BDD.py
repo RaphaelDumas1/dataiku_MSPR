@@ -84,6 +84,10 @@ for index, row in final_df.iterrows():
     for table in tables:
         table_name = table["name"]
         columns = table["columns"]
+        
+        # Itérer sur les clés et les valeurs
+        for key, value in columns.items():
+            print(f"Clé: {clé}, Valeur: {valeur}")
 
         columns_str = ", ".join(row_to_insert.index)
         placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
