@@ -39,30 +39,13 @@ datasets_names = [
   "Legislatives"
 ]  # à adapter
 
-min_years = []
-max_years = []
+dfs = []
 
-for name in datasets_names:
-    ds = Dataset(name)
-    df = ds.get_dataframe(columns=['année']) 
-    min_year = df['année'].min()
-    max_year = df['année'].max()
-    min_years.append((name, min_year))
-    max_years.append((name, max_year))
-    
-print("min")  
-for _, year in min_years:
-    print(year)
-    
-print("max")  
-for _, year in max_years:
-    print(year)
+for ds in datasets:
+    df = dataiku.Dataset(ds).get_dataframe(columns=["année"])
+    dfs.append(df)
 
-oldest = min(min_years, key=lambda x: x[1])
-newest = max(max_years, key=lambda x: x[1])
-
-#for year in range(oldest[1], newest[1] + 1):
-#   print(year)
-#   for name in datasets_names:
+# Concaténation de tous les dataframes
+final_df = pd.concat(dfs, ignore_index=True)
         
     
