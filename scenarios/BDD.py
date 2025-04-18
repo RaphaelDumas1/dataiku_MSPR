@@ -180,6 +180,12 @@ tables = [
         "id": None,
         "add": []  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
     },
+    {
+        "name": "dim_delinquance_has_fait_demographique",
+        "columns": {},
+        "id": None,
+        "add": []  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
+    },
 ]
 
 ids = {
