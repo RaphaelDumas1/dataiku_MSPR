@@ -75,7 +75,7 @@ for index, row in final_df.iterrows():
 
     columns_str = ", ".join(row_to_insert.index)
     placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
-
+    print("aaa")
     insert_sql = text(f"""
         INSERT INTO {table_name} ({columns_str})
         VALUES ({placeholders})
