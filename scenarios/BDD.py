@@ -150,6 +150,27 @@ tables = [
             {"name": "dim_annee_id", "value": "dim_annee"}  # Ajouter une colonne avec l'ID de dim_annee
         ]  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
     },
+    {
+        "name": "fait_logement",
+        "columns": {
+            "salaire net": "total",
+            "agriculteurs exploitants" : "nombre_agriculteurs",
+            "artisans, commercants, chefs entreprise" : "nombre_artisans",
+            "cadres et professions intellectuelles superieures" : "nombre_cadres",
+            "professions intermediaires" : "nombre_professions_intermediaires",
+            "employes" : "nombre_employes",
+            "ouvriers" : "nombre_ouvriers",
+            "retraites" : "nombre_retraites",
+            "autres personnes sans activite professionnelle" : "nombre_sans_emploi",
+            "cdi" : "nombre_cdi",
+            "cdd" : "nombre_cdd",
+            "taux" : "taux_chomage"
+        },
+        "id": None,
+        "add": [
+            {"name": "dim_annee_id", "value": "dim_annee"}  # Ajouter une colonne avec l'ID de dim_annee
+        ]  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
+    },
 ]
 
 ids = {
