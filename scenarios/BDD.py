@@ -41,7 +41,7 @@ datasets_names = [
 
 dfs = []
 
-for ds in datasets:
+for ds in datasets_names:
     df = dataiku.Dataset(ds).get_dataframe(columns=["année"])
     dfs.append(df)
 
