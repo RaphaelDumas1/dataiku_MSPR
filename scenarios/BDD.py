@@ -111,8 +111,8 @@ tables = [
     {
         "name": "fait_economie",
         "columns": {
-            "nombre": "pib_total",
-            "population homme" : "nombre_hommes",
+            "produit interieur brut (pib)": "pib_total",
+            "importations de biens et de services" : "taux_importation",
             "population femme" : "nombre_femmes",
             "taux de natalite" : "nombre_naissance",
             "taux de deces" : "nombre_mortalite",
