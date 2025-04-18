@@ -108,6 +108,26 @@ tables = [
             {"name": "dim_annee_id", "value": "dim_annee"}  # Ajouter une colonne avec l'ID de dim_annee
         ]  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
     },
+    {
+        "name": "fait_economie",
+        "columns": {
+            "nombre": "total",
+            "population homme" : "nombre_hommes",
+            "population femme" : "nombre_femmes",
+            "taux de natalite" : "nombre_naissance",
+            "taux de deces" : "nombre_mortalite",
+            "nombre" : "nombre_immigrant",
+            "nombre" : "nombre_etranger",
+            "homme_total" : "esperance_homme",
+            "femmes_sans_incapacite" : "esperance_femme_sans_incapacite",
+            "femme_total" : "esperance_femme",
+            "hommes_sans_incapacite" : "esperance_homme_sans_incapacite"
+        },
+        "id": None,
+        "add": [
+            {"name": "dim_annee_id", "value": "dim_annee"}  # Ajouter une colonne avec l'ID de dim_annee
+        ]  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
+    },
 ]
 
 ids = {
