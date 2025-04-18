@@ -64,7 +64,7 @@ tables = [
     }
 ]
 
-insert = {
+ids = {
         
     }
 
