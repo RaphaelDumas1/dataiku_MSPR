@@ -132,18 +132,18 @@ tables = [
     {
         "name": "fait_travail",
         "columns": {
-            "produit interieur brut (pib)": "pib_total",
-            "importations de biens et de services" : "taux_importation",
-            "population femme" : "taux_consommation",
-            "depense de consommation finale dont menages" : "taux_consommation_menages",
-            "depense de consommation finale dont administrations_publiques" : "taux_consommation_gouvernement",
-            "formation brute de capital fixe" : "taux_investissement",
-            "formation brute de capital fixe dont societes et entreprises individuelles non financieres" : "taux_investissement_entreprises",
-            "formation brute de capital fixe dont administrations_publiques" : "taux_investissement_gouvernement",
-            "formation brute de capital fixe dont menages hors entrepreneurs individuels" : "taux_investissement_menages",
-            "exportations de biens et de services" : "taux_exportations",
-            "Impot" : "moyenne_impot",
-            "taux d'inflation" : "taux_inflation"
+            "produit interieur brut (pib)": "total",
+            "importations de biens et de services" : "nombre_agriculteurs",
+            "population femme" : "nombre_artisans",
+            "depense de consommation finale dont menages" : "nombre_cadres",
+            "depense de consommation finale dont administrations_publiques" : "nombre_professions_intermediaires",
+            "formation brute de capital fixe" : "nombre_employes",
+            "formation brute de capital fixe dont societes et entreprises individuelles non financieres" : "nombre_ouvriers",
+            "formation brute de capital fixe dont administrations_publiques" : "nombre_retraites",
+            "formation brute de capital fixe dont menages hors entrepreneurs individuels" : "nombre_sans_emploi",
+            "exportations de biens et de services" : "nombre_cdi",
+            "Impot" : "nombre_cdd",
+            "taux d'inflation" : "taux_chomage"
         },
         "id": None,
         "add": [
