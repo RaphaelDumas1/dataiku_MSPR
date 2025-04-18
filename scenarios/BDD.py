@@ -65,7 +65,9 @@ tables = [
 ]
 
 insert = [
-    
+    {
+        
+    }
 ]
 
 final_df = None
