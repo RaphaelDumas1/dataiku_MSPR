@@ -99,7 +99,7 @@ tables = [
             "nombre" : "nombre_immigrant",
             "nombre" : "nombre_etranger",
             "homme_total" : "esperance_homme",
-            "2 enfants" : "deux",
+            "femmes_sans_incapacite" : "esperance_femme_sans_incapacite",
             "3 enfants" : "trois",
             "4 enfants ou plus" : "quatre_et_plus"
         },
