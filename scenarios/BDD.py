@@ -112,6 +112,7 @@ for index, row in final_df.iterrows():
                 # Récupérer l'ID auto-incrémenté retourné par la requête
                 inserted_id = result.scalar()
                 print(f"Inserted row for year {row['annee']} into table {table_name} with ID: {inserted_id}")
+                table["id"] = inserted_id
                 conn.commit()  # Valider la transaction
             except Exception as e:
                 # En cas d'erreur, rollback de la transaction
