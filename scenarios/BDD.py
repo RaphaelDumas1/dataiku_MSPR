@@ -47,6 +47,15 @@ tables = [
             "annee" : "annee"
         },
         "id" : None
+    },
+    {
+        "name" : "fait_administration_penitentiaire",
+        "columns" : {
+            "dim_annee_id" : {
+               
+            } 
+        },
+        "id" : None
     }
 ]
 
