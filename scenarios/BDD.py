@@ -63,7 +63,7 @@ inspector = inspect(engine)
 table_columns = [col['name'] for col in inspector.get_columns(table_name)]
 
 print("Table columns:", table_columns)
-print("final", len(final_df))
+print("final", len(final_df), final_df.columns)
 
 
 for index, row in final_df.iterrows():
