@@ -87,18 +87,18 @@
   },
   "schema": {
     "columns": [
-      {"name":"année","type":"bigint"},
-      {"name":"produit intérieur brut (pib)","type":"double"},
+      {"name":"annee","type":"bigint"},
+      {"name":"produit interieur brut (pib)","type":"double"},
       {"name":"importations de biens et de services","type":"double"},
-      {"name":"dépense de consommation finale","type":"double"},
-      {"name":"dépense de consommation finale dont ménages","type":"double"},
-      {"name":"dépense de consommation finale dont administrations publiques","type":"double"},
+      {"name":"depense de consommation finale","type":"double"},
+      {"name":"depense de consommation finale dont menages","type":"double"},
+      {"name":"depense de consommation finale dont administrations publiques","type":"double"},
       {"name":"formation brute de capital fixe","type":"double"},
-      {"name":"formation brute de capital fixe dont sociétés et entreprises individuelles non financières","type":"double"},
+      {"name":"formation brute de capital fixe dont societes et entreprises individuelles non financieres","type":"double"},
       {"name":"formation brute de capital fixe dont administrations publiques","type":"double"},
-      {"name":"formation brute de capital fixe dont ménages hors entrepreneurs individuels","type":"double"},
+      {"name":"formation brute de capital fixe dont menages hors entrepreneurs individuels","type":"double"},
       {"name":"exportations de biens et de services","type":"double"},
-      {"name":"demande intérieure hors stocks","type":"double"}
+      {"name":"demande interieure hors stocks","type":"double"}
     ],
     "userModified": false
   },
