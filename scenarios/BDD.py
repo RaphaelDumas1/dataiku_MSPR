@@ -45,6 +45,14 @@ tables = [
         "name" : "dim_annee",
         "columns" : {
             "annee" : "annee"
+            "id" : None
+        }
+    },
+    {
+        "name" : "dim_annee",
+        "columns" : {
+            "annee" : "annee"
+            "id" : None
         }
     }
 ]
@@ -71,6 +79,8 @@ inspector = inspect(engine)
 table_columns = [col['name'] for col in inspector.get_columns(table_name)]
 
 for index, row in final_df.iterrows():
+    for key, value in table.items():
+    print(clé, valeur)
     row_to_insert = row[[col for col in final_df.columns if col in table_columns]].dropna()
 
     if row_to_insert.empty:
