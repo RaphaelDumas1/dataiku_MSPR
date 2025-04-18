@@ -63,7 +63,7 @@ for ds_name in datasets_names:
     for index, row in final_df.iterrows():
         # Exemple : accéder à une colonne
         annee = row['année']
-
+        
         # Liste des colonnes de la table dans PostgreSQL
         table_columns = [column['name'] for column in inspector.get_columns(table_name)]
 
