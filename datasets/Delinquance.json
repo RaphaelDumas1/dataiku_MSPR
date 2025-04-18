@@ -87,7 +87,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"année","type":"bigint"},
+      {"name":"annee","type":"bigint"},
       {"name":"indicateur","type":"string"},
       {"name":"unite_de_compte","type":"string"},
       {"name":"nombre","type":"bigint"},
