@@ -57,7 +57,7 @@ for ds_name in datasets_names:
     else:
         final_df = pd.merge(final_df, df, on="année", how="outer")  # merge avec le reste
     
-    table_name = "dim_année"  # Remplace par le nom de ta table PostgreSQL
+    table_name = "dim_annee"  # Remplace par le nom de ta table PostgreSQL
     inspector = inspect(engine)
 
     # Liste des colonnes de la table dans PostgreSQL
