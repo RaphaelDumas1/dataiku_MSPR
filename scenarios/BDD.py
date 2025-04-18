@@ -111,7 +111,7 @@ tables = [
     {
         "name": "fait_economie",
         "columns": {
-            "nombre": "total",
+            "nombre": "pib_total",
             "population homme" : "nombre_hommes",
             "population femme" : "nombre_femmes",
             "taux de natalite" : "nombre_naissance",
