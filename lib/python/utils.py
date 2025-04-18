@@ -5,6 +5,7 @@ import time
 from io import BytesIO
 import re
 from sqlalchemy import create_engine
+from unidecode import unidecode
 
 def make_unique(headers):
     seen = {}
