@@ -64,7 +64,8 @@ for ds_name in datasets_names:
     
     for index, row in final_df.iterrows():
         row_to_insert = row[[col for col in final_df.columns if col in table_columns]].dropna()
-    
+        
+        print("ooo", row_to_insert)
         if row_to_insert.empty:
             continue  # Skip si la ligne est vide après filtrage
 
