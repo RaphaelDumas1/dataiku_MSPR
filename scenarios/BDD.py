@@ -173,17 +173,9 @@ tables = [
     {
         "name": "dim_delinquance",
         "columns": {
-            "nombre de logements": "total",
-            "maisons" : "nombre_maisons",
-            "appartements" : "nombre_appartements",
-            "autres logements" : "nombre_autres",
-            "proprietaires" : "nombre_proprietaires",
-            "locataires" : "nombre_locataires",
-            "- dont locataires d'un logement hlm loue vide" : "nombre_hlm",
-            "loges gratuitement" : "nombre_loges_gratuit",
-            "residences principales" : "nombre_residences_principales",
-            "resid. secondaires et log. occasionnels" : "nombre_residences_secondaires",
-            "logements vacants" : "nombre_logements_vacants"
+            "nombre": "total",
+            "unite_de_compte" : "type_delinquance",
+            "indicateur" : "indicateur",
         },
         "id": None,
         "add": []  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
