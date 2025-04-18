@@ -89,11 +89,8 @@ for index, row in final_df.iterrows():
         try:
             result = conn.execute(insert_sql, row_to_insert.to_dict())
             inserted_id = result.scalar()  # Récupère la valeur retournée par RETURNING id
-            
-            print(f"Inséré avec ID : {inserted_id}")
             conn.commit()
         except Exception as e:
-            print(f"Erreur lors de l'insertion : {e}")
             conn.rollback()
     
     
