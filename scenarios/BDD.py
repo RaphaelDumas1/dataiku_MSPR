@@ -75,7 +75,6 @@ for ds_name in datasets_names:
     else:
         final_df = pd.merge(final_df, df, on="annee", how="outer")  # merge avec le reste
     
-inspector = inspect(engine)
 
 for index, row in final_df.iterrows():
     for key, value in tables.items():
