@@ -67,7 +67,16 @@ tables = [
         "add": [
             {"name": "dim_annee_id", "value": "dim_annee"}  # Ajouter une colonne avec l'ID de dim_annee
         ]
-    }
+    },
+    {
+        "name": "fait_menage",
+        "columns": {
+            "ensemble": "total",
+            " - hommes seuls" : "homme_seul"
+        },
+        "id": None,
+        "add": []  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
+    },
 ]
 
 ids = {
