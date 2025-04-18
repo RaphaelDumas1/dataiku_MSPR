@@ -37,7 +37,7 @@ datasets_names = [
   "Inflation",
   "Salaire_moyen",
   "Impot_moyen", 
-  "Legislatives"
+  # "Legislatives"
 ]  # à adapter
 
 final_df = None
