@@ -64,6 +64,10 @@ tables = [
     }
 ]
 
+insert = [
+    
+]
+
 final_df = None
 
 # Fusionner tous les datasets
@@ -86,6 +90,9 @@ for ds_name in datasets_names:
 inspector = inspect(engine)
 
 with engine.connect() as conn:
+    
+    
+    
     # Pour chaque ligne dans final_df
     for index, row in final_df.iterrows():
         # Pour chaque table
