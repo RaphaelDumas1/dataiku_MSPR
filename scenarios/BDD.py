@@ -86,6 +86,15 @@ for index, row in final_df.iterrows():
         
         # Sélectionner les colonnes à insérer, en fonction des colonnes définies dans `columns`
         row_to_insert = row[[key for key in columns.keys() if key in final_df.columns]].dropna()
+        
+        for column_name, column_value in row_to_insert.items():
+            for ref_table in tables:
+                # Vérifier si la colonne correspond au nom de la table
+                if column_value == ref_table["name"]:
+                    if ref_table["id"] is not None:
+                        # Remplacer la valeur de la colonne par l'ID de la table référencée
+                        row_to_insert[column_name] = ref_table["id"]
+                        print(f"Assigning ID from table '{ref_table['name']}' ({ref_table['id']}) to {column_name} for row {row['annee']}")
 
         # Si la ligne à insérer est vide après le filtrage, passer à la ligne suivante
         if row_to_insert.empty:
