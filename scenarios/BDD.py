@@ -74,7 +74,6 @@ for index, row in final_df.iterrows():
     row_to_insert = row[[col for col in final_df.columns if col in table_columns]].dropna()
 
     if row_to_insert.empty:
-        print("skip")
         continue  # Skip si la ligne est vide après filtrage
 
     columns_str = ", ".join(row_to_insert.index)
