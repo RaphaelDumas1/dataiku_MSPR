@@ -113,7 +113,7 @@ tables = [
         "columns": {
             "produit interieur brut (pib)": "pib_total",
             "importations de biens et de services" : "taux_importation",
-            "population femme" : "nombre_femmes",
+            "population femme" : "taxu_consommation",
             "taux de natalite" : "nombre_naissance",
             "taux de deces" : "nombre_mortalite",
             "nombre" : "nombre_immigrant",
