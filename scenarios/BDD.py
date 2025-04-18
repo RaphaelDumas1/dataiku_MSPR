@@ -129,17 +129,17 @@ with engine.connect() as conn:
             print("sql", insert_sql)
             # Connexion à la base de données et exécution de la requête
 
-                try:
-                    # Exécution de la requête avec les valeurs du DataFrame
-                    if(row["annee"] == 2006):
-                        conn.execute(delete_sql) 
-                    result = conn.execute(insert_sql, row_to_insert.to_dict())
-                    # Récupérer l'ID auto-incrémenté retourné par la requête
-                    inserted_id = result.scalar()
-                    print(f"Inserted row for year {row['annee']} into table {table_name} with ID: {inserted_id}")
-                    table["id"] = inserted_id  # Mettre à jour l'ID de la table après insertion
-                    conn.commit()  # Valider la transaction
-                except Exception as e:
-                    # En cas d'erreur, rollback de la transaction
-                    conn.rollback()
-                    print(f"Error inserting row for year {row['annee']} into table {table_name}: {e}")
+            try:
+                # Exécution de la requête avec les valeurs du DataFrame
+                if(row["annee"] == 2006):
+                    conn.execute(delete_sql) 
+                result = conn.execute(insert_sql, row_to_insert.to_dict())
+                # Récupérer l'ID auto-incrémenté retourné par la requête
+                inserted_id = result.scalar()
+                print(f"Inserted row for year {row['annee']} into table {table_name} with ID: {inserted_id}")
+                table["id"] = inserted_id  # Mettre à jour l'ID de la table après insertion
+                conn.commit()  # Valider la transaction
+            except Exception as e:
+                # En cas d'erreur, rollback de la transaction
+                conn.rollback()
+                print(f"Error inserting row for year {row['annee']} into table {table_name}: {e}")
