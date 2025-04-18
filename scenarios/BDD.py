@@ -11,7 +11,7 @@ datasets_names = [
   # "annuaire_des_ecoles_en_france",
   "Administration_penitentiaire", 
   "Delinquance", 
-  "Presidentielles",
+  # "Presidentielles",
   "Taux_de_chomage",
   "Repartition_des_contrats",
   "Categorie_metiers",
