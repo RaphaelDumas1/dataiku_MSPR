@@ -51,9 +51,7 @@ tables = [
     {
         "name" : "fait_administration_penitentiaire",
         "columns" : {
-            "dim_annee_id" : {
-               
-            } 
+            "dim_annee" : "dim_annee"
         },
         "id" : None
     }
