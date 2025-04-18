@@ -45,15 +45,15 @@ tables = [
         "name" : "dim_annee",
         "columns" : {
             "annee" : "annee"
-            "id" : None
-        }
+        },
+        "id" : None
     },
     {
         "name" : "dim_annee",
         "columns" : {
             "annee" : "annee"
-            "id" : None
-        }
+        },
+        "id" : None
     }
 ]
 
