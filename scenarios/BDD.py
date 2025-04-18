@@ -154,17 +154,16 @@ tables = [
         "name": "fait_logement",
         "columns": {
             "salaire net": "total",
-            "agriculteurs exploitants" : "nombre_agriculteurs",
-            "artisans, commercants, chefs entreprise" : "nombre_artisans",
-            "cadres et professions intellectuelles superieures" : "nombre_cadres",
-            "professions intermediaires" : "nombre_professions_intermediaires",
-            "employes" : "nombre_employes",
-            "ouvriers" : "nombre_ouvriers",
-            "retraites" : "nombre_retraites",
-            "autres personnes sans activite professionnelle" : "nombre_sans_emploi",
-            "cdi" : "nombre_cdi",
-            "cdd" : "nombre_cdd",
-            "taux" : "taux_chomage"
+            "agriculteurs exploitants" : "nombre_maisons",
+            "artisans, commercants, chefs entreprise" : "nombre_appartements",
+            "cadres et professions intellectuelles superieures" : "nombre_autres",
+            "professions intermediaires" : "nombre_proprietaires",
+            "employes" : "nombre_locataires",
+            "ouvriers" : "nombre_hlm",
+            "retraites" : "nombre_loges_gratuit",
+            "autres personnes sans activite professionnelle" : "nombre_residences_principales",
+            "cdi" : "nombre_residences_secondaires",
+            "cdd" : "nombre_logements_vacants"
         },
         "id": None,
         "add": [
