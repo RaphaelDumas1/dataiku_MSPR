@@ -49,6 +49,6 @@ for ds in datasets_names:
 # Concaténation de tous les dataframes
 final_df = pd.concat(dfs, ignore_index=True)
 
-print(final_df.columns)
+print("mmm", final_df.columns)
         
     
