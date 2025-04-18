@@ -64,11 +64,10 @@ tables = [
     }
 ]
 
-insert = [
-    {
+insert = {
         
     }
-]
+
 
 final_df = None
 
