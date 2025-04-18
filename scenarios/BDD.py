@@ -64,7 +64,17 @@ for ds_name in datasets_names:
         # Exemple : accéder à une colonne
         annee = row['année']
 
+        # Liste des colonnes de la table dans PostgreSQL
+        table_columns = [column['name'] for column in inspector.get_columns(table_name)]
 
+        # Filtrer les colonnes du DataFrame pour qu'elles correspondent à la table
+        df_columns_to_insert = [col for col in final_df.columns if col in table_columns]
+
+        # Filtrer le DataFrame
+        df_to_insert = final_df[df_columns_to_insert]
+
+        # Insérer dans la table PostgreSQL
+        df_to_insert.to_sql(table_name, engine, if_exists='append', index=False)
     
     
 print("mmm", final_df.columns)
