@@ -115,7 +115,7 @@ tables = [
             "importations de biens et de services" : "taux_importation",
             "population femme" : "taux_consommation",
             "depense de consommation finale dont menages" : "taux_consommation_menages",
-            "epense de consommation finale dont administrations_publiques" : "taux_consommation_gouvernement",
+            "depense de consommation finale dont administrations_publiques" : "taux_consommation_gouvernement",
             "nombre" : "taux_investissement",
             "nombre" : "taux_investissement_entreprises",
             "homme_total" : "taux_investissement_gouvernement",
