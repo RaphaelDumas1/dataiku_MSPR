@@ -141,9 +141,9 @@ tables = [
             "ouvriers" : "nombre_ouvriers",
             "retraites" : "nombre_retraites",
             "autres personnes sans activite professionnelle" : "nombre_sans_emploi",
-            "exportations de biens et de services" : "nombre_cdi",
-            "Impot" : "nombre_cdd",
-            "taux d'inflation" : "taux_chomage"
+            "cdi" : "nombre_cdi",
+            "cdd" : "nombre_cdd",
+            "taux" : "taux_chomage"
         },
         "id": None,
         "add": [
