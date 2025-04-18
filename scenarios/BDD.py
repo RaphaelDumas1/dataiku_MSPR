@@ -47,5 +47,7 @@ for ds in datasets:
 
 # Concaténation de tous les dataframes
 final_df = pd.concat(dfs, ignore_index=True)
+
+print(final_df.columns)
         
     
