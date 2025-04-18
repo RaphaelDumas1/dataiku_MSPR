@@ -40,14 +40,12 @@ datasets_names = [
   "Legislatives"
 ]  # à adapter
 
-dfs = []
+final_df = None
 
-for ds in datasets_names:
-    df = dataiku.Dataset(ds).get_dataframe(columns=["année"])
-    dfs.append(df)
-
-# Concaténation de tous les dataframes
-final_df = pd.concat(dfs, ignore_index=True)
+for ds_name in datasets_names:
+    ds = dataiku.Dataset(ds_name)
+    df = ds.get_dataframe()
+    final_df = pd.merge(final_df, df, on="année", how="outer")
 
 print("mmm", final_df.columns)
         
