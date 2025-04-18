@@ -87,7 +87,7 @@ for index, row in final_df.iterrows():
         
         # Sélectionner les colonnes à insérer, en fonction des colonnes définies dans `columns`
         row_to_insert = row[[key for key in columns.keys() if key in final_df.columns]].dropna()
-        
+        print("row", row_to_insert)
         for column_name, column_value in row_to_insert.items():
             for ref_table in tables:
                 # Vérifier si la colonne correspond au nom de la table
