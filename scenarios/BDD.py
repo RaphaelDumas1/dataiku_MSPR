@@ -56,7 +56,12 @@ tables = [
         "name": "fait_administration_penitentiaire",
         "columns": {
             "dim_annee_id": "dim_annee",
-            "personnes prises en charge" : "nombre_pris_en_charge"
+            "personnes prises en charge" : "nombre_pris_en_charge",
+            "mesures en cours" : "nombre_en_cours",
+            "sursis1" : "nombre_sursis",
+            "travail d'interet general (tig)2" : "nombre_travaux_interet_general",
+            "liberations conditionnelles3" : "nombre_liberations_conditionnelles",
+            "autres mesures" : "autres"
         },
         "id": None,
         "add": [
