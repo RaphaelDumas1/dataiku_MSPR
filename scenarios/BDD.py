@@ -99,10 +99,14 @@ for index, row in final_df.iterrows():
         for add_column in table.get("add", []):
             column_name = add_column["name"]
             column_value = add_column["value"]
-            if column_value == "dim_annee" and tables[0]["id"] is not None:
-                # Ajouter l'ID de dim_annee dans la colonne spécifiée
-                row_to_insert[column_name] = tables[0]["id"]
-                print(f"Assigning ID from 'dim_annee' ({tables[0]['id']}) to column '{column_name}' for row {row['annee']}")
+
+            # Parcourir toutes les tables pour trouver la table qui correspond à `column_value`
+            for ref_table in tables:
+                if column_value == ref_table["name"]:
+                    # Si l'ID de la table référencée est défini, on remplace la valeur de la colonne par l'ID
+                    if ref_table["id"] is not None:
+                        row_to_insert[column_name] = ref_table["id"]
+                        print(f"Assigning ID from table '{ref_table['name']}' ({ref_table['id']}) to column '{column_name}' for row {row['annee']}")
 
         # Si la ligne à insérer est vide après le filtrage, passer à la ligne suivante
         if row_to_insert.empty:
