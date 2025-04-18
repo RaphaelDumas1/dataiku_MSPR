@@ -59,6 +59,10 @@ for ds_name in datasets_names:
     
     table_name = "dim_annee"  # Remplace par le nom de ta table PostgreSQL
     inspector = inspect(engine)
+    
+    for index, row in final_df.iterrows():
+        # Exemple : accéder à une colonne
+        annee = row['année']
 
     # Liste des colonnes de la table dans PostgreSQL
     table_columns = [column['name'] for column in inspector.get_columns(table_name)]
