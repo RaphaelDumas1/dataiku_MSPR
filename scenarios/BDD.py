@@ -41,8 +41,7 @@ datasets_names = [
 ]  # à adapter
 
 final_df = None
-inspector = inspect(engine)
-table_columns = [col['name'] for col in inspector.get_columns(table_name)]
+
 
 for ds_name in datasets_names:
     ds = dataiku.Dataset(ds_name)
@@ -61,6 +60,7 @@ for ds_name in datasets_names:
     
     table_name = "dim_annee"  # Remplace par le nom de ta table PostgreSQL
     inspector = inspect(engine)
+    table_columns = [col['name'] for col in inspector.get_columns(table_name)]
     
     for index, row in final_df.iterrows():
         row_to_insert = row[[col for col in final_df.columns if col in table_columns]].dropna()
