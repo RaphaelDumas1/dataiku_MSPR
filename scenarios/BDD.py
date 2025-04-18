@@ -114,14 +114,15 @@ tables = [
             "produit interieur brut (pib)": "pib_total",
             "importations de biens et de services" : "taux_importation",
             "population femme" : "taux_consommation",
-            "taux de natalite" : "nombre_naissance",
-            "taux de deces" : "nombre_mortalite",
-            "nombre" : "nombre_immigrant",
-            "nombre" : "nombre_etranger",
-            "homme_total" : "esperance_homme",
-            "femmes_sans_incapacite" : "esperance_femme_sans_incapacite",
-            "femme_total" : "esperance_femme",
-            "hommes_sans_incapacite" : "esperance_homme_sans_incapacite"
+            "depense de consommation finale dont menages" : "taux_consommation_menages",
+            "epense de consommation finale dont administrations_publiques" : "taux_consommation_gouvernement",
+            "nombre" : "taux_investissement",
+            "nombre" : "taux_investissement_entreprises",
+            "homme_total" : "taux_investissement_gouvernement",
+            "femmes_sans_incapacite" : "taux_investissement_menages",
+            "femme_total" : "taux_exportations",
+            "hommes_sans_incapacite" : "moyenne_import",
+            "hommes_sans_incapacite" : "taux_inflation"
         },
         "id": None,
         "add": [
