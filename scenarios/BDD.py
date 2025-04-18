@@ -81,6 +81,7 @@ inspector = inspect(engine)
 for index, row in final_df.iterrows():
     # Foreach table
     for table in tables:
+        print(table, "table")
         table_name = table["name"]
         columns = table["columns"]
         
