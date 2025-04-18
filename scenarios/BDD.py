@@ -120,9 +120,9 @@ tables = [
             "formation brute de capital fixe dont societes et entreprises individuelles non financieres" : "taux_investissement_entreprises",
             "formation brute de capital fixe dont administrations_publiques" : "taux_investissement_gouvernement",
             "formation brute de capital fixe dont menages hors entrepreneurs individuels" : "taux_investissement_menages",
-            "femme_total" : "taux_exportations",
-            "hommes_sans_incapacite" : "moyenne_import",
-            "hommes_sans_incapacite" : "taux_inflation"
+            "exportations de biens et de services" : "taux_exportations",
+            "demande interieure hors stocks" : "moyenne_import",
+            "taux d'inflation" : "taux_inflation"
         },
         "id": None,
         "add": [
