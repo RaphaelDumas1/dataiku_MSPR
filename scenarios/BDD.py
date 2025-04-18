@@ -89,7 +89,7 @@ for index, row in final_df.iterrows():
             inserted_id = result.scalar()  # Récupère la valeur retournée par RETURNING id
             print(f"Inséré avec ID : {inserted_id}")
         except Exception as e:
-            print(f"Erreur lors de l'insertion : {e}"))
+            print(f"Erreur lors de l'insertion : {e}")
     
     
 print("mmm", final_df.columns)
