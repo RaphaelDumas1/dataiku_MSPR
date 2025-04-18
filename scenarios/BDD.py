@@ -130,7 +130,8 @@ for index, row in final_df.iterrows():
         with engine.connect() as conn:
             try:
                 # Exécution de la requête avec les valeurs du DataFrame
-                conn.execute(delete_sql) 
+                if(row["annee"] == 2006)
+                    conn.execute(delete_sql) 
                 result = conn.execute(insert_sql, row_to_insert.to_dict())
                 # Récupérer l'ID auto-incrémenté retourné par la requête
                 inserted_id = result.scalar()
