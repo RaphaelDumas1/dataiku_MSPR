@@ -84,9 +84,12 @@ for index, row in final_df.iterrows():
     """)  # Assure-toi que la colonne auto-incrémentée s'appelle bien "id"
     print("sql", insert_sql)
     with engine.connect() as conn:
-        result = conn.execute(insert_sql, row_to_insert.to_dict())
-        inserted_id = result.scalar()  # Récupère la valeur retournée par RETURNING id
-        print(f"ooo : {inserted_id}")
+        try:
+            result = conn.execute(insert_sql, row_to_insert.to_dict())
+            inserted_id = result.scalar()  # Récupère la valeur retournée par RETURNING id
+            print(f"Inséré avec ID : {inserted_id}")
+        except Exception as e:
+            print(f"Erreur lors de l'insertion : {e}"))
     
     
 print("mmm", final_df.columns)
