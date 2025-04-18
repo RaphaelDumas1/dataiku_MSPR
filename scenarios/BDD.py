@@ -40,6 +40,15 @@ datasets_names = [
   # "Legislatives"
 ]  # à adapter
 
+tables = [
+    {
+        "name" : "dim_annee",
+        "columns" : {
+            "annee" : "annee"
+        }
+    }
+]
+
 final_df = None
 
 
