@@ -81,7 +81,7 @@ tables = [
             "1 enfant" : "un",
             "2 enfants" : "deux",
             "3 enfants" : "trois",
-            "4 enfants ou plus" : "quatre_ou_plus"
+            "4 enfants ou plus" : "quatre_et_plus"
         },
         "id": None,
         "add": []  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
