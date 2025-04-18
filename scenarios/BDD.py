@@ -81,7 +81,7 @@ for index, row in final_df.iterrows():
         VALUES ({placeholders})
         RETURNING id;
     """)  # Assure-toi que la colonne auto-incrémentée s'appelle bien "id"
-
+    print("sql", insert_sql)
     with engine.connect() as conn:
         result = conn.execute(insert_sql, row_to_insert.to_dict())
         inserted_id = result.scalar()  # Récupère la valeur retournée par RETURNING id
