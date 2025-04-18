@@ -80,7 +80,7 @@ for ds_name in datasets_names:
         with engine.connect() as conn:
             result = conn.execute(insert_sql, row_to_insert.to_dict())
             inserted_id = result.scalar()  # Récupère la valeur retournée par RETURNING id
-            print(f"Ligne insérée avec ID : {inserted_id}")
+            print(f"ooo : {inserted_id}")
     
     
 print("mmm", final_df.columns)
