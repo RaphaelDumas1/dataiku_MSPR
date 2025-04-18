@@ -92,8 +92,6 @@ for index, row in final_df.iterrows():
             conn.commit()
         except Exception as e:
             conn.rollback()
-    
-    
-print("mmm", final_df.columns)
+
         
     
