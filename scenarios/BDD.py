@@ -67,7 +67,6 @@ for ds_name in datasets_names:
     else:
         final_df = pd.merge(final_df, df, on="annee", how="outer")  # merge avec le reste
     
-table_name = "dim_annee"  # Remplace par le nom de ta table PostgreSQL
 inspector = inspect(engine)
 table_columns = [col['name'] for col in inspector.get_columns(table_name)]
 
