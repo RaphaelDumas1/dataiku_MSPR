@@ -82,30 +82,25 @@ table_columns = [col['name'] for col in inspector.get_columns(table_name)]
 for index, row in final_df.iterrows():
     # Foreach table
     for table in tables:
-    
-    row[]
-    
-    row_to_insert = row[[col for col in final_df.columns if col in table_columns]].dropna()
+        table_name = table["name"]
+        columns = table["columns"]
 
-    if row_to_insert.empty:
-        continue  # Skip si la ligne est vide après filtrage
+        columns_str = ", ".join(row_to_insert.index)
+        placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
 
-    columns_str = ", ".join(row_to_insert.index)
-    placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
+        insert_sql = text(f"""
+            INSERT INTO {table_name} ({columns_str})
+            VALUES ({placeholders})
+            RETURNING id;
+        """)  # Assure-toi que la colonne auto-incrémentée s'appelle bien "id"
 
-    insert_sql = text(f"""
-        INSERT INTO {table_name} ({columns_str})
-        VALUES ({placeholders})
-        RETURNING id;
-    """)  # Assure-toi que la colonne auto-incrémentée s'appelle bien "id"
-
-    with engine.connect() as conn:
-        try:
-            result = conn.execute(insert_sql, row_to_insert.to_dict())
-            inserted_id = result.scalar()  # Récupère la valeur retournée par RETURNING id
-            conn.commit()
-        except Exception as e:
-            conn.rollback()
+        with engine.connect() as conn:
+            try:
+                result = conn.execute(insert_sql, row_to_insert.to_dict())
+                inserted_id = result.scalar()  # Récupère la valeur retournée par RETURNING id
+                conn.commit()
+            except Exception as e:
+                conn.rollback()
 
         
     
