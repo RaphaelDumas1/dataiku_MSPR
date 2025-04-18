@@ -63,6 +63,8 @@ inspector = inspect(engine)
 table_columns = [col['name'] for col in inspector.get_columns(table_name)]
 
 print("Table columns:", table_columns)
+print("final", len(final_df)
+
 
 for index, row in final_df.iterrows():
     row_to_insert = row[[col for col in final_df.columns if col in table_columns]].dropna()
