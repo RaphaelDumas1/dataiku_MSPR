@@ -91,7 +91,8 @@ for index, row in final_df.iterrows():
     for table in tables:
         table_name = table["name"]
         columns = table["columns"]
-        
+        delete_sql = text(f"DELETE FROM {table_name};")
+
         # Sélectionner les colonnes à insérer en fonction de columns
         row_to_insert = row[[key for key in columns.keys() if key in final_df.columns]].dropna()
 
