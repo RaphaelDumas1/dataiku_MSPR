@@ -73,7 +73,6 @@ table_columns = [col['name'] for col in inspector.get_columns(table_name)]
 for index, row in final_df.iterrows():
     row_to_insert = row[[col for col in final_df.columns if col in table_columns]].dropna()
 
-    print("ttt", row_to_insert)
     if row_to_insert.empty:
         print("skip")
         continue  # Skip si la ligne est vide après filtrage
