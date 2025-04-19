@@ -156,11 +156,12 @@ tables = [
 
 def buildInsertQuery(table_name, row=None, mapping={}, columns_to_add={}, returning=None):
     print("hop", table_name)
-    print(row.index, mapping)
+
     
     
     values_dict = {}
     if row is not None:
+        print(row.index, mapping)
         values_dict = {sql_col: row[df_col] for df_col, sql_col in mapping.items()}
         
     values_dict.update(columns_to_add)
