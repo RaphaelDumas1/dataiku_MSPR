@@ -223,6 +223,10 @@ with engine.connect() as conn:
         age_ids.update({label : executeQueries(conn, queries, "dim_age")})
         queries = []
     
+    # TABLE dim_type_election
+    
+    queries = [text(f"DELETE FROM dim_type_election;")]
+    
     
     for index, row in final_df.iterrows():
         for table in tables:
