@@ -160,9 +160,7 @@ tables = [
     },
 ]
 
-delinquance_ids = {
-        
-    }
+delinquance_ids = {}
 
 
 final_df = None
