@@ -161,7 +161,7 @@ tables = [
 ]
 
 delinquance_ids = {}
-
+age_ids = {}
 
 final_df = None
 
@@ -212,6 +212,36 @@ with engine.connect() as conn:
             
             if(table_name == "fait_demographique"):
                 ds = dataiku.Dataset("Delinquance")
+                df_test = ds.get_dataframe()
+                
+                df_filtre = df_test[df_test['annee'] == row["annee"]]
+                for i, r in df_filtre.iterrows():
+                    queries = []
+                    if r["unite_de_compte"] not in delinquance_ids:
+                        
+                        col_mapping = {
+                            "unite_de_compte" : "type_delinquance",
+                            "indicateur" : "indicateur",
+                        }
+
+                        queries.append(buildInsertQuery(row, "dim_delinquance", col_mapping, {}, False))
+                        delinquance_ids.update({r["unite_de_compte"] : executeQueries(conn, queries, "dim_delinquance")})
+                    queries = []
+                    
+                    id_fait_demographique = None
+                    for ref_table in tables:
+                        if "fait_demographique" == ref_table["name"] and ref_table["id"] is not None:
+                            id_fait_demographique = ref_table["id"] 
+                        
+                    col_mapping = {
+                        "dim_delinquance_id" : delinquance_ids[r["unite_de_compte"]]
+                        "fait_demographqiue_id" : id_fait_demographique,
+                         
+                    }
+                    queries.append(buildInsertQuery(row, "dim_delinquance_has_fait_demograhique", {"nombre" : "total"}, col_mapping, False))
+                    
+                    
+                ds = dataiku.Dataset("Repartition age")
                 df_test = ds.get_dataframe()
                 
                 df_filtre = df_test[df_test['annee'] == row["annee"]]
