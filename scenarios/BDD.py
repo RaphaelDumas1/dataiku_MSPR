@@ -184,10 +184,10 @@ tables = [
         "name": "dim_delinquance_has_fait_demographique",
         "columns": {},
         "id": None,
-        "add": [
-            {"dim_delinquance_id", "value": "dim_delinquance"},
-            {"fait_demographique_id", "value": "dim_delinquance"},
-        ]
+        "add": {
+            "dim_delinquance_id", "dim_delinquance",
+            "fait_demographique_id", "value": "dim_delinquance"
+        }
     },
 ]
 
