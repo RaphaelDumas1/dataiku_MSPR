@@ -257,11 +257,6 @@ with engine.connect() as conn:
                 df_test = ds.get_dataframe()
                 
                 df_filtre = df_testdf_test[df_test['annee'] == row["annee"]]
-                
-                
-            
-            
-            
 
             
             try:
