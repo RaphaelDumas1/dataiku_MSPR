@@ -228,6 +228,9 @@ with engine.connect() as conn:
     
     queries = [text(f"DELETE FROM dim_type_election;")]
     queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : "legislative"}, True))
+    type_election_ids.update({r["unite_de_compte"] : executeQueries(conn, queries)})
+    queries = []
+    
     queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : "presidentielle"}, True))
     
     
