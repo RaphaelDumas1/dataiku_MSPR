@@ -225,21 +225,7 @@ with engine.connect() as conn:
                 
                 columns.update({key : value})
                     
-
-     
-
-            columns_str = ", ".join(row_to_insert.index)
-            placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
-            
-            
-            
-            
-            
-            queries.append(text(f"""
-                INSERT INTO {table_name} ({columns_str})
-                VALUES ({placeholders})
-                RETURNING id;
-            """))
+            queries.append(buildInsertQuery(row, table_name, columns, ))
             
             if(table_name == "fait_demographique"):
                 ds = dataiku.Dataset("Delinquance")
@@ -277,10 +263,8 @@ with engine.connect() as conn:
                 conn.rollback()
                 
                 
-def buildInsertQuery(row, table_name, mapping, columns_to_add=[], returning=None):
+def buildInsertQuery(row, table_name, mapping, returning=None):
     values_dict = {sql_col: row[df_col] for df_col, sql_col in col_mapping.items()}
-    
-    values_dict.update(columns_to_add)
     
     columns_str = ", ".join(values_dict.keys())
     placeholders = ", ".join([f":{col}" for col in values_dict.keys()])
