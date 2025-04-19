@@ -328,7 +328,7 @@ with engine.connect() as conn:
                             "dim_age_id" : age_ids[col],
                             "fait_demographique_id" : table["id"],
                         }
-                        queries.append(buildInsertQuery(row, "fait_demographique_has_dim_age", {row_unique[col] : "total"}, col_mapping, False))
+                        queries.append(buildInsertQuery("fait_demographique_has_dim_age", row, {row_unique[col] : "total"}, col_mapping, False))
                 executeQueries(conn, queries)
                 queries = []
                 
