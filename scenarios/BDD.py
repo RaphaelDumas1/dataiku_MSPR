@@ -231,11 +231,8 @@ with engine.connect() as conn:
                 column_value = add_column["value"]
 
                 for ref_table in tables:
-                    if column_value == ref_table["name"]:
-                        # Si l'ID de la table référencée est défini, on remplace la valeur de la colonne par l'ID
-                        if ref_table["id"] is not None:
-                            row_to_insert[column_name] = ref_table["id"]
-                            print(f"Assigning ID from table '{ref_table['name']}' ({ref_table['id']}) to column '{column_name}' for row {row['annee']}")
+                    if column_value == ref_table["name"] and ref_table["id"] is not None:
+                        row_to_insert[column_name] = ref_table["id"]
 
             if row_to_insert.empty:
                 continue
