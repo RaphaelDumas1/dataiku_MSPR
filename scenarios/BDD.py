@@ -248,7 +248,7 @@ with engine.connect() as conn:
     type_elections = ["legislative", "presidentielle"]
     for election in type_elections: 
         queries.append(buildInsertQuery("dim_type_election", None, {}, {"nom_election" : election}, True))
-        type_election_ids.update({election : executeQueries(conn, queries)})
+        election_type_ids.update({election : executeQueries(conn, queries)})
         queries = []
     
     # TABLE dim_etiquette_politique
