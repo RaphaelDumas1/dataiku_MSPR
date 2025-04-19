@@ -252,9 +252,8 @@ with engine.connect() as conn:
                 # TABLE Delinquance
                 
                 ds_delinquance = dataiku.Dataset("Delinquance")
-                df_delinquance = ds_delinquance.get_dataframe()
-                
-                df_filtre = df_test[df_test['annee'] == row["annee"]]
+                df_delinquance = ds_delinquance.get_dataframe()               
+                df_delinquance_filtre = df_delinquance[df_test['annee'] == row["annee"]]
                 for i, r in df_filtre.iterrows():
                     queries = []
                     if r["unite_de_compte"] not in delinquance_ids:
