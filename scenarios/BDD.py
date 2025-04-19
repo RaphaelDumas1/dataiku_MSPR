@@ -290,6 +290,9 @@ with engine.connect() as conn:
                 
 def buildInsertQuery(row, table_name, mapping, columns_to_add=[], returning=None):
     values_dict = {sql_col: row[df_col] for df_col, sql_col in col_mapping.items()}
+    
+    values_dict.update(columns_to_add)
+    
     columns_str = ", ".join(values_dict.keys())
     placeholders = ", ".join([f":{col}" for col in values_dict.keys()])
     
