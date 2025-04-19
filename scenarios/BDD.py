@@ -277,8 +277,7 @@ with engine.connect() as conn:
                     }
                     
                     queries.append(buildInsertQuery(row, "dim_delinquance_has_fait_demograhique", {"nombre" : "total"}, col_mapping, False))
-                
-                executeQueries(conn, queries, "dim_delinquance_has_fait_demograhique")    
+                    executeQueries(conn, queries, "dim_delinquance_has_fait_demograhique")    
                 queries = []
                 
                 df_filtre = df_test[df_test['annee'] == row["annee"]]
