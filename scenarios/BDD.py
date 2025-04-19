@@ -306,7 +306,7 @@ with engine.connect() as conn:
             for col in row_unique.index:
                 if col != "annee":
                     col_mapping = {
-                        "dim_age_id" : age_ids[col]
+                        "dim_age_id" : age_ids[col],
                         "dim_annee_id" : year_id,
                     }
                     queries.append(buildInsertQuery(row, "fait_scolarisation", {row_unique[col] : "total"}, col_mapping, False))
@@ -323,7 +323,7 @@ with engine.connect() as conn:
                 for ii, rr in df_legislative_filtered.iterrows():
                     col_mapping = {
                         col_mapping = {
-                        "dim_annee_id" : year_id
+                        "dim_annee_id" : year_id,
                         "dim_type_election_id" : type_election_ids["legislative"],
                         "dim_etiquette_politique_id" : etiquette_politique_ids[rr["couleur"]],
                     }
@@ -339,7 +339,7 @@ with engine.connect() as conn:
                 for ii, rr in df_presidentielle_filtered.iterrows():
                     col_mapping = {
                         col_mapping = {
-                        "dim_annee_id" : year_id
+                        "dim_annee_id" : year_id,
                         "dim_type_election_id" : type_election_ids["presidentielle"],
                         "dim_etiquette_politique_id" : etiquette_politique_ids[rr["couleur"]],
                     }
