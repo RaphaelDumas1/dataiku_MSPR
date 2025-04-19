@@ -264,11 +264,6 @@ with engine.connect() as conn:
                         queries.append(buildInsertQuery(row, "dim_delinquance", col_mapping, {}, False))
                         delinquance_ids.update({r["unite_de_compte"] : executeQueries(conn, queries, "dim_delinquance")})
                     queries = []
-                    
-                    id_fait_demographique = None
-                    for ref_table in tables:
-                        if "fait_demographique" == ref_table["name"] and ref_table["id"] is not None:
-                            id_fait_demographique = ref_table["id"] 
                         
                     col_mapping = {
                         "dim_delinquance_id" : delinquance_ids[r["unite_de_compte"]]
