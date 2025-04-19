@@ -240,9 +240,6 @@ with engine.connect() as conn:
             columns_str = ", ".join(row_to_insert.index)
             placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
             
-            if(table_name == "")
-            
-            
             queries = []
             
             # Delete old datas
@@ -254,6 +251,17 @@ with engine.connect() as conn:
                 VALUES ({placeholders})
                 RETURNING id;
             """))
+            
+            if(table_name == "fait_demographique"):
+                ds = dataiku.Dataset("Delinquance")
+                df_test = ds.get_dataframe()
+                
+                df_filtre = df_testdf_test[df_test['annee'] == row["annee"]]
+                
+                
+            
+            
+            
 
             
             try:
