@@ -113,7 +113,7 @@ tables = [
             "importations de biens et de services" : "taux_importation",
             "depense de consommation finale" : "taux_consommation",
             "depense de consommation finale dont menages" : "taux_consommation_menages",
-            "depense de consommation finale dont administrations_publiques" : "taux_consommation_gouvernement",
+            "depense de consommation finale dont administrations publiques" : "taux_consommation_gouvernement",
             "formation brute de capital fixe" : "taux_investissement",
             "formation brute de capital fixe dont societes et entreprises individuelles non financieres" : "taux_investissement_entreprises",
             "formation brute de capital fixe dont administrations_publiques" : "taux_investissement_gouvernement",
