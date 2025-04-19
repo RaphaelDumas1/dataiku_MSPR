@@ -240,7 +240,7 @@ with engine.connect() as conn:
     political_labels = ["Blank", "Far_Right", "Right", "Center", "Left", "Fer_Left"]
     for label in political_labels: 
         queries.append(buildInsertQuery(row, "dim_etiquette_politique", {}, {"etiquette_politique" : label}, True))
-        type_election_ids.update({election : executeQueries(conn, queries)})
+        etiquette_politique_ids.update({label : executeQueries(conn, queries)})
         queries = []
     
     # Main iteration
