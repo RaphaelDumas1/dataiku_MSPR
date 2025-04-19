@@ -250,7 +250,7 @@ with engine.connect() as conn:
             
             if(table_name == "fait_demographique"):
                 
-                # TABLE Delinquance
+                # TABLE deim_delinquance
                 
                 ds_delinquance = dataiku.Dataset("Delinquance")
                 df_delinquance = ds_delinquance.get_dataframe()               
@@ -270,6 +270,7 @@ with engine.connect() as conn:
                         delinquance_ids.update({r["unite_de_compte"] : executeQueries(conn, queries, "dim_delinquance")})
                         queries = []
                     
+                    # # TABLE Delinquance
                     delinquance_demographique_mapping = {
                         "dim_delinquance_id" : delinquance_ids[r["unite_de_compte"]]
                         "fait_demographqiue_id" : table["id"],   
