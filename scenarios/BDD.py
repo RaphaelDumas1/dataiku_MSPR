@@ -206,7 +206,7 @@ with engine.connect() as conn:
                 
                 columns.update({key : value})
                     
-            queries.append(buildInsertQuery(row, table_name, columns, True))
+            table["id"] = queries.append(buildInsertQuery(row, table_name, columns, True))
             
             executeQueries(conn, queries, table_name)
             
