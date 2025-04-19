@@ -212,7 +212,10 @@ with engine.connect() as conn:
             columns = table["columns"]
             add = table["add"]
             
-            row_to_insert = row[[key for key in columns.keys() if key in final_df.columns]].dropna()
+            queries = []
+            # Delete old datas
+            if(row["annee"] == 2006):
+                queries.append(text(f"DELETE FROM {table_name};")) 
 
             to_add = []
             for key, value in add:
@@ -223,17 +226,14 @@ with engine.connect() as conn:
                 columns.update({key : value})
                     
 
-            if row_to_insert.empty:
-                continue
+     
 
             columns_str = ", ".join(row_to_insert.index)
             placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
             
-            queries = []
             
-            # Delete old datas
-            if(row["annee"] == 2006):
-                queries.append(text(f"DELETE FROM {table_name};")) 
+            
+            
             
             queries.append(text(f"""
                 INSERT INTO {table_name} ({columns_str})
