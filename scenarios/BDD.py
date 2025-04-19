@@ -290,11 +290,14 @@ def buildInsertQuery(row, table_name, mapping, columns_to_add=[], returning=None
         INSERT INTO {table_name} ({columns_str})
         VALUES ({placeholders})
     """
-    has_returning = False
+    
     if returning:
         query += f"\nRETURNING {returning}"
-        has_returning = True
 
-    return text(query), values_dict, has_returning
+    return {
+        "query": text(query),
+        "params": values_dict,
+        "returning": returning is not None
+    }
     
                 
