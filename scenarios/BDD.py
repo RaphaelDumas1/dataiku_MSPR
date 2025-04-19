@@ -257,7 +257,7 @@ with engine.connect() as conn:
                 df_test = ds.get_dataframe()
                 
                 df_filtre = df_testdf_test[df_test['annee'] == row["annee"]]
-                for index, row in final_df.iterrows():
+                for index, row in df_filtre.iterrows():
                     
             
             try:
