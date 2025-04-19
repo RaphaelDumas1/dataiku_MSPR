@@ -39,7 +39,6 @@ datasets_names = [
     # "Legislatives"
 ]
 
-# Liste des tables avec les colonnes et id
 tables = [
     {
         "name": "dim_annee",
@@ -157,6 +156,7 @@ tables = [
 ]
 
 engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
+
 delinquance_ids = {}
 age_ids = {}
 election_type_ids = {}
