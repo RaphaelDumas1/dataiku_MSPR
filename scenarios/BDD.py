@@ -167,7 +167,7 @@ tables = [
         },
         "id": None,
         "add": [
-            {"name": "dim_annee_id", "value": "dim_annee"}  # Ajouter une colonne avec l'ID de dim_annee
+            {"dim_annee_id" : "dim_annee"}  # Ajouter une colonne avec l'ID de dim_annee
         ]  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
     },
     {
@@ -178,7 +178,7 @@ tables = [
             "indicateur" : "indicateur",
         },
         "id": None,
-        "add": []  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
+        "add": {}  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
     },
     {
         "name": "dim_delinquance_has_fait_demographique",
