@@ -356,7 +356,7 @@ with engine.connect() as conn:
                         
             ds_presidentielle = dataiku.Dataset("Presidentielle")
             df_presidentielle = ds_presidentielle.get_dataframe()               
-            df_legislative_filtered = df_presidentielle[df_presidentielle['annee'] == row["annee"]]
+            df_presidentielle_filtered = df_presidentielle[df_presidentielle['annee'] == row["annee"]]
 
             if len(df_legislative_filtered) > 0:
                 for ii, rr in df_legislative_filtered.iterrows():
