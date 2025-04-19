@@ -60,7 +60,6 @@ tables = [
     {
         "name": "fait_administration_penitentiaire",
         "columns": {
-            "dim_annee_id": "dim_annee",
             "personnes prises en charge" : "nombre_pris_en_charge",
             "mesures en cours" : "nombre_en_cours",
             "sursis1" : "nombre_sursis",
