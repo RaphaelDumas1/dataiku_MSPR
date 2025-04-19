@@ -256,7 +256,7 @@ with engine.connect() as conn:
                 ds = dataiku.Dataset("Delinquance")
                 df_test = ds.get_dataframe()
                 
-                df_filtre = df_testdf_test[df_test['annee'] == row["annee"]]
+                df_filtre = df_test[df_test['annee'] == row["annee"]]
    
                     
             
