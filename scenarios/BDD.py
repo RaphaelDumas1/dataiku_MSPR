@@ -154,8 +154,11 @@ tables = [
     }
 ]
 
-def buildInsertQuery(row, table_name, mapping, columns_to_add={}, returning=None):
-    values_dict = {sql_col: row[df_col] for df_col, sql_col in col_mapping.items()}
+def buildInsertQuery(table_name, row=None, mapping={}, columns_to_add={}, returning=None):
+    values_dict = {}
+    if row is not None:
+        values_dict = {sql_col: row[df_col] for df_col, sql_col in col_mapping.items()}
+        
     values_dict.update(columns_to_add)
     
     columns_str = ", ".join(values_dict.keys())
@@ -236,7 +239,7 @@ with engine.connect() as conn:
     labels = labels_repartition_age + labels_taux_scolarisation
 
     for label in labels: 
-        queries.append(buildInsertQuery(labels, "dim_age", {}, {"repartition_age" : label}, True))
+        queries.append(buildInsertQuery("dim_age", {}, {"repartition_age" : label}, True))
         age_ids.update({label : executeQueries(conn, queries)})
         queries = []
     
@@ -244,7 +247,7 @@ with engine.connect() as conn:
     
     type_elections = ["legislative", "presidentielle"]
     for election in type_elections: 
-        queries.append(buildInsertQuery(labels, "dim_type_election", {}, {"nom_election" : election}, True))
+        queries.append(buildInsertQuery("dim_type_election", None, {}, {"nom_election" : election}, True))
         type_election_ids.update({election : executeQueries(conn, queries)})
         queries = []
     
@@ -252,7 +255,7 @@ with engine.connect() as conn:
     
     political_labels = ["Blank", "Far_Right", "Right", "Center", "Left", "Fer_Left"]
     for label in political_labels: 
-        queries.append(buildInsertQuery(labels, "dim_etiquette_politique", {}, {"etiquette_politique" : label}, True))
+        queries.append(buildInsertQuery("dim_etiquette_politique", {}, {"etiquette_politique" : label}, True))
         etiquette_politique_ids.update({label : executeQueries(conn, queries)})
         queries = []
     
