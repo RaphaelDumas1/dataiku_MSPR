@@ -220,12 +220,13 @@ with engine.connect() as conn:
 
     for label in labels: 
         queries.append(buildInsertQuery(row, "dim_age", {}, {"repartition_age" : label}, True))
-        age_ids.update({label : executeQueries(conn, queries, "dim_age")})
+        age_ids.update({label : executeQueries(conn, queries)})
         queries = []
     
     # TABLE dim_type_election
     
     queries = [text(f"DELETE FROM dim_type_election;")]
+    queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : "Legislative"}, True))
     
     
     for index, row in final_df.iterrows():
@@ -248,7 +249,7 @@ with engine.connect() as conn:
                 to_add.update({key : value})
                     
             queries.append(buildInsertQuery(row, table_name, columns, to_add, True))        
-            table["id"] = executeQueries(conn, queries, table_name)
+            table["id"] = executeQueries(conn, queries)
             queries = []
             
             
@@ -270,7 +271,7 @@ with engine.connect() as conn:
                         }
 
                         queries.append(buildInsertQuery(row, "dim_delinquance", delinquance_columns, {}, True))
-                        delinquance_ids.update({r["unite_de_compte"] : executeQueries(conn, queries, "dim_delinquance")})
+                        delinquance_ids.update({r["unite_de_compte"] : executeQueries(conn, queries)})
                         queries = []
                     
                     # TABLE dim_delinquance_has_fait_demograhique
@@ -281,7 +282,7 @@ with engine.connect() as conn:
                     }
                     
                     queries.append(buildInsertQuery(row, "dim_delinquance_has_fait_demograhique", {"nombre" : "total"}, col_mapping, False))
-                    executeQueries(conn, queries, "dim_delinquance_has_fait_demograhique")    
+                    executeQueries(conn, queries)    
                     queries = []
                 
                 # TABLE fait_demographique_has_dim_age
@@ -296,7 +297,7 @@ with engine.connect() as conn:
                             "fait_demographique_id" : table["id"],
                         }
                         queries.append(buildInsertQuery(row, "fait_demographique_has_dim_age", {row_unique[col] : "total"}, col_mapping, False))
-                executeQueries(conn, queries, "fait_demographique_has_dim_age")
+                executeQueries(conn, queries)
                 queries = []
                 
             # TABLE fait_scolarisation   
@@ -316,7 +317,7 @@ with engine.connect() as conn:
                         "dim_annee_id" : year_id,
                     }
                     queries.append(buildInsertQuery(row, "fait_scolarisation", {row_unique[col] : "total"}, col_mapping, False))
-            executeQueries(conn, queries, "fait_scolarisation")
+            executeQueries(conn, queries)
             queries = []
             
                 
@@ -342,7 +343,7 @@ def buildInsertQuery(row, table_name, mapping, columns_to_add={}, returning=None
         "returning": returning is not None
     }
 
-def executeQueries(conn, queries, table_name):
+def executeQueries(conn, queries):
     try:
         for q in queries:
             query = q["query"]
