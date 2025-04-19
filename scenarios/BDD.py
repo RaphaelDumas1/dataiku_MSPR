@@ -64,9 +64,7 @@ tables = [
             "autres mesures" : "autres"
         },
         "id": None,
-        "add": [
-            {"name": "dim_annee_id", "value": "dim_annee"}  # Ajouter une colonne avec l'ID de dim_annee
-        ]
+        "add": {"dim_annee_id" : "dim_annee"}
     },
     {
         "name": "fait_menage",
