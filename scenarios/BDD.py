@@ -154,6 +154,42 @@ tables = [
     }
 ]
 
+def buildInsertQuery(row, table_name, mapping, columns_to_add={}, returning=None):
+    values_dict = {sql_col: row[df_col] for df_col, sql_col in col_mapping.items()}
+    values_dict.update(columns_to_add)
+    
+    columns_str = ", ".join(values_dict.keys())
+    placeholders = ", ".join([f":{col}" for col in values_dict.keys()])
+    
+    query = f"""
+        INSERT INTO {table_name} ({columns_str})
+        VALUES ({placeholders})
+    """
+    
+    if returning:
+        query += f"\nRETURNING {returning}"
+
+    return {
+        "query": text(query),
+        "params": values_dict,
+        "returning": returning is not None
+    }
+
+def executeQueries(conn, queries):
+    try:
+        for q in queries:
+            query = q["query"]
+            params = q.get("params", {}) 
+            has_returning = q.get("returning", False)
+
+            result = conn.execute(query, **params) if params else conn.execute(query)
+            conn.commit()
+            
+            if has_returning:
+                return result.scalar()
+    except Exception as e:
+        conn.rollback()
+
 engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
 
 delinquance_ids = {}
