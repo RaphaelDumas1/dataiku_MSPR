@@ -222,14 +222,14 @@ with engine.connect() as conn:
         for table in tables:
             table_name = table["name"]
             columns = table["columns"]
+            add = table["add"]
             
             row_to_insert = row[[key for key in columns.keys() if key in final_df.columns]].dropna()
 
-            for add_column in table.get("add", []):
+            for add_column in add:
                 column_name = add_column["name"]
                 column_value = add_column["value"]
 
-                # Parcourir toutes les tables pour trouver la table qui correspond à column_value
                 for ref_table in tables:
                     if column_value == ref_table["name"]:
                         # Si l'ID de la table référencée est défini, on remplace la valeur de la colonne par l'ID
