@@ -243,8 +243,7 @@ with engine.connect() as conn:
                 
                 to_add.update({key : value})
                     
-            queries.append(buildInsertQuery(row, table_name, columns, to_add, True))
-            
+            queries.append(buildInsertQuery(row, table_name, columns, to_add, True))        
             table["id"] = executeQueries(conn, queries, table_name)
             
             
