@@ -274,7 +274,7 @@ with engine.connect() as conn:
             
             # Add new columns
             to_add = {}
-            for key, value in add:
+            for key, value in add.items():
                 for ref_table in tables:
                     if value == ref_table["name"] and ref_table["id"] is not None:
                         value = ref_table["id"] 
