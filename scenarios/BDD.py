@@ -157,7 +157,10 @@ tables = [
 ]
 
 engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
-
+delinquance_ids = {}
+age_ids = {}
+election_type_ids = {}
+etiquette_politique_ids = {}
 final_df = None
 
 # Fusionner tous les datasets
