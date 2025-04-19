@@ -347,8 +347,8 @@ with engine.connect() as conn:
                     col_mapping = {
                         col_mapping = {
                         "dim_annee_id" : year_id
-                        "dim_type_election_id" : year_id,
-                        "dim_etiquette_politique_id" : year_id,
+                        "dim_type_election_id" : type_election_ids["legislative"],
+                        "dim_etiquette_politique_id" : etiquette_politique_ids[rr["couleur"]],
                     }
                     queries.append(buildInsertQuery(row, "fait_participation", {rr["voix"] : "total"}, col_mapping, False))
                 
