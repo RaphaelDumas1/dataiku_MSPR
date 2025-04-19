@@ -73,7 +73,7 @@ datasets = [
             },
             {
                  "name" : rename_columns,
-                 "args" : [{"ensemble" : "ensemble_logmement"}]
+                 "args" : [{"ensemble" : "ensemble_logements"}]
             },
         ]
     },
