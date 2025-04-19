@@ -273,6 +273,4 @@ with engine.connect() as conn:
                 table["id"] = result.scalar()
                 conn.commit()
             except Exception as e:
-                # En cas d'erreur, rollback de la transaction
                 conn.rollback()
-                print(f"Error inserting row for year {row['annee']} into table {table_name}: {e}")
