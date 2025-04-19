@@ -255,7 +255,7 @@ with engine.connect() as conn:
                 for i, r in df_filtre.iterrows():
                     queries = []
                     col_mapping = {
-                        "dim_delinquance_id" : delinquance_ids[r["unite_de_compte"]]
+                        "dim_age_id" : age_ids[r["unite_de_compte"]]
                         "fait_demographqiue_id" : id_fait_demographique,
                          
                     }
