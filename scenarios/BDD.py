@@ -293,8 +293,8 @@ with engine.connect() as conn:
                         }
                         queries.append(buildInsertQuery(row, "fait_demographique_has_dim_age", {row_unique[col] : "total"}, col_mapping, False))
                 executeQueries(conn, queries, "fait_demographique_has_dim_age")
+                queries = []
                 
-            queries = []
             df_filtre = df_test[df_test['annee'] == row["annee"]]
             row_unique = df_filtre.iloc[0]
             for col in row_unique.index:
