@@ -217,13 +217,15 @@ with engine.connect() as conn:
                 df_filtre = df_test[df_test['annee'] == row["annee"]]
                 for i, r in df_filtre.iterrows():
                     queries = []
-                    col_mapping = {
-                        "unite_de_compte" : "type_delinquance",
-                        "indicateur" : "indicateur",
-                    }
-                    
-                    queries.append(buildInsertQuery(row, "dim_delinquance", col_mapping, False))
-                    id_delinquance = executeQueries(conn, queries, "dim_delinquance")
+                    if r["unite_de_compte"] not in delinquance_ids:
+                        
+                        col_mapping = {
+                            "unite_de_compte" : "type_delinquance",
+                            "indicateur" : "indicateur",
+                        }
+
+                        queries.append(buildInsertQuery(row, "dim_delinquance", col_mapping, False))
+                        delinquance_ids.update({r["unite_de_compte"] : executeQueries(conn, queries, "dim_delinquance")})
                     queries = []
                     col_mapping = {
                         "dim_delinquance_id" : id_delinquance
