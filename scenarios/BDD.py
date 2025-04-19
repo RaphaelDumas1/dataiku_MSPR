@@ -218,7 +218,6 @@ with engine.connect() as conn:
                 for i, r in df_filtre.iterrows():
                     queries = []
                     col_mapping = {
-                        "nombre": "total",
                         "unite_de_compte" : "type_delinquance",
                         "indicateur" : "indicateur",
                     }
