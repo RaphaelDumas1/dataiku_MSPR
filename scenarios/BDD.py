@@ -185,8 +185,8 @@ tables = [
         "columns": {},
         "id": None,
         "add": {
-            "dim_delinquance_id", "dim_delinquance",
-            "fait_demographique_id", "dim_delinquance"
+            "dim_delinquance_id" : "dim_delinquance",
+            "fait_demographique_id" : "dim_delinquance"
         }
     },
 ]
