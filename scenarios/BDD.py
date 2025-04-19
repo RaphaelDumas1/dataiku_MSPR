@@ -218,16 +218,11 @@ for ds_name in datasets_names:
 inspector = inspect(engine)
 
 with engine.connect() as conn:
-    
-    
-    
-    # Pour chaque ligne dans final_df
     for index, row in final_df.iterrows():
-        # Pour chaque table
         for table in tables:
             table_name = table["name"]
             columns = table["columns"]
-            delete_sql = text(f"DELETE FROM {table_name};")
+            
 
             # Sélectionner les colonnes à insérer en fonction de columns
             row_to_insert = row[[key for key in columns.keys() if key in final_df.columns]].dropna()
@@ -260,7 +255,7 @@ with engine.connect() as conn:
             try:
                 # Delete old datas
                 if(row["annee"] == 2006):
-                    conn.execute(delete_sql) 
+                    conn.execute(text(f"DELETE FROM {table_name};")) 
                     
                 result = conn.execute(insert_query, row_to_insert.to_dict())
                 table["id"] = result.scalar()
