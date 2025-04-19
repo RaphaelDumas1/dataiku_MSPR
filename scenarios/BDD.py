@@ -295,6 +295,6 @@ def buildInsertQuery(row, table_name, mapping, columns_to_add=[], returning=None
         query += f"\nRETURNING {returning}"
         has_returning = True
 
-    return text(query), values_dict, returning
+    return text(query), values_dict, has_returning
     
                 
