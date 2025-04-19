@@ -191,7 +191,7 @@ with engine.connect() as conn:
         text(f"DELETE FROM fait_participation;"),
     ]
 
-    ds_repartition_age = dataiku.Dataset("Repartition age")
+    ds_repartition_age = dataiku.Dataset("Repartition_age")
     ds_taux_scolarisation = dataiku.Dataset("Taux_scolarisation")
     df_repartition_age = ds_repartition_age.get_dataframe()
     df_taux_scolarisation = ds_taux_scolarisation.get_dataframe()
