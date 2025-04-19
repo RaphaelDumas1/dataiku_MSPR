@@ -223,7 +223,6 @@ with engine.connect() as conn:
             table_name = table["name"]
             columns = table["columns"]
             
-            # Sélectionner les colonnes à insérer en fonction de columns
             row_to_insert = row[[key for key in columns.keys() if key in final_df.columns]].dropna()
 
             # Ajouter les colonnes spécifiées dans add (si elles sont définies)
