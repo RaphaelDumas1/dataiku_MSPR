@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, pivot, columns_to_int, columns_to_float, complete_with_inteprolate
+from utils import create_datasets_from_file_sheets, pivot, columns_to_int, columns_to_float, complete_with_inteprolate, rename_columns
 
 datasets = [
     {
@@ -70,6 +70,10 @@ datasets = [
             {
                  "name" : complete_with_inteprolate,
                  "args" : []
+            },
+            {
+                 "name" : rename_columns,
+                 "args" : [{"ensemble" : "ensemble_logmement"}]
             },
         ]
     },
