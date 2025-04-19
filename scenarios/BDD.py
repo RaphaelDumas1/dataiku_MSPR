@@ -273,10 +273,10 @@ with engine.connect() as conn:
                     """))
             
             try:
-                for                    
-                result = conn.execute(insert_query, row_to_insert.to_dict())
-                table["id"] = result.scalar()
-                conn.commit()
+                for query in queries:                  
+                    result = conn.execute(insert_query, row_to_insert.to_dict())
+                    table["id"] = result.scalar()
+                    conn.commit()
             except Exception as e:
                 conn.rollback()
                 
@@ -290,10 +290,11 @@ def buildInsertQuery(row, table_name, mapping, columns_to_add=[], returning=None
         INSERT INTO {table_name} ({columns_str})
         VALUES ({placeholders})
     """
-
+    has_returning = False
     if returning:
         query += f"\nRETURNING {returning}"
+        has_returning = True
 
-    return text(query)
+    return text(query), values_dict, returning
     
                 
