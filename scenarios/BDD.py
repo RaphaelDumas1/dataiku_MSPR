@@ -261,8 +261,7 @@ with engine.connect() as conn:
                 VALUES ({placeholders})
                 RETURNING id;
             """)
-            print("sql", insert_sql)
-            # Connexion à la base de données et exécution de la requête
+
 
             try:
                 # Delete old datas
