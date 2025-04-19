@@ -181,7 +181,13 @@ with engine.connect() as conn:
     
     # TABLE dim_age
     
-    queries = [text(f"DELETE FROM dim_age;")]
+    queries = [
+        text(f"DELETE FROM dim_age;"), 
+        text(f"DELETE FROM dim_delinquance;"), 
+        text(f"DELETE FROM dim_type_election;"), 
+        text(f"DELETE FROM dim_etiquette_politique;"),
+        
+    ]
 
     ds_repartition_age = dataiku.Dataset("Repartition age")
     ds_taux_scolarisation = dataiku.Dataset("Taux_scolarisation")
@@ -198,7 +204,6 @@ with engine.connect() as conn:
     
     # TABLE dim_type_election
     
-    queries = [text(f"DELETE FROM dim_type_election;")]
     type_elections = ["legislative", "presidentielle"]
     for election in type_elections: 
         queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : election}, True))
