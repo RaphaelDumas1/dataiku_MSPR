@@ -261,7 +261,7 @@ with engine.connect() as conn:
                             "fait_demographqiue_id" : id_fait_demographique,
                         }
                         queries.append(buildInsertQuery(row, "fait_demographique_has_dim_age", {row_unique[col] : "total"}, col_mapping, False))
-                executeQueries(conn, queries, "dim_age")
+                executeQueries(conn, queries, "fait_demographique_has_dim_age")
             
             
                 
