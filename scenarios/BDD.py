@@ -270,7 +270,7 @@ with engine.connect() as conn:
                     # TABLE dim_delinquance_has_fait_demograhique
                     
                     delinquance_demographique_mapping = {
-                        "dim_delinquance_id" : delinquance_ids[r["unite_de_compte"]]
+                        "dim_delinquance_id" : delinquance_ids[r["unite_de_compte"]],
                         "fait_demographique_id" : table["id"],   
                     }
                     
