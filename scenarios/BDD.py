@@ -245,6 +245,7 @@ with engine.connect() as conn:
                     
             queries.append(buildInsertQuery(row, table_name, columns, to_add, True))        
             table["id"] = executeQueries(conn, queries, table_name)
+            queries = []
             
             
             if(table_name == "fait_demographique"):
@@ -253,9 +254,10 @@ with engine.connect() as conn:
                 
                 ds_delinquance = dataiku.Dataset("Delinquance")
                 df_delinquance = ds_delinquance.get_dataframe()               
-                df_delinquance_filtre = df_delinquance[df_test['annee'] == row["annee"]]
-                for i, r in df_filtre.iterrows():
-                    queries = []
+                df_delinquance_filtered = df_delinquance[df_test['annee'] == row["annee"]]
+                
+                for i, r in df_delinquance_filtered.iterrows():
+                    
                     if r["unite_de_compte"] not in delinquance_ids:
                         
                         col_mapping = {
