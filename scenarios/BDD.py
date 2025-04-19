@@ -245,15 +245,15 @@ with engine.connect() as conn:
             
             queries = []
             
+            # Delete old datas
+            if(row["annee"] == 2006):
+                queries.append(text(f"DELETE FROM {table_name};")) 
+            
             queries.append(text(f"""
                 INSERT INTO {table_name} ({columns_str})
                 VALUES ({placeholders})
                 RETURNING id;
             """))
-            
-            # Delete old datas
-            if(row["annee"] == 2006):
-                queries.append(text(f"DELETE FROM {table_name};")) 
 
             
             try:
