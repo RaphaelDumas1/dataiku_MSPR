@@ -235,6 +235,8 @@ with engine.connect() as conn:
     type_election_ids.update({"presidentielle" : executeQueries(conn, queries)})
     queries = []
     
+    # Main iteration
+    
     for index, row in final_df.iterrows():
         for table in tables:
             table_name = table["name"]
