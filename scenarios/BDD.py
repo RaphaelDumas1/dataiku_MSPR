@@ -259,7 +259,7 @@ with engine.connect() as conn:
                 for i, r in df_delinquance_filtered.iterrows():       
                     if r["unite_de_compte"] not in delinquance_ids:
                         
-                        col_mapping = {
+                        delinquance_columns = {
                             "unite_de_compte" : "type_delinquance",
                             "indicateur" : "indicateur",
                         }
