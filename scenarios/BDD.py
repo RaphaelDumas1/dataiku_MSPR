@@ -177,9 +177,6 @@ for ds_name in datasets_names:
     else:
         final_df = pd.merge(final_df, df, on="annee", how="outer")  # merge avec le reste
 
-# Inspecteur pour obtenir des informations sur les colonnes de la base
-inspector = inspect(engine)
-
 with engine.connect() as conn:
     
     # TABLE dim_age
