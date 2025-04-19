@@ -119,7 +119,7 @@ tables = [
             "formation brute de capital fixe dont administrations_publiques" : "taux_investissement_gouvernement",
             "formation brute de capital fixe dont menages hors entrepreneurs individuels" : "taux_investissement_menages",
             "exportations de biens et de services" : "taux_exportations",
-            "Impot" : "moyenne_impot",
+            "impot" : "moyenne_impot",
             "taux d'inflation" : "taux_inflation"
         },
         "id": None,
