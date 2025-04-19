@@ -111,7 +111,7 @@ tables = [
         "columns": {
             "produit interieur brut (pib)": "pib_total",
             "importations de biens et de services" : "taux_importation",
-            "population femme" : "taux_consommation",
+            "depense de consommation finale" : "taux_consommation",
             "depense de consommation finale dont menages" : "taux_consommation_menages",
             "depense de consommation finale dont administrations_publiques" : "taux_consommation_gouvernement",
             "formation brute de capital fixe" : "taux_investissement",
