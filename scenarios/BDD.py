@@ -212,7 +212,22 @@ with engine.connect() as conn:
             queries = []
             # Delete old datas
             if(row["annee"] == 2006):
-                queries.append(text(f"DELETE FROM {table_name};")) 
+                queries.append(text(f"DELETE FROM {table_name};"))
+                
+                ds_repartition_age = dataiku.Dataset("Repartition age")
+                df_repartition_age = ds_repartition_age.get_dataframe()
+                
+                ds_taux_scolarisation = dataiku.Dataset("Taux_scolarisation")
+                df_taux_scolarisation = ds_taux_scolarisation.get_dataframe()
+                
+                labels_repartition_age = [col for col in df_repartition_age.columns if col != "annee"]
+                labels_taux_scolarisation = [col for col in df_taux_scolarisation.columns if col != "annee"]
+                labels = labels_repartition_age + labels_taux_scolarisation
+                
+                for label in labels:
+                    queries = []
+                    queries.append(buildInsertQuery(row, "dim_age", {}, {"repartition_age" : label} True))
+                    age_ids.update({label : executeQueries(conn, queries, "dim_age")})
 
             to_add = {}
             for key, value in add:
@@ -258,16 +273,7 @@ with engine.connect() as conn:
                     queries.append(buildInsertQuery(row, "dim_delinquance_has_fait_demograhique", {"nombre" : "total"}, col_mapping, False))
                     
                     
-                ds = dataiku.Dataset("Repartition age")
-                df_test = ds.get_dataframe()
                 
-                if(row["annee"] == 2006):
-                    labels = [col for col in df_test.columns if col != "annee"]
-                
-                    for label in labels:
-                        queries = []
-                        queries.append(buildInsertQuery(row, "dim_age", {}, {"repartition_age" : label} True))
-                        age_ids.update({label : executeQueries(conn, queries, "dim_age")})
                 
                 
                 df_filtre = df_test[df_test['annee'] == row["annee"]]
