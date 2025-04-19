@@ -215,13 +215,13 @@ with engine.connect() as conn:
             row_to_insert = row[[key for key in columns.keys() if key in final_df.columns]].dropna()
 
             to_add = []
-            for add_column in add:
-                column_name = add_column["name"]
-                column_value = add_column["value"]
-
+            for key, value in add:
                 for ref_table in tables:
                     if column_value == ref_table["name"] and ref_table["id"] is not None:
-                        row_to_insert[column_name] = ref_table["id"]
+                        value = ref_table["id"] 
+                
+                columns.update({key : value})
+                    
 
             if row_to_insert.empty:
                 continue
