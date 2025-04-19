@@ -356,7 +356,7 @@ with engine.connect() as conn:
             
             # TABLE fait_participation
             
-            ds_legislative = dataiku.Dataset("Legislative")
+            ds_legislative = dataiku.Dataset("Legislatives")
             df_legislative = ds_legislative.get_dataframe()               
             df_legislative_filtered = df_legislative[df_legislative['annee'] == row["annee"]]
             
@@ -371,7 +371,7 @@ with engine.connect() as conn:
                     queries = []
                         
                         
-            ds_presidentielle = dataiku.Dataset("Presidentielle")
+            ds_presidentielle = dataiku.Dataset("Presidentielles")
             df_presidentielle = ds_presidentielle.get_dataframe()               
             df_presidentielle_filtered = df_presidentielle[df_presidentielle['annee'] == row["annee"]]
 
