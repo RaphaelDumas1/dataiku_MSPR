@@ -44,6 +44,7 @@ datasets_names = [
 
 delinquance_ids = {}
 age_ids = {}
+election_type_ids = {}
 
 # Liste des tables avec les colonnes et id
 tables = [
