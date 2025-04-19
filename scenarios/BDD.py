@@ -3,9 +3,6 @@ import dataiku
 from dataiku import Dataset
 import pandas as pd
 
-# Connexion à la base de données PostgreSQL
-engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
-
 # Liste des datasets
 datasets_names = [
     "Esperance_de_vie",
@@ -154,7 +151,7 @@ tables = [
             "proprietaires" : "nombre_proprietaires",
             "locataires" : "nombre_locataires",
             "- dont locataires d'un logement hlm loue vide" : "nombre_hlm",
-            "loges gratuitement" : "nombre_loges_gratuit",
+            "loges gratuitement" : "nombre_logements_gratuit",
             "residences principales" : "nombre_residences_principales",
             "resid. secondaires et log. occasionnels" : "nombre_residences_secondaires",
             "logements vacants" : "nombre_logements_vacants"
@@ -164,7 +161,7 @@ tables = [
     }
 ]
 
-
+engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
 
 final_df = None
 
