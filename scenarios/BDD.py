@@ -275,6 +275,7 @@ with engine.connect() as conn:
                         "dim_delinquance_id" : delinquance_ids[r["unite_de_compte"]]
                         "fait_demographqiue_id" : table["id"],   
                     }
+                    
                     queries.append(buildInsertQuery(row, "dim_delinquance_has_fait_demograhique", {"nombre" : "total"}, col_mapping, False))
                     
                 queries = []
