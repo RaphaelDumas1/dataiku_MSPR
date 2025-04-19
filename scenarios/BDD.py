@@ -158,25 +158,6 @@ tables = [
         "id": None,
         "add": {"dim_annee_id" : "dim_annee"} 
     },
-    {
-        "name": "dim_delinquance",
-        "columns": {
-            "nombre": "total",
-            "unite_de_compte" : "type_delinquance",
-            "indicateur" : "indicateur",
-        },
-        "id": None,
-        "add": {}  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
-    },
-    {
-        "name": "dim_delinquance_has_fait_demographique",
-        "columns": {},
-        "id": None,
-        "add": {
-            "dim_delinquance_id" : "dim_delinquance",
-            "fait_demographique_id" : "dim_delinquance"
-        }
-    },
 ]
 
 ids = {
