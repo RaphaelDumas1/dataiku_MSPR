@@ -358,7 +358,7 @@ with engine.connect() as conn:
             
             ds_legislative = dataiku.Dataset("Legislatives")
             df_legislative = ds_legislative.get_dataframe()               
-            df_legislative_filtered = df_legislative[df_legislative['annee'] == row["annee"]]
+            df_legislative_filtered = df_legislative[df_legislative['année'] == row["annee"]]
             
             if len(df_legislative_filtered) > 0:
                 for ii, rr in df_legislative_filtered.iterrows():
