@@ -213,6 +213,7 @@ with engine.connect() as conn:
             # Delete old datas
             if(row["annee"] == 2006):
                 queries.append(text(f"DELETE FROM {table_name};"))
+                queries.append(text(f"DELETE FROM dim_age;"))
                 
                 ds_repartition_age = dataiku.Dataset("Repartition age")
                 df_repartition_age = ds_repartition_age.get_dataframe()
@@ -243,11 +244,6 @@ with engine.connect() as conn:
             
             
             if(table_name == "fait_demographique"):
-                id_fait_demographique = None
-                    for ref_table in tables:
-                        if "fait_demographique" == ref_table["name"] and ref_table["id"] is not None:
-                            id_fait_demographique = ref_table["id"] 
-                            
                 ds = dataiku.Dataset("Delinquance")
                 df_test = ds.get_dataframe()
                 
@@ -266,7 +262,7 @@ with engine.connect() as conn:
                     queries = []
                     col_mapping = {
                         "dim_delinquance_id" : delinquance_ids[r["unite_de_compte"]]
-                        "fait_demographqiue_id" : id_fait_demographique,
+                        "fait_demographqiue_id" : table["id"],
                          
                     }
                     queries.append(buildInsertQuery(row, "dim_delinquance_has_fait_demograhique", {"nombre" : "total"}, col_mapping, False))
@@ -278,7 +274,7 @@ with engine.connect() as conn:
                     if col != "annee":
                         col_mapping = {
                             "dim_age_id" : age_ids[col]
-                            "fait_demographqiue_id" : id_fait_demographique,
+                            "fait_demographqiue_id" : table["id"],
                         }
                         queries.append(buildInsertQuery(row, "fait_demographique_has_dim_age", {row_unique[col] : "total"}, col_mapping, False))
                 executeQueries(conn, queries, "fait_demographique_has_dim_age")
