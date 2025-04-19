@@ -227,13 +227,20 @@ with engine.connect() as conn:
     # TABLE dim_type_election
     
     queries = [text(f"DELETE FROM dim_type_election;")]
-    queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : "legislative"}, True))
-    type_election_ids.update({"legislative" : executeQueries(conn, queries)})
-    queries = []
+    type_elections = ["legislative", "presidentielle"]
+    for election in type_elections: 
+        queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : election}, True))
+        type_election_ids.update({election : executeQueries(conn, queries)})
+        queries = []
     
-    queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : "presidentielle"}, True))
-    type_election_ids.update({"presidentielle" : executeQueries(conn, queries)})
-    queries = []
+    # TABLE dim_etiquette_politique
+    
+    queries = [text(f"DELETE FROM dim_etiquette_politique;")]
+    type_elections = ["Blank", "Far_Right", "Right", "Center", "Left", "Fer_Left"]
+    for election in type_elections: 
+        queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : election}, True))
+        type_election_ids.update({election : executeQueries(conn, queries)})
+        queries = []
     
     # Main iteration
     
