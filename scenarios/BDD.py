@@ -299,6 +299,12 @@ with engine.connect() as conn:
                 
             df_taux_scolarisation_filtered = df_taux_scolarisation[df_taux_scolarisation['annee'] == row["annee"]]
             row_unique = df_taux_scolarisation_filtered.iloc[0]
+            
+            year_id = 0
+            for ref_table in tables:
+                if "annee" == ref_table["name"] and ref_table["id"] is not None:
+                    year_id = ref_table["id"] 
+                    
             for col in row_unique.index:
                 if col != "annee":
                     col_mapping = {
