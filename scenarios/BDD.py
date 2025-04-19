@@ -94,8 +94,8 @@ tables = [
             "nombre": "total",
             "population homme" : "nombre_hommes",
             "population femme" : "nombre_femmes",
-            "taux de natalite" : "nombre_naissance",
-            "taux de deces" : "nombre_mortalite",
+            "taux de natalite" : "taux_natalite",
+            "taux de deces" : "taux_mortalite",
             "nombre" : "nombre_immigrant",
             "nombre" : "nombre_etranger",
             "homme_total" : "esperance_homme",
@@ -161,25 +161,7 @@ tables = [
         },
         "id": None,
         "add": {"dim_annee_id" : "dim_annee"} 
-    },
-    {
-        "name": "fait_scolarisation",
-        "columns": {
-            "nombre de logements": "total",
-            "maisons" : "nombre_maisons",
-            "appartements" : "nombre_appartements",
-            "autres logements" : "nombre_autres",
-            "proprietaires" : "nombre_proprietaires",
-            "locataires" : "nombre_locataires",
-            "- dont locataires d'un logement hlm loue vide" : "nombre_hlm",
-            "loges gratuitement" : "nombre_loges_gratuit",
-            "residences principales" : "nombre_residences_principales",
-            "resid. secondaires et log. occasionnels" : "nombre_residences_secondaires",
-            "logements vacants" : "nombre_logements_vacants"
-        },
-        "id": None,
-        "add": {"dim_annee_id" : "dim_annee"} 
-    },
+    }
 ]
 
 
