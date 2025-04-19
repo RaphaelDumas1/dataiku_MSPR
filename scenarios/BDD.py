@@ -3,7 +3,6 @@ import dataiku
 from dataiku import Dataset
 import pandas as pd
 
-# Liste des datasets
 datasets_names = [
     "Esperance_de_vie",
     "Taux_scolarisation",
