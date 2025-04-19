@@ -275,7 +275,7 @@ with engine.connect() as conn:
             try:
                 for q in queries:
                     query = q["query"]
-                    params = q.get("params", {})  # Vide par défaut s'il n'y en a pas
+                    params = q.get("params", {}) 
                     has_returning = q.get("returning", False)
 
                     result = conn.execute(query, **params) if params else conn.execute(query)
