@@ -272,7 +272,7 @@ with engine.connect() as conn:
                 result = conn.execute(insert_sql, row_to_insert.to_dict())
                 table["id"] = result.scalar()
 
-                conn.commit()  # Valider la transaction
+                conn.commit()
             except Exception as e:
                 # En cas d'erreur, rollback de la transaction
                 conn.rollback()
