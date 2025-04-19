@@ -210,7 +210,10 @@ with engine.connect() as conn:
             
             executeQueries(conn, queries, table_name)
             
+
+            
             if(table_name == "fait_demographique"):
+                queries = []
                 ds = dataiku.Dataset("Delinquance")
                 df_test = ds.get_dataframe()
                 
@@ -223,6 +226,7 @@ with engine.connect() as conn:
                     }
                     
                     queries.append(buildInsertQuery(row, "dim_delinquance", col_mapping, False))
+                    
             
             
                 
