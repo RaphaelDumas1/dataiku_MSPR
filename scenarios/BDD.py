@@ -185,8 +185,8 @@ tables = [
         "columns": {},
         "id": None,
         "add": [
-            {"name": "dim_delinquance_id", "value": "dim_delinquance"},
-            {"name": "fait_demographique_id", "value": "dim_delinquance"},
+            {"dim_delinquance_id", "value": "dim_delinquance"},
+            {"fait_demographique_id", "value": "dim_delinquance"},
         ]
     },
 ]
@@ -226,6 +226,7 @@ with engine.connect() as conn:
             
             row_to_insert = row[[key for key in columns.keys() if key in final_df.columns]].dropna()
 
+            to_add = []
             for add_column in add:
                 column_name = add_column["name"]
                 column_value = add_column["value"]
