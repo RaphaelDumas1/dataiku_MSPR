@@ -146,9 +146,7 @@ tables = [
             "taux" : "taux_chomage"
         },
         "id": None,
-        "add": [
-            {"dim_annee_id" : "dim_annee"}  # Ajouter une colonne avec l'ID de dim_annee
-        ]  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
+        "add": {"dim_annee_id" : "dim_annee"}
     },
     {
         "name": "fait_logement",
