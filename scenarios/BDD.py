@@ -236,9 +236,9 @@ with engine.connect() as conn:
     # TABLE dim_etiquette_politique
     
     queries = [text(f"DELETE FROM dim_etiquette_politique;")]
-    type_elections = ["Blank", "Far_Right", "Right", "Center", "Left", "Fer_Left"]
-    for election in type_elections: 
-        queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : election}, True))
+    political_labels = ["Blank", "Far_Right", "Right", "Center", "Left", "Fer_Left"]
+    for label in political_labels: 
+        queries.append(buildInsertQuery(row, "dim_etiquette_politique", {}, {"etiquette_politique" : label}, True))
         type_election_ids.update({election : executeQueries(conn, queries)})
         queries = []
     
