@@ -256,7 +256,9 @@ with engine.connect() as conn:
                 df_delinquance = ds_delinquance.get_dataframe()               
                 df_delinquance_filtered = df_delinquance[df_test['annee'] == row["annee"]]
                 
-                for i, r in df_delinquance_filtered.iterrows():       
+                for i, r in df_delinquance_filtered.iterrows():
+                    
+                    # If delinquance doesnt exist
                     if r["unite_de_compte"] not in delinquance_ids:
                         
                         delinquance_columns = {
