@@ -253,14 +253,17 @@ with engine.connect() as conn:
                 
                 
                 df_filtre = df_test[df_test['annee'] == row["annee"]]
-                for i, r in df_filtre.iterrows():
-                    queries = []
-                    col_mapping = {
-                        "dim_age_id" : age_ids[r["unite_de_compte"]]
-                        "fait_demographqiue_id" : id_fait_demographique,
-                         
-                    }
-                    queries.append(buildInsertQuery(row, "dim_delinquance_has_fait_demograhique", {"nombre" : "total"}, col_mapping, False))
+                row_unique = df_filtre.iloc[0]
+                for col in row_unique.index:
+                    if col != "annee":
+                        col_mapping = {
+                            "dim_age_id" : age_ids[col]
+                            "fait_demographqiue_id" : id_fait_demographique,
+                            "total" : row_unique[col]
+
+                        }
+                        queries.append(buildInsertQuery(row, "fait_demographique_has_dim_age", {"nombre" : "total"}, col_mapping, False))
+                executeQueries(conn, queries, "dim_age")
             
             
                 
