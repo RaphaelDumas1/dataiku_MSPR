@@ -92,7 +92,7 @@
       {"name":"locataires","type":"bigint"},
       {"name":"- dont locataires d\u0027un logement hlm loue vide","type":"bigint"},
       {"name":"loges gratuitement","type":"bigint"},
-      {"name":"ensemble","type":"bigint"}
+      {"name":"ensemble_logmement","type":"bigint"}
     ],
     "userModified": false
   },
