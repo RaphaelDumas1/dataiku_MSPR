@@ -295,6 +295,8 @@ with engine.connect() as conn:
                 executeQueries(conn, queries, "fait_demographique_has_dim_age")
                 queries = []
                 
+            # TABLE fait_scolarisation   
+                
             df_filtre = df_test[df_test['annee'] == row["annee"]]
             row_unique = df_filtre.iloc[0]
             for col in row_unique.index:
