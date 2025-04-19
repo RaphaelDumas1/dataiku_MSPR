@@ -281,6 +281,7 @@ with engine.connect() as conn:
                     queries = []
                 
                 # TABLE fait_demographique_has_dim_age
+                
                 df_repartition_age_filtered = df_repartition_age[df_repartition_age['annee'] == row["annee"]]
                 row_unique = df_repartition_age_filtered.iloc[0]
                 
