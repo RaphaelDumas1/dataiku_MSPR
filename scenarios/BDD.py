@@ -218,10 +218,10 @@ with engine.connect() as conn:
     labels_taux_scolarisation = [col for col in df_taux_scolarisation.columns if col != "annee"]
     labels = labels_repartition_age + labels_taux_scolarisation
 
-    for label in labels:
-        queries = []
-        queries.append(buildInsertQuery(row, "dim_age", {}, {"repartition_age" : label} True))
+    for label in labels: 
+        queries.append(buildInsertQuery(row, "dim_age", {}, {"repartition_age" : label}, True))
         age_ids.update({label : executeQueries(conn, queries, "dim_age")})
+        queries = []
     
     
     for index, row in final_df.iterrows():
