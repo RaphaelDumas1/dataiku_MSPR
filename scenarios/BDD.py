@@ -228,11 +228,12 @@ with engine.connect() as conn:
     
     queries = [text(f"DELETE FROM dim_type_election;")]
     queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : "legislative"}, True))
-    type_election_ids.update({r["unite_de_compte"] : executeQueries(conn, queries)})
+    type_election_ids.update({"legislative" : executeQueries(conn, queries)})
     queries = []
     
     queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : "presidentielle"}, True))
-    
+    type_election_ids.update({"presidentielle" : executeQueries(conn, queries)})
+    queries = []
     
     for index, row in final_df.iterrows():
         for table in tables:
