@@ -273,9 +273,16 @@ with engine.connect() as conn:
                     """))
             
             try:
-                for query in queries:                  
-                    result = conn.execute(insert_query, row_to_insert.to_dict())
-                    table["id"] = result.scalar()
+                for q in queries:
+                    query = q["query"]
+                    params = q.get("params", {})  # Vide par défaut s'il n'y en a pas
+                    has_returning = q.get("returning", False)
+
+                    result = conn.execute(query, **params) if params else conn.execute(query)
+
+                    if has_returning:
+                        table["id"] = result.scalar()
+
                     conn.commit()
             except Exception as e:
                 conn.rollback()
