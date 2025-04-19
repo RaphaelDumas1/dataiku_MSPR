@@ -344,7 +344,13 @@ with engine.connect() as conn:
             
             if len(df_legislative_filtered) > 0:
                 for ii, rr in df_legislative_filtered.iterrows():
-                    queries.append(buildInsertQuery(row, "fait_scolarisation", {row_unique[col] : "total"}, col_mapping, False))
+                    col_mapping = {
+                        col_mapping = {
+                        "dim_annee_id" : year_id
+                        "dim_type_election_id" : year_id,
+                        "dim_etiquette_politique_id" : year_id,
+                    }
+                    queries.append(buildInsertQuery(row, "fait_participation", {rr["voix"] : "total"}, col_mapping, False))
                 
                 
 def buildInsertQuery(row, table_name, mapping, columns_to_add={}, returning=None):
