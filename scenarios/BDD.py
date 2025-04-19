@@ -214,7 +214,6 @@ with engine.connect() as conn:
     ds_taux_scolarisation = dataiku.Dataset("Taux_scolarisation")
     df_repartition_age = ds_repartition_age.get_dataframe()
     df_taux_scolarisation = ds_taux_scolarisation.get_dataframe()
-
     labels_repartition_age = [col for col in df_repartition_age.columns if col != "annee"]
     labels_taux_scolarisation = [col for col in df_taux_scolarisation.columns if col != "annee"]
     labels = labels_repartition_age + labels_taux_scolarisation
