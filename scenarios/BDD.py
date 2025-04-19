@@ -245,16 +245,11 @@ with engine.connect() as conn:
                             row_to_insert[column_name] = ref_table["id"]
                             print(f"Assigning ID from table '{ref_table['name']}' ({ref_table['id']}) to column '{column_name}' for row {row['annee']}")
 
-            # Si la ligne à insérer est vide après le filtrage, passer à la ligne suivante
             if row_to_insert.empty:
-                print(f"Skipping year {row['annee']} as no valid data found for table {table_name}.")
                 continue
 
-            # Construire la chaîne des colonnes à insérer
             columns_str = ", ".join(row_to_insert.index)
-            # Créer les placeholders pour les valeurs
             placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
-
             
             insert_query = text(f"""
                 INSERT INTO {table_name} ({columns_str})
