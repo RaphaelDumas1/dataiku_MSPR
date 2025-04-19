@@ -225,27 +225,21 @@ with engine.connect() as conn:
                 
                 columns.update({key : value})
                     
-            queries.append(buildInsertQuery(row, table_name, columns, ))
+            queries.append(buildInsertQuery(row, table_name, columns, True))
             
             if(table_name == "fait_demographique"):
                 ds = dataiku.Dataset("Delinquance")
                 df_test = ds.get_dataframe()
                 
                 df_filtre = df_test[df_test['annee'] == row["annee"]]
-                for i, roww in df_filtre.iterrows():
+                for i, r in df_filtre.iterrows():
                     col_mapping = {
                         "nombre": "total",
                         "unite_de_compte" : "type_delinquance",
                         "indicateur" : "indicateur",
                     }
-                    values_dict = {sql_col: roww[df_col] for df_col, sql_col in col_mapping.items()}
-                    columns_str = ", ".join(values_dict.keys())
-                    placeholders = ", ".join([f":{col}" for col in values_dict.keys()])
-
-                    queries.append(text(f"""
-                        INSERT INTO fait_delinquance ({columns_str})
-                        VALUES ({placeholders});
-                    """))
+                    
+                    queries.append(buildInsertQuery(row, table_name, columns, False))
             
             try:
                 for q in queries:
