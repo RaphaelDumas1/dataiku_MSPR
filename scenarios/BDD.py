@@ -225,7 +225,6 @@ with engine.connect() as conn:
             
             row_to_insert = row[[key for key in columns.keys() if key in final_df.columns]].dropna()
 
-            # Ajouter les colonnes spécifiées dans add (si elles sont définies)
             for add_column in table.get("add", []):
                 column_name = add_column["name"]
                 column_value = add_column["value"]
