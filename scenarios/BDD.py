@@ -240,19 +240,31 @@ with engine.connect() as conn:
             columns_str = ", ".join(row_to_insert.index)
             placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
             
-            insert_query = text(f"""
+            if(table_name == "")
+            
+            
+            queries = []
+            
+            queries.append(text(f"""
                 INSERT INTO {table_name} ({columns_str})
                 VALUES ({placeholders})
                 RETURNING id;
-            """)
+            """))
+            
+            # Delete old datas
+            if(row["annee"] == 2006):
+                queries.append(text(f"DELETE FROM {table_name};")) 
 
+            
             try:
-                # Delete old datas
-                if(row["annee"] == 2006):
-                    conn.execute(text(f"DELETE FROM {table_name};")) 
-                    
+                for                    
                 result = conn.execute(insert_query, row_to_insert.to_dict())
                 table["id"] = result.scalar()
                 conn.commit()
             except Exception as e:
                 conn.rollback()
+                
+                
+                
+              
+                
