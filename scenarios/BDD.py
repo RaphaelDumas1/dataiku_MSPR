@@ -340,8 +340,24 @@ with engine.connect() as conn:
             
             ds_legislative = dataiku.Dataset("Legislative")
             df_legislative = ds_legislative.get_dataframe()               
-            df_legislative_filtered = df_legislativedf_legislative[df_legislative['annee'] == row["annee"]]
+            df_legislative_filtered = df_legislative[df_legislative['annee'] == row["annee"]]
             
+            if len(df_legislative_filtered) > 0:
+                for ii, rr in df_legislative_filtered.iterrows():
+                    col_mapping = {
+                        col_mapping = {
+                        "dim_annee_id" : year_id
+                        "dim_type_election_id" : type_election_ids["legislative"],
+                        "dim_etiquette_politique_id" : etiquette_politique_ids[rr["couleur"]],
+                    }
+                    queries.append(buildInsertQuery(row, "fait_participation", {rr["voix"] : "total"}, col_mapping, False))
+                    queries = []
+                        
+                        
+            ds_presidentielle = dataiku.Dataset("Presidentielle")
+            df_presidentielle = ds_presidentielle.get_dataframe()               
+            df_legislative_filtered = df_presidentielle[df_presidentielle['annee'] == row["annee"]]
+
             if len(df_legislative_filtered) > 0:
                 for ii, rr in df_legislative_filtered.iterrows():
                     col_mapping = {
