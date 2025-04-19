@@ -128,7 +128,7 @@ tables = [
     {
         "name": "fait_travail",
         "columns": {
-            "salaire net": "total",
+            "salaire net": "salaire",
             "agriculteurs exploitants" : "nombre_agriculteurs",
             "artisans, commercants, chefs entreprise" : "nombre_artisans",
             "cadres et professions intellectuelles superieures" : "nombre_cadres",
