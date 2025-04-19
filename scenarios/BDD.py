@@ -75,7 +75,7 @@ tables = [
         "columns": {
             "ensemble": "total",
             " - hommes seuls" : "homme_seul",
-            " - femmes seules" : "femme seule",
+            " - femmes seules" : "femme_seule",
             "- un couple avec enfant(s)" : "couple_avec_enfant",
             "- un couple sans enfant" : "couple_sans_enfant",
             "- une famille monoparentale" : "famille_monoparentale",
