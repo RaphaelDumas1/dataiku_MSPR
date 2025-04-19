@@ -309,7 +309,7 @@ with engine.connect() as conn:
                 if col != "annee":
                     col_mapping = {
                         "dim_age_id" : age_ids[col]
-                        "dim_annee_id" : table["id"],
+                        "dim_annee_id" : year_id,
                     }
                     queries.append(buildInsertQuery(row, "fait_scolarisation", {row_unique[col] : "total"}, col_mapping, False))
             executeQueries(conn, queries, "fait_scolarisation")
