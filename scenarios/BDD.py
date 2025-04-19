@@ -280,6 +280,7 @@ with engine.connect() as conn:
                     executeQueries(conn, queries, "dim_delinquance_has_fait_demograhique")    
                     queries = []
                 
+                # TABLE fait_demographique_has_dim_age
                 df_filtre = df_test[df_test['annee'] == row["annee"]]
                 row_unique = df_filtre.iloc[0]
                 for col in row_unique.index:
