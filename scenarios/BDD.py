@@ -249,14 +249,13 @@ with engine.connect() as conn:
             
             
             if(table_name == "fait_demographique"):
-                
-                # TABLE deim_delinquance
-                
                 ds_delinquance = dataiku.Dataset("Delinquance")
                 df_delinquance = ds_delinquance.get_dataframe()               
                 df_delinquance_filtered = df_delinquance[df_test['annee'] == row["annee"]]
                 
                 for i, r in df_delinquance_filtered.iterrows():
+                    
+                    # TABLE dim_delinquance
                     
                     # If delinquance doesnt exist
                     if r["unite_de_compte"] not in delinquance_ids:
