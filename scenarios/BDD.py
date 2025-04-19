@@ -337,7 +337,6 @@ with engine.connect() as conn:
             if len(df_presidentielle_filtered) > 0:
                 for ii, rr in df_presidentielle_filtered.iterrows():
                     col_mapping = {
-                        col_mapping = {
                         "dim_annee_id" : year_id,
                         "dim_type_election_id" : type_election_ids["presidentielle"],
                         "dim_etiquette_politique_id" : etiquette_politique_ids[rr["couleur"]],
