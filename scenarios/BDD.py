@@ -55,7 +55,7 @@ tables = [
             "annee": "annee"
         },
         "id": None,
-        "add": {}  # Liste vide pour dim_annee car il n'y a pas de colonnes supplémentaires
+        "add": {}
     },
     {
         "name": "fait_administration_penitentiaire",
