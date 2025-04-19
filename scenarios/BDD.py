@@ -160,7 +160,7 @@ tables = [
     },
 ]
 
-ids = {
+delinquance_ids = {
         
     }
 
@@ -228,6 +228,10 @@ with engine.connect() as conn:
                     queries.append(buildInsertQuery(row, "dim_delinquance", col_mapping, False))
                     id_delinquance = executeQueries(conn, queries, "dim_delinquance")
                     queries = []
+                    col_mapping = {
+                        "dim_delinquance_id" : id_delinquance
+                        ""
+                    }
                     queries.append(buildInsertQuery(row, "dim_delinquance_has_fait_demograhique", col_mapping, False))
             
             
