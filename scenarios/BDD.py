@@ -254,21 +254,20 @@ with engine.connect() as conn:
             columns_str = ", ".join(row_to_insert.index)
             # Créer les placeholders pour les valeurs
             placeholders = ", ".join([f":{col}" for col in row_to_insert.index])
-            print(row, "roww")
-            # Créer la requête SQL pour l'insertion
-            insert_sql = text(f"""
+
+            
+            insert_query = text(f"""
                 INSERT INTO {table_name} ({columns_str})
                 VALUES ({placeholders})
                 RETURNING id;
             """)
-
 
             try:
                 # Delete old datas
                 if(row["annee"] == 2006):
                     conn.execute(delete_sql) 
                     
-                result = conn.execute(insert_sql, row_to_insert.to_dict())
+                result = conn.execute(insert_query, row_to_insert.to_dict())
                 table["id"] = result.scalar()
                 conn.commit()
             except Exception as e:
