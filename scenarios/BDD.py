@@ -264,7 +264,7 @@ with engine.connect() as conn:
                             "indicateur" : "indicateur",
                         }
 
-                        queries.append(buildInsertQuery(row, "dim_delinquance", col_mapping, {}, False))
+                        queries.append(buildInsertQuery(row, "dim_delinquance", delinquance_columns, {}, False))
                         delinquance_ids.update({r["unite_de_compte"] : executeQueries(conn, queries, "dim_delinquance")})
                     queries = []
                     col_mapping = {
