@@ -239,7 +239,7 @@ with engine.connect() as conn:
     labels = labels_repartition_age + labels_taux_scolarisation
 
     for label in labels: 
-        queries.append(buildInsertQuery("dim_age", {}, {"repartition_age" : label}, True))
+        queries.append(buildInsertQuery("dim_age", None, {}, {"repartition_age" : label}, True))
         age_ids.update({label : executeQueries(conn, queries)})
         queries = []
     
@@ -255,7 +255,7 @@ with engine.connect() as conn:
     
     political_labels = ["Blank", "Far_Right", "Right", "Center", "Left", "Fer_Left"]
     for label in political_labels: 
-        queries.append(buildInsertQuery("dim_etiquette_politique", {}, {"etiquette_politique" : label}, True))
+        queries.append(buildInsertQuery("dim_etiquette_politique", None, {}, {"etiquette_politique" : label}, True))
         etiquette_politique_ids.update({label : executeQueries(conn, queries)})
         queries = []
     
@@ -280,7 +280,7 @@ with engine.connect() as conn:
                 
                 to_add.update({key : value})
                     
-            queries.append(buildInsertQuery(row, table_name, columns, to_add, True))        
+            queries.append(buildInsertQuery(table_name, row, columns, to_add, True))        
             table["id"] = executeQueries(conn, queries)
             queries = []
             
