@@ -205,6 +205,9 @@ for ds_name in datasets_names:
 inspector = inspect(engine)
 
 with engine.connect() as conn:
+    
+    # TABLE dim_age
+    
     queries = [text(f"DELETE FROM dim_age;")]
 
     ds_repartition_age = dataiku.Dataset("Repartition age")
