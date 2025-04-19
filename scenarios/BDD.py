@@ -239,7 +239,7 @@ with engine.connect() as conn:
                         "indicateur" : "indicateur",
                     }
                     
-                    queries.append(buildInsertQuery(row, table_name, columns, False))
+                    queries.append(buildInsertQuery(row, "dim_delinquance", columns, False))
             
             try:
                 for q in queries:
