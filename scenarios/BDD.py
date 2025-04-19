@@ -196,15 +196,15 @@ with engine.connect() as conn:
             if(row["annee"] == 2006):
                 queries.append(text(f"DELETE FROM {table_name};")) 
 
-            to_add = []
+            to_add = {}
             for key, value in add:
                 for ref_table in tables:
                     if column_value == ref_table["name"] and ref_table["id"] is not None:
                         value = ref_table["id"] 
                 
-                columns.update({key : value})
+                to_add.update({key : value})
                     
-            queries.append(buildInsertQuery(row, table_name, columns, True))
+            queries.append(buildInsertQuery(row, table_name, columns, to_add, True))
             
             table["id"] = executeQueries(conn, queries, table_name)
             
@@ -224,7 +224,7 @@ with engine.connect() as conn:
                             "indicateur" : "indicateur",
                         }
 
-                        queries.append(buildInsertQuery(row, "dim_delinquance", col_mapping, False))
+                        queries.append(buildInsertQuery(row, "dim_delinquance", col_mapping, {}, False))
                         delinquance_ids.update({r["unite_de_compte"] : executeQueries(conn, queries, "dim_delinquance")})
                     queries = []
                     
@@ -235,15 +235,17 @@ with engine.connect() as conn:
                         
                     col_mapping = {
                         "dim_delinquance_id" : delinquance_ids[r["unite_de_compte"]]
-                        "fait_demographqiue_id" : id_fait_demographique 
+                        "fait_demographqiue_id" : id_fait_demographique,
+                         
                     }
-                    queries.append(buildInsertQuery(row, "dim_delinquance_has_fait_demograhique", col_mapping, False))
+                    queries.append(buildInsertQuery(row, "dim_delinquance_has_fait_demograhique", {"nombre" : "total"}, col_mapping, False))
             
             
                 
                 
-def buildInsertQuery(row, table_name, mapping, returning=None):
+def buildInsertQuery(row, table_name, mapping, columns_to_add={}, returning=None):
     values_dict = {sql_col: row[df_col] for df_col, sql_col in col_mapping.items()}
+    values_dict.update(columns_to_add)
     
     columns_str = ", ".join(values_dict.keys())
     placeholders = ", ".join([f":{col}" for col in values_dict.keys()])
