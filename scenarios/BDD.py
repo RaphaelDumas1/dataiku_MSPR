@@ -358,8 +358,8 @@ with engine.connect() as conn:
             df_presidentielle = ds_presidentielle.get_dataframe()               
             df_presidentielle_filtered = df_presidentielle[df_presidentielle['annee'] == row["annee"]]
 
-            if len(df_legislative_filtered) > 0:
-                for ii, rr in df_legislative_filtered.iterrows():
+            if len(df_presidentielle_filtered) > 0:
+                for ii, rr in df_presidentielle_filtered.iterrows():
                     col_mapping = {
                         col_mapping = {
                         "dim_annee_id" : year_id
