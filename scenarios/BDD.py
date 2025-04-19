@@ -351,6 +351,7 @@ with engine.connect() as conn:
                         "dim_etiquette_politique_id" : etiquette_politique_ids[rr["couleur"]],
                     }
                     queries.append(buildInsertQuery(row, "fait_participation", {rr["voix"] : "total"}, col_mapping, False))
+                    queries = []
                 
                 
 def buildInsertQuery(row, table_name, mapping, columns_to_add={}, returning=None):
