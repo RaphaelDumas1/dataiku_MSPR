@@ -257,8 +257,12 @@ with engine.connect() as conn:
                 df_test = ds.get_dataframe()
                 
                 df_filtre = df_test[df_test['annee'] == row["annee"]]
-   
-                    
+                for i, roww in df_filtre.iterrows():
+                    col_mapping = {
+                        "nombre": "total",
+                        "unite_de_compte" : "type_delinquance",
+                        "indicateur" : "indicateur",
+                    }
             
             try:
                 for                    
