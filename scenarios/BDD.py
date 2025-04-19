@@ -272,7 +272,7 @@ with engine.connect() as conn:
             if(table_name == "fait_demographique"):
                 ds_delinquance = dataiku.Dataset("Delinquance")
                 df_delinquance = ds_delinquance.get_dataframe()               
-                df_delinquance_filtered = df_delinquance[df_test['annee'] == row["annee"]]
+                df_delinquance_filtered = df_delinquance[df_delinquance['annee'] == row["annee"]]
                 
                 for i, r in df_delinquance_filtered.iterrows():
                     
@@ -336,6 +336,15 @@ with engine.connect() as conn:
             executeQueries(conn, queries)
             queries = []
             
+            # TABLE fait_participation
+            
+            ds_legislative = dataiku.Dataset("Legislative")
+            df_legislative = ds_legislative.get_dataframe()               
+            df_legislative_filtered = df_legislativedf_legislative[df_legislative['annee'] == row["annee"]]
+            
+            if len(df_legislative_filtered) > 0:
+                for ii, rr in df_legislative_filtered.iterrows():
+                    queries.append(buildInsertQuery(row, "fait_scolarisation", {row_unique[col] : "total"}, col_mapping, False))
                 
                 
 def buildInsertQuery(row, table_name, mapping, columns_to_add={}, returning=None):
