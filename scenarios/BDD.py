@@ -249,7 +249,7 @@ with engine.connect() as conn:
             
             if(table_name == "fait_demographique"):
                 ds_delinquance = dataiku.Dataset("Delinquance")
-                df_test = ds.get_dataframe()
+                df_delinquance = ds.get_dataframe()
                 
                 df_filtre = df_test[df_test['annee'] == row["annee"]]
                 for i, r in df_filtre.iterrows():
