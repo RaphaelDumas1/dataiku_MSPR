@@ -244,6 +244,13 @@ with engine.connect() as conn:
                 ds = dataiku.Dataset("Repartition age")
                 df_test = ds.get_dataframe()
                 
+                labels = [col for col in df_test.columns if col != "annee"]
+                
+                for label in labels:
+                    queries = []
+                    queries.append(buildInsertQuery(row, "dim_age", {}, {"repartition_age" : label} True))
+                
+                
                 df_filtre = df_test[df_test['annee'] == row["annee"]]
                 for i, r in df_filtre.iterrows():
                     queries = []
