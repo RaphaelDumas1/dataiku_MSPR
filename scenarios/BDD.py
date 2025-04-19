@@ -230,7 +230,6 @@ with engine.connect() as conn:
             columns = table["columns"]
             add = table["add"]
             
-            queries = []
             # Delete old datas
             if(row["annee"] == 2006):
                 queries.append(text(f"DELETE FROM {table_name};"))
