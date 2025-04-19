@@ -91,7 +91,7 @@ tables = [
             "homme_total" : "esperance_homme",
             "femmes_sans_incapacite" : "esperance_femme_sans_incapacite",
             "femme_total" : "esperance_femme",
-            "hommes_sans_incapacite" : "esperance_homme_sans_incapacite"
+            "homme_sans_incapacite" : "esperance_homme_sans_incapacite"
         },
         "id": None,
         "add": {"dim_annee_id": "dim_annee"}
