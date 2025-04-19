@@ -226,7 +226,8 @@ with engine.connect() as conn:
     # TABLE dim_type_election
     
     queries = [text(f"DELETE FROM dim_type_election;")]
-    queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : "Legislative"}, True))
+    queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : "legislative"}, True))
+    queries.append(buildInsertQuery(row, "dim_type_election", {}, {"nom_election" : "presidentielle"}, True))
     
     
     for index, row in final_df.iterrows():
