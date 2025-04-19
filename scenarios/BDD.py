@@ -42,6 +42,9 @@ datasets_names = [
     # "Legislatives"
 ]
 
+delinquance_ids = {}
+age_ids = {}
+
 # Liste des tables avec les colonnes et id
 tables = [
     {
@@ -178,8 +181,7 @@ tables = [
     },
 ]
 
-delinquance_ids = {}
-age_ids = {}
+
 
 final_df = None
 
@@ -233,7 +235,7 @@ with engine.connect() as conn:
             to_add = {}
             for key, value in add:
                 for ref_table in tables:
-                    if column_value == ref_table["name"] and ref_table["id"] is not None:
+                    if value == ref_table["name"] and ref_table["id"] is not None:
                         value = ref_table["id"] 
                 
                 to_add.update({key : value})
