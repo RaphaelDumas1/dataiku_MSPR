@@ -162,7 +162,6 @@ election_type_ids = {}
 etiquette_politique_ids = {}
 final_df = None
 
-# Fusionner tous les datasets
 for ds_name in datasets_names:
     ds = dataiku.Dataset(ds_name)
     df = ds.get_dataframe()
