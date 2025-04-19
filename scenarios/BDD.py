@@ -269,7 +269,8 @@ with engine.connect() as conn:
                         delinquance_ids.update({r["unite_de_compte"] : executeQueries(conn, queries, "dim_delinquance")})
                         queries = []
                     
-                    # # TABLE Delinquance
+                    # TABLE dim_delinquance_has_fait_demograhique
+                    
                     delinquance_demographique_mapping = {
                         "dim_delinquance_id" : delinquance_ids[r["unite_de_compte"]]
                         "fait_demographqiue_id" : table["id"],   
