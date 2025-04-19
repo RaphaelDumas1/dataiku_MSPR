@@ -281,7 +281,7 @@ with engine.connect() as conn:
                 conn.rollback()
                 
                 
-def buildInsertQuery(row, table_name, mapping, returning=None):
+def buildInsertQuery(row, table_name, mapping, columns_to_add, returning=None):
     values_dict = {sql_col: row[df_col] for df_col, sql_col in col_mapping.items()}
     columns_str = ", ".join(values_dict.keys())
     placeholders = ", ".join([f":{col}" for col in values_dict.keys()])
