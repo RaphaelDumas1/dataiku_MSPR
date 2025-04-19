@@ -208,6 +208,8 @@ with engine.connect() as conn:
                     
             queries.append(buildInsertQuery(row, table_name, columns, True))
             
+            executeQueries(conn, queries, table_name)
+            
             if(table_name == "fait_demographique"):
                 ds = dataiku.Dataset("Delinquance")
                 df_test = ds.get_dataframe()
@@ -222,20 +224,7 @@ with engine.connect() as conn:
                     
                     queries.append(buildInsertQuery(row, "dim_delinquance", col_mapping, False))
             
-            try:
-                for q in queries:
-                    query = q["query"]
-                    params = q.get("params", {}) 
-                    has_returning = q.get("returning", False)
-
-                    result = conn.execute(query, **params) if params else conn.execute(query)
-
-                    if has_returning:
-                        table["id"] = result.scalar()
-
-                    conn.commit()
-            except Exception as e:
-                conn.rollback()
+            
                 
                 
 def buildInsertQuery(row, table_name, mapping, returning=None):
@@ -257,5 +246,19 @@ def buildInsertQuery(row, table_name, mapping, returning=None):
         "params": values_dict,
         "returning": returning is not None
     }
-    
+
+def executeQueries(conn, queries, table_name):
+    try:
+        for q in queries:
+            query = q["query"]
+            params = q.get("params", {}) 
+            has_returning = q.get("returning", False)
+
+            result = conn.execute(query, **params) if params else conn.execute(query)
+            conn.commit()
+            
+            if has_returning:
+                return result.scalar()
+    except Exception as e:
+        conn.rollback()
                 
