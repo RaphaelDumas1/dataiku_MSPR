@@ -241,7 +241,6 @@ with engine.connect() as conn:
             
             table["id"] = executeQueries(conn, queries, table_name)
             
-
             
             if(table_name == "fait_demographique"):
                 id_fait_demographique = None
