@@ -210,12 +210,6 @@ for ds_name in datasets_names:
     ds = dataiku.Dataset(ds_name)
     df = ds.get_dataframe()
     
-    new_columns = {
-        col: f"{col}_{ds_name}" for col in df.columns if col != "annee"
-    }
-    
-    df = df.rename(columns=new_columns)
-    
     if final_df is None:
         final_df = df  # première itération, on initialise
     else:
