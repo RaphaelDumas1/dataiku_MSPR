@@ -273,7 +273,7 @@ with engine.connect() as conn:
                     
                     delinquance_demographique_mapping = {
                         "dim_delinquance_id" : delinquance_ids[r["unite_de_compte"]]
-                        "fait_demographqiue_id" : table["id"],   
+                        "fait_demographique_id" : table["id"],   
                     }
                     
                     queries.append(buildInsertQuery(row, "dim_delinquance_has_fait_demograhique", {"nombre" : "total"}, col_mapping, False))
@@ -289,7 +289,7 @@ with engine.connect() as conn:
                     if col != "annee":
                         col_mapping = {
                             "dim_age_id" : age_ids[col]
-                            "fait_demographqiue_id" : table["id"],
+                            "fait_demographique_id" : table["id"],
                         }
                         queries.append(buildInsertQuery(row, "fait_demographique_has_dim_age", {row_unique[col] : "total"}, col_mapping, False))
                 executeQueries(conn, queries, "fait_demographique_has_dim_age")
