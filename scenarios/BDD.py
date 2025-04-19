@@ -226,6 +226,7 @@ with engine.connect() as conn:
                     }
                     
                     queries.append(buildInsertQuery(row, "dim_delinquance", col_mapping, False))
+                    id_delinquance = executeQueries(conn, queries, "dim_delinquance")
                     
             
             
