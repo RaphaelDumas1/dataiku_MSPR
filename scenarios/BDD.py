@@ -211,19 +211,18 @@ with engine.connect() as conn:
     queries = [text(f"DELETE FROM dim_age;")]
 
     ds_repartition_age = dataiku.Dataset("Repartition age")
-                df_repartition_age = ds_repartition_age.get_dataframe()
-                
-                ds_taux_scolarisation = dataiku.Dataset("Taux_scolarisation")
-                df_taux_scolarisation = ds_taux_scolarisation.get_dataframe()
-                
-                labels_repartition_age = [col for col in df_repartition_age.columns if col != "annee"]
-                labels_taux_scolarisation = [col for col in df_taux_scolarisation.columns if col != "annee"]
-                labels = labels_repartition_age + labels_taux_scolarisation
-                
-                for label in labels:
-                    queries = []
-                    queries.append(buildInsertQuery(row, "dim_age", {}, {"repartition_age" : label} True))
-                    age_ids.update({label : executeQueries(conn, queries, "dim_age")})
+    df_repartition_age = ds_repartition_age.get_dataframe()
+    ds_taux_scolarisation = dataiku.Dataset("Taux_scolarisation")
+    df_taux_scolarisation = ds_taux_scolarisation.get_dataframe()
+
+    labels_repartition_age = [col for col in df_repartition_age.columns if col != "annee"]
+    labels_taux_scolarisation = [col for col in df_taux_scolarisation.columns if col != "annee"]
+    labels = labels_repartition_age + labels_taux_scolarisation
+
+    for label in labels:
+        queries = []
+        queries.append(buildInsertQuery(row, "dim_age", {}, {"repartition_age" : label} True))
+        age_ids.update({label : executeQueries(conn, queries, "dim_age")})
     
     
     for index, row in final_df.iterrows():
