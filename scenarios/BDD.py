@@ -298,7 +298,7 @@ with engine.connect() as conn:
             # TABLE fait_scolarisation   
                 
             df_taux_scolarisation_filtered = df_taux_scolarisation[df_taux_scolarisation['annee'] == row["annee"]]
-            row_unique = df_filtre.iloc[0]
+            row_unique = df_taux_scolarisation_filtered.iloc[0]
             for col in row_unique.index:
                 if col != "annee":
                     col_mapping = {
