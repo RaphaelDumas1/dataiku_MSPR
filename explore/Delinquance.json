@@ -5,7 +5,17 @@
     "columnsSelection": {
       "mode": "ALL"
     },
-    "columnWidthsByName": {},
+    "columnWidthsByName": {
+      "annee": 100,
+      "indicateur": 300,
+      "unite_de_compte": 155,
+      "nombre": 100,
+      "taux_pour_mille": 134,
+      "insee_pop": 113,
+      "insee_pop_millesime": 158,
+      "insee_log": 113,
+      "insee_log_millesime": 158
+    },
     "columnUseScientificNotationByName": {},
     "coloring": {
       "scheme": "MEANING_AND_STATUS",
@@ -13,7 +23,12 @@
       "individualColumnsRules": [],
       "valueColoringMode": "HASH"
     },
-    "sorting": [],
+    "sorting": [
+      {
+        "column": "annee",
+        "ascending": true
+      }
+    ],
     "analysisColumnData": {},
     "explorationSampling": {
       "selection": {
@@ -63,7 +78,9 @@
       "autoRefreshSample": false,
       "_refreshTrigger": 0
     },
-    "exploreUIParams": {},
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
     "globalSearchQuery": "",
     "explorationFilters": [],
     "previewMode": "ALL_ROWS"
