@@ -187,8 +187,8 @@ def executeQueries(conn, queries):
     
     result_id = None
     try:
-        print("uuu", queries)
         for q in queries:
+            print("uuu", q)
             query = q["query"]
             params = q.get("params", {}) 
             has_returning = q.get("returning", False)
