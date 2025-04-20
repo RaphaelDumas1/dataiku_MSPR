@@ -87,7 +87,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"année","type":"bigint"},
+      {"name":"annee","type":"bigint"},
       {"name":"population de 0-14 ans","type":"double"},
       {"name":"population de 15-29 ans","type":"double"},
       {"name":"population de 30-44 ans","type":"double"},

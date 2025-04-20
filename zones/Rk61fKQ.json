@@ -7,10 +7,6 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "Quotient_familiale",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "Taux_de_natalite",
       "objectType": "DATASET"
     },

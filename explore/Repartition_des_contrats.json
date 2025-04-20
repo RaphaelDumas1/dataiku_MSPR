@@ -5,12 +5,7 @@
     "columnsSelection": {
       "mode": "ALL"
     },
-    "columnWidthsByName": {
-      "année": 100,
-      "parti": 100,
-      "voix": 100,
-      "couleur": 100
-    },
+    "columnWidthsByName": {},
     "columnUseScientificNotationByName": {},
     "coloring": {
       "scheme": "MEANING_AND_STATUS",
@@ -18,12 +13,7 @@
       "individualColumnsRules": [],
       "valueColoringMode": "HASH"
     },
-    "sorting": [
-      {
-        "column": "année",
-        "ascending": true
-      }
-    ],
+    "sorting": [],
     "analysisColumnData": {},
     "explorationSampling": {
       "selection": {
@@ -73,9 +63,7 @@
       "autoRefreshSample": false,
       "_refreshTrigger": 0
     },
-    "exploreUIParams": {
-      "autoRefresh": true
-    },
+    "exploreUIParams": {},
     "globalSearchQuery": "",
     "explorationFilters": [],
     "previewMode": "ALL_ROWS"

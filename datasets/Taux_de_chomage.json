@@ -87,8 +87,8 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Taux","type":"double"}
+      {"name":"annee","type":"bigint"},
+      {"name":"taux","type":"double"}
     ],
     "userModified": false
   },

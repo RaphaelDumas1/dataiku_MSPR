@@ -87,12 +87,12 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Propriétaires","type":"bigint"},
-      {"name":"Locataires","type":"bigint"},
-      {"name":"- dont locataires d\u0027un logement HLM loué vide","type":"bigint"},
-      {"name":"Logés gratuitement","type":"bigint"},
-      {"name":"Ensemble","type":"bigint"}
+      {"name":"annee","type":"bigint"},
+      {"name":"proprietaires","type":"bigint"},
+      {"name":"locataires","type":"bigint"},
+      {"name":"- dont locataires d\u0027un logement hlm loue vide","type":"bigint"},
+      {"name":"loges gratuitement","type":"bigint"},
+      {"name":"ensemble_logements","type":"bigint"}
     ],
     "userModified": false
   },

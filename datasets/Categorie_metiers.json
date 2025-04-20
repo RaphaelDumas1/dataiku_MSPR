@@ -87,16 +87,16 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Agriculteurs exploitants","type":"bigint"},
-      {"name":"Artisans, commerçants, chefs entreprise","type":"bigint"},
-      {"name":"Cadres et professions intellectuelles supérieures","type":"bigint"},
-      {"name":"Professions intermédiaires","type":"bigint"},
-      {"name":"Employés","type":"bigint"},
-      {"name":"Ouvriers","type":"bigint"},
-      {"name":"Retraités","type":"bigint"},
-      {"name":"Autres personnes sans activité professionnelle","type":"bigint"},
-      {"name":"Total","type":"bigint"}
+      {"name":"annee","type":"bigint"},
+      {"name":"agriculteurs exploitants","type":"bigint"},
+      {"name":"artisans, commercants, chefs entreprise","type":"bigint"},
+      {"name":"cadres et professions intellectuelles superieures","type":"bigint"},
+      {"name":"professions intermediaires","type":"bigint"},
+      {"name":"employes","type":"bigint"},
+      {"name":"ouvriers","type":"bigint"},
+      {"name":"retraites","type":"bigint"},
+      {"name":"autres personnes sans activite professionnelle","type":"bigint"},
+      {"name":"total","type":"bigint"}
     ],
     "userModified": false
   },

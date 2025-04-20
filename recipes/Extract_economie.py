@@ -1,16 +1,33 @@
-from utils import create_datasets_from_file_sheets, process_pib, pivot, columns_to_int, columns_to_float, process_inflation, columns_to_float
+from utils import create_datasets_from_file_sheets, pivot, columns_to_int, columns_to_float, columns_to_float, set_row_as_headers, delete_rows_by_index, make_unique, set_row_as_headers, delete_rows_by_index, rename_columns, complete_with_inteprolate
+
+def pib_column(columns):
+    return columns.astype(str).str.strip().str.replace(" \(r\)", "", regex=True)
 
 datasets = [
     {
         "name": "Pib",
         "functions": [
             {
-                "name" : process_pib,
-                "args" : []
+                "name" : set_row_as_headers,
+                "args" : [1, pib_column]
+            },
+            {
+                "name" : delete_rows_by_index,
+                "args" : [[0, 1, 2, 3, 6, 8, 12], 17]
             },
             {
                 "name" : pivot,
                 "args" : ["Année"]
+            },
+            {
+                "name" : rename_columns,
+                "args" : [{
+                    "ménages": "Dépense de consommation finale dont ménages",
+                    "administrations publiques": "Dépense de consommation finale dont administrations publiques",
+                    "sociétés et entreprises individuelles non financières": "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
+                    "administrations publiques_1": "Formation brute de capital fixe dont administrations publiques",
+                    "ménages hors entrepreneurs individuels": "Formation brute de capital fixe dont ménages hors entrepreneurs individuels"
+                }]
             },
             {
                 "name" : columns_to_int,
@@ -23,14 +40,23 @@ datasets = [
                           "Formation brute de capital fixe dont administrations publiques", " Formation brute de capital fixe dont ménages hors entrepreneurs individuels", "Exportations de biens et de services",
                           "Demande intérieure hors stocks"], 1]
             },
+            {
+                "name" : complete_with_inteprolate,
+                "args" : []
+            },
+            
         ]
     },
     {
         "name": "Inflation",
         "functions": [
             {
-                "name" : process_inflation,
-                "args" : []
+                "name" : set_row_as_headers,
+                "args" : [1]
+            },
+            {
+                "name" : delete_rows_by_index,
+                "args" : [[0, 1, 2], 35]
             },
             {
                 "name" : columns_to_int,
@@ -40,6 +66,10 @@ datasets = [
                 "name" : columns_to_float,
                 "args" : [["Taux d'inflation"]]
             },
+            {
+                "name" : complete_with_inteprolate,
+                "args" : []
+            },
         ]
     },
     {
@@ -47,6 +77,10 @@ datasets = [
         "functions": [
             {
                 "name" : columns_to_int,
+                "args" : []
+            },
+            {
+                "name" : complete_with_inteprolate,
                 "args" : []
             },
         ]
@@ -61,6 +95,10 @@ datasets = [
             {
                 "name" : columns_to_float,
                 "args" : [["Impot"], 2]
+            },
+            {
+                "name" : complete_with_inteprolate,
+                "args" : []
             },
         ]
     },

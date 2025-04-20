@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, pivot, columns_to_int, columns_to_float
+from utils import create_datasets_from_file_sheets, pivot, columns_to_int, columns_to_float, complete_with_inteprolate, rename_columns
 
 datasets = [
     {
@@ -15,7 +15,11 @@ datasets = [
             {
                  "name" : columns_to_float,
                  "args" : [["Part des résidences principales (%)", "Part des rés. secondaires (yc log. occasionnels) (%)", "Part des logements vacants (%)"]]
-            }
+            },
+            {
+                 "name" : complete_with_inteprolate,
+                 "args" : []
+            },
         ]
     },
     {
@@ -28,7 +32,11 @@ datasets = [
             {
                  "name" : columns_to_int,
                  "args" : []
-            }
+            },
+            {
+                 "name" : complete_with_inteprolate,
+                 "args" : []
+            },
         ]
     },
     {
@@ -41,7 +49,11 @@ datasets = [
             {
                  "name" : columns_to_int,
                  "args" : []
-            }
+            },
+            {
+                 "name" : complete_with_inteprolate,
+                 "args" : []
+            },
         ]
     },
     {
@@ -54,7 +66,15 @@ datasets = [
             {
                  "name" : columns_to_int,
                  "args" : []
-            }
+            },
+            {
+                 "name" : complete_with_inteprolate,
+                 "args" : []
+            },
+            {
+                 "name" : rename_columns,
+                 "args" : [{"ensemble" : "ensemble_logements"}]
+            },
         ]
     },
     {
@@ -67,7 +87,15 @@ datasets = [
            {
                  "name" : columns_to_int,
                  "args" : []
-            }
+            },
+           {
+                 "name" : complete_with_inteprolate,
+                 "args" : []
+            },
+           {
+                 "name" : rename_columns,
+                 "args" : [{"ensemble" : "ensemble_menages"}]
+            },
         ]
     },
     {
@@ -80,7 +108,11 @@ datasets = [
             {
                  "name" : columns_to_int,
                  "args" : []
-            }
+            },
+            {
+                 "name" : complete_with_inteprolate,
+                 "args" : []
+            },
         ]
     }
 ]

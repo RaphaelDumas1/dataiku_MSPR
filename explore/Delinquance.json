@@ -6,10 +6,15 @@
       "mode": "ALL"
     },
     "columnWidthsByName": {
-      "année": 100,
-      "parti": 100,
-      "voix": 100,
-      "couleur": 100
+      "annee": 100,
+      "indicateur": 300,
+      "unite_de_compte": 155,
+      "nombre": 100,
+      "taux_pour_mille": 134,
+      "insee_pop": 113,
+      "insee_pop_millesime": 158,
+      "insee_log": 113,
+      "insee_log_millesime": 158
     },
     "columnUseScientificNotationByName": {},
     "coloring": {
@@ -20,8 +25,8 @@
     },
     "sorting": [
       {
-        "column": "année",
-        "ascending": true
+        "column": "annee",
+        "ascending": false
       }
     ],
     "analysisColumnData": {},

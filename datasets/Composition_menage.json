@@ -87,16 +87,16 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Ménages d\u0027une personne","type":"bigint"},
+      {"name":"annee","type":"bigint"},
+      {"name":"menages d\u0027une personne","type":"bigint"},
       {"name":"- hommes seuls","type":"bigint"},
       {"name":"- femmes seules","type":"bigint"},
-      {"name":"Autres ménages sans famille","type":"bigint"},
-      {"name":"Ménages avec famille(s) dont la famille principale est","type":"bigint"},
+      {"name":"autres menages sans famille","type":"bigint"},
+      {"name":"menages avec famille(s) dont la famille principale est","type":"bigint"},
       {"name":"- un couple sans enfant","type":"bigint"},
       {"name":"- un couple avec enfant(s)","type":"bigint"},
       {"name":"- une famille monoparentale","type":"bigint"},
-      {"name":"Ensemble","type":"bigint"}
+      {"name":"ensemble_menages","type":"bigint"}
     ],
     "userModified": false
   },

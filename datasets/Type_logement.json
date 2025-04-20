@@ -87,11 +87,11 @@
   },
   "schema": {
     "columns": [
-      {"name":"Année","type":"bigint"},
-      {"name":"Maisons","type":"bigint"},
-      {"name":"Appartements","type":"bigint"},
-      {"name":"Autres logements","type":"bigint"},
-      {"name":"Total","type":"bigint"}
+      {"name":"annee","type":"bigint"},
+      {"name":"maisons","type":"bigint"},
+      {"name":"appartements","type":"bigint"},
+      {"name":"autres logements","type":"bigint"},
+      {"name":"total","type":"bigint"}
     ],
     "userModified": false
   },

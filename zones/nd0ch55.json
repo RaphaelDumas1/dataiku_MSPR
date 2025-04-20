@@ -3,16 +3,16 @@
   "color": "#D03713",
   "items": [
     {
-      "objectId": "Delinquance",
-      "objectType": "DATASET"
+      "objectId": "Extract_securite",
+      "objectType": "RECIPE"
     },
     {
       "objectId": "Administration_penitentiaire",
       "objectType": "DATASET"
     },
     {
-      "objectId": "Extract_securite",
-      "objectType": "RECIPE"
+      "objectId": "Delinquance",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],

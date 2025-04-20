@@ -1,8 +1,7 @@
 {
-  "type": "Filesystem",
+  "type": "PostgreSQL",
   "managed": true,
   "featureGroup": false,
-  "formatType": "csv",
   "checklists": {
     "checklists": []
   },
@@ -24,37 +23,6 @@
       "rules": []
     }
   },
-  "formatParams": {
-    "style": "unix",
-    "charset": "utf8",
-    "separator": "\t",
-    "quoteChar": "\"",
-    "escapeChar": "\\",
-    "maxRowChars": 100000000,
-    "dateSerializationFormat": "ISO",
-    "arrayMapFormat": "json",
-    "hiveSeparators": [
-      "\u0002",
-      "\u0003",
-      "\u0004",
-      "\u0005",
-      "\u0006",
-      "\u0007",
-      "\b"
-    ],
-    "skipRowsBeforeHeader": 0,
-    "parseHeaderRow": false,
-    "skipRowsAfterHeader": 0,
-    "probableNumberOfRecords": 0,
-    "normalizeBooleans": false,
-    "normalizeDoubles": true,
-    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
-    "readMissingColumnsBehavior": "DISCARD_SILENT",
-    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
-    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
-    "fileReadFailureBehavior": "FAIL",
-    "compress": "gz"
-  },
   "partitioning": {
     "ignoreNonMatchingFile": false,
     "considerMissingRequestedPartitionsAsEmpty": false,
@@ -65,47 +33,35 @@
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1744578931846,
+    "lastModifiedOn": 1744788518088,
     "extendedProperties": {}
   },
   "tags": [],
   "params": {
-    "connection": "filesystem_managed",
-    "path": "${projectKey}/Quotient_familiale",
+    "writeWithCopyBadDataBehavior": "NOVERIFY_ERROR",
+    "connection": "MSPR",
     "notReadyIfEmpty": false,
-    "filesSelectionRules": {
-      "mode": "ALL",
-      "excludeRules": [],
-      "includeRules": [],
-      "explicitFiles": []
-    },
+    "mode": "table",
+    "partitioningType": "custom",
+    "normalizeDoubles": true,
+    "table": "${projectKey}_test",
+    "tableCreationMode": "auto",
+    "writeInsertBatchSize": 10000,
+    "noDropOnSchemaMismatch": true,
+    "writeJDBCBadDataBehavior": "DISCARD_ROW",
+    "readColsWithUnknownTzAsDates": false,
+    "readSQLDateColsAsDSSDates": true,
     "variablesExpansionLoopConfig": {
       "enabled": false,
       "mode": "CREATE_VARIABLE_FOR_EACH_COLUMN",
       "replacements": []
-    }
+    },
+    "sparkJdbcAccess": "NONE",
+    "numPartitions": -1
   },
   "schema": {
-    "columns": [
-      {"name":"année","type":"bigint"},
-      {"name":"caracteristiques","type":"string"},
-      {"name":"nombre foyers ndur","type":"bigint"},
-      {"name":"nombre personnes ndur","type":"bigint"},
-      {"name":"montant total ndur","type":"bigint"},
-      {"name":"nombre foyers ndurpaje","type":"bigint"},
-      {"name":"nombre personnes ndurpaje","type":"bigint"},
-      {"name":"montant total ndurpaje","type":"bigint"},
-      {"name":"nombre foyers ndurej","type":"bigint"},
-      {"name":"nombre personnes ndurej","type":"bigint"},
-      {"name":"montant total ndurej","type":"bigint"},
-      {"name":"nombre foyers ndural","type":"bigint"},
-      {"name":"nombre personnes ndural","type":"bigint"},
-      {"name":"montant total ndural","type":"bigint"},
-      {"name":"nombre foyers ndurins","type":"bigint"},
-      {"name":"nombre personnes ndurins","type":"bigint"},
-      {"name":"montant total ndurins","type":"bigint"}
-    ],
-    "userModified": false
+    "columns": [],
+    "userModified": true
   },
   "dkuProperties": [],
   "metrics": {
@@ -176,8 +132,6 @@
       "columns": [],
       "metrics": [
         "basic:COUNT_COLUMNS",
-        "basic:COUNT_FILES",
-        "basic:SIZE",
         "records:COUNT_RECORDS"
       ]
     }

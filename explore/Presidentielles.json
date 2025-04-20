@@ -10,7 +10,13 @@
       "Genre": 100,
       "Nom": 106,
       "Prénom": 100,
-      "Voix": 100
+      "Voix": 100,
+      "année": 100,
+      "genre": 100,
+      "nom": 106,
+      "prénom": 100,
+      "voix": 100,
+      "couleur": 100
     },
     "columnUseScientificNotationByName": {},
     "coloring": {
@@ -19,7 +25,12 @@
       "individualColumnsRules": [],
       "valueColoringMode": "HASH"
     },
-    "sorting": [],
+    "sorting": [
+      {
+        "column": "année",
+        "ascending": false
+      }
+    ],
     "analysisColumnData": {},
     "explorationSampling": {
       "selection": {

@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, strip_headers, columns_to_int, pivot
+from utils import create_datasets_from_file_sheets, strip_headers, columns_to_int, pivot, complete_with_inteprolate
 
 datasets = [
     {
@@ -15,7 +15,11 @@ datasets = [
             {
                  "name" : columns_to_int,
                  "args" : []
-            }
+            }, 
+            {
+                 "name" : complete_with_inteprolate,
+                 "args" : []
+            },
         ]
     },
     {

@@ -4,6 +4,8 @@ import openpyxl
 import time
 from io import BytesIO
 import re
+from sqlalchemy import create_engine
+from unidecode import unidecode
 
 def make_unique(headers):
     seen = {}
@@ -62,29 +64,58 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
     for sheet_name in ss.sheetnames:
         if sheet_name in sheets_to_exclude:
             continue
-
+        print("ooo", "e" + sheet_name + "e", sheets_to_exclude)
         sheet = ss[sheet_name]
         title = clean_title(sheet_name)
+        print("ici", title)
         df = create_dataframe_from_sheet(sheet)
         instruction = find_entry_in_instructions(title, datasets_instructions)
         
-        execute_instruction_on_dataframe(df, instruction)
+        execute_instruction_on_dataframe(df, title, instruction)
+#
+# CHECK
+#
 
+# Check if column exists in dataframe
+def is_column_in_dataframe(df, column):
+    if column not in df.columns:
+        raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
+
+#
+# DELETE
+#
+
+# Delete row(s) in dataframe where column equal value
 def delete_where_equal(df, column, value):
-    if column not in df.columns:
-        raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
-    
+    is_column_in_dataframe(df, column)
     return df[df[column] != value].reset_index(drop=True)
-    
+
+# Delete row(s) in dataframe where column not equal value
 def delete_where_not_equal(df, column, value):
-    if column not in df.columns:
-        raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
-    
+    is_column_in_dataframe(df, column)
     return df[df[column] == value].reset_index(drop=True)
 
-# 
-# FUNCTIONS
+# Delete columns(s) by name in list
+def delete_columns_by_name(df, columns_to_delete):
+    return df.drop(columns=columns_to_delete)
+
+def delete_rows_by_index(df, indexes, delete_after_index=None):
+    if delete_after_index is not None:
+        df = df[df.index <= delete_after_index]
+        
+    df = df.drop(index=[i for i in indexes if i < len(df)], errors='ignore') 
+    df = df.reset_index(drop=True)
+    
+    return df
+    
+# Delete columns(s) by name in list
+def delete_columns__not_in_list(df, columns_to_keep):
+    return df[columns_to_keep]
+
 #
+# CONVERT
+#
+
 
 def pivot(df, first_column_name):
     # Pivot
@@ -93,14 +124,12 @@ def pivot(df, first_column_name):
 
     # Rename column
     df = df.rename(columns={df.columns[0]: first_column_name})
+    df.columns = make_unique(df.columns)
     
     return df
 
-def column_from_float_to_string(df, column):
-    df["Année"] = df["Année"].astype(float).astype(int).astype(str)
-    return df
-
 def copy_years_range(df):
+    print("llll", df.columns)
     # Add row for each year in range
     rows = []
 
@@ -244,162 +273,99 @@ def add_columns(df, col1, col2, result_column):
 
     return df
 
-def rename_column(df, old_name, new_name):
-    if old_name not in df.columns:
-        raise ValueError(f"La colonne '{old_name}' n'existe pas dans le DataFrame.")
-    return df.rename(columns={old_name: new_name})
+def rename_columns(df, columns_dict):
+    return df.rename(columns=columns_dict)
 
-def process_pib(df):
-    if len(df) > 3:
-        df.columns = df.iloc[2].astype(str).str.strip().str.replace(" \(r\)", "", regex=True)
-        df.columns = make_unique(df.columns)
-    else:
-        raise ValueError("Le DataFrame ne contient pas au moins 4 lignes pour définir les headers")
+def set_row_as_headers(df, index, function=None):
+    df.columns = df.iloc[index]
     
-    df = df[df.index <= 17]
-    
-    rows_to_prefix = [9, 10, 13, 14, 15]
-    first_col = df.columns[0]
-
-    prefix_sources = {
-        9: 7,
-        10: 7,
-        13: 11,
-        14: 11,
-        15: 11
-    }
-
-    for i in rows_to_prefix:
-        if i < len(df):
-            val = df.at[i, first_col]
-            if pd.notnull(val):
-                source_row = prefix_sources.get(i)
-                reference_value = str(df.at[source_row, first_col]).strip() if source_row in df.index else ""
-
-                current_val = str(val).strip()
-                new_val = f"{reference_value} dont {current_val}"
-
-                if new_val in df[first_col].values:
-                    new_val += " 2"
-
-                df.at[i, first_col] = new_val
-
-    
-    # 3. Supprimer lignes 1 à 4, 5, 8, 10, 14 et toutes les lignes après 19
-    rows_to_drop = list(range(0, 4)) + [6, 8, 12]
-    df = df.drop(index=[i for i in rows_to_drop if i < len(df)], errors='ignore')
-
-    
-
-    # Réinitialiser les index
-    df = df.reset_index(drop=True)
+    if function is not None:
+        df.columns = function(df.columns)
 
     return df
 
-def process_inflation(df):
-    df = df[df.index <= 35]
-    
-    if len(df) > 3:
-        df.columns = df.iloc[2]
-    else:
-        raise ValueError("Le DataFrame ne contient pas au moins 4 lignes pour définir les headers")
-        
-    rows_to_drop = list(range(0, 3))
-    df = df.drop(index=[i for i in rows_to_drop if i < len(df)], errors='ignore')
-    
-    df = df.reset_index(drop=True)
-    return df
-        
-def process_annuaire(df):  
-    delete_columns = ['code_departement', 'code_region', 'libelle_departement', 'libelle_region']
-
-    df = df.drop(columns=delete_columns)
-    df = df.dropna(how="all")
-    columns_defaults = {
-        "type_etablissement": "Inconnu",
-        "statut_public_prive": "Inconnu",
-        "adresse_1": "Inconnue",
-        "adresse_2": "Inconnue",
-        "ecole_maternelle": 0.0,
-        "ecole_elementaire": 0.0,
-        "voie_generale" : 0.0,
-        "voie_technologique" : 0.0,
-        "voie_professionnelle" : 0.0,
-        "telephone": "Inconnu",
-        "fax": "Inconnu", 
-        "web": "Inconnu", 
-        "mail": "Inconnu", 
-        "telephone": "Inconnu", 
-        "restauration": 0.0,
-        "hebergement": 0.0,
-        "ulis": 0.0,
-        "apprentissage": 0.0,
-        "segpa": 0.0,
-        "section_arts": 0.0,
-        "section_cinema": 0.0,
-        "section_theatre": 0.0,
-        "section_sport": 0.0,
-        "section_internationale": 0.0,
-        "section_europeenne": 0.0,
-        "lycee_agricole": 0.0,
-        "lycee_militaire": 0.0,
-        "lycee_des_metiers": 0.0,
-        "post_bac": 0.0,
-        "appartenance_education_prioritaire": "Aucune",
-        "greta": 0.0,
-        "siren_siret": "Inconnu",
-        "fiche_onisep": "Inconnue",
-        "position": "48.856614,2.3522219",
-        "type_contrat_prive": "Inconnu",
-        "coordx_origine": "2.3522",
-        "coordy_origine": "48.8566",
-        "epsg_origine": "EPSG:2154",
-        "nom_circonscription": "Inconnu",
-        "latitude": "48.856614",
-        "longitude": "2.3522219",
-        "precision_localisation": "Inconnue",
-        "rpi_concentre" : 0.0,
-        "rpi_disperse" : 0.0,
-        "pial" : "Inconnu",
-        "etablissement_mere" : "Inconnu",
-        "type_rattachement_etablissement_mere" : "Inconnu",
-        "code_circonscription" : "Inconnu",
-        "code_zone_animation_pedagogique" : "Inconnu",
-        "libelle_zone_animation_pedagogique" : "Inconnu",
-        "code_bassin_formation" : "Inconnu",
-        "libelle_bassin_formation" : "Inconnu"
-    }
-        
+def fill_empty_values(df, columns_defaults):
     for col, default in columns_defaults.items():
+        is_column_in_dataframe(df, col)
         df[col] = df[col].fillna("").apply(lambda x: x if str(x).strip() else default)
-    
-    df["nombre_d_eleves"] = df["nombre_d_eleves"].fillna(df["nombre_d_eleves"].mean())
-    
     return df
-    
+
+def fill_empty_values_with_mean(df, columns):
+    for col in columns:
+        is_column_in_dataframe(df, col)
+        df[col] = df[col].fillna(df[col].mean())
+    return df
+
+def complete_with_inteprolate(df):
+    df.columns = df.columns.str.lower()
+
+    # Sauvegarder les colonnes int et float d'origine
+    int_cols = df.select_dtypes(include='int').columns.drop('année', errors='ignore')
+    float_cols = df.select_dtypes(include='float').columns.drop('année', errors='ignore')
+
+    # Calculer le nombre de décimales significatives par colonne float
+    float_precision = {}
+    for col in float_cols:
+        non_null = df[col].dropna()
+        if not non_null.empty:
+            # Max des nombres de chiffres après la virgule
+            float_precision[col] = non_null.map(lambda x: len(str(x).split(".")[1]) if "." in str(x) else 0).max()
+        else:
+            float_precision[col] = 2  # Valeur par défaut
+
+    # Créer DataFrame avec toutes les années
+    full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
+
+    # Fusionner avec df
+    df_full = pd.merge(full_years, df, on='année', how='left')
+
+    # Interpolation + extrapolation
+    num_cols = df_full.select_dtypes(include='number').columns.drop('année')
+
+    df_full[num_cols] = df_full[num_cols]\
+        .interpolate(method='linear', limit_direction='both')\
+        .ffill().bfill()
+
+    # Reconvertir les colonnes int d'origine
+    for col in int_cols:
+        df_full[col] = df_full[col].round().astype(int)
+
+    # Arrondir les colonnes float au bon nombre de décimales
+    for col, precision in float_precision.items():
+        df_full[col] = df_full[col].round(precision)
+
+    return df_full
         
-def execute_instruction_on_dataframe(df, instruction):
+def execute_instruction_on_dataframe(df, title, instruction):
+    engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
     functions = instruction["functions"]
     instruction_name = instruction["name"]
+    
+    df = df.dropna(how="all")
    
     for function in functions:
         # Set variables for iteration
         name = function["name"]
         args = function["args"] if function["args"] is not None else []
-        print("yes", df.columns)
+
         # Use function
         df = name(df, *args)
 
     # Drop empty rows
-    df = df.dropna(how="all")
-    df.columns = df.columns.str.lower()
-
+    df.columns = [unidecode(col).lower() for col in df.columns]
+    if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:  
+        df = df[df['annee'] >= 2006]
+        
+        
+        
+    # Exportation vers PostgreSQL
+    # df.to_sql(table_name, engine, if_exists='replace', index=False)
     # Write datas
     dataset = dataiku.Dataset(instruction_name)
     dataset.write_with_schema(df)
 
 def extract_and_concat_to_original(df, interval1, interval2):
-    
+    df = df.reset_index(drop=True)
     # Fonction d'extraction
     def extract(df, start, end):
         block = df.iloc[start:end+1].copy()
@@ -420,9 +386,7 @@ def extract_and_concat_to_original(df, interval1, interval2):
     df_cleaned.rename(columns={'Quotient familial': 'Caracteristiques'}, inplace=True)
     df1.rename(columns={'Situation familiale': 'Caracteristiques'}, inplace=True)
     df2.rename(columns={'Age responsable dossier': 'Caracteristiques'}, inplace=True)
-    
-    print("lll", df_cleaned.columns, df1.columns, df2.columns)
-    
+
     # On ne réindexe pas ici, on s'assure juste que les colonnes sont bien dans df_cleaned
     columns_to_add_1 = [col for col in df1.columns if col in df_cleaned.columns]
     columns_to_add_2 = [col for col in df2.columns if col in df_cleaned.columns]
@@ -435,9 +399,5 @@ def extract_and_concat_to_original(df, interval1, interval2):
     
     df_cleaned["Date référence"] = df_cleaned["Date référence"].astype(str).str[:4]
     df_cleaned.rename(columns={'Date référence': 'Année'}, inplace=True)
-    
-    delete_columns = ['Numéro département', 'Nom département', 'Numéro région', 'Nom région', "Lieu résidence"]
-
-    df_cleaned = df_cleaned.drop(columns=delete_columns)
 
     return df_cleaned
