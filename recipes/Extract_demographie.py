@@ -12,6 +12,10 @@ datasets = [
                  "name" : complete_with_inteprolate,
                  "args" : []
             },
+            {
+                 "name" : rename_columns,
+                 "args" : [{"nombre" : "etrangers"}]
+            },
         ]
     },
     # {
@@ -120,7 +124,7 @@ datasets = [
             },
             {
                  "name" : rename_columns,
-                 "args" : [{"nombre" : "immigrant"}]
+                 "args" : [{"nombre" : "immigrants"}]
             },
         ]
     },
