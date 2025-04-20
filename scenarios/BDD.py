@@ -273,8 +273,8 @@ with engine.connect() as conn:
             add = table["add"]
             
             # Delete old datas
-            if(row["annee"] == 2006):
-                queries.append(text(f"DELETE FROM {table_name};"))
+            if(row["annee"] == 2006): 
+                queries.append({"query" : text(f"DELETE FROM {table_name};"), "params" : None, "returning" : False},)
             
             # Add new columns
             to_add = {}
