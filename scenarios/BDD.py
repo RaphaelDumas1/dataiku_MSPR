@@ -63,7 +63,7 @@ tables = [
     {
         "name": "fait_menage",
         "columns": {
-            "ensemble_logements": "total",
+            "ensemble_menages": "total",
             "- hommes seuls" : "homme_seul",
             "- femmes seules" : "femme_seule",
             "- un couple avec enfant(s)" : "couple_avec_enfant",
