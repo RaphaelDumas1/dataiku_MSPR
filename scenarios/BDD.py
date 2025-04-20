@@ -184,7 +184,7 @@ def buildInsertQuery(table_name, row=None, mapping={}, columns_to_add={}, return
     }
 
 def executeQueries(conn, queries):
-    result = None
+    result_id = None
     try:
         for q in queries:
             query = q["query"]
@@ -193,12 +193,13 @@ def executeQueries(conn, queries):
             
             result = conn.execute(query, **params) if params else conn.execute(query)
             conn.commit()
-            print(has_returning, result.scalar())
+            
             if has_returning:
-                result = result.scalar()
+                result_id = result.scalar()
+            print(result_id, result.scalar())
     except Exception as e:
         conn.rollback()
-    return result
+    return result_id
     
 engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
 
