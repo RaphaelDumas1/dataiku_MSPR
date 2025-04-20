@@ -188,11 +188,11 @@ def executeQueries(conn, queries):
     result_id = None
     try:
         for q in queries:
-            print("uuu", q)
+            
             query = q["query"]
             params = q.get("params", {}) 
             has_returning = q.get("returning", False)
-            
+            print("uuu", query)
             result = conn.execute(query, **params) if params else conn.execute(query)
 
             conn.commit()
