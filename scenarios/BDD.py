@@ -196,11 +196,11 @@ def executeQueries(conn, queries):
             
             result = conn.execute(query, **params) if params else conn.execute(query)
 
-        conn.commit()
-        print("uuu", query, has_returning)
-        if has_returning:
-            result_id = result.scalar()
-        print(result_id, result.scalar())
+            conn.commit()
+            print("uuu", query, has_returning)
+            if has_returning:
+                result_id = result.scalar()
+            print(result_id, result.scalar())
     except Exception as e:
         conn.rollback()
     return result_id
