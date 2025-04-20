@@ -390,7 +390,7 @@ with engine.connect() as conn:
                 for ii, rr in df_presidentielle_filtered.iterrows():
                     col_mapping = {
                         "dim_annee_id" : year_id,
-                        "dim_type_election_id" : type_election_ids["presidentielle"],
+                        "dim_type_election_id" : election_type_ids["presidentielle"],
                         "dim_etiquette_politique_id" : etiquette_politique_ids[rr["couleur"]],
                     }
                     queries.append(buildInsertQuery("fait_participation", rr, {"voix": "total"}, col_mapping))
