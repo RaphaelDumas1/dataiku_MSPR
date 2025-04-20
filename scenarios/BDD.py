@@ -180,7 +180,7 @@ def buildInsertQuery(table_name, row=None, mapping={}, columns_to_add={}, return
     return {
         "query": text(query),
         "params": values_dict,
-        "returning": returning is not None
+        "returning": bool(returning)
     }
 
 def executeQueries(conn, queries):
