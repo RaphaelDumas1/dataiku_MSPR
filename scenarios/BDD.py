@@ -192,11 +192,11 @@ def executeQueries(conn, queries):
             query = q["query"]
             params = q.get("params", {}) 
             has_returning = q.get("returning", False)
-            print("uuu", query)
+            
             result = conn.execute(query, **params) if params else conn.execute(query)
 
             conn.commit()
-            
+            print("uuu", query, has_returning)
             if has_returning:
                 result_id = result.scalar()
             print(result_id, result.scalar())
