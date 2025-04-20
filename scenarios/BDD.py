@@ -189,7 +189,6 @@ def executeQueries(conn, queries):
     print("lll", len(queries))
     try:
         for q in queries:
-            
             query = q["query"]
             params = q.get("params", {}) 
             has_returning = q.get("returning", False)
