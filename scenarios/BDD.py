@@ -189,10 +189,10 @@ def executeQueries(conn, queries):
             query = q["query"]
             params = q.get("params", {}) 
             has_returning = q.get("returning", False)
-            print(has_returning)
+            
             result = conn.execute(query, **params) if params else conn.execute(query)
             conn.commit()
-            
+            print(has_returning, result.scalar())
             if has_returning:
                 return result.scalar()
     except Exception as e:
