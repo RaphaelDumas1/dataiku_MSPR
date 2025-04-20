@@ -124,7 +124,7 @@ datasets = [
             },
             {
                  "name" : rename_columns,
-                 "args" : [{"nombre" : "immigrants"}]
+                 "args" : [{"nombre" : "immigres"}]
             },
         ]
     },
