@@ -244,7 +244,7 @@ with engine.connect() as conn:
     labels = labels_repartition_age + labels_taux_scolarisation
 
     for label in labels: 
-        queries.append(buildInsertQuery("dim_age", None, {}, {"repartition_age" : label}, True))
+        queries.append(buildInsertQuery("dim_age", None, {}, {"repartition_age" : label}, 'id'))
         age_ids.update({label : executeQueries(conn, queries)})
         queries = []
     
@@ -252,7 +252,7 @@ with engine.connect() as conn:
     
     type_elections = ["legislative", "presidentielle"]
     for election in type_elections: 
-        queries.append(buildInsertQuery("dim_type_election", None, {}, {"nom_election" : election}, True))
+        queries.append(buildInsertQuery("dim_type_election", None, {}, {"nom_election" : election}, 'id'))
         election_type_ids.update({election : executeQueries(conn, queries)})
         queries = []
     
@@ -260,7 +260,7 @@ with engine.connect() as conn:
     
     political_labels = ["Blank", "Far_Right", "Right", "Center", "Left", "Far_Left"]
     for label in political_labels: 
-        queries.append(buildInsertQuery("dim_etiquette_politique", None, {}, {"etiquette_politique" : label}, True))
+        queries.append(buildInsertQuery("dim_etiquette_politique", None, {}, {"etiquette_politique" : label}, 'id'))
         etiquette_politique_ids.update({label : executeQueries(conn, queries)})
         queries = []
     
@@ -285,7 +285,7 @@ with engine.connect() as conn:
                 
                 to_add.update({key : value})
                     
-            queries.append(buildInsertQuery(table_name, row, columns, to_add, True))        
+            queries.append(buildInsertQuery(table_name, row, columns, to_add, 'id'))        
             table["id"] = executeQueries(conn, queries)
             queries = []
             
@@ -307,7 +307,7 @@ with engine.connect() as conn:
                             "indicateur" : "indicateur",
                         }
 
-                        queries.append(buildInsertQuery("dim_delinquance", r, delinquance_columns, {}, True))
+                        queries.append(buildInsertQuery("dim_delinquance", r, delinquance_columns, {}, 'id'))
                         delinquance_ids.update({r["unite_de_compte"] : executeQueries(conn, queries)})
                         queries = []
                     
@@ -318,7 +318,7 @@ with engine.connect() as conn:
                         "fait_demographique_id" : table["id"],   
                     }
                     
-                    queries.append(buildInsertQuery("dim_delinquance_has_fait_demograhique", r, {"nombre" : "total"}, col_mapping, False))
+                    queries.append(buildInsertQuery("dim_delinquance_has_fait_demograhique", r, {"nombre" : "total"}, col_mapping))
                     executeQueries(conn, queries)    
                     queries = []
                 
@@ -334,7 +334,7 @@ with engine.connect() as conn:
                             "fait_demographique_id" : table["id"],
                             "total" : row_unique[col]
                         }
-                        queries.append(buildInsertQuery("fait_demographique_has_dim_age", row, {}, col_mapping, False))
+                        queries.append(buildInsertQuery("fait_demographique_has_dim_age", row, {}, col_mapping))
                 executeQueries(conn, queries)
                 queries = []
                 
@@ -355,7 +355,7 @@ with engine.connect() as conn:
                         "dim_annee_id" : year_id,
                         "total" : row_unique[col]
                     }
-                    queries.append(buildInsertQuery("fait_scolarisation", row, {}, col_mapping, False))
+                    queries.append(buildInsertQuery("fait_scolarisation", row, {}, col_mapping))
             executeQueries(conn, queries)
             queries = []
             
@@ -373,7 +373,7 @@ with engine.connect() as conn:
                         "dim_type_election_id" : election_type_ids["legislative"],
                         "dim_etiquette_politique_id" : etiquette_politique_ids[rr["couleur"]],
                     }
-                    queries.append(buildInsertQuery("fait_participation", row, {rr["voix"] : "total"}, col_mapping, False))
+                    queries.append(buildInsertQuery("fait_participation", row, {rr["voix"] : "total"}, col_mapping))
                     queries = []
                         
                         
@@ -388,5 +388,5 @@ with engine.connect() as conn:
                         "dim_type_election_id" : type_election_ids["presidentielle"],
                         "dim_etiquette_politique_id" : etiquette_politique_ids[rr["couleur"]],
                     }
-                    queries.append(buildInsertQuery("fait_participation", row, {rr["voix"] : "total"}, col_mapping, False))
+                    queries.append(buildInsertQuery("fait_participation", row, {rr["voix"] : "total"}, col_mapping))
                     queries = []
