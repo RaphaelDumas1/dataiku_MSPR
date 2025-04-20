@@ -192,6 +192,7 @@ def executeQueries(conn, queries):
             has_returning = q.get("returning", False)
             
             result = conn.execute(query, **params) if params else conn.execute(query)
+            print("uuu")
             conn.commit()
             
             if has_returning:
