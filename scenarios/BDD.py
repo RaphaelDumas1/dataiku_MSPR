@@ -350,7 +350,7 @@ with engine.connect() as conn:
             
             year_id = 0
             for ref_table in tables:
-                if ref_table["name"] == "annee" and ref_table["id"] is not None:
+                if ref_table["name"] == "dim_annee" and ref_table["id"] is not None:
                     year_id = ref_table["id"] 
                     
             for col in row_unique.index:
