@@ -184,9 +184,8 @@ def buildInsertQuery(table_name, row=None, mapping={}, columns_to_add={}, return
     }
 
 def executeQueries(conn, queries):
-    
     result_id = None
-    print("lll", len(queries))
+
     try:
         for q in queries:
             query = q["query"]
