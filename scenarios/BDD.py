@@ -201,7 +201,7 @@ def executeQueries(conn, queries):
                 result_id = result.scalar()
             print(result_id, result.scalar())
     except Exception as e:
-        print("except", query, e, params, has_returning)
+        print("except", query, e, params, returning)
         conn.rollback()
     return result_id
     
