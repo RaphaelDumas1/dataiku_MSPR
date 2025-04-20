@@ -191,13 +191,13 @@ def executeQueries(conn, queries):
         for q in queries:
             query = q["query"]
             params = q.get("params", {}) 
-            has_returning = q["returning"]
+            returning = q["returning"]
             
             result = conn.execute(query, **params) if params else conn.execute(query)
 
             conn.commit()
 
-            if has_returning is not None:
+            if returning is not None:
                 result_id = result.scalar()
             print(result_id, result.scalar())
     except Exception as e:
