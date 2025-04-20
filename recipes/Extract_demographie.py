@@ -73,7 +73,7 @@ datasets = [
             },
             {
                  "name" : rename_columns,
-                 "args" : [{"nombre", "population"}]
+                 "args" : [{"nombre" : "population"}]
             },
         ]
     },
