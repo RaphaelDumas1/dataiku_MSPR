@@ -201,7 +201,7 @@ def executeQueries(conn, queries):
                 
             conn.commit()
 
-            if returning is not None:
+            if returning:
                 print("con")
                 result_id = result.scalar()
             print(result_id, result.scalar())
