@@ -275,7 +275,7 @@ with engine.connect() as conn:
             
             # Delete old datas
             if(row["annee"] == 2006): 
-                queries.append({"query" : text(f"DELETE FROM {table_name};"), "params" : None, "returning" : False},)
+                queries.append({"query" : text(f"DELETE FROM {table_name};"), "params" : None, "returning" : None},)
             
             # Add new columns
             to_add = {}
