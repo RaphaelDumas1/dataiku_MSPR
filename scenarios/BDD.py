@@ -198,6 +198,7 @@ def executeQueries(conn, queries):
                 result = conn.execute(query, **params)
             else :
                 conn.execute(query)
+                
             conn.commit()
 
             if returning is not None:
