@@ -28,7 +28,7 @@
     "sorting": [
       {
         "column": "année",
-        "ascending": true
+        "ascending": false
       }
     ],
     "analysisColumnData": {},
