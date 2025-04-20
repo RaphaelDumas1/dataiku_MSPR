@@ -393,5 +393,5 @@ with engine.connect() as conn:
                         "dim_type_election_id" : type_election_ids["presidentielle"],
                         "dim_etiquette_politique_id" : etiquette_politique_ids[rr["couleur"]],
                     }
-                    queries.append(buildInsertQuery("fait_participation", rr, {rr["voix"] : "total"}, col_mapping))
+                    queries.append(buildInsertQuery("fait_participation", rr, {"voix": "total"}, col_mapping))
                     queries = []
