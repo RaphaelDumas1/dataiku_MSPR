@@ -198,6 +198,7 @@ def executeQueries(conn, queries):
             conn.commit()
 
             if returning is not None:
+                print("con")
                 result_id = result.scalar()
             print(result_id, result.scalar())
     except Exception as e:
