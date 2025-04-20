@@ -109,6 +109,7 @@ tables = [
             "formation brute de capital fixe dont administrations publiques" : "taux_investissement_gouvernement",
             "formation brute de capital fixe dont menages hors entrepreneurs individuels" : "taux_investissement_menages",
             "exportations de biens et de services" : "taux_exportations",
+            "demande interieure hors stocks" : "taux_demande_interieure",
             "impot" : "moyenne_impot",
             "taux d'inflation" : "taux_inflation"
         },
