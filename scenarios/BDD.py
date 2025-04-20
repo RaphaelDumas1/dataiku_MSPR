@@ -226,13 +226,13 @@ with engine.connect() as conn:
     # TABLE dim_age
     
     queries = [
-        text(f"DELETE FROM dim_age;"), 
-        text(f"DELETE FROM dim_delinquance;"), 
-        text(f"DELETE FROM dim_type_election;"), 
-        text(f"DELETE FROM dim_etiquette_politique;"),
-        text(f"DELETE FROM dim_delinquance_has_fait_demograhique;"),
-        text(f"DELETE FROM fait_demographique_has_dim_age;"),
-        text(f"DELETE FROM fait_participation;"),
+        {"query" : text(f"DELETE FROM dim_age;"), params : None, returning : False}, 
+        {"query" : text(f"DELETE FROM dim_delinquance;"), params : None, returning : False}, 
+        {"query" : text(f"DELETE FROM dim_type_election;"), params : None, returning : False}, 
+        {"query" : text(f"DELETE FROM dim_etiquette_politique;"), params : None, returning : False},
+        {"query" : text(f"DELETE FROM dim_delinquance_has_fait_demograhique;"), params : None, returning : False},
+        {"query" : text(f"DELETE FROM fait_demographique_has_dim_age;"), params : None, returning : False},
+        {"query" : text(f"DELETE FROM fait_participation;"), params : None, returning : False}
     ]
 
     ds_repartition_age = dataiku.Dataset("Repartition_age")
