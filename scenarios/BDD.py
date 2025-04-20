@@ -305,7 +305,7 @@ with engine.connect() as conn:
                     # TABLE dim_delinquance
                     
                     # If delinquance doesnt exist
-                    if r["unite_de_compte"] not in delinquance_ids:
+                    if r["indicateur"] not in delinquance_ids:
                         
                         delinquance_columns = {
                             "unite_de_compte" : "type_delinquance",
@@ -313,13 +313,13 @@ with engine.connect() as conn:
                         }
 
                         queries.append(buildInsertQuery("dim_delinquance", r, delinquance_columns, {}, 'id'))
-                        delinquance_ids.update({r["unite_de_compte"] : executeQueries(conn, queries)})
+                        delinquance_ids.update({r["indicateur"] : executeQueries(conn, queries)})
                         queries = []
                     
                     # TABLE dim_delinquance_has_fait_demograhique
                     
                     delinquance_demographique_mapping = {
-                        "dim_delinquance_id" : delinquance_ids[r["unite_de_compte"]],
+                        "dim_delinquance_id" : delinquance_ids[r["indicateur"]],
                         "fait_demographique_id" : table["id"],   
                     }
                     
