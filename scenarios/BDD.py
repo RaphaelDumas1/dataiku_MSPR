@@ -300,7 +300,7 @@ with engine.connect() as conn:
                 ds_delinquance = dataiku.Dataset("Delinquance")
                 df_delinquance = ds_delinquance.get_dataframe()               
                 df_delinquance_filtered = df_delinquance[df_delinquance['annee'] == row["annee"]]
-                print("yyy", len(df_delinquance_filtered))
+                print("ooo", len(df_delinquance_filtered))
                 for i, r in df_delinquance_filtered.iterrows():
                     
                     # TABLE dim_delinquance
