@@ -193,7 +193,7 @@ def executeQueries(conn, queries):
             params = q["params"]
             returning = q["returning"]
             
-            
+            result = None
             if params is not None :
                 result = conn.execute(query, **params)
             else :
