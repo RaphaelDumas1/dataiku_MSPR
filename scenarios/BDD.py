@@ -194,7 +194,7 @@ def executeQueries(conn, queries):
             
             result = None
             if params is not None :
-                result = conn.execute(query, **params)
+                result = conn.execute(query, params)
             else :
                 conn.execute(query)
                 
