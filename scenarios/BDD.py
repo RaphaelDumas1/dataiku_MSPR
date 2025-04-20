@@ -206,6 +206,7 @@ def executeQueries(conn, queries):
     except Exception as e:
         print("except", query, e, params, returning)
         conn.rollback()
+    print("good", query, params, returning)
     return result_id
     
 engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
