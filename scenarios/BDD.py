@@ -315,7 +315,7 @@ with engine.connect() as conn:
                         queries = []
                     
                     # TABLE dim_delinquance_has_fait_demograhique
-                    print("ggg", delinquance_ids[r["indicateur"]])
+
                     delinquance_demographique_mapping = {
                         "dim_delinquance_id" : delinquance_ids[r["indicateur"]],
                         "fait_demographique_id" : table["id"],   
