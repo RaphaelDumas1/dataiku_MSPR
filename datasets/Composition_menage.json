@@ -96,7 +96,7 @@
       {"name":"- un couple sans enfant","type":"bigint"},
       {"name":"- un couple avec enfant(s)","type":"bigint"},
       {"name":"- une famille monoparentale","type":"bigint"},
-      {"name":"ensemble","type":"bigint"}
+      {"name":"ensemble_menages","type":"bigint"}
     ],
     "userModified": false
   },
