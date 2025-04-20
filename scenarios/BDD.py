@@ -184,6 +184,7 @@ def buildInsertQuery(table_name, row=None, mapping={}, columns_to_add={}, return
     }
 
 def executeQueries(conn, queries):
+    result = None
     try:
         for q in queries:
             query = q["query"]
@@ -194,10 +195,11 @@ def executeQueries(conn, queries):
             conn.commit()
             print(has_returning, result.scalar())
             if has_returning:
-                return result.scalar()
+                result = result.scalar()
     except Exception as e:
         conn.rollback()
-
+    return result
+    
 engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
 
 delinquance_ids = {}
