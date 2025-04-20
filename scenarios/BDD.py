@@ -361,7 +361,7 @@ with engine.connect() as conn:
             
             if len(df_legislative_filtered) > 0:
                 for ii, rr in df_legislative_filtered.iterrows():
-                    print("hip", rr["couleur"], etiquette_politique_ids)
+                    print("hip", rr["couleur"], etiquette_politique_ids, delinquance_ids, age_ids, election_type_ids)
                     col_mapping = {
                         "dim_annee_id" : year_id,
                         "dim_type_election_id" : election_type_ids["legislative"],
