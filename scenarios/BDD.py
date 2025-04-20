@@ -161,7 +161,7 @@ def buildInsertQuery(table_name, row=None, mapping={}, columns_to_add={}, return
     
     values_dict = {}
     if row is not None:
-        print(row.index, mapping)
+        # print(row.index, mapping)
         values_dict = {sql_col: row[df_col] for df_col, sql_col in mapping.items()}
         
     values_dict.update(columns_to_add)
