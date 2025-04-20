@@ -191,7 +191,7 @@ def executeQueries(conn, queries):
         for q in queries:
             query = q["query"]
             params = q.get("params", {}) 
-            has_returning = q.get("returning", False)
+            has_returning = q["returning"]
             
             result = conn.execute(query, **params) if params else conn.execute(query)
 
