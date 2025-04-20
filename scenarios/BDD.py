@@ -184,9 +184,10 @@ def buildInsertQuery(table_name, row=None, mapping={}, columns_to_add={}, return
     }
 
 def executeQueries(conn, queries):
-    print("uuu")
+    
     result_id = None
     try:
+        print("uuu", queries)
         for q in queries:
             query = q["query"]
             params = q.get("params", {}) 
