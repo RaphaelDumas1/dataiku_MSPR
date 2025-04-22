@@ -75,14 +75,14 @@ def make_list_values_unique(list):
             seen[values] = 1
             result.append(values)
         else:
-            count = seen[h]
-            new_h = f"{h}_{count}"
-            while new_h in seen:
+            count = seen[values]
+            new_values = f"{values}_{count}"
+            while new_values in seen:
                 count += 1
-                new_h = f"{h}_{count}"
-            seen[h] = count + 1
-            seen[new_h] = 1
-            result.append(new_h)
+                new_h = f"{values}_{count}"
+            seen[values] = count + 1
+            seen[new_values] = 1
+            result.append(new_values)
     return result       
 
 # Used to convert a sheet in a dataframe
