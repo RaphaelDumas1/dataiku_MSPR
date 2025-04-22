@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, delete_where_equal, columns_to_int, columns_to_float, rename_columns, complete_with_inteprolate
+from utils import create_datasets_from_file_sheets, delete_row_where_equal, columns_to_int, columns_to_float, rename_columns, complete_with_inteprolate
 
 datasets = [
     {
@@ -6,16 +6,18 @@ datasets = [
         "functions": [
             {
                 "name" : rename_columns,
-                "args" : [{
-                    "Espérance de vie sans incapacité femme" : "femmes_sans_incapacite",
-                    "Espérance de vie femme" : "femme_total",
-                    "Espérance de vie sans incapacité homme" : "homme_sans_incapacite",
-                    "Espérance de vie homme" : "homme_total"
-                }]
+                "args" : [
+                    {
+                        "Espérance de vie sans incapacité femme" : "femmes_sans_incapacite",
+                        "Espérance de vie femme" : "femme_total",
+                        "Espérance de vie sans incapacité homme" : "homme_sans_incapacite",
+                        "Espérance de vie homme" : "homme_total"
+                    }
+                ]
             
             },
             {
-                "name" : delete_where_equal,
+                "name" : delete_row_where_equal,
                 "args" : ["femmes_sans_incapacite", "nd"]
             
             },
