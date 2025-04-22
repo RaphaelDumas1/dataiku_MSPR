@@ -71,7 +71,8 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructi
         df = create_dataframe_from_sheet(sheet)
         df = execute_instructions_on_dataframe(df, title, instructions[title])
         
-        # Drop empty rows
+        # General post treatment
+        
         df.columns = [unidecode(col).lower() for col in df.columns]
         if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:  
             df = df[df['annee'] >= 2006]
