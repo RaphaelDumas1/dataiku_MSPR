@@ -23,4 +23,4 @@ instructions = {
     ]
 }
 
-create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Securite.xlsx", datasets, [])
+create_datasets_from_file_sheets("MSPR - Securite.xlsx", instructions)
