@@ -58,7 +58,9 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructi
             raise InvalidFileException("Fichier Excel invalide ou corrompu")
         except Exception as e:
             raise RuntimeError(f"Erreur inattendue lors du chargement du fichier : {e}")
-
+    
+     # Iterate over sheets
+    
     for sheet_name in ss.sheetnames:
         sheet = ss[sheet_name]
         title = clean_title(sheet_name)
