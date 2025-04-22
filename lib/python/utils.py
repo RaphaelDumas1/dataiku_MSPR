@@ -34,7 +34,7 @@ def create_dataframe_from_sheet(sheet):
     valid_columns = [(i, col[0]) for i, col in enumerate(transposed) if any(cell is not None and str(cell).strip() for cell in col)]
     headers = make_unique([str(h).strip() for _, h in valid_columns])
     rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
-    return pd.DataFrame(rows, columns=headers)
+    return pd.DataFrame(rows, columns=headers).dropna(how="all")
 
 def strip_headers(df):
     df.columns = df.columns.str.strip()
@@ -69,7 +69,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructi
             continue
         
         df = create_dataframe_from_sheet(sheet)
-        df = df.dropna(how="all")
+        df = df
         
         df = execute_instructions_on_dataframe(df, title, instructions[title])
         
