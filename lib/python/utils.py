@@ -67,7 +67,13 @@ def create_datasets_from_file_sheets(file_name, instructions):
 
         
 
-
+def create_dataframe_from_sheet(sheet):
+    data = list(sheet.values)
+    transposed = list(zip(*data))
+    valid_columns = [(i, col[0]) for i, col in enumerate(transposed) if any(cell is not None and str(cell).strip() for cell in col)]
+    headers = make_unique([str(h).strip() for _, h in valid_columns])
+    rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
+    return pd.DataFrame(rows, columns=headers).dropna(how="all")
 
 
         
@@ -114,13 +120,7 @@ def make_unique(headers):
 
 
 
-def create_dataframe_from_sheet(sheet):
-    data = list(sheet.values)
-    transposed = list(zip(*data))
-    valid_columns = [(i, col[0]) for i, col in enumerate(transposed) if any(cell is not None and str(cell).strip() for cell in col)]
-    headers = make_unique([str(h).strip() for _, h in valid_columns])
-    rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
-    return pd.DataFrame(rows, columns=headers).dropna(how="all")
+
 
 
 ####
