@@ -41,7 +41,7 @@ def strip_headers(df):
     return df
 
 
-def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructions, sheets_to_exclude):
+def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructions):
     
     # Loading source
     
@@ -60,11 +60,12 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructi
             raise RuntimeError(f"Erreur inattendue lors du chargement du fichier : {e}")
 
     for sheet_name in ss.sheetnames:
-        if sheet_name in sheets_to_exclude:
-            continue
-
         sheet = ss[sheet_name]
         title = clean_title(sheet_name)
+        
+        if sheet_name not in instructions:
+            continue
+        
 
         df = create_dataframe_from_sheet(sheet)
         df = df.dropna(how="all")
