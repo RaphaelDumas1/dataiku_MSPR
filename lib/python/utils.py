@@ -168,11 +168,8 @@ def delete_rows_by_index(df, indexes, max_index=None):
     if max_index is not None:
         df = df[df.index <= max_index]
         
-    df = df.drop(index=[i for i in indexes if i < len(df)], errors='ignore') 
-    df = df.reset_index(drop=True)
-    
-    return df
-    
+    return df.drop(index=[i for i in indexes if i < len(df)], errors='ignore').reset_index(drop=True)
+
 
 
 #
