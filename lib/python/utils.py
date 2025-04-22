@@ -89,7 +89,7 @@ def create_datasets_from_file_sheets(file_name, instructions):
 
         # Write dataset
         
-        dataset = dataiku.Dataset(instruction_name)
+        dataset = dataiku.Dataset(title)
         dataset.write_with_schema(df)
         
 #
