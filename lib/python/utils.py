@@ -65,15 +65,15 @@ def create_datasets_from_file_sheets(file_name, instructions):
         dataset = dataiku.Dataset(title)
         dataset.write_with_schema(df)
 
-        
-def make_list_entries_unique(headers):
+# U      
+def make_list_values_unique(list):
     seen = {}
     result = []
-    for h in headers:
-        h = str(h).strip()
-        if h not in seen:
-            seen[h] = 1
-            result.append(h)
+    for values in list:
+        values = str(values).strip()
+        if values not in seen:
+            seen[values] = 1
+            result.append(values)
         else:
             count = seen[h]
             new_h = f"{h}_{count}"
