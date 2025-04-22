@@ -68,7 +68,6 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructi
         if sheet_name not in instructions:
             continue
         
-
         df = create_dataframe_from_sheet(sheet)
         df = df.dropna(how="all")
         
