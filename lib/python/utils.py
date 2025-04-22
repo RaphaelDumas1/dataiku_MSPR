@@ -22,7 +22,8 @@ SOURCE_FOLDER_ID = "Datas"
 #
 
 
-
+# Used in recipes to create datasets for each sheets in Excel file given in parameter, 
+# Intructions parameter is a dict used to pass function(s) to apply before
 def create_datasets_from_file_sheets(file_name, instructions):
     
     # Loading source
