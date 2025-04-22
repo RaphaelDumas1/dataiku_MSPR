@@ -63,10 +63,10 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
     for sheet_name in ss.sheetnames:
         if sheet_name in sheets_to_exclude:
             continue
-        print("ooo", "e" + sheet_name + "e", sheets_to_exclude)
+
         sheet = ss[sheet_name]
         title = clean_title(sheet_name)
-        print("ici", title)
+
         df = create_dataframe_from_sheet(sheet)
         instruction = find_entry_in_instructions(title, datasets_instructions)
         
