@@ -6,6 +6,8 @@ from io import BytesIO
 import re
 from unidecode import unidecode
 
+
+
 #
 # Environnement
 #
@@ -13,9 +15,13 @@ from unidecode import unidecode
 PROJECT_ID = "MSPR"
 SOURCE_FOLDER_ID = "Datas"
 
+
+
 #
 # Global
 #
+
+
 
 def create_datasets_from_file_sheets(file_name, instructions):
     
