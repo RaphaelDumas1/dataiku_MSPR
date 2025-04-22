@@ -9,10 +9,6 @@ datasets = [
                  "args" : ["Année"]
             },
             {
-                 "name" : strip_headers,
-                 "args" : []
-            },
-            {
                  "name" : columns_to_int,
                  "args" : []
             }, 
