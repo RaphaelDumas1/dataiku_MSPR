@@ -78,11 +78,8 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructi
         if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:  
             df = df[df['annee'] >= 2006]
 
-
-
-        # Exportation vers PostgreSQL
-        # df.to_sql(table_name, engine, if_exists='replace', index=False)
-        # Write datas
+        # Write dataset
+        
         dataset = dataiku.Dataset(instruction_name)
         dataset.write_with_schema(df)
 #
