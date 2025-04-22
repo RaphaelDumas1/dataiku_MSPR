@@ -148,6 +148,9 @@ def delete_rows_where_not_equal(df, column, value):
     is_column_in_dataframe(df, column)
     return df[df[column] == value].reset_index(drop=True)
 
+
+
+
 # Delete columns(s) by name in list
 def delete_columns_by_name(df, columns_to_delete):
     return df.drop(columns=columns_to_delete)
