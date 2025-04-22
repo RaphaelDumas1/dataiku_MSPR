@@ -86,7 +86,7 @@ def is_column_in_dataframe(df, column):
 #
 
 # Delete row(s) in dataframe where column equal value
-def delete_where_equal(df, column, value):
+def delete_rows_where_equal(df, column, value):
     is_column_in_dataframe(df, column)
     return df[df[column] != value].reset_index(drop=True)
 
