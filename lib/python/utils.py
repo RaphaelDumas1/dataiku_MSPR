@@ -64,7 +64,12 @@ def create_datasets_from_file_sheets(file_name, instructions):
         
         dataset = dataiku.Dataset(title)
         dataset.write_with_schema(df)
+
         
+        
+def clean_title(title):
+    return '_'.join(title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
+
 
         
 def execute_instructions_on_dataframe(df, instructions):
@@ -75,6 +80,11 @@ def execute_instructions_on_dataframe(df, instructions):
         df = function(df, *args)
     
     return df
+
+
+
+
+
 
 
 
@@ -100,8 +110,7 @@ def make_unique(headers):
 
 
 
-def clean_title(title):
-    return '_'.join(title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
+
 
 
 
