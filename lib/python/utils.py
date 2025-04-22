@@ -69,7 +69,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructi
         df = create_dataframe_from_sheet(sheet)
         df = df.dropna(how="all")
         
-        execute_instruction_on_dataframe(df, title, instructions[title])
+        execute_instructions_on_dataframe(df, title, instructions[title])
         
         # Drop empty rows
         df.columns = [unidecode(col).lower() for col in df.columns]
@@ -347,19 +347,13 @@ def complete_with_inteprolate(df):
 
     return df_full
         
-def execute_instruction_on_dataframe(df, title, instruction):
-    functions = instruction["functions"]
-    instruction_name = instruction["name"]
-    
-    
-   
-    for function in functions:
+def execute_instructions_on_dataframe(df, title, instructions):
+    for instruction in instructions:
         # Set variables for iteration
-        name = function["name"]
-        args = function["args"] if function["args"] is not None else []
+        function = instruction["name"]
+        args = instruction["args"] if instruction["args"] is not None else []
 
-        # Use function
-        df = name(df, *args)
+        df = function(df, *args)
     
     return df
 
