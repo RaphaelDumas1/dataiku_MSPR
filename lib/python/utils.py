@@ -180,6 +180,67 @@ def delete_rows_by_index(df, indexes, max_index=None):
 #
 
 
+def convert_columns(df, columns, decimal_round=None):
+    check_columns_exist(df, columns.keys())
+    
+    for key, value in columns.items():
+        key = key.strip() if isinstance(key, str) else key
+        
+        try:
+            if value == 'int':
+                df = column_to_int(df, key)
+            else if value = 'decimal':
+                df = column_to_decimal(df, key, decimal_round)
+            else if value = 'str':
+                df = column_to_string(df, key)
+        except Exception as e:
+            raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
+
+def column_to_int(df, column):
+    df[column] = (
+        df[column]
+        .astype(str)
+        .str.replace('\xa0', '', regex=False)
+        .str.replace(' ', '', regex=False)
+        .str.replace(',', '.', regex=False)
+        .apply(lambda x: int(float(x)) if x.lower() != 'nan' else pd.NA)
+        .astype("Int64")
+    )
+    return df
+
+def columns_to_float(df, columns=None, round=None):
+
+
+
+            df[column] = df[column].apply(lambda x: float(
+                str(x)
+                .replace('\xa0', '')  # espace insécable
+                .replace(' ', '')     # espace classique
+                .replace(',', '.')    # virgule -> point
+            ) if pd.notnull(x) else x)
+        
+    
+        if round is not None:
+            df[column] = df[column].round(1)
+    
+    return df
+
+def columns_to_string(df, columns=None):
+
+
+            df[column] = df[column].apply(
+                lambda x: str(int(x)) if isinstance(x, float) and x.is_integer()
+                else str(x) if pd.notnull(x)
+                else x
+            )
+
+
+        df[column] = df[column].astype("string")
+
+    return df
+
+
+
 def pivot(df, first_column_name):
     # Pivot
     df.set_index(df.columns[0], inplace=True)
@@ -250,77 +311,7 @@ def process_evolution_trimestrielle_emploi(df):
 
     return pd.DataFrame(new_rows)
 
-def columns_to_int(df, columns=None):
-    if columns is None:
-        columns = df.columns
-    
-    for column in columns:
-        column = column.strip() if isinstance(column, str) else column
 
-        if column not in df.columns:
-            raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
-
-        try:
-            df[column] = df[column].apply(lambda x: int(float(
-                str(x)
-                .replace('\xa0', '') 
-                .replace(' ', '')
-                .replace(',', '.')
-            )) if pd.notnull(x) else x)
-        except Exception as e:
-            raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
-            
-        df[column] = df[column].astype("Int64")
-
-    return df
-
-def columns_to_float(df, columns=None, round=None):
-    if columns is None:
-        columns = df.columns
-
-    for column in columns:
-        column = column.strip() if isinstance(column, str) else column
-
-        if column not in df.columns:
-            raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
-
-        try:
-            df[column] = df[column].apply(lambda x: float(
-                str(x)
-                .replace('\xa0', '')  # espace insécable
-                .replace(' ', '')     # espace classique
-                .replace(',', '.')    # virgule -> point
-            ) if pd.notnull(x) else x)
-        except Exception as e:
-            raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
-    
-        if round is not None:
-            df[column] = df[column].round(1)
-    
-    return df
-
-def columns_to_string(df, columns=None):
-    if columns is None:
-        columns = df.columns
-
-    for column in columns:
-        column = column.strip() if isinstance(column, str) else column
-
-        if column not in df.columns:
-            raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
-
-        try:
-            df[column] = df[column].apply(
-                lambda x: str(int(x)) if isinstance(x, float) and x.is_integer()
-                else str(x) if pd.notnull(x)
-                else x
-            )
-        except Exception as e:
-            raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
-
-        df[column] = df[column].astype("string")
-
-    return df
 
 def add_columns(df, col1, col2, result_column):
     if col1 not in df.columns or col2 not in df.columns:
