@@ -86,8 +86,6 @@ def create_datasets_from_file_sheets(file_name, instructions):
         # Remove years before 2006
         if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:  
             df = df[df['annee'] >= 2006]
-
-        # Write dataset
         
         dataset = dataiku.Dataset(title)
         dataset.write_with_schema(df)
