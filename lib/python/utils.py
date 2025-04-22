@@ -211,6 +211,9 @@ def column_to_decima(df, column, round_to=None):
 
     return df
 
+
+
+# Used to convert the given column of a dataframe to string type
 def column_to_string(df, column):
     df[column] = (
         df[column]
