@@ -226,7 +226,7 @@ def column_to_string(df, column):
 
 
 # Used to convert the types of the columns of a dataframe based on a dict with keys as columns names and value as types ('int, decimal, str)
-def convert_columns(df, columns, decimal_round=None):
+def convert_columns(df, columns):
     check_columns_exist(df, columns.keys())
     
     for key, value in columns.items():
