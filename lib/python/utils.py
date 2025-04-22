@@ -69,8 +69,6 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructi
             continue
         
         df = create_dataframe_from_sheet(sheet)
-        df = df
-        
         df = execute_instructions_on_dataframe(df, title, instructions[title])
         
         # Drop empty rows
