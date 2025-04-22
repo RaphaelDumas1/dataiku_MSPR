@@ -156,7 +156,7 @@ def delete_columns_in_list(df, columns_to_delete):
 
 
 
-# Delete columns(s) to keep only the one(s) in list
+# Used to delete columns(s) to keep only the one(s) in list
 def delete_columns_not_in_list(df, columns_to_keep):
     return df[columns_to_keep]
 
