@@ -82,6 +82,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructi
         
         dataset = dataiku.Dataset(instruction_name)
         dataset.write_with_schema(df)
+        
 #
 # CHECK
 #
