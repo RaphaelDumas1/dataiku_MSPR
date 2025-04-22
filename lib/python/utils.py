@@ -141,8 +141,10 @@ def delete_rows_where_equal(df, column, value):
     is_column_in_dataframe(df, column)
     return df[df[column] != value].reset_index(drop=True)
 
+
+
 # Delete row(s) in dataframe where column not equal value
-def delete_where_not_equal(df, column, value):
+def delete_rows_where_not_equal(df, column, value):
     is_column_in_dataframe(df, column)
     return df[df[column] == value].reset_index(drop=True)
 
