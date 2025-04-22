@@ -136,25 +136,33 @@ def is_column_in_dataframe(df, column):
 
 
 
-# Delete row(s) in dataframe where column equal value
+# Used to delete row(s) in a dataframe where column equal value
 def delete_rows_where_equal(df, column, value):
     is_column_in_dataframe(df, column)
     return df[df[column] != value].reset_index(drop=True)
 
 
 
-# Delete row(s) in dataframe where column not equal value
+# Used to delete row(s) in a dataframe where column not equal value
 def delete_rows_where_not_equal(df, column, value):
     is_column_in_dataframe(df, column)
     return df[df[column] == value].reset_index(drop=True)
 
 
 
-
-# Delete columns(s) by name in a dataframe
-def delete_columns_by_name(df, columns_to_delete):
+# Used to delete columns(s) in list by name in a dataframe
+def delete_columns_in_list(df, columns_to_delete):
     return df.drop(columns=columns_to_delete)
 
+
+
+# Delete columns(s) to keep only the one(s) in list
+def delete_columns_not_in_list(df, columns_to_keep):
+    return df[columns_to_keep]
+
+
+
+# Delete p
 def delete_rows_by_index(df, indexes, delete_after_index=None):
     if delete_after_index is not None:
         df = df[df.index <= delete_after_index]
@@ -164,9 +172,7 @@ def delete_rows_by_index(df, indexes, delete_after_index=None):
     
     return df
     
-# Delete columns(s) by name in list
-def delete_columns__not_in_list(df, columns_to_keep):
-    return df[columns_to_keep]
+
 
 #
 # CONVERT
