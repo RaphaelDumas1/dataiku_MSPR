@@ -124,9 +124,10 @@ def execute_instructions_on_dataframe(df, instructions):
 
 
 # Used to check if a column exists in a dataframe
-def is_column_in_dataframe(df, column):
-    if column not in df.columns:
-        raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
+def check_columns_exist(df, columns):
+    for col in columns:
+        if col not in df.columns:
+            raise ValueError(f"Colonne '{col}' non trouvée dans le DataFrame.")
 
         
         
