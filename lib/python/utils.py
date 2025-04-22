@@ -180,24 +180,8 @@ def delete_rows_by_index(df, indexes, max_index=None):
 #
 
 
-def convert_columns(df, columns, decimal_round=None):
-    check_columns_exist(df, columns.keys())
-    
-    for key, value in columns.items():
-        key = key.strip() if isinstance(key, str) else key
-        
-        try:
-            if value == 'int':
-                df = column_to_int(df, key)
-            else if value = 'decimal':
-                df = column_to_decimal(df, key, decimal_round=None)
-            else if value = 'str':
-                df = column_to_string(df, key)
-        except Exception as e:
-            raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
 
-    return df
-
+# Used to convert the given column of a dataframe to integer type
 def column_to_int(df, column):
     df[column] = (
         df[column]
@@ -210,7 +194,10 @@ def column_to_int(df, column):
     )
     return df
 
-def column_to_float(df, column, round_to=None):
+
+
+# Used to convert the given column of a dataframe to decimal type
+def column_to_decima(df, column, round_to=None):
     df[column] = (
         df[column]
         .astype(str)
@@ -232,6 +219,27 @@ def column_to_string(df, column):
         .astype("string")
     )
     return df
+
+
+def convert_columns(df, columns, decimal_round=None):
+    check_columns_exist(df, columns.keys())
+    
+    for key, value in columns.items():
+        key = key.strip() if isinstance(key, str) else key
+        
+        try:
+            if value == 'int':
+                df = column_to_int(df, key)
+            else if value = 'decimal':
+                df = column_to_decimal(df, key, decimal_round=None)
+            else if value = 'str':
+                df = column_to_string(df, key)
+        except Exception as e:
+            raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
+
+    return df
+
+
 
 
 
