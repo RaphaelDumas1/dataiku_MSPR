@@ -65,7 +65,7 @@ def create_datasets_from_file_sheets(file_name, instructions):
         dataset = dataiku.Dataset(title)
         dataset.write_with_schema(df)
 
-# U      
+# Used to make each element of a list unique by adding a number at the end of it to prevent duplicates   
 def make_list_values_unique(list):
     seen = {}
     result = []
