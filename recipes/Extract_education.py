@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, columns_to_int, columns_to_string, delete_where_not_equal, fill_empty_values, fill_empty_values_with_mean, delete_columns__not_in_list, complete_with_inteprolate
+from utils import create_datasets_from_file_sheets, columns_to_int, columns_to_string, delete_rows_where_not_equal, fill_empty_values, fill_empty_values_with_mean, delete_columns__not_in_list, complete_with_inteprolate
 
 datasets = [
     {
@@ -18,7 +18,7 @@ datasets = [
         "name": "annuaire_des_ecoles_en_france",
         "functions": [
             {
-                "name" : delete_where_not_equal,
+                "name" : delete_rows_where_not_equal,
                 "args" : ["code_departement", 35.0]
             },
             {
