@@ -65,14 +65,36 @@ def create_datasets_from_file_sheets(file_name, instructions):
         dataset = dataiku.Dataset(title)
         dataset.write_with_schema(df)
 
-        
+def make_unique(headers):
+seen = {}
+result = []
+for h in headers:
+    h = str(h).strip()
+    if h not in seen:
+        seen[h] = 1
+        result.append(h)
+    else:
+        count = seen[h]
+        new_h = f"{h}_{count}"
+        while new_h in seen:
+            count += 1
+            new_h = f"{h}_{count}"
+        seen[h] = count + 1
+        seen[new_h] = 1
+        result.append(new_h)
+return result       
 
 def create_dataframe_from_sheet(sheet):
+    # Gat datas in a list
     data = list(sheet.values)
     transposed = list(zip(*data))
+ 
+    # Remove empty columns
     valid_columns = [(i, col[0]) for i, col in enumerate(transposed) if any(cell is not None and str(cell).strip() for cell in col)]
+    
     headers = make_unique([str(h).strip() for _, h in valid_columns])
     rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
+    
     return pd.DataFrame(rows, columns=headers).dropna(how="all")
 
 
@@ -93,24 +115,7 @@ def execute_instructions_on_dataframe(df, instructions):
 
 
 
-def make_unique(headers):
-    seen = {}
-    result = []
-    for h in headers:
-        h = str(h).strip()
-        if h not in seen:
-            seen[h] = 1
-            result.append(h)
-        else:
-            count = seen[h]
-            new_h = f"{h}_{count}"
-            while new_h in seen:
-                count += 1
-                new_h = f"{h}_{count}"
-            seen[h] = count + 1
-            seen[new_h] = 1
-            result.append(new_h)
-    return result
+
 
 
 
