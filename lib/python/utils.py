@@ -196,6 +196,8 @@ def convert_columns(df, columns, decimal_round=None):
         except Exception as e:
             raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
 
+    return df
+
 def column_to_int(df, column):
     df[column] = (
         df[column]
@@ -208,21 +210,18 @@ def column_to_int(df, column):
     )
     return df
 
-def columns_to_float(df, columns=None, round=None):
+def columns_to_float(df, column, round=None):
+    df[column] = (
+        df[column]
+        .astype(str)
+        .str.replace(r'[\s\xa0]', '', regex=True)
+        .str.replace(',', '.', regex=False)
+        .apply(lambda x: float(x) if x.lower() != 'nan' else pd.NA)
+    )
 
+    if round_to is not None:
+        df[column] = df[column].round(round_to)
 
-
-            df[column] = df[column].apply(lambda x: float(
-                str(x)
-                .replace('\xa0', '')  # espace insécable
-                .replace(' ', '')     # espace classique
-                .replace(',', '.')    # virgule -> point
-            ) if pd.notnull(x) else x)
-        
-    
-        if round is not None:
-            df[column] = df[column].round(1)
-    
     return df
 
 def columns_to_string(df, columns=None):
