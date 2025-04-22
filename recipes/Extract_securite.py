@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, strip_headers, columns_to_int, pivot, complete_with_inteprolate
+from utils import create_datasets_from_file_sheets, columns_to_int, pivot, complete_with_inteprolate
 
 instructions = {
     "Administration_penitentiaire" : [
