@@ -48,10 +48,15 @@ def find_entry_in_instructions(title, datasets_instructions):
 
 
 def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructions, sheets_to_exclude):
+    
+    # Loading source
+    
     client = dataiku.api_client()
     project = client.get_project(project_id)
     folder = dataiku.Folder(folder_id, project_key=project.project_key)
-
+    
+    # Loading file sheets
+    
     with folder.get_download_stream(file_name) as file_handle:
         try:
             ss = openpyxl.load_workbook(BytesIO(file_handle.read()))
