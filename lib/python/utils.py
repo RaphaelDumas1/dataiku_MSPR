@@ -210,7 +210,7 @@ def column_to_int(df, column):
     )
     return df
 
-def columns_to_float(df, column, round=None):
+def column_to_float(df, column, round=None):
     df[column] = (
         df[column]
         .astype(str)
