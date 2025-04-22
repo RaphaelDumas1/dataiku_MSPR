@@ -73,9 +73,25 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructi
         title = clean_title(sheet_name)
 
         df = create_dataframe_from_sheet(sheet)
+        df = df.dropna(how="all")
+        
+        
         instruction = find_entry_in_instructions(title, datasets_instructions)
         
         execute_instruction_on_dataframe(df, title, instructions)
+        
+        # Drop empty rows
+        df.columns = [unidecode(col).lower() for col in df.columns]
+        if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:  
+            df = df[df['annee'] >= 2006]
+
+
+
+        # Exportation vers PostgreSQL
+        # df.to_sql(table_name, engine, if_exists='replace', index=False)
+        # Write datas
+        dataset = dataiku.Dataset(instruction_name)
+        dataset.write_with_schema(df)
 #
 # CHECK
 #
@@ -344,7 +360,7 @@ def execute_instruction_on_dataframe(df, title, instruction):
     functions = instruction["functions"]
     instruction_name = instruction["name"]
     
-    df = df.dropna(how="all")
+    
    
     for function in functions:
         # Set variables for iteration
@@ -353,19 +369,8 @@ def execute_instruction_on_dataframe(df, title, instruction):
 
         # Use function
         df = name(df, *args)
-
-    # Drop empty rows
-    df.columns = [unidecode(col).lower() for col in df.columns]
-    if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:  
-        df = df[df['annee'] >= 2006]
-        
-        
-        
-    # Exportation vers PostgreSQL
-    # df.to_sql(table_name, engine, if_exists='replace', index=False)
-    # Write datas
-    dataset = dataiku.Dataset(instruction_name)
-    dataset.write_with_schema(df)
+    
+    return df
 
 def extract_and_concat_to_original(df, interval1, interval2):
     df = df.reset_index(drop=True)
