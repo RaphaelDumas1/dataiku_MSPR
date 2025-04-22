@@ -77,7 +77,7 @@ def create_datasets_from_file_sheets(file_name, instructions):
             continue
         
         df = create_dataframe_from_sheet(sheet)
-        df = execute_instructions_on_dataframe(df, title, instructions[title])
+        df = execute_instructions_on_dataframe(df, instructions[title])
         
         # Post treatment and write dataset
         
