@@ -83,6 +83,7 @@ def create_datasets_from_file_sheets(file_name, instructions):
         
         df.columns = [unidecode(col).lower() for col in df.columns]
         
+        # Remove years before 2006
         if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:  
             df = df[df['annee'] >= 2006]
 
