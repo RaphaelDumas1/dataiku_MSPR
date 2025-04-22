@@ -69,7 +69,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructi
         df = create_dataframe_from_sheet(sheet)
         df = df.dropna(how="all")
         
-        execute_instructions_on_dataframe(df, title, instructions[title])
+        df = execute_instructions_on_dataframe(df, title, instructions[title])
         
         # Drop empty rows
         df.columns = [unidecode(col).lower() for col in df.columns]
