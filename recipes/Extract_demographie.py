@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, pivot, copy_years_range, columns_to_int, add_columns, extract_and_concat_to_original, columns_to_string, delete_columns_by_name, rename_columns, complete_with_inteprolate
+from utils import create_datasets_from_file_sheets, pivot, copy_years_range, columns_to_int, add_columns, extract_and_concat_to_original, columns_to_string, delete_columns_in_list, rename_columns, complete_with_inteprolate
 
 datasets = [
     {
@@ -26,7 +26,7 @@ datasets = [
     #             "args" : [(801, 1603), (1604, 2802)]
     #        },
     #        {
-    #             "name" : delete_columns_by_name,
+    #             "name" : delete_columns_in_list,
     #             "args" : [['Numéro département', 'Nom département', 'Numéro région', 'Nom région', "Lieu résidence"]]
     #        },
     #        {
