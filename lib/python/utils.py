@@ -87,6 +87,8 @@ def make_list_values_unique(list):
             result.append(new_values)
     return result       
 
+
+
 # Used to convert a sheet in a dataframe
 def create_dataframe_from_sheet(sheet):
     # Get datas in a list
