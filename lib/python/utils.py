@@ -49,13 +49,13 @@ def strip_headers(df):
     return df
 
 
-def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructions):
+def create_datasets_from_file_sheets(file_name, instructions):
     
     # Loading source
     
     client = dataiku.api_client()
-    project = client.get_project(project_id)
-    folder = dataiku.Folder(folder_id, project_key=project.project_key)
+    project = client.get_project(PROJECT_ID)
+    folder = dataiku.Folder(SOURCE_FOLDER_ID, project_key=project.project_key)
     
     # Loading file sheets
     
