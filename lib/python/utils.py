@@ -46,7 +46,7 @@ def create_datasets_from_file_sheets(file_name, instructions):
     
     for sheet_name in ss.sheetnames:
         sheet = ss[sheet_name]
-        title = clean_title(sheet_name)
+        title = '_'.join(sheet_name.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
         
         if sheet_name not in instructions:
             continue
@@ -66,9 +66,8 @@ def create_datasets_from_file_sheets(file_name, instructions):
         dataset.write_with_schema(df)
 
         
-        
-def clean_title(title):
-    return '_'.join(title.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
+
+
 
 
         
