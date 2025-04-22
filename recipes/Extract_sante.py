@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets, delete_row_where_equal, columns_to_int, columns_to_float, rename_columns, complete_with_inteprolate
+from utils import create_datasets_from_file_sheets, delete_rows_where_equal, columns_to_int, columns_to_float, rename_columns, complete_with_inteprolate
 
 datasets = [
     {
