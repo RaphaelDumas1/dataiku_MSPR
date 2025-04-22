@@ -6,6 +6,14 @@ from io import BytesIO
 import re
 from unidecode import unidecode
 
+#
+# Environnement
+#
+
+PROJECT_NAME = "MSPR"
+SOURCE_FOLDER_NAME = "Datas"
+
+
 def make_unique(headers):
     seen = {}
     result = []
