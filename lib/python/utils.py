@@ -238,8 +238,8 @@ def convert_columns(df, columns):
             else if value == 'str':
                 df = column_to_string(df, key)
             else if value.startswith('decimal'):
-                round_to = (s.split("_", 1) + [1])[1]
-                df = column_to_decimal(df, key)
+                round_to = (s.split("_", 1) + [None])[1]
+                df = column_to_decimal(df, key, round_to)
             
         except Exception as e:
             raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
