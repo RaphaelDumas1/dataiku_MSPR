@@ -104,7 +104,7 @@ def create_dataframe_from_sheet(sheet):
     return pd.DataFrame(rows, columns=headers).dropna(how="all")
 
 
-        
+# Used to execute each function in instructions on a dataframe   
 def execute_instructions_on_dataframe(df, instructions):
     for instruction in instructions:
         function = instruction["name"]
