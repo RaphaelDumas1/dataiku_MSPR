@@ -190,7 +190,7 @@ def convert_columns(df, columns, decimal_round=None):
             if value == 'int':
                 df = column_to_int(df, key)
             else if value = 'decimal':
-                df = column_to_decimal(df, key, decimal_round)
+                df = column_to_decimal(df, key, decimal_round=None)
             else if value = 'str':
                 df = column_to_string(df, key)
         except Exception as e:
