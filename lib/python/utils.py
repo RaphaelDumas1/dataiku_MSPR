@@ -163,7 +163,7 @@ def delete_columns_not_in_list(df, columns_to_keep):
 
 
 # Used to delete row(s) from a list of indexes
-# The optionnal parameter max index is used to remove rows after the given value
+# The optionnal parameter max_index is used to remove rows after the given value
 def delete_rows_by_index(df, indexes, max_index=None):
     if max_index is not None:
         df = df[df.index <= max_index]
