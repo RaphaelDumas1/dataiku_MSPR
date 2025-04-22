@@ -48,7 +48,7 @@ def create_datasets_from_file_sheets(file_name, instructions):
         sheet = ss[sheet_name]
         title = '_'.join(sheet_name.split()).replace(')', '').replace('(', '').replace('/', '_').replace('.', '_')
         
-        if sheet_name not in instructions:
+        if title not in instructions:
             continue
         
         df = create_dataframe_from_sheet(sheet)
