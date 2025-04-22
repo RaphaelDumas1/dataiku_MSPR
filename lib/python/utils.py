@@ -210,7 +210,7 @@ def column_to_int(df, column):
     )
     return df
 
-def column_to_float(df, column, round=None):
+def column_to_float(df, column, round_to=None):
     df[column] = (
         df[column]
         .astype(str)
@@ -224,18 +224,13 @@ def column_to_float(df, column, round=None):
 
     return df
 
-def columns_to_string(df, columns=None):
-
-
-            df[column] = df[column].apply(
-                lambda x: str(int(x)) if isinstance(x, float) and x.is_integer()
-                else str(x) if pd.notnull(x)
-                else x
-            )
-
-
-        df[column] = df[column].astype("string")
-
+def column_to_string(df, column):
+    df[column] = (
+        df[column]
+        .apply(lambda x: str(int(x)) if isinstance(x, float) and x.is_integer()
+               else str(x) if pd.notnull(x) else pd.NA)
+        .astype("string")
+    )
     return df
 
 
