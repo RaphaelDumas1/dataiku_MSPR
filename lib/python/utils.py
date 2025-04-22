@@ -114,16 +114,22 @@ def execute_instructions_on_dataframe(df, instructions):
         df = function(df, *args)
     
     return df
-        
+
+
+
 #
 # CHECK
 #
 
-# Check if column exists in dataframe
+
+
+# Used to check if a column exists in a dataframe
 def is_column_in_dataframe(df, column):
     if column not in df.columns:
         raise ValueError(f"Colonne '{column}' non trouvée dans le DataFrame.")
 
+        
+        
 #
 # DELETE
 #
