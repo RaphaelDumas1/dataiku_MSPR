@@ -337,7 +337,6 @@ def complete_with_inteprolate(df):
     return df_full
         
 def execute_instruction_on_dataframe(df, title, instruction):
-    engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
     functions = instruction["functions"]
     instruction_name = instruction["name"]
     
