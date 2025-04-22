@@ -57,6 +57,16 @@ def create_datasets_from_file_sheets(file_name, instructions):
         
         dataset = dataiku.Dataset(title)
         dataset.write_with_schema(df)
+        
+
+def execute_instructions_on_dataframe(df, instructions):
+    for instruction in instructions:
+        function = instruction["name"]
+        args = instruction["args"] if instruction["args"] is not None else []
+
+        df = function(df, *args)
+    
+    return df
 
 def make_unique(headers):
     seen = {}
@@ -359,14 +369,7 @@ def complete_with_inteprolate(df):
 
     return df_full
         
-def execute_instructions_on_dataframe(df, instructions):
-    for instruction in instructions:
-        function = instruction["name"]
-        args = instruction["args"] if instruction["args"] is not None else []
 
-        df = function(df, *args)
-    
-    return df
 
 def extract_and_concat_to_original(df, interval1, interval2):
     df = df.reset_index(drop=True)
