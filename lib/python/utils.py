@@ -123,7 +123,7 @@ def execute_instructions_on_dataframe(df, instructions):
 
 
 
-# Used to check if a column exists in a dataframe
+# Used to check if given column(s) exist in a dataframe
 def check_columns_exist(df, columns):
     for col in columns:
         if col not in df.columns:
