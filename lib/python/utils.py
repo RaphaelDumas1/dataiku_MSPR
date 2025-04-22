@@ -40,12 +40,6 @@ def strip_headers(df):
     df.columns = df.columns.str.strip()
     return df
 
-def find_entry_in_instructions(title, datasets_instructions):
-    entry = next((d for d in datasets_instructions if d["name"] == title), None)
-    if entry is None:
-        raise ValueError(f"Aucune entrée trouvée pour le nom : '{title}'")
-    return entry
-
 
 def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructions, sheets_to_exclude):
     
@@ -78,7 +72,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructi
         
         instruction = find_entry_in_instructions(title, datasets_instructions)
         
-        execute_instruction_on_dataframe(df, title, instructions)
+        execute_instruction_on_dataframe(df, title, instructions[title])
         
         # Drop empty rows
         df.columns = [unidecode(col).lower() for col in df.columns]
