@@ -225,7 +225,7 @@ def column_to_string(df, column):
 
 
 
-# Used to convert the types of the columns of a dataframe based on a dict with keys as columns names and value as types ('int, decimal + round, str)
+# Used to convert the types of the columns of a dataframe based on a dict with keys as columns names and value as types ('int, decimal_round, str)
 def convert_columns(df, columns):
     check_columns_exist(df, columns.keys())
     
@@ -235,10 +235,12 @@ def convert_columns(df, columns):
         try:
             if value == 'int':
                 df = column_to_int(df, key)
-            else if value = 'decimal':
-                df = column_to_decimal(df, key)
-            else if value = 'str':
+            else if value == 'str':
                 df = column_to_string(df, key)
+            else if value.startswith('decimal'):
+                round_to = (s.split("_", 1) + [1])[1]
+                df = column_to_decimal(df, key)
+            
         except Exception as e:
             raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
 
