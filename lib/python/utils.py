@@ -117,29 +117,9 @@ def execute_instructions_on_dataframe(df, instructions):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-####
-
-
-
-
+#
+# Global
+#
 
 
 def strip_headers(df):
