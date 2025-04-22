@@ -85,7 +85,7 @@ for h in headers:
 return result       
 
 def create_dataframe_from_sheet(sheet):
-    # Gat datas in a list
+    # Get datas in a list
     data = list(sheet.values)
     transposed = list(zip(*data))
  
