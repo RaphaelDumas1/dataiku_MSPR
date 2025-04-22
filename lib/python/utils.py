@@ -114,20 +114,6 @@ def execute_instructions_on_dataframe(df, instructions):
         df = function(df, *args)
     
     return df
-
-
-
-#
-# Global
-#
-
-
-def strip_headers(df):
-    df.columns = df.columns.str.strip()
-    return df
-
-
-
         
 #
 # CHECK
