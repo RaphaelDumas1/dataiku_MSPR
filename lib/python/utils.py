@@ -47,7 +47,7 @@ def find_entry_in_instructions(title, datasets_instructions):
     return entry
 
 
-def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_instructions, sheets_to_exclude):
+def create_datasets_from_file_sheets(project_id, folder_id, file_name, instructions, sheets_to_exclude):
     client = dataiku.api_client()
     project = client.get_project(project_id)
     folder = dataiku.Folder(folder_id, project_key=project.project_key)
@@ -70,7 +70,7 @@ def create_datasets_from_file_sheets(project_id, folder_id, file_name, datasets_
         df = create_dataframe_from_sheet(sheet)
         instruction = find_entry_in_instructions(title, datasets_instructions)
         
-        execute_instruction_on_dataframe(df, title, instruction)
+        execute_instruction_on_dataframe(df, title, instructions)
 #
 # CHECK
 #
