@@ -162,10 +162,11 @@ def delete_columns_not_in_list(df, columns_to_keep):
 
 
 
-# Delete p
-def delete_rows_by_index(df, indexes, delete_after_index=None):
-    if delete_after_index is not None:
-        df = df[df.index <= delete_after_index]
+# Used to delete row(s) from a list of indexes
+# The parameter max index is used to remove rows after the given value
+def delete_rows_by_index(df, indexes, max_index=None):
+    if max_index is not None:
+        df = df[df.index <= max_index]
         
     df = df.drop(index=[i for i in indexes if i < len(df)], errors='ignore') 
     df = df.reset_index(drop=True)
