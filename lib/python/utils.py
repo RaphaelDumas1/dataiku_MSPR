@@ -10,8 +10,8 @@ from unidecode import unidecode
 # Environnement
 #
 
-PROJECT_NAME = "MSPR"
-SOURCE_FOLDER_NAME = "Datas"
+PROJECT_ID = "MSPR"
+SOURCE_FOLDER_ID = "Datas"
 
 
 def make_unique(headers):
