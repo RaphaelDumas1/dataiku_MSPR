@@ -107,6 +107,14 @@ def create_dataframe_from_sheet(sheet):
     rows = [[row[i] for i, _ in valid_columns] for row in data[1:]]
     return pd.DataFrame(rows, columns=headers).dropna(how="all")
 
+
+####
+
+
+
+
+
+
 def strip_headers(df):
     df.columns = df.columns.str.strip()
     return df
