@@ -356,9 +356,8 @@ def complete_with_inteprolate(df):
 
     return df_full
         
-def execute_instructions_on_dataframe(df, title, instructions):
+def execute_instructions_on_dataframe(df, instructions):
     for instruction in instructions:
-        # Set variables for iteration
         function = instruction["name"]
         args = instruction["args"] if instruction["args"] is not None else []
 
