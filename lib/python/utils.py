@@ -151,7 +151,7 @@ def delete_rows_where_not_equal(df, column, value):
 
 
 
-# Delete columns(s) by name in dataframe
+# Delete columns(s) by name in a dataframe
 def delete_columns_by_name(df, columns_to_delete):
     return df.drop(columns=columns_to_delete)
 
