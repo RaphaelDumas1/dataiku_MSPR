@@ -17,7 +17,7 @@ datasets = [
             
             },
             {
-                "name" : delete_row_where_equal,
+                "name" : delete_rows_where_equal,
                 "args" : ["femmes_sans_incapacite", "nd"]
             
             },
