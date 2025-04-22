@@ -51,13 +51,13 @@ def strip_headers(df):
 
 def create_datasets_from_file_sheets(file_name, instructions):
     
-    # LOADING SOURCE
+    # Loading source
     
     client = dataiku.api_client()
     project = client.get_project(PROJECT_ID)
     folder = dataiku.Folder(SOURCE_FOLDER_ID, project_key=project.project_key)
     
-    # LOADING FILE SHEETS
+    # Loading file sheets
     
     with folder.get_download_stream(file_name) as file_handle:
         try:
@@ -67,7 +67,7 @@ def create_datasets_from_file_sheets(file_name, instructions):
         except Exception as e:
             raise RuntimeError(f"Erreur inattendue lors du chargement du fichier : {e}")
     
-     # ITERATE OVER SHEETS
+     # Iterate over sheets
     
     for sheet_name in ss.sheetnames:
         sheet = ss[sheet_name]
@@ -79,7 +79,7 @@ def create_datasets_from_file_sheets(file_name, instructions):
         df = create_dataframe_from_sheet(sheet)
         df = execute_instructions_on_dataframe(df, title, instructions[title])
         
-        # GENERAL POST TREATMENT
+        # General post treatment
         
         df.columns = [unidecode(col).lower() for col in df.columns]
         
@@ -87,7 +87,7 @@ def create_datasets_from_file_sheets(file_name, instructions):
         if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:  
             df = df[df['annee'] >= 2006]
 
-        # WRITE DATASETS
+        # Write dataset
         
         dataset = dataiku.Dataset(instruction_name)
         dataset.write_with_schema(df)
