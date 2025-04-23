@@ -302,7 +302,8 @@ def complete_with_inteprolate(df):
 
     df_full[num_cols] = df_full[num_cols]\
         .interpolate(method='linear', limit_direction='both')\
-        .ffill().bfill()
+        .ffill()
+        .bfill()
 
     # Reconvertir les colonnes int d'origine
     for col in int_cols:
