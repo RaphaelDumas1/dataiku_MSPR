@@ -253,13 +253,17 @@ def convert_columns(df, columns):
 
 
 
-def fill_empty_values(df, values):
-    check_columns_exist(df, values.keys())
+# Used to fill empty values in a dataframe from a dict with key as column and value as replacement value
+def fill_empty_values(df, values_dict):
+    check_columns_exist(df, values_dict.keys())
     
-    for col, value in values.items():
+    for col, value in values_dict.items():
         df[col] = df[col].fillna("").apply(lambda x: x if str(x).strip() else value)
         
     return df
+
+
+
 
 def fill_empty_values_with_mean(df, columns):
     for col in columns:
