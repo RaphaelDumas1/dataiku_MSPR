@@ -287,7 +287,6 @@ def complete_with_inteprolate(df):
     for col in float_cols:
         non_null = df[col].dropna()
         if not non_null.empty:
-            # Max des nombres de chiffres après la virgule
             float_precision[col] = non_null.map(lambda x: len(str(x).split(".")[1]) if "." in str(x) else 0).max()
         else:
             float_precision[col] = 2  # Valeur par défaut
