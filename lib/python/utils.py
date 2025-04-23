@@ -266,6 +266,8 @@ def fill_empty_values(df, values_dict):
 
 
 def fill_empty_values_with_mean(df, columns):
+    check_columns_exist(df, columns)
+    
     for col in columns:
         is_column_in_dataframe(df, col)
         df[col] = df[col].fillna(df[col].mean())
