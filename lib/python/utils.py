@@ -264,7 +264,7 @@ def fill_empty_values(df, values_dict):
 
 
 
-# Used to fill empty values of numericals columns from a list with the mean of the others values of the column
+# Used to fill empty values of numericals columns from a list with the mean of the others values of the columns
 def fill_empty_values_with_mean(df, columns):
     check_columns_exist(df, columns)
     
