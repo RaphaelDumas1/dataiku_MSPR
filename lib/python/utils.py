@@ -61,14 +61,10 @@ def create_datasets_from_file_sheets(file_name, instructions):
         # Post treatment and write dataset
         
         # Interpolate
-        if instructions.get(title, {}).get("interpolate") != False:
-        
-        # Remove years before 2006 except if not needed
-        if instructions.get(title, {}).get("cut_years") != False:
+        if instructions.get(title, {}).get("post_treatment") != False:
             df = df[df['annee'] >= 2006]
-            
-        
-        # if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:         
+                                
+        # TODO if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:         
         
         dataset = dataiku.Dataset(title)
         dataset.write_with_schema(df)
