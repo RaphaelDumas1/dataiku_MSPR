@@ -283,7 +283,6 @@ def complete_with_inteprolate(df):
     int_cols = df.select_dtypes(include='int').columns.drop('année', errors='ignore')
     float_cols = df.select_dtypes(include='float').columns.drop('année', errors='ignore')
 
-    # Calculer le nombre de décimales significatives par colonne float
     float_precision = {}
     for col in float_cols:
         non_null = df[col].dropna()
