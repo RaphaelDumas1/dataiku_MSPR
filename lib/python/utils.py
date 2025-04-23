@@ -291,7 +291,6 @@ def complete_with_inteprolate(df):
         else:
             float_precision[col] = 2
 
-    # Créer DataFrame avec toutes les années
     full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
 
     # Fusionner avec df
