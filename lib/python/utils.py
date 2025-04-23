@@ -280,9 +280,6 @@ def fill_empty_values_with_mean(df, columns):
     return df
 
 def complete_with_inteprolate(df):
-    df.columns = df.columns.str.lower()
-
-    # Sauvegarder les colonnes int et float d'origine
     int_cols = df.select_dtypes(include='int').columns.drop('année', errors='ignore')
     float_cols = df.select_dtypes(include='float').columns.drop('année', errors='ignore')
 
