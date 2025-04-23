@@ -252,6 +252,61 @@ def convert_columns(df, columns):
 #
 
 
+
+def fill_empty_values(df, columns_defaults):
+    for col, default in columns_defaults.items():
+        is_column_in_dataframe(df, col)
+        df[col] = df[col].fillna("").apply(lambda x: x if str(x).strip() else default)
+    return df
+
+def fill_empty_values_with_mean(df, columns):
+    for col in columns:
+        is_column_in_dataframe(df, col)
+        df[col] = df[col].fillna(df[col].mean())
+    return df
+
+def complete_with_inteprolate(df):
+    df.columns = df.columns.str.lower()
+
+    # Sauvegarder les colonnes int et float d'origine
+    int_cols = df.select_dtypes(include='int').columns.drop('année', errors='ignore')
+    float_cols = df.select_dtypes(include='float').columns.drop('année', errors='ignore')
+
+    # Calculer le nombre de décimales significatives par colonne float
+    float_precision = {}
+    for col in float_cols:
+        non_null = df[col].dropna()
+        if not non_null.empty:
+            # Max des nombres de chiffres après la virgule
+            float_precision[col] = non_null.map(lambda x: len(str(x).split(".")[1]) if "." in str(x) else 0).max()
+        else:
+            float_precision[col] = 2  # Valeur par défaut
+
+    # Créer DataFrame avec toutes les années
+    full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
+
+    # Fusionner avec df
+    df_full = pd.merge(full_years, df, on='année', how='left')
+
+    # Interpolation + extrapolation
+    num_cols = df_full.select_dtypes(include='number').columns.drop('année')
+
+    df_full[num_cols] = df_full[num_cols]\
+        .interpolate(method='linear', limit_direction='both')\
+        .ffill().bfill()
+
+    # Reconvertir les colonnes int d'origine
+    for col in int_cols:
+        df_full[col] = df_full[col].round().astype(int)
+
+    # Arrondir les colonnes float au bon nombre de décimales
+    for col, precision in float_precision.items():
+        df_full[col] = df_full[col].round(precision)
+
+    return df_full
+
+
+
 def pivot(df, first_column_name):
     # Pivot
     df.set_index(df.columns[0], inplace=True)
@@ -349,57 +404,7 @@ def set_row_as_headers(df, index, function=None):
 
     return df
 
-def fill_empty_values(df, columns_defaults):
-    for col, default in columns_defaults.items():
-        is_column_in_dataframe(df, col)
-        df[col] = df[col].fillna("").apply(lambda x: x if str(x).strip() else default)
-    return df
 
-def fill_empty_values_with_mean(df, columns):
-    for col in columns:
-        is_column_in_dataframe(df, col)
-        df[col] = df[col].fillna(df[col].mean())
-    return df
-
-def complete_with_inteprolate(df):
-    df.columns = df.columns.str.lower()
-
-    # Sauvegarder les colonnes int et float d'origine
-    int_cols = df.select_dtypes(include='int').columns.drop('année', errors='ignore')
-    float_cols = df.select_dtypes(include='float').columns.drop('année', errors='ignore')
-
-    # Calculer le nombre de décimales significatives par colonne float
-    float_precision = {}
-    for col in float_cols:
-        non_null = df[col].dropna()
-        if not non_null.empty:
-            # Max des nombres de chiffres après la virgule
-            float_precision[col] = non_null.map(lambda x: len(str(x).split(".")[1]) if "." in str(x) else 0).max()
-        else:
-            float_precision[col] = 2  # Valeur par défaut
-
-    # Créer DataFrame avec toutes les années
-    full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
-
-    # Fusionner avec df
-    df_full = pd.merge(full_years, df, on='année', how='left')
-
-    # Interpolation + extrapolation
-    num_cols = df_full.select_dtypes(include='number').columns.drop('année')
-
-    df_full[num_cols] = df_full[num_cols]\
-        .interpolate(method='linear', limit_direction='both')\
-        .ffill().bfill()
-
-    # Reconvertir les colonnes int d'origine
-    for col in int_cols:
-        df_full[col] = df_full[col].round().astype(int)
-
-    # Arrondir les colonnes float au bon nombre de décimales
-    for col, precision in float_precision.items():
-        df_full[col] = df_full[col].round(precision)
-
-    return df_full
         
 
 
