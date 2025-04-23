@@ -253,10 +253,12 @@ def convert_columns(df, columns):
 
 
 
-def fill_empty_values(df, columns_defaults):
-    for col, default in columns_defaults.items():
-        is_column_in_dataframe(df, col)
-        df[col] = df[col].fillna("").apply(lambda x: x if str(x).strip() else default)
+def fill_empty_values(df, values):
+    check_columns_exist(df, values.keys())
+    
+    for col, value in values.items():
+        df[col] = df[col].fillna("").apply(lambda x: x if str(x).strip() else value)
+        
     return df
 
 def fill_empty_values_with_mean(df, columns):
