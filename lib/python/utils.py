@@ -59,9 +59,11 @@ def create_datasets_from_file_sheets(file_name, instructions):
         df.columns = [unidecode(col).lower() for col in df.columns]
         
         # Post treatment and write dataset
-        
-        # Interpolate
+
         if instructions.get(title, {}).get("post_treatment") != False:
+            # Interpolate
+            
+            
             df = df[df['annee'] >= 2006]
                                 
         # TODO if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:         
