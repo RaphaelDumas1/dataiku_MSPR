@@ -58,12 +58,12 @@ def create_datasets_from_file_sheets(file_name, instructions):
         
         df.columns = [unidecode(col).lower() for col in df.columns]
         
+        # Interpolate except if not needed
+        if instructions.get(title, {}).get("interpolate") != False:
+        
         # Remove years before 2006 except if not needed
         if instructions.get(title, {}).get("cut_years") != False:
             df = df[df['annee'] >= 2006]
-        
-        # Interpolate except if not needed
-        if instructions.get(title, {}).get("interpolate") != False:
             
         
         # if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:         
