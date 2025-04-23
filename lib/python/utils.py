@@ -291,7 +291,7 @@ def complete_with_inteprolate(df):
         if not non_null.empty:
             float_precision[col] = non_null.map(lambda x: len(str(x).split(".")[1]) if "." in str(x) else 0).max()
         else:
-            float_precision[col] = 2
+            float_precision[col] = 1
 
     full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
 
