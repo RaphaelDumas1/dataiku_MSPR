@@ -293,7 +293,6 @@ def complete_with_inteprolate(df):
 
     full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
 
-    # Fusionner avec df
     df_full = pd.merge(full_years, df, on='année', how='left')
 
     # Interpolation + extrapolation
