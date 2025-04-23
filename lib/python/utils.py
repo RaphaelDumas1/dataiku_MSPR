@@ -54,11 +54,13 @@ def create_datasets_from_file_sheets(file_name, instructions):
         df = create_dataframe_from_sheet(sheet)
         df = execute_instructions_on_dataframe(df, instructions[title])
         
-        # Post treatment and write dataset
+        
         
         df.columns = [unidecode(col).lower() for col in df.columns]
         
-        # Interpolate except if not needed
+        # Post treatment and write dataset
+        
+        # Interpolate
         if instructions.get(title, {}).get("interpolate") != False:
         
         # Remove years before 2006 except if not needed
