@@ -9,12 +9,18 @@ instructions = {
              "args" : ["Année"]
         },
         {
-             "name" : columns_to_int,
-             "args" : [["Année", "Nombre de logements"]]
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Nombre de logements" : 'int',
+                 "Part des résidences principales (%)" : 'decimal_1',
+                 "Part des rés. secondaires (yc log. occasionnels) (%)" : "decimal_1",
+                 "Part des logements vacants (%)" : "decimal_1"
+             }]
         },
         {
              "name" : columns_to_float,
-             "args" : [["Part des résidences principales (%)", "Part des rés. secondaires (yc log. occasionnels) (%)", "Part des logements vacants (%)"]]
+             "args" : [[, , ]]
         },
         {
              "name" : complete_with_inteprolate,
