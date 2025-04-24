@@ -35,6 +35,19 @@ instructions = [
                  "Année" : "int",
              }]
         }
+    ],
+    "Population" : [
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : "int",
+                 "Nombre" : "int",
+             }]
+        }
+        {
+             "name" : rename_columns,
+             "args" : [{"Nombre" : "population"}]
+        },
     ]
     {
         "name": ,
@@ -69,21 +82,8 @@ instructions = [
         "functions": 
     },
     {
-        "name": "Population",
-        "functions": [
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-            {
-                 "name" : rename_columns,
-                 "args" : [{"nombre" : "population"}]
-            },
-        ]
+        "name": ,
+        "functions": 
     },
     {
         "name": "Repartition_age",
