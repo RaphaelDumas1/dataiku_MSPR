@@ -44,23 +44,3 @@ def set_row_as_headers(df, index, function=None):
         df.columns = function(df.columns)
 
     return df
-
-
-
-
-def copy_years_range(df):
-    rows = []
-
-    for index, row in df.iterrows():
-        year_range = str(row['Année'])
-        start_year, end_year = map(int, year_range.split('-'))
-
-        if(index == (len(df) - 1)):
-            end_year = end_year + 1
-
-        for year in range(start_year, end_year):
-            new_row = row.copy()
-            new_row['Année'] = str(year)
-            rows.append(new_row)
-    
-    return pd.DataFrame(rows)
