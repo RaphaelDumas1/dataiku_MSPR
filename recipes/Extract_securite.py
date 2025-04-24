@@ -14,12 +14,12 @@ instructions = {
              "name" : convert_columns,
              "args" : [{
                  "Année" : 'int',
-                 "personnes prises en charge" : 'int',
-                 "mesures en cours" : 'int',
-                 "sursis1" : 'int',
-                 "travail d'interet general (tig)2" : 'int',
-                 "liberations conditionnelles3" : 'int',
-                 "autres mesures" : 'int'
+                 "Personnes prises en charge" : 'int',
+                 "Mesures en cours" : 'int',
+                 "Sursis1" : 'int',
+                 "Travail d'interet general (tig)2" : 'int',
+                 "Liberations conditionnelles3" : 'int',
+                 "Autres mesures" : 'int'
              }]
         }, 
     ],
