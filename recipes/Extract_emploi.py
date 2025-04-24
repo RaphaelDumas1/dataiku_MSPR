@@ -7,14 +7,20 @@ from delete import delete_rows_by_index
 datasets = {
     "Taux_de_chomage" : [
         {
-            "name" : columns_to_int,
-            "args" : [["Année"]]
+            "name" : convert_columns,
+            "args" : [{
+                "Année" : 'int'
+            }]
         }
     ],
     "Repartition_des_contrats" : [
         {
-            "name" : columns_to_int,
-            "args" : []
+            "name" : convert_columns,
+            "args" : [{
+                "Année" : 'int',
+                "CDI" : 'int',
+                "CDD" : 'int'
+            }]
         }
     ],
     "Categorie_metiers" : [
@@ -33,8 +39,11 @@ datasets = {
     ],
     "Nombre_de_salarie" : [
         {
-            "name" : columns_to_int,
-            "args" : []
+            "name" : convert_columns,
+            "args" : [{
+                "Année" : 'int',
+                "nombre" : 'int',
+            }]
         }
     ],
     #"Evolution_trimestrielle_emploi" : [
