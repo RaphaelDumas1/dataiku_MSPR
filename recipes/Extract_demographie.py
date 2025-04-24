@@ -43,7 +43,7 @@ instructions = {
                  "Année" : "int",
                  "Nombre" : "int",
              }]
-        }
+        },
         {
              "name" : rename_columns,
              "args" : [{"Nombre" : "population"}]
