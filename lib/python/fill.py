@@ -32,7 +32,7 @@ def fill_with_interpolation(df, columns_to_exlude=[]):
     num_columns = df.select_dtypes(include='number').columns.drop(columns_to_exlude, errors='ignore')
     
     # Interpolation + forward fill + backward fill
-    df[num_cols] = df[num_cols]\
+    df[num_columns] = df[num_columns]\
         .interpolate(method='linear', limit_direction='both')\
         .ffill()\
         .bfill()
