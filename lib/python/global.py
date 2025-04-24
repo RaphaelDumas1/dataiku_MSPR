@@ -68,10 +68,6 @@ def create_datasets_from_file_sheets(file_name, instructions):
         dataset = dataiku.Dataset(title)
         dataset.write_with_schema(df)
         
-        
-        
-      
-
 
 
 # Used to convert a sheet in a dataframe
