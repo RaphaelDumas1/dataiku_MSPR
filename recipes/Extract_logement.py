@@ -66,7 +66,7 @@ instructions = {
                  "Logés gratuitement" : "int",
                  "Ensemble" : "int"
              }]
-        }
+        },
         {
              "name" : rename_columns,
              "args" : [{"ensemble" : "ensemble_logements"}]
