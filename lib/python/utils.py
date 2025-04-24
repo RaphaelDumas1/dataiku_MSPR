@@ -316,7 +316,6 @@ def pivot(df, first_column_name):
     return df
 
 def copy_years_range(df):
-    print("llll", df.columns)
     # Add row for each year in range
     rows = []
 
