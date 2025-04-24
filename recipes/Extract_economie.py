@@ -70,7 +70,7 @@ instructions = {
             "name" : convert_columns,
             "args" : [{
                 "Année" : 'int',
-                "Salaire net" : 'int'
+                "Salaire Net" : 'int'
             }]
         }
     ],
