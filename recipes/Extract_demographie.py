@@ -1,6 +1,6 @@
 from general import create_datasets_from_file_sheets
 from other import pivot, create_column_by_adding_columns_values, rename_columns
-from special import copy_years_range, extract_and_concat_to_original
+from special import copy_years_range, process_quotient_familiale
 from convert import convert_columns
 from delete import delete_columns_in_list
 
@@ -111,7 +111,7 @@ instructions = {
     ],
     #"Quotient_familiale" : [
     #    {
-    #         "name" : extract_and_concat_to_original,
+    #         "name" : process_quotient_familiale,
     #         "args" : [(801, 1603), (1604, 2802)]
     #    },
     #    {
