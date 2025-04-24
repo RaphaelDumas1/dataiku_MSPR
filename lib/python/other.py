@@ -24,3 +24,19 @@ def add_columns(df, col1, col2, result_column):
         raise ValueError(f"Erreur lors de l'addition des colonnes : {e}")
 
     return df
+
+#
+def add_rows_from_column_range(df, column, start, end)
+    df_full = pd.DataFrame({column: range(min(df[column].min(), start), end + 1)})
+    return pd.merge(df_full, df, on=column, how='left')
+
+def rename_columns(df, columns_dict):
+    return df.rename(columns=columns_dict)
+
+def set_row_as_headers(df, index, function=None):
+    df.columns = df.iloc[index]
+    
+    if function is not None:
+        df.columns = function(df.columns)
+
+    return df

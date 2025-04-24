@@ -76,21 +76,7 @@ def process_evolution_trimestrielle_emploi(df):
 
 
 
-#
-def add_rows_from_column_range(df, column, start, end)
-    df_full = pd.DataFrame({column: range(min(df[column].min(), start), end + 1)})
-    return pd.merge(df_full, df, on=column, how='left')
 
-def rename_columns(df, columns_dict):
-    return df.rename(columns=columns_dict)
-
-def set_row_as_headers(df, index, function=None):
-    df.columns = df.iloc[index]
-    
-    if function is not None:
-        df.columns = function(df.columns)
-
-    return df
 
 
         
