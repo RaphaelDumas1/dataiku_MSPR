@@ -28,7 +28,7 @@ def fill_empty_values_with_mean(df, columns):
 def fill_with_interpolation(df, columns_to_exlude=[]):
     int_columns = df.select_dtypes(include='int').columns.drop(columns_to_exlude, errors='ignore')
     float_columns = df.select_dtypes(include='float').columns.drop(columns_to_exlude, errors='ignore')
-    float_precision = get_float_precision(df, float_cols)
+    float_precision = get_float_precision(df, float_columns)
     num_columns = df.select_dtypes(include='number').columns.drop(columns_to_exlude, errors='ignore')
     
     # Interpolation + forward fill + backward fill
@@ -38,10 +38,10 @@ def fill_with_interpolation(df, columns_to_exlude=[]):
         .bfill()
     
     # Convert result to initial types
-    for col in int_cols:
-        df_full[col] = df_full[col].round().astype(int)
+    for col in int_columns:
+        df[col] = df[col].round().astype(int)
 
     for col, precision in float_precision.items():
-        df_full[col] = df_full[col].round(precision)
+        df[col] = df[col].round(precision)
         
     return df
