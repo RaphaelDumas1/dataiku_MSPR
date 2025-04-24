@@ -36,7 +36,7 @@ instructions = {
                 "Année" :'int',
                 " Produit intérieur brut (PIB)" : "decimal_1",
                 "Importations de biens et de services" : "decimal_1",
-                "Dépense de consommation finale" : "decimal_1,
+                "Dépense de consommation finale" : "decimal_1",
                 "Dépense de consommation finale dont ménages" : "decimal_1",
                 "Dépense de consommation finale dont administrations publiques" : "decimal_1",
                 "Formation brute de capital fixe" : "decimal_1",
