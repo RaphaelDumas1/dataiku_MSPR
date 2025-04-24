@@ -47,67 +47,54 @@ datasets = {
         },
 
     ],
-    
+    "Inflation" : [
+        {
+            "name" : set_row_as_headers,
+            "args" : [1]
+        },
+        {
+            "name" : delete_rows_by_index,
+            "args" : [[0, 1, 2], 35]
+        },
+        {
+            "name" : columns_to_int,
+            "args" : [["Année"]]
+        },
+        {
+            "name" : columns_to_float,
+            "args" : [["Taux d'inflation"]]
+        },
+        {
+            "name" : complete_with_inteprolate,
+            "args" : []
+        },
+    ],
+    "Salaire_moyen" : [
+        {
+            "name" : columns_to_int,
+            "args" : []
+        },
+        {
+            "name" : complete_with_inteprolate,
+            "args" : []
+        },
+    ],
+   "Impot_moyen" : [
+        {
+            "name" : columns_to_int,
+            "args" : [["Année"]]
+        },
+        {
+            "name" : columns_to_float,
+            "args" : [["Impot"], 2]
+        },
+        {
+            "name" : complete_with_inteprolate,
+            "args" : []
+        },
+    ] 
 }
-    {
-        "name": ,
-        "functions": 
-    },
-    {
-        "name": "Inflation",
-        "functions": [
-            {
-                "name" : set_row_as_headers,
-                "args" : [1]
-            },
-            {
-                "name" : delete_rows_by_index,
-                "args" : [[0, 1, 2], 35]
-            },
-            {
-                "name" : columns_to_int,
-                "args" : [["Année"]]
-            },
-            {
-                "name" : columns_to_float,
-                "args" : [["Taux d'inflation"]]
-            },
-            {
-                "name" : complete_with_inteprolate,
-                "args" : []
-            },
-        ]
-    },
-    {
-        "name": "Salaire_moyen",
-        "functions": [
-            {
-                "name" : columns_to_int,
-                "args" : []
-            },
-            {
-                "name" : complete_with_inteprolate,
-                "args" : []
-            },
-        ]
-    },
-    {
-        "name": "Impot_moyen",
-        "functions": [
-            {
-                "name" : columns_to_int,
-                "args" : [["Année"]]
-            },
-            {
-                "name" : columns_to_float,
-                "args" : [["Impot"], 2]
-            },
-            {
-                "name" : complete_with_inteprolate,
-                "args" : []
-            },
-        ]
-    },
-]
+
+
 
 create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Economie.xlsx", datasets, [])
