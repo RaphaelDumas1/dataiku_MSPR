@@ -12,9 +12,8 @@ def pivot(df, first_column_name):
 
 
 
-def add_columns(df, col1, col2, result_column):
-    if col1 not in df.columns or col2 not in df.columns:
-        raise ValueError(f"Colonnes '{col1}' ou '{col2}' non trouvées dans le DataFrame.")
+def add_columns(df, first_column, second_column, result_column):
+    check_columns_exist(df, [first_column, second_column])
 
     try:
         df[result_column] = (
