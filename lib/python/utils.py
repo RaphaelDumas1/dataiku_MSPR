@@ -406,6 +406,11 @@ def add_columns(df, col1, col2, result_column):
 
     return df
 
+
+def add_rows_from_column_range(df, column, start, end)
+    df_full = pd.DataFrame({column: range(min(df[column].min(), start), end + 1)})
+    return pd.merge(years, df, on='année', how='left')
+
 def rename_columns(df, columns_dict):
     return df.rename(columns=columns_dict)
 
