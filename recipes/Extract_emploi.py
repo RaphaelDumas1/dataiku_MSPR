@@ -1,5 +1,5 @@
 from general import create_datasets_from_file_sheets
-from special import process_category_metier, process_evolution_trimestrielle_emploi
+from special import process_categorie_metier, process_evolution_trimestrielle_emploi
 from other import pivot, rename_columns, set_row_as_headers
 from convert import convert_columns 
 from delete import delete_rows_by_index
@@ -25,7 +25,7 @@ datasets = {
     ],
     "Categorie_metiers" : [
         {
-             "name" : process_category_metier,
+             "name" : process_categorie_metier,
              "args" : []   
         },
         {
