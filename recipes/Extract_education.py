@@ -3,7 +3,7 @@ from convert import convert_columns
 from delete import delete_rows_where_not_equal, delete_columns_not_in_list
 from fill import fill_empty_values, fill_empty_values_with_mean
 
-datasets = [
+instructions = [
     {
         "name": "Taux_scolarisation",
         "functions": [
@@ -44,4 +44,4 @@ datasets = [
     },
 ]
 
-create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Education.xlsx", datasets, [])
+create_datasets_from_file_sheets("MSPR - Education.xlsx", instructions)
