@@ -48,80 +48,60 @@ instructions = {
              "name" : complete_with_inteprolate,
              "args" : []
         },
-    ] 
+    ],
+    "Statut_occupation_logement" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+        {
+             "name" : columns_to_int,
+             "args" : []
+        },
+        {
+             "name" : complete_with_inteprolate,
+             "args" : []
+        },
+        {
+             "name" : rename_columns,
+             "args" : [{"ensemble" : "ensemble_logements"}]
+        },
+    ],
+    "Composition_menage" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+       {
+             "name" : columns_to_int,
+             "args" : []
+        },
+       {
+             "name" : complete_with_inteprolate,
+             "args" : []
+        },
+       {
+             "name" : rename_columns,
+             "args" : [{"ensemble" : "ensemble_menages"}]
+        },
+    ],
+    "Nombre_enfant" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+        {
+             "name" : columns_to_int,
+             "args" : []
+        },
+        {
+             "name" : complete_with_inteprolate,
+             "args" : []
+        },
+    ]
 }
-    {
-        "name": ,
-        "functions": 
-    },
-    {
-        "name": ,
-        "functions": 
-    },
-    {
-        "name": ,
-        "functions": 
-    },
-    {
-        "name": "Statut_occupation_logement",
-        "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-            {
-                 "name" : rename_columns,
-                 "args" : [{"ensemble" : "ensemble_logements"}]
-            },
-        ]
-    },
-    {
-        "name": "Composition_menage",
-       "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-           {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-           {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-           {
-                 "name" : rename_columns,
-                 "args" : [{"ensemble" : "ensemble_menages"}]
-            },
-        ]
-    },
-    {
-        "name": "Nombre_enfant",
-        "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-        ]
-    }
-]
+ 
 
-create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Logement.xlsx", datasets, [])
+
+create_datasets_from_file_sheets("MSPR - Logement.xlsx", instructions)
 
