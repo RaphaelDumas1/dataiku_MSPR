@@ -137,7 +137,7 @@ for key, df in dfs.items():
             count += 1
 
 final_df['couleur'] = final_df['parti'].map(party_orientation)
-final_df = convert_columns(final_df, [{"année" : 'int', "voix" : 'int'}])
+final_df = convert_columns(final_df, {"année" : 'int', "voix" : 'int'})
 final_df = final_df[final_df['année'] >= 2006]
 
 test = dataiku.Dataset("Legislatives")
