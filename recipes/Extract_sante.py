@@ -43,4 +43,4 @@ instruction = {
 }
 
 
-create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Sante.xlsx", datasets)
+create_datasets_from_file_sheets("MSPR - Sante.xlsx", instructions)
