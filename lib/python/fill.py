@@ -34,7 +34,8 @@ def fill_with_interpolation(df, columns_to_exlude=[]):
         .interpolate(method='linear', limit_direction='both')\
         .ffill()\
         .bfill()
-
+    
+    # Convert result to initial types
     for col in int_cols:
         df_full[col] = df_full[col].round().astype(int)
 
