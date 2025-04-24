@@ -1,3 +1,4 @@
+# Used to pivot a dataframe and rename it first column
 def pivot(df, first_column_name):
     # Pivot
     df.set_index(df.columns[0], inplace=True)
