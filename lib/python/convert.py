@@ -60,7 +60,7 @@ def convert_columns(df, columns):
                 df = column_to_string(df, key)
             elif value.startswith('decimal'):
                 round_to = (value.split("_", 1) + [None])[1]
-                df = column_to_decimal(df, key, round_to)
+                df = column_to_decimal(df, key, int(round_to)
             
         except Exception as e:
             raise ValueError(f"Erreur de conversion dans la colonne '{key}': {e}")
