@@ -5,7 +5,7 @@ from delete import delete_rows_where_equal
 
 
 
-instruction = {
+instructions = {
     "Esperance_de_vie" : [
         {
             "name" : rename_columns,
