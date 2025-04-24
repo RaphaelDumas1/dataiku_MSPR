@@ -56,9 +56,9 @@ def convert_columns(df, columns):
         try:
             if value == 'int':
                 df = column_to_int(df, key)
-            else if value == 'str':
+            elif value == 'str':
                 df = column_to_string(df, key)
-            else if value.startswith('decimal'):
+            elif value.startswith('decimal'):
                 round_to = (s.split("_", 1) + [None])[1]
                 df = column_to_decimal(df, key, round_to)
             
