@@ -1,3 +1,7 @@
+from check import check_columns_exist
+
+
+
 # Used to convert the given column of a dataframe to integer type
 def column_to_int(df, column):
     df[column] = (
