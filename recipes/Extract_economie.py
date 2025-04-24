@@ -1,4 +1,7 @@
-from utils import create_datasets_from_file_sheets, pivot, columns_to_int, columns_to_float, columns_to_float, set_row_as_headers, delete_rows_by_index, make_unique, set_row_as_headers, delete_rows_by_index, rename_columns, complete_with_inteprolate
+from general import create_datasets_from_file_sheets
+from other import pivot, set_row_as_headers, rename_columns
+from convert import convert_columns 
+from delete import delete_rows_by_index
 
 def pib_column(columns):
     return columns.astype(str).str.strip().str.replace(" \(r\)", "", regex=True)
