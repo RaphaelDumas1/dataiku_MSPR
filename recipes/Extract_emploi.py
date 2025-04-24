@@ -4,81 +4,65 @@ from other import pivot, rename_columns, set_row_as_headers
 from convert import convert_columns 
 from delete import delete_rows_by_index
 
-datasets = [
-    {
-        "name": "Taux_de_chomage",
-        "functions": [
-            {
-                "name" : columns_to_int,
-                "args" : [["Année"]]
-            }
-        ]
-    },
-    {
-        "name": "Repartition_des_contrats",
-        "functions": [
-            {
-                "name" : columns_to_int,
-                "args" : []
-            },
-            {
-                "name" : complete_with_inteprolate,
-                "args" : []
-            },
-        ]
-    },
-    {
-        "name": "Categorie_metiers",
-        "functions": [
-            {
-                 "name" : process_category_metier,
-                 "args" : []   
-            },
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]   
-            },
-            {
-                "name" : columns_to_int,
-                "args" : []
-            },
-            {
-                "name" : complete_with_inteprolate,
-                "args" : []
-            },
-        ]
-    },
-    {
-        "name": "Nombre_de_salarie",
-        "functions": [
-            {
-                "name" : columns_to_int,
-                "args" : []
-            },
-            {
-                "name" : complete_with_inteprolate,
-                "args" : []
-            },
-        ]
-    },
-    #{
-    #    "name": "Evolution_trimestrielle_emploi",
-    #    "functions": [
-    #        {
-    #            "name" : process_evolution_trimestrielle_emploi,
-    #            "args" : []
-    #        },
-    #        {
-    #            "name" : rename_columns,
-    #            "args" : [{"None" : "Année"}]
-    #        },
-    #        {
-    #            "name" : columns_to_int,
-    #            "args" : [["Année"]]
-    #        }
-    #    ]
-    #},
-]
+datasets = {
+    "Taux_de_chomage" : [
+        {
+            "name" : columns_to_int,
+            "args" : [["Année"]]
+        }
+    ],
+    "Repartition_des_contrats" : [
+        {
+            "name" : columns_to_int,
+            "args" : []
+        },
+        {
+            "name" : complete_with_inteprolate,
+            "args" : []
+        },
+    ],
+    "Categorie_metiers" : [
+        {
+             "name" : process_category_metier,
+             "args" : []   
+        },
+        {
+             "name" : pivot,
+             "args" : ["Année"]   
+        },
+        {
+            "name" : columns_to_int,
+            "args" : []
+        },
+        {
+            "name" : complete_with_inteprolate,
+            "args" : []
+        },
+    ],
+    "Nombre_de_salarie" : [
+        {
+            "name" : columns_to_int,
+            "args" : []
+        },
+        {
+            "name" : complete_with_inteprolate,
+            "args" : []
+        },
+    ],
+    #"Evolution_trimestrielle_emploi" : [
+    #    {
+    #        "name" : process_evolution_trimestrielle_emploi,
+    #         "args" : []
+    #    },
+    #    {
+    #        "name" : rename_columns,
+    #        "args" : [{"None" : "Année"}]
+    #    },
+    #    {
+    #        "name" : columns_to_int,
+    #        "args" : [["Année"]]
+    #    }
+}
 
 create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Emploi.xlsx", datasets, ["Evolution trimestrielle emploi "])
 
