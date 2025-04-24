@@ -8,13 +8,11 @@ from fill import fill_empty_values, fill_empty_values_with_mean
 instructions = {
     "Taux_scolarisation" : [
         {
-             "name" : columns_to_int,
-             "args" : [["Année"]]
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int'
+             }]
         },
-        {
-             "name" : complete_with_inteprolate,
-             "args" : []
-        }
     ],
     "annuaire_des_ecoles_en_france" : [
         {
