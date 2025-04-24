@@ -1,7 +1,8 @@
 from general import create_datasets_from_file_sheets
 from special import process_category_metier, process_evolution_trimestrielle_emploi
-from other import pivot, rename_columns
-from convert import convert_columns  , delete_rows_by_index, make_unique, set_row_as_headers, complete_with_inteprolate  
+from other import pivot, rename_columns, set_row_as_headers
+from convert import convert_columns 
+from delete import delete_rows_by_index
 
 datasets = [
     {
