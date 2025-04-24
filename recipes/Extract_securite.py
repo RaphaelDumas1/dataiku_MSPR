@@ -19,7 +19,7 @@ instructions = {
                  "sursis1" : 'int',
                  "travail d'interet general (tig)2" : 'int',
                  "liberations conditionnelles3" : 'int',
-                 "autres mesures : 'int"
+                 "autres mesures" : 'int'
              }]
         }, 
     ],
