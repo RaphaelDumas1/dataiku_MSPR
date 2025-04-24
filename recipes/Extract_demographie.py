@@ -71,6 +71,19 @@ instructions = [
                  "Population totale": 'int'
              }]
         }
+    ],
+    "Nombre_dimmigre" : [
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : "int",
+                 "Nombre" : "int",
+             }]
+        }
+        {
+             "name" : rename_columns,
+             "args" : [{"Nombre" : "immigres"}]
+        },
     ]
     {
         "name": ,
@@ -119,21 +132,8 @@ instructions = [
         "functions": 
     },
     {
-        "name": "Nombre_dimmigre",
-        "functions": [
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-            {
-                 "name" : rename_columns,
-                 "args" : [{"nombre" : "immigres"}]
-            },
-        ]
+        "name": ,
+        "functions": 
     },
     {
         "name": "Taux_de_pauvrete",
