@@ -36,15 +36,15 @@ instructions = {
             "name" : convert_columns,
             "args" : [{
                 "Année" : 'int',
-                'agriculteurs exploitants' : 'int',
-                "artisans, commercants, chefs entreprise" : 'int',
-                "cadres et professions intellectuelles superieures" : 'int',
-                "professions intermediaires": 'int',
-                "employes" : 'int',
-                "ouvriers" : 'int',
-                "retraites" : 'int',
-                "autres personnes sans activite professionnelle" : 'int',
-                "total" : 'int'
+                'Agriculteurs exploitants' : 'int',
+                "Artisans, commerçants, chefs entreprise" : 'int',
+                "Cadres et professions intellectuelles supérieures" : 'int',
+                "Professions intermédiaires": 'int',
+                "Employés" : 'int',
+                "Ouvriers" : 'int',
+                "Retraités" : 'int',
+                "Autres personnes sans activité professionnelle" : 'int',
+                "Total" : 'int'
             }]
         }
     ],
