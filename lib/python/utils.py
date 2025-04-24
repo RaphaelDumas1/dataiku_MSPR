@@ -416,6 +416,13 @@ def get_float_precision(df, float_cols):
             float_precision[col] = 1
     return float_precision
 
+def interpolate_and_fill(df, exclude_cols=['année']):
+    num_cols = df.select_dtypes(include='number').columns.drop(exclude_cols, errors='ignore')
+    df[num_cols] = df[num_cols]\
+        .interpolate(method='linear', limit_direction='both')\
+        .ffill()\
+        .bfill()
+    return df
 
 #
 def add_rows_from_column_range(df, column, start, end)
