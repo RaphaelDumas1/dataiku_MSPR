@@ -2,61 +2,65 @@ from general import create_datasets_from_file_sheets
 from other import pivot, rename_columns
 from convert import convert_columns 
 
-datasets = [
+instructions = {
+    "Logement" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+        {
+             "name" : columns_to_int,
+             "args" : [["Année", "Nombre de logements"]]
+        },
+        {
+             "name" : columns_to_float,
+             "args" : [["Part des résidences principales (%)", "Part des rés. secondaires (yc log. occasionnels) (%)", "Part des logements vacants (%)"]]
+        },
+        {
+             "name" : complete_with_inteprolate,
+             "args" : []
+        },
+    ],
+    "Type_logement" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+        {
+             "name" : columns_to_int,
+             "args" : []
+        },
+        {
+             "name" : complete_with_inteprolate,
+             "args" : []
+        },
+    ],
+    "Categorie_logement" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+        {
+             "name" : columns_to_int,
+             "args" : []
+        },
+        {
+             "name" : complete_with_inteprolate,
+             "args" : []
+        },
+    ] 
+}
     {
-        "name": "Logement",
-        "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : [["Année", "Nombre de logements"]]
-            },
-            {
-                 "name" : columns_to_float,
-                 "args" : [["Part des résidences principales (%)", "Part des rés. secondaires (yc log. occasionnels) (%)", "Part des logements vacants (%)"]]
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-        ]
+        "name": ,
+        "functions": 
     },
     {
-        "name": "Type_logement",
-        "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-        ]
+        "name": ,
+        "functions": 
     },
     {
-        "name": "Categorie_logement",
-        "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-        ]
+        "name": ,
+        "functions": 
     },
     {
         "name": "Statut_occupation_logement",
