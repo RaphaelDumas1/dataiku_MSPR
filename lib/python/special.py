@@ -44,7 +44,8 @@ def process_evolution_trimestrielle_emploi(df):
 
 
 
-def extract_and_concat_to_original(df, interval1, interval2):
+# Special treatment for evolution trimestrielle emploi
+def process_quotient_familiale(df, interval1, interval2):
     df = df.reset_index(drop=True)
     # Fonction d'extraction
     def extract(df, start, end):
