@@ -18,7 +18,7 @@ def column_to_int(df, column):
 
 
 # Used to convert the given column of a dataframe to decimal type
-def column_to_decima(df, column, round_to=None):
+def column_to_decimal(df, column, round_to=None):
     df[column] = (
         df[column]
         .astype(str)
