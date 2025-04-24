@@ -3,16 +3,16 @@
   "color": "#087ABF",
   "items": [
     {
-      "objectId": "Extract_education",
-      "objectType": "RECIPE"
-    },
-    {
       "objectId": "Taux_scolarisation",
       "objectType": "DATASET"
     },
     {
       "objectId": "annuaire_des_ecoles_en_france",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "extract_education",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],

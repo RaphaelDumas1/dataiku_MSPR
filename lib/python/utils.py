@@ -1,13 +1,24 @@
-def get_float_precision(df, float_cols):
-    float_precision = {}
-    for col in float_cols:
+import dataiku
+
+
+
+# Used to get a dataframe from a dataset name 
+def get_dataframe_from_dataset(dataset_name):
+    ds = dataiku.Dataset(dataset_name)   
+    return ds.get_dataframe()
+
+
+
+# Used to get precision of decimal column(s) as dict
+def get_decimal_precision(df, decimal_cols):
+    decimal_precision = {}
+    for col in decimal_cols:
         non_null = df[col].dropna()
         if not non_null.empty:
-            float_precision[col] = non_null.map(lambda x: len(str(x).split(".")[1]) if "." in str(x) else 0).max()
+            decimal_precision[col] = non_null.map(lambda x: len(str(x).split(".")[1]) if "." in str(x) else 0).max()
         else:
-            float_precision[col] = 1
-    return float_precision
-
+            decimal_precision[col] = 1
+    return decimal_precision
 
 
 

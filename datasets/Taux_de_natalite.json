@@ -88,7 +88,7 @@
   "schema": {
     "columns": [
       {"name":"annee","type":"bigint"},
-      {"name":"taux de natalite","type":"double"}
+      {"name":"taux_natalite","type":"double"}
     ],
     "userModified": false
   },

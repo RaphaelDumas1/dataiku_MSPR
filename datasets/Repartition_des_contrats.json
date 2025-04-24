@@ -88,8 +88,8 @@
   "schema": {
     "columns": [
       {"name":"annee","type":"bigint"},
-      {"name":"cdd","type":"bigint"},
-      {"name":"cdi","type":"bigint"}
+      {"name":"nombre_cdd","type":"bigint"},
+      {"name":"nombre_cdi","type":"bigint"}
     ],
     "userModified": false
   },

@@ -16,21 +16,21 @@ def delete_rows_where_not_equal(df, column, value):
 
 
 
-# Used to delete columns(s) in list by name in a dataframe
+# Used to delete columns(s) in a dataframe from a list of column name(s) 
 def delete_columns_in_list(df, columns_to_delete):
     check_columns_exist(df, columns_to_delete)
     return df.drop(columns=columns_to_delete)
 
 
 
-# Used to delete columns(s) to keep only the one(s) in list
+# Used to delete columns(s) in a dataframe to keep only the one(s) in list
 def delete_columns_not_in_list(df, columns_to_keep):
     check_columns_exist(df, columns_to_keep)
     return df[columns_to_keep]
 
 
 
-# Used to delete row(s) from a list of indexes
+# Used to delete row(s) from a list of indexe(s)
 # The optionnal parameter max_index is used to remove rows after the given value
 def delete_rows_by_index(df, indexes, max_index=None):
     if max_index is not None:

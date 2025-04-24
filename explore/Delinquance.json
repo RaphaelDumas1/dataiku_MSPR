@@ -23,12 +23,7 @@
       "individualColumnsRules": [],
       "valueColoringMode": "HASH"
     },
-    "sorting": [
-      {
-        "column": "annee",
-        "ascending": false
-      }
-    ],
+    "sorting": [],
     "analysisColumnData": {},
     "explorationSampling": {
       "selection": {

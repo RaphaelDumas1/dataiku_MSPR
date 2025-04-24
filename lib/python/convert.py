@@ -1,4 +1,5 @@
 from check import check_columns_exist
+import pandas as pd
 
 
 
@@ -39,15 +40,21 @@ def column_to_string(df, column):
     df[column] = (
         df[column]
         .apply(lambda x: str(int(x)) if isinstance(x, float) and x.is_integer()
-               else str(x) if pd.notnull(x) else pd.NA)
+                else str(x) if pd.notnull(x) else pd.NA)
         .astype("string")
     )
     return df
 
 
 
-# Used to convert the types of the columns of a dataframe based on a dict with keys as columns names and value as types (int, decimal_round, str)
-def convert_columns(df, columns):
+# Used to convert the type of the column(s) of a dataframe based on a dict with key(s) as column name(s) and value(s) as type(s) (int, decimal_round, str)
+# If type is given directly instead of dict then convert all colum(s) of dataframe to this type 
+def convert_columns(df, columns_or_type):
+    columns = columns_or_type
+    
+    if not isinstance(columns, dict):
+        columns = {key: columns_or_type for key in df.columns}
+    
     check_columns_exist(df, columns.keys())
     
     for key, value in columns.items():

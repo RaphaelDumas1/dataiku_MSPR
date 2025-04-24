@@ -15,12 +15,12 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "Extract_emploi",
-      "objectType": "RECIPE"
-    },
-    {
       "objectId": "Repartition_des_contrats",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "extract_emploi",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],

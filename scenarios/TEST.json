@@ -1,6 +1,6 @@
 {
   "type": "custom_python",
-  "name": "test",
+  "name": "export_as_CSVs",
   "active": false,
   "checklists": {
     "checklists": []

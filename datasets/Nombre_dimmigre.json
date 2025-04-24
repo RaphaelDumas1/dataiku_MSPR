@@ -88,7 +88,7 @@
   "schema": {
     "columns": [
       {"name":"annee","type":"bigint"},
-      {"name":"immigres","type":"bigint"}
+      {"name":"nombre_immigrant","type":"bigint"}
     ],
     "userModified": false
   },
