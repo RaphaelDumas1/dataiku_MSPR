@@ -106,7 +106,7 @@ instructions = {
              "name" : convert_columns,
              "args" : [{
                  "Année" : 'int',
-                 "Aucun enfant : 'int',
+                 "Aucun enfant" : 'int',
                  "1 enfant" : 'int',
                  "2 enfants" : 'int',
                  "3 enfants" : "int",
