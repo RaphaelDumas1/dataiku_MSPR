@@ -32,9 +32,11 @@ instructions = {
              "args" : [["nombre_d_eleves"]]
         },
         {
-             "name" : columns_to_int,
-             "args" : [["nombre_d_eleves"]]
-        }
+             "name" : convert_columns,
+             "args" : [{
+                 "nombre_d_eleves" : 'int'
+             }]
+        },
     ]
 }
 
