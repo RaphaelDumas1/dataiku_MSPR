@@ -57,13 +57,16 @@ instructions = {
              "args" : ["Année"]
         },
         {
-             "name" : columns_to_int,
-             "args" : []
-        },
-        {
-             "name" : complete_with_inteprolate,
-             "args" : []
-        },
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Propriétaires" : 'int',
+                 "Locataires" : 'int',
+                 "- dont locataires d'un logement HLM loué vide" : 'int',
+                 "Logés gratuitement" : "int",
+                 "Ensemble" : "int"
+             }]
+        }
         {
              "name" : rename_columns,
              "args" : [{"ensemble" : "ensemble_logements"}]
