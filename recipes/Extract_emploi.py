@@ -53,7 +53,7 @@ instructions = {
             "name" : convert_columns,
             "args" : [{
                 "Année" : 'int',
-                "total" : 'int',
+                "Nombre de salarie" : 'int',
             }]
         }
     ],
