@@ -1,7 +1,7 @@
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
-from utils import columns_to_int
+from convert import convert_columns
 
 party_orientation = {
     # Far-left parties
@@ -137,7 +137,7 @@ for key, df in dfs.items():
             count += 1
 
 final_df['couleur'] = final_df['parti'].map(party_orientation)
-final_df = columns_to_int(final_df, ["année", "voix"])
+final_df = convert_columns(final_df, [{"année" : 'int', "voix" : 'int'}])
 final_df = final_df[final_df['année'] >= 2006]
 
 test = dataiku.Dataset("Legislatives")
