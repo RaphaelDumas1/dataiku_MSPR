@@ -285,7 +285,7 @@ def set_years_window_(df):
     
 
 
-def set_years_window_(df):
+def interpolate(df):
     int_cols = df.select_dtypes(include='int').columns.drop('année', errors='ignore')
     float_cols = df.select_dtypes(include='float').columns.drop('année', errors='ignore')
     
