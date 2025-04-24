@@ -59,7 +59,7 @@ def create_datasets_from_file_sheets(file_name, instructions):
         
         df.columns = [unidecode(col).lower() for col in df.columns]
 
-        if instructions.get(title, {}).get("post_treatment") != False:
+        if instructions[title].get("post_treatment") != False:
             df = add_rows_from_column_range(df, "annee", 2006, 2024)
             df = fill_with_interpolation(df, "annee")                    
                                 
