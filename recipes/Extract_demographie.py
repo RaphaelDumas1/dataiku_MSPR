@@ -63,13 +63,14 @@ instructions = [
              "args" : [["Population femme", "Population homme"], "Population totale"]
         },
         {
-             "name" : columns_to_int,
-             "args" : []
-        },
-        {
-             "name" : complete_with_inteprolate,
-             "args" : []
-        },
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : "int",
+                 "Population femme" : 'int',
+                 "Population femme" : 'int'
+                 "Population totale": 'int'
+             }]
+        }
     ]
     {
         "name": ,
