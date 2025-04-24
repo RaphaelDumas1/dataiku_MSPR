@@ -31,21 +31,22 @@ instructions = {
             }]
         },
         {
-            "name" : columns_to_int,
-            "args" : [["Année"]]
+            "name" : convert_columns,
+            "args" : [{
+                "Année" :'int',
+                " Produit intérieur brut (PIB)" : "decimal_1",
+                "Importations de biens et de services" : "decimal_1",
+                "Dépense de consommation finale" : "decimal_1,
+                "Dépense de consommation finale dont ménages" : "decimal_1",
+                "Dépense de consommation finale dont administrations publiques" : "decimal_1",
+                "Formation brute de capital fixe" : "decimal_1",
+                "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières" : "decimal_1",
+                "Formation brute de capital fixe dont administrations publiques" : "decimal_1",
+                " Formation brute de capital fixe dont ménages hors entrepreneurs individuels" : "decimal_1",
+                "Exportations de biens et de services" : "decimal_1",
+                "Demande intérieure hors stocks" : "decimal_1"
+            }]
         },
-        {
-            "name" : columns_to_float,
-            "args" : [[" Produit intérieur brut (PIB)", "Importations de biens et de services", "Dépense de consommation finale", "Dépense de consommation finale dont ménages",
-                      "Dépense de consommation finale dont administrations publiques", "Formation brute de capital fixe", "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières",
-                      "Formation brute de capital fixe dont administrations publiques", " Formation brute de capital fixe dont ménages hors entrepreneurs individuels", "Exportations de biens et de services",
-                      "Demande intérieure hors stocks"], 1]
-        },
-        {
-            "name" : complete_with_inteprolate,
-            "args" : []
-        },
-
     ],
     "Inflation" : [
         {
@@ -57,41 +58,30 @@ instructions = {
             "args" : [[0, 1, 2], 35]
         },
         {
-            "name" : columns_to_int,
-            "args" : [["Année"]]
-        },
-        {
-            "name" : columns_to_float,
-            "args" : [["Taux d'inflation"]]
-        },
-        {
-            "name" : complete_with_inteprolate,
-            "args" : []
-        },
+            "name" : convert_columns,
+            "args" : [{
+                "Année" : 'int',
+                "Taux d'inflation" : 'decimal_1'
+            }]
+        }
     ],
     "Salaire_moyen" : [
         {
-            "name" : columns_to_int,
-            "args" : []
-        },
-        {
-            "name" : complete_with_inteprolate,
-            "args" : []
-        },
+            "name" : convert_columns,
+            "args" : [{
+                "Année" : 'int',
+                "Salaire net" : 'int'
+            }]
+        }
     ],
    "Impot_moyen" : [
         {
-            "name" : columns_to_int,
-            "args" : [["Année"]]
-        },
-        {
-            "name" : columns_to_float,
-            "args" : [["Impot"], 2]
-        },
-        {
-            "name" : complete_with_inteprolate,
-            "args" : []
-        },
+            "name" : convert_columns,
+            "args" : [{
+                "Année" : 'int',
+                "Impot" : 'decimal_2'
+            }]
+        }
     ] 
 }
 
