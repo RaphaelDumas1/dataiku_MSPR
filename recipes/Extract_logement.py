@@ -17,15 +17,7 @@ instructions = {
                  "Part des rés. secondaires (yc log. occasionnels) (%)" : "decimal_1",
                  "Part des logements vacants (%)" : "decimal_1"
              }]
-        },
-        {
-             "name" : columns_to_float,
-             "args" : [[, , ]]
-        },
-        {
-             "name" : complete_with_inteprolate,
-             "args" : []
-        },
+        }
     ],
     "Type_logement" : [
         {
