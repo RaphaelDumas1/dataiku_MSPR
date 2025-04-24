@@ -280,8 +280,6 @@ def fill_empty_values_with_mean(df, columns):
         df[col] = df[col].fillna(df[col].mean())
         
     return df
-
-def set_years_window_(df):
     
 
 
