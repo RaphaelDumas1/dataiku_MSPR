@@ -34,7 +34,7 @@ instructions = {
             "name" : convert_columns,
             "args" : [{
                 "Année" :'int',
-                " Produit intérieur brut (PIB)" : "decimal_1",
+                "Produit intérieur brut (PIB)" : "decimal_1",
                 "Importations de biens et de services" : "decimal_1",
                 "Dépense de consommation finale" : "decimal_1",
                 "Dépense de consommation finale dont ménages" : "decimal_1",
