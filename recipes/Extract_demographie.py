@@ -48,6 +48,14 @@ instructions = [
              "name" : rename_columns,
              "args" : [{"Nombre" : "population"}]
         },
+    ],
+    "Repartition_age" : [
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : "int",
+             }]
+        }
     ]
     {
         "name": ,
@@ -86,16 +94,9 @@ instructions = [
         "functions": 
     },
     {
-        "name": "Repartition_age",
+        "name": ,
         "functions": [
-            {
-                 "name" : columns_to_int,
-                 "args" : [["Année"]]
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
+            
         ]
     },
     {
