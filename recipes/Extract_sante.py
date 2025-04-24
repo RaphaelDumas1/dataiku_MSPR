@@ -25,20 +25,15 @@ instruction = {
 
         },
         {
-            "name" : columns_to_int,
-            "args" : [["Année"]]
-
-        },
-        {
-            "name" : columns_to_float,
-            "args" : [["femmes_sans_incapacite", "femme_total", "homme_sans_incapacite", "homme_total"], 1]
-
-        },
-        {
-            "name" : complete_with_inteprolate,
-            "args" : []
-
-        },
+            "name" : convert_columns,
+            "args" : [{
+                "Année" : 'int',
+                "femmes_sans_incapacite" : 'decimal_1', 
+                "femme_total": 'decimal_1',
+                "homme_sans_incapacite": 'decimal_1', 
+                "homme_total" : 'decimal_1'
+            }]
+        }
     ]
 }
 
