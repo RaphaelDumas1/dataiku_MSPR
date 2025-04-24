@@ -301,39 +301,6 @@ def fill_with_interpolate(df, columns_to_exlude=[]):
         
     return df
 
-def interpolate(df):
-    
-    
-    # Register float precision
-    float_precision = {}
-    for col in float_cols:
-        non_null = df[col].dropna()
-        if not non_null.empty:
-            float_precision[col] = non_null.map(lambda x: len(str(x).split(".")[1]) if "." in str(x) else 0).max()
-        else:
-            float_precision[col] = 1
-
-    full_years = pd.DataFrame({'année': range(min(df['année'].min(), 2006), 2025)})
-
-    df_full = pd.merge(full_years, df, on='année', how='left')
-
-    # Interpolation + extrapolation
-    num_cols = df_full.select_dtypes(include='number').columns.drop('année')
-
-    df_full[num_cols] = df_full[num_cols]\
-        .interpolate(method='linear', limit_direction='both')\
-        .ffill()
-        .bfill()
-
-    # Reconvertir les colonnes int d'origine
-    for col in int_cols:
-        df_full[col] = df_full[col].round().astype(int)
-
-    # Arrondir les colonnes float au bon nombre de décimales
-    for col, precision in float_precision.items():
-        df_full[col] = df_full[col].round(precision)
-
-    return df_full
 
 
 
