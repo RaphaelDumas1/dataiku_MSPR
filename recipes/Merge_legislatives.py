@@ -50,43 +50,43 @@ dfs = {
     },
     "2022" : {
         "df" : legislative_2022.get_dataframe(),
-        "first_party_col_name" : "code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 2,
         "cycle_length" : 5,
     },
     "2017" : {
         "df" : legislative_2017.get_dataframe(),
-        "first_party_col_name" : "code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 2,
         "cycle_length" : 5,
     },
     "2012" : {
         "df" : legislative_2012.get_dataframe(),
-        "first_party_col_name" : "code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 3,
         "cycle_length" : 5,
     },
     "2007" : {
         "df" : legislative_2007.get_dataframe(),
-        "first_party_col_name" : "code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 3,
         "cycle_length" : 5,
     },
     "2002" : {
         "df" : legislative_2002.get_dataframe(),
-        "first_party_col_name" : "code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 3,
         "cycle_length" : 5,
     },
     "1997" : {
         "df" : legislative_1997.get_dataframe(),
-        "first_party_col_name" : "code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 3,
         "cycle_length" : 5,
     },
     "1993" : {
         "df" : legislative_1993.get_dataframe(),
-        "first_party_col_name" : "code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 3,
         "cycle_length" : 3,
     },
@@ -107,9 +107,9 @@ for key, df in dfs.items():
     for index, (header, value) in enumerate(zip(headers, row)):
         
         # Create new row for blank votes
-        if(header == "Blancs" or header == "Nuls" or header == "Blancs et nuls"):
+        if(header == "blancs" or header == "nuls" or header == "blancs et nuls"):
             final_df.loc[count, "année"] = key
-            final_df.loc[count, "parti"] = "Blanc"
+            final_df.loc[count, "parti"] = "blanc"
             
             # Add blank and nulls if needed
             if pd.isna(final_df.at[count, "voix"]):
@@ -117,7 +117,7 @@ for key, df in dfs.items():
             else:
                 final_df.loc[count, "voix"] += value
             
-            if(header == "Nuls" or header == "Blancs et nuls"):
+            if(header == "nuls" or header == "blancs et nuls"):
                 count += 1
             
         
