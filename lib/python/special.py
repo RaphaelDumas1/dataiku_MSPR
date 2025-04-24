@@ -88,4 +88,21 @@ def extract_and_concat_to_original(df, interval1, interval2):
     df_cleaned["Date référence"] = df_cleaned["Date référence"].astype(str).str[:4]
     df_cleaned.rename(columns={'Date référence': 'Année'}, inplace=True)
 
-    return df_cleaned                            
+    return df_cleaned     
+
+def copy_years_range(df):
+    rows = []
+
+    for index, row in df.iterrows():
+        year_range = str(row['Année'])
+        start_year, end_year = map(int, year_range.split('-'))
+
+        if(index == (len(df) - 1)):
+            end_year = end_year + 1
+
+        for year in range(start_year, end_year):
+            new_row = row.copy()
+            new_row['Année'] = str(year)
+            rows.append(new_row)
+    
+    return pd.DataFrame(rows)
