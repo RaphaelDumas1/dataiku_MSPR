@@ -44,6 +44,9 @@ def set_row_as_headers(df, index, function=None):
 
     return df
 
+
+
+
 def copy_years_range(df):
     # Add row for each year in range
     rows = []
