@@ -20,7 +20,8 @@ def create_column_by_adding_columns_values(df, columns, result_column):
     return df
 
 
-#
+
+# Us
 def add_rows_from_column_range(df, column, start, end)
     df_full = pd.DataFrame({column: range(min(df[column].min(), start), end + 1)})
     return pd.merge(df_full, df, on=column, how='left')
