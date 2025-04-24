@@ -41,13 +41,15 @@ instructions = {
              "args" : ["Année"]
         },
         {
-             "name" : columns_to_int,
-             "args" : []
-        },
-        {
-             "name" : complete_with_inteprolate,
-             "args" : []
-        },
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Résidences principales" : 'int',
+                 "Résid. secondaires et log. occasionnels" : 'int',
+                 "Logements vacants" : 'int',
+                 "Total" : "int"
+             }]
+        }
     ],
     "Statut_occupation_logement" : [
         {
