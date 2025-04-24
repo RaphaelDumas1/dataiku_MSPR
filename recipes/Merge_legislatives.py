@@ -28,7 +28,7 @@ party_orientation = {
     'EXD': 'Far_Right', 'DLF': 'Far_Right', 'DSV': 'Far_Right', 'REC': 'Far_Right',
     'MPF': 'Far_Right', 'RPF': 'Far_Right',
     
-    'Blanc' : 'Blank'
+    'blanc' : 'Blank'
 }
 
 legislative_2024 = dataiku.Dataset("Legislative_2024")
