@@ -55,10 +55,9 @@ def create_datasets_from_file_sheets(file_name, instructions):
         df = execute_instructions_on_dataframe(df, instructions[title])
         
         
+        # Post treatment and write dataset
         
         df.columns = [unidecode(col).lower() for col in df.columns]
-        
-        # Post treatment and write dataset
 
         if instructions.get(title, {}).get("post_treatment") != False:
             # Interpolate
