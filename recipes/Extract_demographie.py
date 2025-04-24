@@ -130,4 +130,4 @@ instructions = {
 
 
 
-create_datasets_from_file_sheets("MSPR - Demographie.xlsx", datasets, ["Quotient familiale"])
+create_datasets_from_file_sheets("MSPR - Demographie.xlsx", datasets)
