@@ -11,8 +11,8 @@ def pivot(df, first_column_name):
     return df
 
 
-
-def add_columns(df, first_column, second_column, result_column):
+# Used to add 
+def create_column_by_adding_columns_values(df, first_column, second_column, result_column):
     check_columns_exist(df, [first_column, second_column])
 
     df[result_column] = pd.to_numeric(df[first_column], errors='coerce') + pd.to_numeric(df[second_column], errors='coerce')
