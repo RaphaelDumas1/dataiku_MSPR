@@ -42,7 +42,7 @@ instructions = {
                 "Formation brute de capital fixe" : "decimal_1",
                 "Formation brute de capital fixe dont sociétés et entreprises individuelles non financières" : "decimal_1",
                 "Formation brute de capital fixe dont administrations publiques" : "decimal_1",
-                " Formation brute de capital fixe dont ménages hors entrepreneurs individuels" : "decimal_1",
+                "Formation brute de capital fixe dont ménages hors entrepreneurs individuels" : "decimal_1",
                 "Exportations de biens et de services" : "decimal_1",
                 "Demande intérieure hors stocks" : "decimal_1"
             }]
