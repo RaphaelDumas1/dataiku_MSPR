@@ -15,14 +15,7 @@ def pivot(df, first_column_name):
 def add_columns(df, first_column, second_column, result_column):
     check_columns_exist(df, [first_column, second_column])
 
-    try:
-        df[result_column] = (
-            pd.to_numeric(df[col1], errors='coerce')
-            + pd.to_numeric(df[col2], errors='coerce')
-        )
-    except Exception as e:
-        raise ValueError(f"Erreur lors de l'addition des colonnes : {e}")
-
+    df[result_column] = pd.to_numeric(df[first_column], errors='coerce') + pd.to_numeric(df[second_column], errors='coerce')
     return df
 
 #
