@@ -2,7 +2,7 @@
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
-from utils import convert_columns
+from convert import convert_columns
 
 candidate_orientation = {
     'MÉLENCHON': 'Far_Left',
