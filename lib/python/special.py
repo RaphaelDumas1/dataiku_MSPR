@@ -83,6 +83,9 @@ def process_quotient_familiale(df, interval1, interval2):
 
     return df_cleaned     
 
+
+
+# Special treatment for evolution population
 def copy_years_range(df):
     rows = []
 
