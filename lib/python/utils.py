@@ -284,8 +284,8 @@ def fill_empty_values_with_mean(df, columns):
 
 
 
-def fill_with_interpolate(df, exclude_cols=['année']):
-    num_cols = df.select_dtypes(include='number').columns.drop(exclude_cols, errors='ignore')
+def fill_with_interpolate(df, columns_to_exlude=[]):
+    num_cols = df.select_dtypes(include='number').columns.drop(columns_to_exlude, errors='ignore')
     df[num_cols] = df[num_cols]\
         .interpolate(method='linear', limit_direction='both')\
         .ffill()\
