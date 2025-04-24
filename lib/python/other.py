@@ -32,6 +32,9 @@ def add_rows_from_column_range(df, column, start, end)
 def rename_columns(df, columns_dict):
     return df.rename(columns=columns_dict)
 
+
+
+# 
 def set_row_as_headers(df, index, function=None):
     df.columns = df.iloc[index]
     
