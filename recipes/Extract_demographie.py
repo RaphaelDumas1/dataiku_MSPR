@@ -1,5 +1,5 @@
 from geenral import create_datasets_from_file_sheets
-from other import pivot, add_columns, rename_columns,
+from other import pivot, create_column_by_adding_columns_values, rename_columns,
 from special import copy_years_range, extract_and_concat_to_original
 from convert import convert_columns
 from delete import delete_columns_in_list
@@ -56,6 +56,20 @@ instructions = [
                  "Année" : "int",
              }]
         }
+    ],
+    "Repartition_sexe" : [
+        {
+             "name" : create_column_by_adding_columns_values,
+             "args" : [["Population femme", "Population homme"], "Population totale"]
+        },
+        {
+             "name" : columns_to_int,
+             "args" : []
+        },
+        {
+             "name" : complete_with_inteprolate,
+             "args" : []
+        },
     ]
     {
         "name": ,
@@ -100,21 +114,8 @@ instructions = [
         ]
     },
     {
-        "name": "Repartition_sexe",
-        "functions": [
-            {
-                 "name" : add_columns,
-                 "args" : ["Population femme", "Population homme", "Population totale"]
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-        ]
+        "name": ,
+        "functions": 
     },
     {
         "name": "Nombre_dimmigre",
