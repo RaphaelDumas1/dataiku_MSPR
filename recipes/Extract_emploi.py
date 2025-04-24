@@ -4,7 +4,7 @@ from other import pivot, rename_columns, set_row_as_headers
 from convert import convert_columns 
 from delete import delete_rows_by_index
 
-datasets = {
+instructions = {
     "Taux_de_chomage" : [
         {
             "name" : convert_columns,
