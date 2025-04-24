@@ -33,8 +33,19 @@ datasets = {
              "args" : ["Année"]   
         },
         {
-            "name" : columns_to_int,
-            "args" : []
+            "name" : convert_columns,
+            "args" : [{
+                "Année" : 'int',
+                'agriculteurs exploitants' : 'int',
+                "artisans, commercants, chefs entreprise" : 'int',
+                "cadres et professions intellectuelles superieures" : 'int',
+                "professions intermediaires": 'int',
+                "employes" : 'int',
+                "ouvriers" : 'int',
+                "retraites" : 'int',
+                "autres personnes sans activite professionnelle" : 'int',
+                "total" : 'int'
+            }]
         }
     ],
     "Nombre_de_salarie" : [
