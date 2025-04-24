@@ -61,7 +61,7 @@ def create_datasets_from_file_sheets(file_name, instructions):
 
         if instructions.get(title, {}).get("post_treatment") != False:
             df = add_rows_from_column_range(df, "annee", 2006, 2024)
-            df = fill_with_interpolate(df, "annee")                    
+            df = fill_with_interpolation(df, "annee")                    
                                 
         # TODO if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:         
         
