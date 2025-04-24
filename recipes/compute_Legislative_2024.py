@@ -1,4 +1,4 @@
-from utils import create_datasets_from_file_sheets
+from general import create_datasets_from_file_sheets
 
 datasets = [
     {
@@ -35,4 +35,6 @@ datasets = [
     },
 ]
 
-create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Legislative.xlsx", datasets, [])
+
+
+create_datasets_from_file_sheets("MSPR - Legislative.xlsx", datasets)
