@@ -2,7 +2,7 @@ from general import create_datasets_from_file_sheets
 
 
 
-datasets = [
+instructions = [
     {
         "name": "Legislative_2024",
         "functions": []
