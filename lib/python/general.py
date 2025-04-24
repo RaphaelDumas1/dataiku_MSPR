@@ -6,7 +6,7 @@ from io import BytesIO
 import re
 from unidecode import unidecode
 from utils import make_list_values_unique
-
+from other import add_rows_from_column_range
 
 #
 # Environnement
