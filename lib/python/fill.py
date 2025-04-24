@@ -27,8 +27,7 @@ def fill_with_interpolation(df, columns_to_exlude=[]):
     int_columns = df.select_dtypes(include='int').columns.drop(columns_to_exlude, errors='ignore')
     float_columns = df.select_dtypes(include='float').columns.drop(columns_to_exlude, errors='ignore')
     float_precision = get_float_precision(df, float_cols)
-    
-    num_cols = df.select_dtypes(include='number').columns.drop(columns_to_exlude, errors='ignore')
+    num_columns = df.select_dtypes(include='number').columns.drop(columns_to_exlude, errors='ignore')
     df[num_cols] = df[num_cols]\
         .interpolate(method='linear', limit_direction='both')\
         .ffill()\
