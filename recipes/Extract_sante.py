@@ -1,5 +1,9 @@
-from global import create_datasets_from_file_sheets, 
-delete_rows_where_equal, columns_to_int, columns_to_float, rename_columns, complete_with_inteprolate
+from global import create_datasets_from_file_sheets
+from other import rename_columns
+from convert import convert_columns
+from delete import delete_rows_where_equal
+
+
 
 datasets = {
     "Esperance_de_vie" : [
