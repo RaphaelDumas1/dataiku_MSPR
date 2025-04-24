@@ -5,7 +5,7 @@ from delete import delete_rows_where_equal
 
 
 
-datasets = {
+instruction = {
     "Esperance_de_vie" : [
         {
             "name" : rename_columns,
