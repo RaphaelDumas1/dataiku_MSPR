@@ -17,8 +17,8 @@ instructions = {
                  "Personnes prises en charge" : 'int',
                  "Mesures en cours" : 'int',
                  "Sursis1" : 'int',
-                 "Travail d'interet general (TIG)2" : 'int',
-                 "Liberations conditionnelles3" : 'int',
+                 "Travail d'intérêt général (TIG)2" : 'int',
+                 "Libérations conditionnelles3" : 'int',
                  "Autres mesures" : 'int'
              }]
         }, 
