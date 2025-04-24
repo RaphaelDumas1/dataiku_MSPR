@@ -1,4 +1,7 @@
-from utils import create_datasets_from_file_sheets, columns_to_int, columns_to_string, delete_rows_where_not_equal, fill_empty_values, fill_empty_values_with_mean, delete_columns_not_in_list, complete_with_inteprolate
+from general import create_datasets_from_file_sheets
+from convert import convert_columns
+from delete import delete_rows_where_not_equal, delete_columns_not_in_list
+from fill import fill_empty_values, fill_empty_values_with_mean
 
 datasets = [
     {
