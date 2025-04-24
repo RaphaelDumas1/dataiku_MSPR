@@ -1,6 +1,6 @@
 {
   "type": "custom_python",
-  "name": "bdd",
+  "name": "populate_DB",
   "active": false,
   "checklists": {
     "checklists": []

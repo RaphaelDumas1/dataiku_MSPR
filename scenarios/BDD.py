@@ -1,20 +1,30 @@
-from sqlalchemy import create_engine, inspect, text
-import dataiku
-from dataiku import Dataset
+from sqlalchemy import create_engine, text
 import pandas as pd
+from database import execute_queries, insert_in_table_column_from_list, get_column_names_from_table, build_execute_insert_query
+from utils import get_dataframe_from_dataset
 
-datasets_names = [
+#
+# PostgreSQL environnement
+#
+
+USER = "postgres"
+PASSWORD = "test"
+HOST = "host.docker.internal"
+PORT = "5432"
+DB = "MSPR"
+
+#
+# Datas
+#
+
+datasets_to_merge = [
     "Esperance_de_vie",
     "Taux_scolarisation",
-    # "annuaire_des_ecoles_en_france",
     "Administration_penitentiaire", 
-    # "Delinquance", 
-    # "Presidentielles",
     "Taux_de_chomage",
     "Repartition_des_contrats",
     "Categorie_metiers",
     "Nombre_de_salarie",
-    # "Evolution_trimestrielle_emploi",
     "Logement", 
     "Type_logement",
     "Categorie_logement", 
@@ -22,7 +32,6 @@ datasets_names = [
     "Composition_menage",
     "Nombre_enfant",
     "Nombre_detranger",
-    #"Quotient_familiale",
     "Taux_de_natalite",
     "Taux_de_mortalite",
     "Population",
@@ -35,358 +44,190 @@ datasets_names = [
     "Inflation",
     "Salaire_moyen",
     "Impot_moyen", 
-    # "Legislatives"
 ]
 
-tables = [
-    {
-        "name": "dim_annee",
-        "columns": {
-            "annee": "annee"
-        },
-        "id": None,
-        "add": {}
+
+tables_to_insert = {
+    "dim_annee" : {},
+    "fait_administration_penitentiaire" : {},
+    "fait_menage" : {
+        "ensemble_menages": "total"
     },
-    {
-        "name": "fait_administration_penitentiaire",
-        "columns": {
-            "personnes prises en charge" : "nombre_pris_en_charge",
-            "mesures en cours" : "nombre_en_cours",
-            "sursis1" : "nombre_sursis",
-            "travail d'interet general (tig)2" : "nombre_travaux_interet_general",
-            "liberations conditionnelles3" : "nombre_liberations_conditionnelles",
-            "autres mesures" : "autres"
-        },
-        "id": None,
-        "add": {"dim_annee_id" : "dim_annee"}
+    "fait_demographique" : {
+        "population": "total"
     },
-    {
-        "name": "fait_menage",
-        "columns": {
-            "ensemble_menages": "total",
-            "- hommes seuls" : "homme_seul",
-            "- femmes seules" : "femme_seule",
-            "- un couple avec enfant(s)" : "couple_avec_enfant",
-            "- un couple sans enfant" : "couple_sans_enfant",
-            "- une famille monoparentale" : "famille_monoparentale",
-            "aucun enfant" : "sans_enfant",
-            "1 enfant" : "un",
-            "2 enfants" : "deux",
-            "3 enfants" : "trois",
-            "4 enfants ou plus" : "quatre_et_plus"
-        },
-        "id": None,
-        "add": {"dim_annee_id" :"dim_annee"}
-    },
-    {
-        "name": "fait_demographique",
-        "columns": {
-            "population": "total",
-            "population homme" : "nombre_hommes",
-            "population femme" : "nombre_femmes",
-            "taux de natalite" : "taux_natalite",
-            "taux de deces" : "taux_mortalite",
-            "immigres" : "nombre_immigrant",
-            "etrangers" : "nombre_etranger",
-            "homme_total" : "esperance_homme",
-            "femmes_sans_incapacite" : "esperance_femme_sans_incapacite",
-            "femme_total" : "esperance_femme",
-            "homme_sans_incapacite" : "esperance_homme_sans_incapacite"
-        },
-        "id": None,
-        "add": {"dim_annee_id": "dim_annee"}
-    },
-    {
-        "name": "fait_economie",
-        "columns": {
-            "produit interieur brut (pib)": "pib_total",
-            "importations de biens et de services" : "taux_importation",
-            "depense de consommation finale" : "taux_consommation",
-            "depense de consommation finale dont menages" : "taux_consommation_menages",
-            "depense de consommation finale dont administrations publiques" : "taux_consommation_gouvernement",
-            "formation brute de capital fixe" : "taux_investissement",
-            "formation brute de capital fixe dont societes et entreprises individuelles non financieres" : "taux_investissement_entreprises",
-            "formation brute de capital fixe dont administrations publiques" : "taux_investissement_gouvernement",
-            "formation brute de capital fixe dont menages hors entrepreneurs individuels" : "taux_investissement_menages",
-            "exportations de biens et de services" : "taux_exportations",
-            "demande interieure hors stocks" : "taux_demande_interieure",
-            "impot" : "moyenne_impot",
-            "taux d'inflation" : "taux_inflation"
-        },
-        "id": None,
-        "add": {"dim_annee_id" : "dim_annee"}
-    },
-    {
-        "name": "fait_travail",
-        "columns": {
-            "salaire net": "salaire",
-            "agriculteurs exploitants" : "nombre_agriculteurs",
-            "artisans, commercants, chefs entreprise" : "nombre_artisans",
-            "cadres et professions intellectuelles superieures" : "nombre_cadres",
-            "professions intermediaires" : "nombre_professions_intermediaires",
-            "employes" : "nombre_employes",
-            "ouvriers" : "nombre_ouvriers",
-            "retraites" : "nombre_retraites",
-            "autres personnes sans activite professionnelle" : "nombre_sans_emploi",
-            "cdi" : "nombre_cdi",
-            "cdd" : "nombre_cdd",
-            "taux" : "taux_chomage"
-        },
-        "id": None,
-        "add": {"dim_annee_id" : "dim_annee"}
-    },
-    {
-        "name": "fait_logement",
-        "columns": {
-            "nombre de logements": "total",
-            "maisons" : "nombre_maisons",
-            "appartements" : "nombre_appartements",
-            "autres logements" : "nombre_autres",
-            "proprietaires" : "nombre_proprietaires",
-            "locataires" : "nombre_locataires",
-            "- dont locataires d'un logement hlm loue vide" : "nombre_hlm",
-            "loges gratuitement" : "nombre_logements_gratuit",
-            "residences principales" : "nombre_residences_principales",
-            "resid. secondaires et log. occasionnels" : "nombre_residences_secondaires",
-            "logements vacants" : "nombre_logements_vacants"
-        },
-        "id": None,
-        "add": {"dim_annee_id" : "dim_annee"} 
+    "fait_economie" : {},
+    "fait_travail" : {},
+    "fait_logement" : {
+        "nombre de logements": "total"
     }
-]
+}
 
-def buildInsertQuery(table_name, row=None, mapping={}, columns_to_add={}, returning=None):
-    values_dict = {}
-    if row is not None:
-        values_dict = {sql_col: row[df_col] for df_col, sql_col in mapping.items()}
-        
-    values_dict.update(columns_to_add)
-    
-    columns_str = ", ".join(values_dict.keys())
-    placeholders = ", ".join([f":{col}" for col in values_dict.keys()])
-    
-    query = f"""
-        INSERT INTO {table_name} ({columns_str})
-        VALUES ({placeholders})
-    """
-    
-    if returning:
-        query += f"\nRETURNING {returning}"
 
-    return {
-        "query": text(query),
-        "params": values_dict,
-        "returning": returning
+ids = {
+    "delinquance" : {},
+    "age" : {},
+    "type_election" : {
+        "legislative" : None,
+        "presidentielle" : None
+    },
+    "etiquette_politique" : {
+        "Blank" : None, 
+        "Far_Right" : None,
+        "Right" : None, 
+        "Center" : None, 
+        "Left" : None, 
+        "Far_Left" : None, 
+        "Green" : None
     }
+}
 
-def executeQueries(conn, queries):
-    result_id = None
 
-    try:
-        for q in queries:
-            query = q["query"]
-            params = q["params"]
-            returning = q["returning"]
-            
-            result = None
-            if params is not None :
-                result = conn.execute(query, params)
-            else :
-                conn.execute(query)
-                
-            conn.commit()
+datasets_to_dataframes = {
+    "Repartition_age" : None,
+    "Taux_scolarisation" : None,
+    "Delinquance" : None,
+    "Legislatives" : None,
+    "Presidentielles" : None
+}
 
-            if returning:
-                result_id = result.scalar()
-                
-    except Exception as e:
-        conn.rollback()
-    return result_id
-    
-engine = create_engine('postgresql://postgres:test@host.docker.internal:5432/MSPR')
+#
+# Logic
+#
 
-delinquance_ids = {}
-age_ids = {}
-election_type_ids = {}
-etiquette_politique_ids = {}
+# Initiate DB client
+db = create_engine(f"postgresql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}")
+
+
+# Merge all datasets in one based on year column
 final_df = None
-
-for ds_name in datasets_names:
-    ds = dataiku.Dataset(ds_name)
-    df = ds.get_dataframe()
+for dataset in datasets_to_merge:
+    df = get_dataframe_from_dataset(dataset)
     
     if final_df is None:
-        final_df = df  # première itération, on initialise
+        final_df = df
     else:
-        final_df = pd.merge(final_df, df, on="annee", how="outer")  # merge avec le reste
+        final_df = pd.merge(final_df, df, on="annee", how="outer")
 
-with engine.connect() as conn:
+        
+# Load other needed dataframes
+for key in datasets_to_dataframes.keys():
+    datasets_to_dataframes[key] = get_dataframe_from_dataset(key)
+
+
+with db.connect() as conn:
     
-    # TABLE dim_age
-    
-    queries = [
+    # Delete existing datas not present in merged dataframe
+    delete_queries = [
         {"query" : text(f"DELETE FROM dim_age;"), "params" : None, "returning" : None}, 
         {"query" : text(f"DELETE FROM dim_delinquance;"), "params" : None, "returning" : None}, 
         {"query" : text(f"DELETE FROM dim_type_election;"), "params" : None, "returning" : None}, 
         {"query" : text(f"DELETE FROM dim_etiquette_politique;"), "params" : None, "returning" : None},
         {"query" : text(f"DELETE FROM dim_delinquance_has_fait_demographique;"), "params" : None, "returning" : None},
         {"query" : text(f"DELETE FROM fait_demographique_has_dim_age;"), "params" : None, "returning" : None},
-        {"query" : text(f"DELETE FROM fait_participation;"), "params" : None, "returning" : None}
+        {"query" : text(f"DELETE FROM fait_participation;"), "params" : None, "returning" : None},
+        {"query" : text(f"DELETE FROM fait_scolarisation;"), "params" : None, "returning" : None}
     ]
-
-    ds_repartition_age = dataiku.Dataset("Repartition_age")
-    ds_taux_scolarisation = dataiku.Dataset("Taux_scolarisation")
-    df_repartition_age = ds_repartition_age.get_dataframe()
-    df_taux_scolarisation = ds_taux_scolarisation.get_dataframe()
-    labels_repartition_age = [col for col in df_repartition_age.columns if col != "annee"]
-    labels_taux_scolarisation = [col for col in df_taux_scolarisation.columns if col != "annee"]
-    labels = labels_repartition_age + labels_taux_scolarisation
-
-    for label in labels: 
-        queries.append(buildInsertQuery("dim_age", None, {}, {"repartition_age" : label}, 'id'))
-        age_ids.update({label : executeQueries(conn, queries)})
-        queries = []
+    execute_queries(conn, delete_queries)
+    
+    # TABLE dim_age
+    
+    ids["age"] = insert_in_table_column_from_list(conn, "dim_age", "repartition_age", ([col for col in datasets_to_dataframes["Repartition_age"].columns if col != "annee"]) + ([col for col in datasets_to_dataframes["Taux_scolarisation"] if col != "annee"]), "id")
     
     # TABLE dim_type_election
     
-    type_elections = ["legislative", "presidentielle"]
-    for election in type_elections: 
-        queries.append(buildInsertQuery("dim_type_election", None, {}, {"nom_election" : election}, 'id'))
-        election_type_ids.update({election : executeQueries(conn, queries)})
-        queries = []
+    ids["type_election"] = insert_in_table_column_from_list(conn, "dim_type_election", "nom_election", ids["type_election"].keys(), "id")
     
     # TABLE dim_etiquette_politique
     
-    political_labels = ["Blank", "Far_Right", "Right", "Center", "Left", "Far_Left", "Green"]
-    for label in political_labels: 
-        queries.append(buildInsertQuery("dim_etiquette_politique", None, {}, {"etiquette_politique" : label}, 'id'))
-        etiquette_politique_ids.update({label : executeQueries(conn, queries)})
-        queries = []
+    ids["etiquette_politique"] = insert_in_table_column_from_list(conn, "dim_etiquette_politique", "etiquette_politique", ids["etiquette_politique"].keys(), "id")
     
-    # Main iteration
-    
-    for index, row in final_df.iterrows():
-        for table in tables:
-            table_name = table["name"]
-            columns = table["columns"]
-            add = table["add"]
-            
+    # Iterate over rows (years) 
+    for index, row in final_df.iterrows(): 
+        year_id = None
+        fait_demographique_id = None
+        current_year_dataframes = {}
+
+        # Filter dataframes for current row year
+        for key, value in datasets_to_dataframes.items():
+            current_year_dataframes.update({key : value[value['annee'] == row["annee"]]})
+        
+        # Iterate over tables
+        for table_name, mapping in tables_to_insert.items():
             # Delete old datas
-            if(row["annee"] == 2006): 
-                queries.append({"query" : text(f"DELETE FROM {table_name};"), "params" : None, "returning" : None},)
+
+            if(index == 0): 
+                execute_queries(conn, [{"query" : text(f"DELETE FROM {table_name};"), "params" : None, "returning" : None}])
+
+            # MAIN TABLES
             
-            # Add new columns
-            to_add = {}
-            for key, value in add.items():
-                for ref_table in tables:
-                    if value == ref_table["name"] and ref_table["id"] is not None:
-                        value = ref_table["id"] 
-                
-                to_add.update({key : value})
-                    
-            queries.append(buildInsertQuery(table_name, row, columns, to_add, 'id'))        
-            table["id"] = executeQueries(conn, queries)
-            queries = []
+            table_column_names = get_column_names_from_table(conn, table_name)
+            ds_to_db_mapping = {name: name for name in table_column_names if name not in ["id", "dim_annee_id"]} | mapping 
             
+            id = build_execute_insert_query(conn, table_name, row, ds_to_db_mapping, 
+                {"dim_annee_id" : year_id} if table_name != "dim_annee" else {}, 
+                None if table_name not in ["dim_annee", "fait_demographique"] else 'id'
+            )
+            
+            if table_name == "dim_annee":
+                year_id = id             
+
+            # OTHER TABLES
             
             if(table_name == "fait_demographique"):
-                ds_delinquance = dataiku.Dataset("Delinquance")
-                df_delinquance = ds_delinquance.get_dataframe()               
-                df_delinquance_filtered = df_delinquance[df_delinquance['annee'] == row["annee"]]
-
-                for i, r in df_delinquance_filtered.iterrows():
+                fait_demographique_id = id
+                
+                for _, r in current_year_dataframes["Delinquance"].iterrows():
                     
                     # TABLE dim_delinquance
                     
-                    # If delinquance doesnt exist
-                    if r["indicateur"] not in delinquance_ids:
-                        
-                        delinquance_columns = {
-                            "unite_de_compte" : "type_delinquance",
-                            "indicateur" : "indicateur",
-                        }
-
-                        queries.append(buildInsertQuery("dim_delinquance", r, delinquance_columns, {}, 'id'))
-                        delinquance_ids.update({r["indicateur"] : executeQueries(conn, queries)})
-                        queries = []
+                    # If delinquance doesnt exist yet
+                    if r["indicateur"] not in ids["delinquance"].keys():
+                        ids["delinquance"].update({r["indicateur"] : build_execute_insert_query(conn, "dim_delinquance", r, {
+                            "unite_de_compte" : "type_delinquance", 
+                            "indicateur" : "indicateur"}, {}, 'id')
+                        })
                     
                     # TABLE dim_delinquance_has_fait_demograhique
 
-                    delinquance_demographique_mapping = {
-                        "dim_delinquance_id" : delinquance_ids[r["indicateur"]],
-                        "fait_demographique_id" : table["id"],   
-                    }
-                    
-                    queries.append(buildInsertQuery("dim_delinquance_has_fait_demographique", r, {"nombre" : "total"}, delinquance_demographique_mapping))
-                    executeQueries(conn, queries)    
-                    queries = []
+                    build_execute_insert_query(conn, "dim_delinquance_has_fait_demographique", r, {"nombre" : "total"}, {
+                        "dim_delinquance_id" : ids["delinquance"][r["indicateur"]], 
+                        "fait_demographique_id" : fait_demographique_id
+                    })
                 
                 # TABLE fait_demographique_has_dim_age
                 
-                df_repartition_age_filtered = df_repartition_age[df_repartition_age['annee'] == row["annee"]]
-                row_unique = df_repartition_age_filtered.iloc[0]
-                
-                for col in row_unique.index:
+                first_unique_row = current_year_dataframes["Repartition_age"].iloc[0]    
+                for col in first_unique_row.index:
                     if col != "annee":
-                        col_mapping = {
-                            "dim_age_id" : age_ids[col],
-                            "fait_demographique_id" : table["id"],
-                            "total" : row_unique[col]
-                        }
-                        queries.append(buildInsertQuery("fait_demographique_has_dim_age", row, {}, col_mapping))
-                executeQueries(conn, queries)
-                queries = []
+                        build_execute_insert_query(conn, "fait_demographique_has_dim_age", row, {}, {
+                            "dim_age_id" : ids["age"][col],
+                            "fait_demographique_id" : fait_demographique_id,
+                            "total" : first_unique_row[col]
+                        })
                 
-            # TABLE fait_scolarisation   
-                
-            df_taux_scolarisation_filtered = df_taux_scolarisation[df_taux_scolarisation['annee'] == row["annee"]]
-            row_unique = df_taux_scolarisation_filtered.iloc[0]
-            
-            year_id = 0
-            for ref_table in tables:
-                if ref_table["name"] == "dim_annee" and ref_table["id"] is not None:
-                    year_id = ref_table["id"] 
-                    
-            for col in row_unique.index:
-                if col != "annee":
-                    col_mapping = {
-                        "dim_age_id" : age_ids[col],
-                        "dim_annee_id" : year_id,
-                        "total" : row_unique[col]
-                    }
-                    queries.append(buildInsertQuery("fait_scolarisation", row, {}, col_mapping))
-            executeQueries(conn, queries)
-            queries = []
-            
-            # TABLE fait_participation
-            
-            ds_legislative = dataiku.Dataset("Legislatives")
-            df_legislative = ds_legislative.get_dataframe()               
-            df_legislative_filtered = df_legislative[df_legislative['année'] == row["annee"]]
-            
-            if len(df_legislative_filtered) > 0:
-                for ii, rr in df_legislative_filtered.iterrows():
-                    col_mapping = {
-                        "dim_annee_id" : year_id,
-                        "dim_type_election_id" : election_type_ids["legislative"],
-                        "dim_etiquette_politique_id" : etiquette_politique_ids[rr["couleur"]],
-                    }
-                    queries.append(buildInsertQuery("fait_participation", rr, {"voix": "total"}, col_mapping))
-                executeQueries(conn, queries)
-                queries = []
-                        
-                        
-            ds_presidentielle = dataiku.Dataset("Presidentielles")
-            df_presidentielle = ds_presidentielle.get_dataframe()               
-            df_presidentielle_filtered = df_presidentielle[df_presidentielle['année'] == row["annee"]]
+        # TABLE fait_scolarisation   
 
-            if len(df_presidentielle_filtered) > 0:
-                for ii, rr in df_presidentielle_filtered.iterrows():
-                    col_mapping = {
-                        "dim_annee_id" : year_id,
-                        "dim_type_election_id" : election_type_ids["presidentielle"],
-                        "dim_etiquette_politique_id" : etiquette_politique_ids[rr["couleur"]],
-                    }
-                    queries.append(buildInsertQuery("fait_participation", rr, {"voix": "total"}, col_mapping))
-                executeQueries(conn, queries)
-                queries = []
+        first_unique_row = current_year_dataframes["Taux_scolarisation"].iloc[0]                 
+        for col in first_unique_row.index:
+            if col != "annee":
+                build_execute_insert_query(conn, "fait_scolarisation", row, {}, {"dim_age_id" : ids["age"][col], "dim_annee_id" : year_id, "total" : first_unique_row[col]})
+
+        # TABLE fait_participation
+
+        if len(current_year_dataframes["Legislatives"]) > 0:
+            for _, r in current_year_dataframes["Legislatives"].iterrows():
+                build_execute_insert_query(conn, "fait_participation", r, {"voix": "total"}, {
+                    "dim_annee_id" : year_id, 
+                    "dim_type_election_id" : ids["type_election"]["legislative"],
+                    "dim_etiquette_politique_id" : ids["etiquette_politique"][r["couleur"]]
+                })
+
+
+        if len(current_year_dataframes["Presidentielles"]) > 0:
+            for _, r in current_year_dataframes["Presidentielles"].iterrows():
+                build_execute_insert_query(conn, "fait_participation", r, {"voix": "total"}, {
+                    "dim_annee_id" : year_id, 
+                    "dim_type_election_id" : ids["type_election"]["presidentielle"], 
+                    "dim_etiquette_politique_id" : ids["etiquette_politique"][r["couleur"]]
+                })

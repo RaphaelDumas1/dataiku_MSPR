@@ -1,9 +1,7 @@
 import dataiku
 import pandas as pd
 import openpyxl
-import time
 from io import BytesIO
-import re
 from unidecode import unidecode
 from utils import make_list_values_unique
 from other import add_rows_from_column_range
@@ -43,7 +41,7 @@ def create_datasets_from_file_sheets(file_name, instructions):
         except Exception as e:
             raise RuntimeError(f"Erreur inattendue lors du chargement du fichier : {e}")
     
-     # Iterate over sheets
+    # Iterate over sheets
     
     for sheet_name in ss.sheetnames:
         sheet = ss[sheet_name]
@@ -61,10 +59,8 @@ def create_datasets_from_file_sheets(file_name, instructions):
         df.columns = [unidecode(col).lower() for col in df.columns]
 
         if title not in ["annuaire_des_ecoles_en_france", "Delinquance"] and not title.startswith("Legislative") and not title.startswith("Presidentielle"):
-            if not title.startswith("Legislative") and not title.startswith("Presidentielle"):
-                df = add_rows_from_column_range(df, "annee", 2006, 2024)
-                df = fill_with_interpolation(df, "annee")    
-              
+            df = add_rows_from_column_range(df, "annee", 2006, 2024)
+            df = fill_with_interpolation(df, "annee")        
             df = df[df['annee'] >= 2006]
         
         dataset = dataiku.Dataset(title)
@@ -77,7 +73,7 @@ def create_dataframe_from_sheet(sheet):
     # Get datas in a list
     data = list(sheet.values)
     transposed = list(zip(*data))
- 
+
     # Remove empty columns
     valid_columns = [(i, col[0]) for i, col in enumerate(transposed) if any(cell is not None and str(cell).strip() for cell in col)]
     

@@ -88,12 +88,12 @@
   "schema": {
     "columns": [
       {"name":"annee","type":"bigint"},
-      {"name":"personnes prises en charge","type":"bigint"},
-      {"name":"mesures en cours","type":"bigint"},
-      {"name":"sursis1","type":"bigint"},
-      {"name":"travail d\u0027interet general (tig)2","type":"bigint"},
-      {"name":"liberations conditionnelles3","type":"bigint"},
-      {"name":"autres mesures","type":"bigint"}
+      {"name":"nombre_pris_en_charge","type":"bigint"},
+      {"name":"nombre_en_cours","type":"bigint"},
+      {"name":"nombre_sursis","type":"bigint"},
+      {"name":"nombre_travaux_interet_general","type":"bigint"},
+      {"name":"nombre_liberations_conditionnelles","type":"bigint"},
+      {"name":"autres","type":"bigint"}
     ],
     "userModified": false
   },

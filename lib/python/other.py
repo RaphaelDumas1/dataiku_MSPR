@@ -13,7 +13,7 @@ def pivot(df, first_column_name):
     # Rename column
     df = df.rename(columns={df.columns[0]: first_column_name})
     df.columns = make_list_values_unique(df.columns)
-    print("pivot", df.columns)
+
     return df
 
 
@@ -41,12 +41,12 @@ def rename_columns(df, columns_dict):
 
 
 
-# Used to set the headers of the dataframe from the values of the row with the given index
-# Function parameter is used to make eventual post treatment on headers
+# Used to set the header(s) of the dataframe from the value(s) of the row with the given index
+# Function parameter is used to make eventual post treatment on header(s)
 def set_row_as_headers(df, index, function=None):
     df.columns = df.iloc[index]
     
     if function is not None:
         df.columns = function(df.columns)
-
+    
     return df

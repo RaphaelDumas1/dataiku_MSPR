@@ -88,7 +88,7 @@
   "schema": {
     "columns": [
       {"name":"annee","type":"bigint"},
-      {"name":"impot","type":"double"}
+      {"name":"moyenne_impot","type":"double"}
     ],
     "userModified": false
   },

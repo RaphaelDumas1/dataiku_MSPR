@@ -88,17 +88,17 @@
   "schema": {
     "columns": [
       {"name":"annee","type":"bigint"},
-      {"name":"produit interieur brut (pib)","type":"double"},
-      {"name":"importations de biens et de services","type":"double"},
-      {"name":"depense de consommation finale","type":"double"},
-      {"name":"depense de consommation finale dont menages","type":"double"},
-      {"name":"depense de consommation finale dont administrations publiques","type":"double"},
-      {"name":"formation brute de capital fixe","type":"double"},
-      {"name":"formation brute de capital fixe dont societes et entreprises individuelles non financieres","type":"double"},
-      {"name":"formation brute de capital fixe dont administrations publiques","type":"double"},
-      {"name":"formation brute de capital fixe dont menages hors entrepreneurs individuels","type":"double"},
-      {"name":"exportations de biens et de services","type":"double"},
-      {"name":"demande interieure hors stocks","type":"double"}
+      {"name":"pib_total","type":"double"},
+      {"name":"taux_importation","type":"double"},
+      {"name":"taux_consommation","type":"double"},
+      {"name":"taux_consommation_menages","type":"double"},
+      {"name":"taux_consommation_gouvernement","type":"double"},
+      {"name":"taux_investissement","type":"double"},
+      {"name":"taux_investissement_entreprises","type":"double"},
+      {"name":"taux_investissement_gouvernement","type":"double"},
+      {"name":"taux_investissement_menages","type":"double"},
+      {"name":"taux_exportations","type":"double"},
+      {"name":"taux_demande_interieure","type":"double"}
     ],
     "userModified": false
   },

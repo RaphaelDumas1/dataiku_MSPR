@@ -88,9 +88,9 @@
   "schema": {
     "columns": [
       {"name":"annee","type":"bigint"},
-      {"name":"maisons","type":"bigint"},
-      {"name":"appartements","type":"bigint"},
-      {"name":"autres logements","type":"bigint"},
+      {"name":"nombre_maisons","type":"bigint"},
+      {"name":"nombre_appartements","type":"bigint"},
+      {"name":"nombre_autres","type":"bigint"},
       {"name":"total","type":"bigint"}
     ],
     "userModified": false

@@ -88,11 +88,11 @@
   "schema": {
     "columns": [
       {"name":"annee","type":"bigint"},
-      {"name":"aucun enfant","type":"bigint"},
-      {"name":"1 enfant","type":"bigint"},
-      {"name":"2 enfants","type":"bigint"},
-      {"name":"3 enfants","type":"bigint"},
-      {"name":"4 enfants ou plus","type":"bigint"}
+      {"name":"sans_enfant","type":"bigint"},
+      {"name":"un","type":"bigint"},
+      {"name":"deux","type":"bigint"},
+      {"name":"trois","type":"bigint"},
+      {"name":"quatre_et_plus","type":"bigint"}
     ],
     "userModified": false
   },

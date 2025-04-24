@@ -35,15 +35,15 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "Merge_legislatives",
-      "objectType": "RECIPE"
-    },
-    {
       "objectId": "Legislatives",
       "objectType": "DATASET"
     },
     {
-      "objectId": "compute_Legislative_2024",
+      "objectId": "merge_legislatives",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "extract_legislative",
       "objectType": "RECIPE"
     }
   ],
