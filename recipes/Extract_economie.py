@@ -6,7 +6,7 @@ from delete import delete_rows_by_index
 def pib_column(columns):
     return columns.astype(str).str.strip().str.replace(" \(r\)", "", regex=True)
 
-datasets = {
+instructions = {
     "Pib" : [
         {
             "name" : set_row_as_headers,
