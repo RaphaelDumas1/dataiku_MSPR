@@ -63,6 +63,6 @@ def convert_columns(df, columns):
                 df = column_to_decimal(df, key, round_to)
             
         except Exception as e:
-            raise ValueError(f"Erreur de conversion dans la colonne '{column}': {e}")
+            raise ValueError(f"Erreur de conversion dans la colonne '{key}': {e}")
 
     return df
