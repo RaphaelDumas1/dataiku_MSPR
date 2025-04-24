@@ -36,6 +36,7 @@ def rename_columns(df, columns_dict):
 
 
 # Used to set the headers of the dataframe from the values of the row with the given index
+# Function parameter is used to make eventual post treatment on headers
 def set_row_as_headers(df, index, function=None):
     df.columns = df.iloc[index]
     
