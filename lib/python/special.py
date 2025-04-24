@@ -12,6 +12,9 @@ def process_categorie_metier(df):
     
     return df
 
+
+
+# Special treatment for evolution trimestrielle emploi
 def process_evolution_trimestrielle_emploi(df):
     df = df.reset_index(drop=True)
     new_rows = []
