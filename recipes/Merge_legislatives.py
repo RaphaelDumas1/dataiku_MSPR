@@ -1,7 +1,7 @@
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
-from utils import columns_to_int
+from convert import convert_columns
 
 party_orientation = {
     # Far-left parties
@@ -28,7 +28,7 @@ party_orientation = {
     'EXD': 'Far_Right', 'DLF': 'Far_Right', 'DSV': 'Far_Right', 'REC': 'Far_Right',
     'MPF': 'Far_Right', 'RPF': 'Far_Right',
     
-    'Blanc' : 'Blank'
+    'blanc' : 'Blank'
 }
 
 legislative_2024 = dataiku.Dataset("Legislative_2024")
@@ -44,49 +44,49 @@ legislative_1993 = dataiku.Dataset("Legislative_1993")
 dfs = {
     "2024" : {
         "df" : legislative_2024.get_dataframe(),
-        "first_party_col_name" : "Nuance candidat 1",
+        "first_party_col_name" : "nuance candidat 1",
         "votes_col_nb" : 2,
         "cycle_length" : 4,
     },
     "2022" : {
         "df" : legislative_2022.get_dataframe(),
-        "first_party_col_name" : "Code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 2,
         "cycle_length" : 5,
     },
     "2017" : {
         "df" : legislative_2017.get_dataframe(),
-        "first_party_col_name" : "Code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 2,
         "cycle_length" : 5,
     },
     "2012" : {
         "df" : legislative_2012.get_dataframe(),
-        "first_party_col_name" : "Code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 3,
         "cycle_length" : 5,
     },
     "2007" : {
         "df" : legislative_2007.get_dataframe(),
-        "first_party_col_name" : "Code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 3,
         "cycle_length" : 5,
     },
     "2002" : {
         "df" : legislative_2002.get_dataframe(),
-        "first_party_col_name" : "Code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 3,
         "cycle_length" : 5,
     },
     "1997" : {
         "df" : legislative_1997.get_dataframe(),
-        "first_party_col_name" : "Code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 3,
         "cycle_length" : 5,
     },
     "1993" : {
         "df" : legislative_1993.get_dataframe(),
-        "first_party_col_name" : "Code Nuance",
+        "first_party_col_name" : "code nuance",
         "votes_col_nb" : 3,
         "cycle_length" : 3,
     },
@@ -107,9 +107,9 @@ for key, df in dfs.items():
     for index, (header, value) in enumerate(zip(headers, row)):
         
         # Create new row for blank votes
-        if(header == "Blancs" or header == "Nuls" or header == "Blancs et nuls"):
+        if(header == "blancs" or header == "nuls" or header == "blancs et nuls"):
             final_df.loc[count, "année"] = key
-            final_df.loc[count, "parti"] = "Blanc"
+            final_df.loc[count, "parti"] = "blanc"
             
             # Add blank and nulls if needed
             if pd.isna(final_df.at[count, "voix"]):
@@ -117,7 +117,7 @@ for key, df in dfs.items():
             else:
                 final_df.loc[count, "voix"] += value
             
-            if(header == "Nuls" or header == "Blancs et nuls"):
+            if(header == "nuls" or header == "blancs et nuls"):
                 count += 1
             
         
@@ -137,7 +137,7 @@ for key, df in dfs.items():
             count += 1
 
 final_df['couleur'] = final_df['parti'].map(party_orientation)
-final_df = columns_to_int(final_df, ["année", "voix"])
+final_df = convert_columns(final_df, {"année" : 'int', "voix" : 'int'})
 final_df = final_df[final_df['année'] >= 2006]
 
 test = dataiku.Dataset("Legislatives")

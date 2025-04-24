@@ -1,121 +1,122 @@
-from utils import create_datasets_from_file_sheets, pivot, columns_to_int, columns_to_float, complete_with_inteprolate, rename_columns
+from general import create_datasets_from_file_sheets
+from other import pivot, rename_columns
+from convert import convert_columns 
 
-datasets = [
-    {
-        "name": "Logement",
-        "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : [["Année", "Nombre de logements"]]
-            },
-            {
-                 "name" : columns_to_float,
-                 "args" : [["Part des résidences principales (%)", "Part des rés. secondaires (yc log. occasionnels) (%)", "Part des logements vacants (%)"]]
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-        ]
-    },
-    {
-        "name": "Type_logement",
-        "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-        ]
-    },
-    {
-        "name": "Categorie_logement",
-        "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-        ]
-    },
-    {
-        "name": "Statut_occupation_logement",
-        "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-            {
-                 "name" : rename_columns,
-                 "args" : [{"ensemble" : "ensemble_logements"}]
-            },
-        ]
-    },
-    {
-        "name": "Composition_menage",
-       "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-           {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-           {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-           {
-                 "name" : rename_columns,
-                 "args" : [{"ensemble" : "ensemble_menages"}]
-            },
-        ]
-    },
-    {
-        "name": "Nombre_enfant",
-        "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-        ]
-    }
-]
+instructions = {
+    "Logement" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Nombre de logements" : 'int',
+                 "Part des résidences principales (%)" : 'decimal_1',
+                 "Part des rés. secondaires (yc log. occasionnels) (%)" : "decimal_1",
+                 "Part des logements vacants (%)" : "decimal_1"
+             }]
+        }
+    ],
+    "Type_logement" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Maisons" : 'int',
+                 "Appartements" : 'int',
+                 "Autres logements" : 'int',
+                 "Total" : "int"
+             }]
+        }
+    ],
+    "Categorie_logement" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Résidences principales" : 'int',
+                 "Résid. secondaires et log. occasionnels" : 'int',
+                 "Logements vacants" : 'int',
+                 "Total" : "int"
+             }]
+        }
+    ],
+    "Statut_occupation_logement" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Propriétaires" : 'int',
+                 "Locataires" : 'int',
+                 "- dont locataires d'un logement HLM loué vide" : 'int',
+                 "Logés gratuitement" : "int",
+                 "Ensemble" : "int"
+             }]
+        },
+        {
+             "name" : rename_columns,
+             "args" : [{"Ensemble" : "ensemble_logements"}]
+        },
+    ],
+    "Composition_menage" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Ménages d'une personne" : 'int',
+                 "- hommes seuls" : 'int',
+                 "- femmes seules" : 'int',
+                 "Autres ménages sans famille" : "int",
+                 "Ménages avec famille(s) dont la famille principale est" : "int",
+                 "- un couple sans enfant" : 'int',
+                 "- un couple avec enfant(s)" : 'int',
+                 "- une famille monoparentale" : 'int',
+                 "Ensemble" : 'int',
+             }]
+        },
+        {
+             "name" : rename_columns,
+             "args" : [{"Ensemble" : "ensemble_menages"}]
+        },
+    ],
+    "Nombre_enfant" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Aucun enfant" : 'int',
+                 "1 enfant" : 'int',
+                 "2 enfants" : 'int',
+                 "3 enfants" : "int",
+                 "4 enfants ou plus" : "int"
+             }]
+        },
+    ]
+}
+ 
 
-create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Logement.xlsx", datasets, [])
+
+create_datasets_from_file_sheets("MSPR - Logement.xlsx", instructions)
 

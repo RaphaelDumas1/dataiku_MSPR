@@ -2,7 +2,7 @@
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
-from utils import columns_to_int
+from convert import convert_columns
 
 candidate_orientation = {
     'MÉLENCHON': 'Far_Left',
@@ -88,8 +88,7 @@ for key, df in dfs.items():
     for index, (header, value) in enumerate(zip(headers, row)):
         
         # Create new row for blank votes
-        if(header == "Blancs" or header == "Blancs et nuls"):
-            print("yes")
+        if(header == "blancs" or header == "blancs et nuls"):
             final_df.loc[count, "année"] = key
             final_df.loc[count, "nom"] = "Blanc"
             final_df.loc[count, "prénom"] = "Blanc"
@@ -98,7 +97,7 @@ for key, df in dfs.items():
             count += 1
         
         # Increment since first candidate
-        if(headers.get_loc("Sexe") <= index):
+        if(headers.get_loc("sexe") <= index):
             col_count += 1
             
         if(col_count == 1):
@@ -119,7 +118,7 @@ for key, df in dfs.items():
             count += 1
 
 final_df['couleur'] = final_df['nom'].map(candidate_orientation)
-final_df = columns_to_int(final_df, ["année", "voix"])
+final_df = convert_columns(final_df, {"année" : 'int', "voix" : 'int'})
 final_df = final_df[final_df['année'] >= 2006]
 
 # Dataset Presidentielle renamed to Presidentielles by admin on 2025-02-11 18:01:24

@@ -1,36 +1,43 @@
-from utils import create_datasets_from_file_sheets, strip_headers, columns_to_int, pivot, complete_with_inteprolate
+from general import create_datasets_from_file_sheets
+from convert import convert_columns 
+from other import pivot
 
-datasets = [
-    {
-        "name": "Administration_penitentiaire",
-        "functions": [
-            {
-                 "name" : pivot,
-                 "args" : ["Année"]
-            },
-            {
-                 "name" : strip_headers,
-                 "args" : []
-            },
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            }, 
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-        ]
-    },
-    {
-        "name": "Delinquance",
-        "functions": [
-            {
-                 "name" : columns_to_int,
-                 "args" : [{"Année", "nombre", "insee_pop", "insee_pop_millesime", "insee_log", "insee_log_millesime"}]
-            }
-        ]
-    },
-]
 
-create_datasets_from_file_sheets("MSPR", "Datas", "MSPR - Securite.xlsx", datasets, [])
+
+instructions = {
+    "Administration_penitentiaire" : [
+        {
+             "name" : pivot,
+             "args" : ["Année"]
+        },
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Personnes prises en charge" : 'int',
+                 "Mesures en cours" : 'int',
+                 "Sursis1" : 'int',
+                 "Travail d'intérêt général (TIG)2" : 'int',
+                 "Libérations conditionnelles3" : 'int',
+                 "Autres mesures" : 'int'
+             }]
+        }, 
+    ],
+    "Delinquance" : [
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int', 
+                 "nombre": 'int',
+                 "insee_pop": 'int',
+                 "insee_pop_millesime": 'int',
+                 "insee_log": 'int',
+                 "insee_log_millesime": 'int'
+             }]
+        }
+    ]
+}
+
+
+
+create_datasets_from_file_sheets("MSPR - Securite.xlsx", instructions)
