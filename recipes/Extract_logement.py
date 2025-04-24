@@ -1,4 +1,6 @@
-from utils import create_datasets_from_file_sheets, pivot, columns_to_int, columns_to_float, complete_with_inteprolate, rename_columns
+from general import create_datasets_from_file_sheets
+from other import pivot, rename_columns
+from convert import convert_columns 
 
 datasets = [
     {
