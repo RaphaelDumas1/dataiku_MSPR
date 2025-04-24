@@ -59,7 +59,7 @@ def convert_columns(df, columns):
             elif value == 'str':
                 df = column_to_string(df, key)
             elif value.startswith('decimal'):
-                round_to = (s.split("_", 1) + [None])[1]
+                round_to = (value.split("_", 1) + [None])[1]
                 df = column_to_decimal(df, key, round_to)
             
         except Exception as e:
