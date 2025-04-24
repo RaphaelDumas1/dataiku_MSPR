@@ -25,13 +25,15 @@ instructions = {
              "args" : ["Année"]
         },
         {
-             "name" : columns_to_int,
-             "args" : []
-        },
-        {
-             "name" : complete_with_inteprolate,
-             "args" : []
-        },
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Maisons" : 'int',
+                 "Appartements" : 'int',
+                 "Autres logements" : 'int',
+                 "Total" : "int"
+             }]
+        }
     ],
     "Categorie_logement" : [
         {
