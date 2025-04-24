@@ -89,7 +89,7 @@
     "columns": [
       {"name":"annee","type":"bigint"},
       {"name":"population femme","type":"bigint"},
-      {"name":"population homme","type":"bigint"},
+      {"name":"population homme","type":"double"},
       {"name":"population totale","type":"bigint"}
     ],
     "userModified": false
