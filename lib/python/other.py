@@ -1,3 +1,4 @@
+import pandas as pd
 from check import check_columns_exist
 
 
