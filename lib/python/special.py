@@ -1,3 +1,7 @@
+import pandas as pd
+
+
+
 # Special treatment for catgeoriemetier
 def process_categorie_metier(df):
     # Remove headers rows
