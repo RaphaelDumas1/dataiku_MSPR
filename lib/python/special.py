@@ -1,4 +1,5 @@
-def process_category_metier(df):
+# Special treatment for catgeoriemetier
+def process_categorie_metier(df):
     # Remove headers rows
     df = df.drop(index=1)
     df = df.loc[:10]
