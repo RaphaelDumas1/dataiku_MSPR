@@ -67,7 +67,7 @@ instructions = {
              "args" : [{
                  "Année" : "int",
                  "Population femme" : 'int',
-                 "Population femme" : 'int',
+                 "Population homme" : 'int',
                  "Population totale": 'int'
              }]
         }
