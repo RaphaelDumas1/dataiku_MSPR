@@ -1,3 +1,7 @@
+from check import check_columns_exist
+
+
+
 # Used to pivot a dataframe and rename it first column
 def pivot(df, first_column_name):
     # Pivot
