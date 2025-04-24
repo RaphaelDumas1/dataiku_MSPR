@@ -1,22 +1,44 @@
-from utils import create_datasets_from_file_sheets, pivot, copy_years_range, columns_to_int, add_columns, extract_and_concat_to_original, columns_to_string, delete_columns_in_list, rename_columns, complete_with_inteprolate
+from geenral import create_datasets_from_file_sheets
+from other import pivot, add_columns, rename_columns,
+from special import copy_years_range, extract_and_concat_to_original
+from convert import convert_columns
+from delete import delete_columns_in_list
 
-datasets = [
+
+
+instructions = [
+    "Nombre_detranger" : [
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : "int",
+                 "Nombre" : "int"
+             }]
+        },
+        {
+             "name" : rename_columns,
+             "args" : [{"Nombre" : "etrangers"}]
+        },
+    ],
+    "Taux_de_natalite" : [
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : "int",
+             }]
+        }
+    ],
+    "Taux_de_mortalite" : [
+         {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : "int",
+             }]
+        }
+    ]
     {
-        "name": "Nombre_detranger",
-        "functions": [
-            {
-                 "name" : columns_to_int,
-                 "args" : []
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-            {
-                 "name" : rename_columns,
-                 "args" : [{"nombre" : "etrangers"}]
-            },
-        ]
+        "name": ,
+        "functions": 
     },
     # {
     #    "name": "Quotient_familiale",
@@ -39,30 +61,12 @@ datasets = [
     #    ]
     #},
     {
-        "name": "Taux_de_natalite",
-        "functions": [
-            {
-                 "name" : columns_to_int,
-                 "args" : [["Année"]]
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-        ]
+        "name": ,
+        "functions": 
     },
     {
-        "name": "Taux_de_mortalite",
-        "functions": [
-            {
-                 "name" : columns_to_int,
-                 "args" : [["Année"]]
-            },
-            {
-                 "name" : complete_with_inteprolate,
-                 "args" : []
-            },
-        ]
+        "name": ,
+        "functions": 
     },
     {
         "name": "Population",
