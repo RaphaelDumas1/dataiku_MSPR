@@ -62,7 +62,8 @@ def create_datasets_from_file_sheets(file_name, instructions):
 
         if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:    
             df = add_rows_from_column_range(df, "annee", 2006, 2024)
-            df = fill_with_interpolation(df, "annee")                      
+            df = fill_with_interpolation(df, "annee")    
+            df = df[df['annee'] >= 2006]
         
         dataset = dataiku.Dataset(title)
         dataset.write_with_schema(df)
