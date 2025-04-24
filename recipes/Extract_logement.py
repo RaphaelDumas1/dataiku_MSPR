@@ -77,15 +77,22 @@ instructions = {
              "name" : pivot,
              "args" : ["Année"]
         },
-       {
-             "name" : columns_to_int,
-             "args" : []
+        {
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Ménages d'une personne" : 'int',
+                 "- hommes seuls" : 'int',
+                 "- femmes seules" : 'int',
+                 "Autres ménages sans famille" : "int",
+                 "Ménages avec famille(s) dont la famille principale est" : "int",
+                 "- un couple sans enfant" : 'int',
+                 "- un couple avec enfant(s)" : 'int',
+                 "- une famille monoparentale" : 'int',
+                 "Ensemble" : 'int',
+             }]
         },
-       {
-             "name" : complete_with_inteprolate,
-             "args" : []
-        },
-       {
+        {
              "name" : rename_columns,
              "args" : [{"ensemble" : "ensemble_menages"}]
         },
@@ -96,12 +103,15 @@ instructions = {
              "args" : ["Année"]
         },
         {
-             "name" : columns_to_int,
-             "args" : []
-        },
-        {
-             "name" : complete_with_inteprolate,
-             "args" : []
+             "name" : convert_columns,
+             "args" : [{
+                 "Année" : 'int',
+                 "Aucun enfant : 'int',
+                 "1 enfant" : 'int',
+                 "2 enfants" : 'int',
+                 "3 enfants" : "int",
+                 "4 enfants ou plus" : "int"
+             }]
         },
     ]
 }
