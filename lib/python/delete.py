@@ -1,3 +1,7 @@
+from check import check_columns_exist
+
+
+
 # Used to delete row(s) in a dataframe where column equal value
 def delete_rows_where_equal(df, column, value):
     check_columns_exist(df, [column])
