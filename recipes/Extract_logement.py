@@ -69,7 +69,7 @@ instructions = {
         },
         {
              "name" : rename_columns,
-             "args" : [{"ensemble" : "ensemble_logements"}]
+             "args" : [{"Ensemble" : "ensemble_logements"}]
         },
     ],
     "Composition_menage" : [
@@ -94,7 +94,7 @@ instructions = {
         },
         {
              "name" : rename_columns,
-             "args" : [{"ensemble" : "ensemble_menages"}]
+             "args" : [{"Ensemble" : "ensemble_menages"}]
         },
     ],
     "Nombre_enfant" : [
