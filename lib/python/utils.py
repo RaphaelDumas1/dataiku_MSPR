@@ -294,6 +294,15 @@ def fill_with_interpolate(df, columns_to_exlude=[]):
         .interpolate(method='linear', limit_direction='both')\
         .ffill()\
         .bfill()
+        
+    # Reconvertir les colonnes int d'origine
+    for col in int_cols:
+        df_full[col] = df_full[col].round().astype(int)
+
+    # Arrondir les colonnes float au bon nombre de décimales
+    for col, precision in float_precision.items():
+        df_full[col] = df_full[col].round(precision)
+        
     return df
 
 def interpolate(df):
