@@ -54,7 +54,7 @@ candidate_orientation = {
     'de VILLIERS': 'Far_Right',
     'VILLIERS DE': 'Far_Right',
     
-    'Blanc': 'Blank'
+    'blanc': 'Blank'
 }
 
 presidentielle_2022 = dataiku.Dataset("Presidentielle_2022")
@@ -88,8 +88,7 @@ for key, df in dfs.items():
     for index, (header, value) in enumerate(zip(headers, row)):
         
         # Create new row for blank votes
-        if(header == "Blancs" or header == "Blancs et nuls"):
-            print("yes")
+        if(header == "blancs" or header == "blancs et nuls"):
             final_df.loc[count, "année"] = key
             final_df.loc[count, "nom"] = "Blanc"
             final_df.loc[count, "prénom"] = "Blanc"
@@ -98,7 +97,7 @@ for key, df in dfs.items():
             count += 1
         
         # Increment since first candidate
-        if(headers.get_loc("Sexe") <= index):
+        if(headers.get_loc("sexe") <= index):
             col_count += 1
             
         if(col_count == 1):
