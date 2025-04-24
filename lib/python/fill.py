@@ -1,5 +1,5 @@
 from check import check_columns_exist
-from get_float_precision import utils
+from utils import get_float_precision
 
 
 # Used to fill empty values in a dataframe from a dict with keys as columns names and values as replacement values
