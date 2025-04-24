@@ -281,8 +281,6 @@ def fill_empty_values_with_mean(df, columns):
         
     return df
 
-def set_years_window_(df):
-    
 
 
 def interpolate(df):
