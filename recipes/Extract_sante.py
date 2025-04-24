@@ -1,4 +1,4 @@
-from global import create_datasets_from_file_sheets
+from general import create_datasets_from_file_sheets
 from other import rename_columns
 from convert import convert_columns
 from delete import delete_rows_where_equal
