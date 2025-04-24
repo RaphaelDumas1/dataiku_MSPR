@@ -60,9 +60,11 @@ def create_datasets_from_file_sheets(file_name, instructions):
         
         df.columns = [unidecode(col).lower() for col in df.columns]
 
-        if title not in ["annuaire_des_ecoles_en_france", "Delinquance"]:    
-            df = add_rows_from_column_range(df, "annee", 2006, 2024)
-            df = fill_with_interpolation(df, "annee")    
+        if title not in ["annuaire_des_ecoles_en_france", "Delinquance"] and not title.startswith("Legislative") and not title.startswith("Presidentielle"):
+            if not title.startswith("Legislative") and not title.startswith("Presidentielle"):
+                df = add_rows_from_column_range(df, "annee", 2006, 2024)
+                df = fill_with_interpolation(df, "annee")    
+              
             df = df[df['annee'] >= 2006]
         
         dataset = dataiku.Dataset(title)
