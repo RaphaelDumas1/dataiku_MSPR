@@ -11,7 +11,7 @@ def pivot(df, first_column_name):
     return df
 
 
-# Used to add 
+# Used to add multiple columns values to a new column
 def create_column_by_adding_columns_values(df, columns, result_column):
     check_columns_exist(df, columns)
 
