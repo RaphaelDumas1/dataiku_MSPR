@@ -15,11 +15,7 @@ datasets = {
         {
             "name" : columns_to_int,
             "args" : []
-        },
-        {
-            "name" : complete_with_inteprolate,
-            "args" : []
-        },
+        }
     ],
     "Categorie_metiers" : [
         {
@@ -33,21 +29,13 @@ datasets = {
         {
             "name" : columns_to_int,
             "args" : []
-        },
-        {
-            "name" : complete_with_inteprolate,
-            "args" : []
-        },
+        }
     ],
     "Nombre_de_salarie" : [
         {
             "name" : columns_to_int,
             "args" : []
-        },
-        {
-            "name" : complete_with_inteprolate,
-            "args" : []
-        },
+        }
     ],
     #"Evolution_trimestrielle_emploi" : [
     #    {
