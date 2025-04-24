@@ -11,12 +11,14 @@ def pivot(df, first_column_name):
     return df
 
 
+
 # Used to add up multiple columns values to a new column
 def create_column_by_adding_columns_values(df, columns, result_column):
     check_columns_exist(df, columns)
 
     df[result_column] = df[columns].apply(pd.to_numeric, errors='coerce').sum(axis=1)
     return df
+
 
 #
 def add_rows_from_column_range(df, column, start, end)
